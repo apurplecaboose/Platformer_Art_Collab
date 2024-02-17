@@ -16,7 +16,7 @@ public class PlayerMove : MonoBehaviour
         _rb = GetComponent<Rigidbody2D>();
         _speed = 4;
         _jumpHight = 7;
-        _force = 500;
+        _force = 5000;
 
 
     }
@@ -34,6 +34,7 @@ public class PlayerMove : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space))
         {
             _rb.velocity = Vector2.up * _jumpHight;
+            //_rb.AddForce(Vector2.up * _jumpHight,ForceMode2D.Force);
         }
 
         _rb.velocity = new Vector2(_speed * _horizontalInput, _rb.velocity.y);
@@ -41,7 +42,7 @@ public class PlayerMove : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.K))
         {
             Debug.Log("K key pressed.");
-            _rb.AddForce(Vector2.right * _force, ForceMode2D.Impulse);
+            _rb.AddForce(Vector2.right * _force, ForceMode2D.Force);
         }
     }
     private void FixedUpdate()

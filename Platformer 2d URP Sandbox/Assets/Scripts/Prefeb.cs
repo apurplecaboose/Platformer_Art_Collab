@@ -16,7 +16,7 @@ public class Prefeb : MonoBehaviour
     void Update()
     {
         _timer += Time.deltaTime;
-        if(_timer > 2)
+        if(_timer > 4)
         {
             Destroy(gameObject);
         }
