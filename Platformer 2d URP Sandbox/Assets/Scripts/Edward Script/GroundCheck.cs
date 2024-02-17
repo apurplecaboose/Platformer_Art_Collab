@@ -23,18 +23,18 @@ public class GroundCheck : MonoBehaviour
             }
         }
     }
-    void OnTriggerExit2D(Collider2D collision)
-    {
-        if ((GroundLayer.value & (1 << collision.transform.gameObject.layer)) > 0)
-        {
-            P_Ref.Grounded = false;
-        }
-        if (P_Ref.Grounded)
-        {
-            if ((WallLayer.value & (1 << collision.transform.gameObject.layer)) > 0)
-            {
-                P_Ref.Grounded = false;
-            }
-        }
-    }
+    //void OnTriggerExit2D(Collider2D collision)
+    //{
+    //    if ((GroundLayer.value & (1 << collision.transform.gameObject.layer)) > 0)
+    //    {
+    //        P_Ref.Grounded = false;
+    //    }
+    //    if (P_Ref.Grounded)
+    //    {
+    //        if ((WallLayer.value & (1 << collision.transform.gameObject.layer)) > 0)
+    //        {
+    //            P_Ref.Grounded = false;
+    //        }
+    //    }
+    //}
 }
