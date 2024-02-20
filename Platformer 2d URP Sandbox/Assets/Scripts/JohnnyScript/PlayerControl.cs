@@ -9,9 +9,10 @@ public class PlayerControl : MonoBehaviour
     private Rigidbody2D _refPlayerRb;
     [SerializeField] float _speed,_upThrust, _firePower,_blastPower;
     private Vector3 _refToMousePosition;
-    public Transform ShootDirection,ShootPoint;
+    public Transform ShootDirection,ShootPoint,TeleportPos;
     public GameObject Bullet;
-    public bool isBlast;
+    public bool IsBlast,CanTeleport;
+
     private void Awake()
     {
         _refPlayerRb = this.GetComponent<Rigidbody2D>();
@@ -22,19 +23,10 @@ public class PlayerControl : MonoBehaviour
 
         Vector3 _dir = new Vector3(_refToMousePosition.x - ShootDirection.position.x, _refToMousePosition.y - ShootDirection.position.y);
         ShootDirection.up = _dir;// shooting direction
-        if (Input.GetKeyDown(KeyCode.Mouse0))
-        {
-            Shoot(_dir);         
-        }
 
-        if (isBlast)
-        {
-            _refPlayerRb.AddForce(new Vector2(0, _blastPower), ForceMode2D.Impulse);
-            isBlast = false;
-        }
-
-
-
+        Shoot(_dir, _firePower);
+        BlastJump(_blastPower);
+        TeleportLogic();
         Jump(_upThrust);
     }
     private void FixedUpdate()
@@ -58,21 +50,36 @@ public class PlayerControl : MonoBehaviour
         }       
     }
 
-
-    //private void OnTriggerEnter2D(Collider2D collision)
-    //{
-    //    float blastPower = 15;
-    //    if (collision.CompareTag("BlastBarrel"))
-    //    {
-    //        _refPlayerRb.AddForce(new Vector2(0, blastPower), ForceMode2D.Impulse);
-    //    }
-    //}
-
-    void Shoot(Vector3 dir)
+    void BlastJump(float blastPower)
     {
-        GameObject BulletInstance =Instantiate(Bullet, ShootPoint.position, ShootPoint.rotation);
-        //using GameObject BulletInstance to save the instance of object as variabl.(If no, the instantiate object is not asigned as gameobject in game ) 
-        //如果不用变量存储，脚本无法控制新生成游戏物体的组件对其进行编程（类似于Awake中绑定的步骤）
-        BulletInstance.GetComponent<Rigidbody2D>().AddForce(dir*_firePower, ForceMode2D.Impulse);
+        if (IsBlast)
+        {
+            _refPlayerRb.AddForce(new Vector2(0, blastPower), ForceMode2D.Impulse);
+            IsBlast = false;
+        }
+    }
+
+    void TeleportLogic()
+    {
+        if (CanTeleport)
+        {
+            if (Input.GetKeyDown(KeyCode.Mouse1))
+            {
+                transform.position = TeleportPos.transform.position;
+                CanTeleport = false;
+            }
+        }
+    }
+
+
+    void Shoot(Vector3 dir,float firePower)
+    {
+        if (Input.GetKeyDown(KeyCode.Mouse0))
+        {
+            GameObject BulletInstance = Instantiate(Bullet, ShootPoint.position, ShootPoint.rotation);
+            //using GameObject BulletInstance to save the instance of object as variabl.(If no, the instantiate object is not asigned as gameobject in game ) 
+            //如果不用变量存储，脚本无法控制新生成游戏物体的组件对其进行编程（类似于Awake中绑定的步骤）
+            BulletInstance.GetComponent<Rigidbody2D>().AddForce(dir * firePower, ForceMode2D.Impulse);
+        }      
     }
 }

@@ -15,7 +15,16 @@ public class BulletLogic : MonoBehaviour
     {
         if (collision.collider.CompareTag("BlastBarrel"))
         {
-            RefToPlayer.GetComponent<PlayerControl>().isBlast = true;
+            RefToPlayer.GetComponent<PlayerControl>().IsBlast = true;
+            Destroy(gameObject);
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("CampFire"))
+        {
+            RefToPlayer.GetComponent<PlayerControl>().CanTeleport = true;
             Destroy(gameObject);
         }
     }
