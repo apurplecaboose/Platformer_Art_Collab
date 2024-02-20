@@ -25,6 +25,8 @@ public class BulletLogic : MonoBehaviour
         if (collision.CompareTag("CampFire"))
         {
             RefToPlayer.GetComponent<PlayerControl>().CanTeleport = true;
+           // RefToPlayer.GetComponent<PlayerControl>().TeleportPos.Add(collision.transform.position)
+
             Destroy(gameObject);
         }
     }
