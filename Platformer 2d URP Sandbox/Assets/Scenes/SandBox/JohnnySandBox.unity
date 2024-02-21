@@ -9655,7 +9655,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 5
   m_Material: {fileID: 6200000, guid: 4b408cc84d6af2c4c822265fff10475b, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
@@ -9715,9 +9715,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _speed: 5
-  _upThrust: 3
+  _upThrust: 10
   _firePower: 1.5
-  _blastPower: 500
+  _blastPower: 1000
   BarrelBlastDir: {x: 0, y: 0}
   blastDir: {x: 0, y: 0}
   ShootDirection: {fileID: 1841509417}
