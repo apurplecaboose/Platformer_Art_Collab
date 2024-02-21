@@ -5,16 +5,18 @@ using UnityEngine;
 public class BulletLogic : MonoBehaviour
 {
     private GameObject RefToPlayer;
+    public Vector3 BlastDir;
     private void Awake()
     {
         RefToPlayer = GameObject.Find("player").gameObject;
-        print(RefToPlayer);
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.collider.CompareTag("BlastBarrel"))
-        {
+        {           
+            BlastDir = RefToPlayer.transform.position - collision.collider.transform.position;
+            RefToPlayer.GetComponent<PlayerControl>().BlastDir = BlastDir;
             RefToPlayer.GetComponent<PlayerControl>().IsBlast = true;
             Destroy(gameObject);
         }
@@ -24,9 +26,8 @@ public class BulletLogic : MonoBehaviour
     {
         if (collision.CompareTag("CampFire"))
         {
+            RefToPlayer.GetComponent<PlayerControl>().TeleportPos.Add(collision.gameObject.transform);
             RefToPlayer.GetComponent<PlayerControl>().CanTeleport = true;
-           // RefToPlayer.GetComponent<PlayerControl>().TeleportPos.Add(collision.transform.position)
-
             Destroy(gameObject);
         }
     }

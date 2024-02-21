@@ -8,12 +8,12 @@ public class PlayerControl : MonoBehaviour
     private float _xdir;
     private Rigidbody2D _refPlayerRb;
     [SerializeField] float _speed,_upThrust, _firePower,_blastPower;
-    private Vector3 _refToMousePosition, _blastDirection,_blastDir;
+    private Vector3 _refToMousePosition, _blastDirection;
+    public Vector3 BlastDir, blastDir;
     public Transform ShootDirection,ShootPoint;
     public List<Transform> TeleportPos=new List<Transform>();
     public GameObject Bullet;
     public bool IsBlast,CanTeleport;
-    public GameObject Barrel;
 
     private void Awake()
     {
@@ -26,14 +26,12 @@ public class PlayerControl : MonoBehaviour
         Vector3 _dir = new Vector3(_refToMousePosition.x - ShootDirection.position.x, _refToMousePosition.y - ShootDirection.position.y);
         ShootDirection.up = _dir;// shooting direction
 
-        Vector3 tempPos = this.transform.position- Barrel.transform.position;
-        //_blastDirection = new Vector3(Barrel.transform.position.x - transform.position.x, Barrel.transform.position.y - transform.position.y,0);//
-        _blastDir = tempPos.normalized;
+         blastDir = BlastDir.normalized;
 
         Shoot(_dir, _firePower);
         BlastJump(_blastPower);
         TeleportLogic();
-        //Jump(_upThrust);
+        Jump(_upThrust);
         if (Input.GetKeyDown(KeyCode.Space))
         {
             _refPlayerRb.AddForce(new Vector2(100,0));
@@ -51,7 +49,15 @@ public class PlayerControl : MonoBehaviour
     void HorizontalMove(float speed)
     {
         _xdir = Input.GetAxis("Horizontal");
-        _refPlayerRb.velocity = new Vector2(_xdir * speed,_refPlayerRb.velocity.y);
+        if (_xdir == 0)
+        {
+            _refPlayerRb.velocity = new Vector2(_refPlayerRb.velocity.x, _refPlayerRb.velocity.y);//avoid the override to rb velocity from x input
+        }//blast state
+        else
+        {
+            _refPlayerRb.velocity = new Vector2(_xdir * speed, _refPlayerRb.velocity.y);
+        }//normal state
+
     }
 
     void Jump(float upThrust)
@@ -66,9 +72,10 @@ public class PlayerControl : MonoBehaviour
     {
         if (IsBlast)
         {
-            Vector2 blast = new Vector2(_blastDir.x, _blastDir.y);
-            print(blast);
-            _refPlayerRb.AddForce(blast * blastPower);
+            //Vector2 blast = new Vector2(_blastDir.x, BlastDir.y);
+            //print(blast);
+            _refPlayerRb.AddForce(blastDir * blastPower);
+            _refPlayerRb.velocity= new Vector2(_refPlayerRb.velocity.x, _refPlayerRb.velocity.y);
             IsBlast = false;
         }
     }
@@ -80,7 +87,9 @@ public class PlayerControl : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.Mouse1))
             {
                 transform.position = TeleportPos[0].transform.position;
+                _refPlayerRb.velocity = Vector2.zero;
                 CanTeleport = false;
+                TeleportPos.Clear();
             }
         }
     }
@@ -97,3 +106,4 @@ public class PlayerControl : MonoBehaviour
         }      
     }
 }
+  
