@@ -9,7 +9,7 @@ public class PlayerMove : MonoBehaviour
     [SerializeField]
     float _moveForce = 50f;
 
-    public bool Grounded, Wallin;
+    public bool Grounded;
     void Start()
     {
         
