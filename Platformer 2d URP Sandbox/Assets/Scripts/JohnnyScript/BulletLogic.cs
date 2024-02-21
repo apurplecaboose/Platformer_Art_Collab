@@ -5,7 +5,7 @@ using UnityEngine;
 public class BulletLogic : MonoBehaviour
 {
     private GameObject RefToPlayer;
-    public Vector3 BlastDir;
+    public Vector2 BlastDir;
     private void Awake()
     {
         RefToPlayer = GameObject.Find("player").gameObject;
@@ -16,7 +16,8 @@ public class BulletLogic : MonoBehaviour
         if (collision.collider.CompareTag("BlastBarrel"))
         {           
             BlastDir = RefToPlayer.transform.position - collision.collider.transform.position;
-            RefToPlayer.GetComponent<PlayerControl>().BlastDir = BlastDir;
+            RefToPlayer.GetComponent<PlayerControl>().BarrelBlastDir = BlastDir;
+            print("Detect" + BlastDir);
             RefToPlayer.GetComponent<PlayerControl>().IsBlast = true;
             Destroy(gameObject);
         }

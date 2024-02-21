@@ -8,8 +8,8 @@ public class PlayerControl : MonoBehaviour
     private float _xdir;
     private Rigidbody2D _refPlayerRb;
     [SerializeField] float _speed,_upThrust, _firePower,_blastPower;
-    private Vector3 _refToMousePosition, _blastDirection;
-    public Vector3 BlastDir, blastDir;
+    private Vector3 _refToMousePosition;
+    public Vector2 BarrelBlastDir, blastDir;
     public Transform ShootDirection,ShootPoint;
     public List<Transform> TeleportPos=new List<Transform>();
     public GameObject Bullet;
@@ -22,27 +22,17 @@ public class PlayerControl : MonoBehaviour
     private void Update()
     {
         _refToMousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition) + new Vector3(0, 0, 10);//mouse input
-
-        Vector3 _dir = new Vector3(_refToMousePosition.x - ShootDirection.position.x, _refToMousePosition.y - ShootDirection.position.y);
-        ShootDirection.up = _dir;// shooting direction
-
-         blastDir = BlastDir.normalized;
-
-        Shoot(_dir, _firePower);
+        blastDir = BarrelBlastDir.normalized;//normalize the Blast vector into direction only
+        Shoot(_firePower);
         BlastJump(_blastPower);
         TeleportLogic();
         Jump(_upThrust);
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            _refPlayerRb.AddForce(new Vector2(100,0));
-        }
 
 
     }
     private void FixedUpdate()
     {
-        HorizontalMove(_speed);
-       
+        HorizontalMove(_speed);   
     }
 
 
@@ -72,10 +62,7 @@ public class PlayerControl : MonoBehaviour
     {
         if (IsBlast)
         {
-            //Vector2 blast = new Vector2(_blastDir.x, BlastDir.y);
-            //print(blast);
             _refPlayerRb.AddForce(blastDir * blastPower);
-            _refPlayerRb.velocity= new Vector2(_refPlayerRb.velocity.x, _refPlayerRb.velocity.y);
             IsBlast = false;
         }
     }
@@ -86,7 +73,7 @@ public class PlayerControl : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.Mouse1))
             {
-                transform.position = TeleportPos[0].transform.position;
+                transform.position = new Vector2(TeleportPos[0].transform.position.x, TeleportPos[0].transform.position.y+1);
                 _refPlayerRb.velocity = Vector2.zero;
                 CanTeleport = false;
                 TeleportPos.Clear();
@@ -95,14 +82,16 @@ public class PlayerControl : MonoBehaviour
     }
 
 
-    void Shoot(Vector3 dir,float firePower)
+    void Shoot(float firePower)
     {
+        Vector3 _dir = new Vector3(_refToMousePosition.x - ShootDirection.position.x, _refToMousePosition.y - ShootDirection.position.y);
+        ShootDirection.up = _dir;// shooting direction
         if (Input.GetKeyDown(KeyCode.Mouse0))
         {
             GameObject BulletInstance = Instantiate(Bullet, ShootPoint.position, ShootPoint.rotation);
             //using GameObject BulletInstance to save the instance of object as variabl.(If no, the instantiate object is not asigned as gameobject in game ) 
             //如果不用变量存储，脚本无法控制新生成游戏物体的组件对其进行编程（类似于Awake中绑定的步骤）
-            BulletInstance.GetComponent<Rigidbody2D>().AddForce(dir* firePower, ForceMode2D.Impulse);
+            BulletInstance.GetComponent<Rigidbody2D>().AddForce(_dir * firePower, ForceMode2D.Impulse);
         }      
     }
 }
