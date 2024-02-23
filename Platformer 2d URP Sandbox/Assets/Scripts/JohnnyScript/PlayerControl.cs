@@ -73,6 +73,7 @@ public class PlayerControl : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.Mouse1))
             {
+                Time.timeScale = 0.1f;
                 transform.position = new Vector2(TeleportPos[0].transform.position.x, TeleportPos[0].transform.position.y+1);
                 _refPlayerRb.velocity = Vector2.zero;
                 CanTeleport = false;
@@ -88,6 +89,7 @@ public class PlayerControl : MonoBehaviour
         ShootDirection.up = _dir;// shooting direction
         if (Input.GetKeyDown(KeyCode.Mouse0))
         {
+            Time.timeScale = 1;
             GameObject BulletInstance = Instantiate(Bullet, ShootPoint.position, ShootPoint.rotation);
             //using GameObject BulletInstance to save the instance of object as variabl.(If no, the instantiate object is not asigned as gameobject in game ) 
             //如果不用变量存储，脚本无法控制新生成游戏物体的组件对其进行编程（类似于Awake中绑定的步骤）
