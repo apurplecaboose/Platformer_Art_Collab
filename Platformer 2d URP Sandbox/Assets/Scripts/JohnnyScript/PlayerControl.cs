@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.UIElements;
 
@@ -13,8 +14,8 @@ public class PlayerControl : MonoBehaviour
     public Transform ShootDirection,ShootPoint;
     public List<Transform> TeleportPos=new List<Transform>();
     public GameObject Bullet;
-    public bool IsBlast,CanTeleport;
-
+    public bool IsBlast,CanTeleport,CanJump;
+    public LayerMask CheckGroundLayer;
     private void Awake()
     {
         _refPlayerRb = this.GetComponent<Rigidbody2D>();
@@ -26,8 +27,12 @@ public class PlayerControl : MonoBehaviour
         Shoot(_firePower);
         BlastJump(_blastPower);
         TeleportLogic();
-        Jump(_upThrust);
+        if (CanJump)
+        {
+            Jump(_upThrust);
+        }
 
+        GroundCheck();
 
     }
     private void FixedUpdate()
@@ -96,5 +101,18 @@ public class PlayerControl : MonoBehaviour
             BulletInstance.GetComponent<Rigidbody2D>().AddForce(_dir * firePower, ForceMode2D.Impulse);
         }      
     }
+
+    void GroundCheck()
+    {
+        float detectRange = 1f;
+        RaycastHit2D _hitGround = Physics2D.Raycast(transform.position, -transform.up, detectRange, CheckGroundLayer);
+        Debug.DrawRay(transform.position, -transform.up, Color.red, detectRange);
+        if (_hitGround)
+        {
+            CanJump = true;
+        }
+        else { CanJump = false; }
+    }
+
 }
   
