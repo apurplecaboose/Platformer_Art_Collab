@@ -7,7 +7,7 @@ public class PlayerMove : MonoBehaviour
     public Rigidbody2D P_rb;
     float _xInput;
     [SerializeField]
-    float _moveForce = 50f;
+    float _moveForce = 25f;
 
     public bool Grounded;
 
