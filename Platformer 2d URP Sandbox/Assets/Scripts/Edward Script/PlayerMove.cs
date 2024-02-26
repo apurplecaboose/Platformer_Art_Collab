@@ -10,17 +10,13 @@ public class PlayerMove : MonoBehaviour
     float _moveForce = 50f;
 
     public bool Grounded;
-    void Start()
-    {
-        
-    }
 
 
     void Update()
     {
         if(Input.GetKeyDown(KeyCode.Space) && Grounded)
         {
-            P_rb.AddForce(Vector2.up * 10f, ForceMode2D.Impulse);
+            P_rb.AddForce(Vector2.up * 7.5f, ForceMode2D.Impulse);
         }
         PlayerInput();
     }
@@ -29,11 +25,11 @@ public class PlayerMove : MonoBehaviour
         if (Input.GetKey(KeyCode.A) && Input.GetKey(KeyCode.D)) _xInput = 0;
         else
         {
-            if (Input.GetKey(KeyCode.Space)) // tapstrafe
+            if (/*Input.GetKey(KeyCode.Space)*/!Grounded) // tapstrafe
             {
                 if(Mathf.Sign(P_rb.velocity.x) != _xInput && _xInput != 0)
                 {
-                    float tapstrafeM = 1.15f;
+                    float tapstrafeM = .9f; // expressed as percent momentum transfer 1 being full momentum transfer
                     P_rb.velocity = new Vector2(-P_rb.velocity.x * tapstrafeM, P_rb.velocity.y);
                 }
                 else
