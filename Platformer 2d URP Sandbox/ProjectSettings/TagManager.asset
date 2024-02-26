@@ -7,15 +7,15 @@ TagManager:
   - BlastBarrel
   - Bullet
   - CampFire
-  - Ground
+  - Floor
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - Player
+  - 
   - Water
   - UI
-  - Ground
+  - 
   - 
   - 
   - 
