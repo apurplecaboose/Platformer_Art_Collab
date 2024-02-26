@@ -6,6 +6,7 @@ public class SlowMo : MonoBehaviour
 {
     float _sigma_DTime = 0;
     float _slowMoTimeScale = 0.2f;
+    float _eric_loves_clash_from_r6_Timer;
     public AnimationCurve ReturntoNormalSpeedCurve; // for inspector use
     
     public float SlowMoResourceTime;
@@ -16,12 +17,6 @@ public class SlowMo : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.N))
         {
             SlowMoToggle = !SlowMoToggle;
-            if (SlowMoToggle && SlowMoResourceTime >= 0)
-            {
-                //spam punishment
-                float punishmentAmount = 0.5f;
-                SlowMoResourceTime -= punishmentAmount; //public var
-            }
         }
         /// ^^^
 
@@ -29,7 +24,7 @@ public class SlowMo : MonoBehaviour
         {
             SlowMoToggle = false;
         }
-        if(Time.timeScale == 1)
+        if(Time.timeScale == 1 && Time.fixedDeltaTime != 0.02f)
         {
             Time.fixedDeltaTime = 0.02f; // set it to fixed time step 
             Debug.Log("Time.fixedDeltaTime Reset Catch Case!!!");
@@ -50,21 +45,26 @@ public class SlowMo : MonoBehaviour
             else
             {
                 SlowMoResourceTime -= Time.unscaledDeltaTime;
+                _eric_loves_clash_from_r6_Timer = 0;
                 NeoTime(true);
             }
         }
         if(!activated)
         {
             NeoTime(false);
+            _eric_loves_clash_from_r6_Timer += Time.unscaledDeltaTime;
 
-            float maxSlowMoResourceTime = 5.5f;
+            float maxSlowMoResourceTime = 5f;
             if (SlowMoResourceTime < maxSlowMoResourceTime)
             {
-                SlowMoResourceTime += 0.5f * Time.unscaledDeltaTime;
+                if(_eric_loves_clash_from_r6_Timer > 1f)
+                {
+                    SlowMoResourceTime += 0.5f * Time.unscaledDeltaTime;
+                }
             }
             else
             {
-                SlowMoResourceTime = 5; // catch case
+                SlowMoResourceTime = maxSlowMoResourceTime; // catch case
                 Debug.Log("SlowMoResourceTime Overflow Catch Case!!!");
             }
         }
@@ -105,7 +105,4 @@ public class SlowMo : MonoBehaviour
             }
         }
     }
-
-
-
 }
