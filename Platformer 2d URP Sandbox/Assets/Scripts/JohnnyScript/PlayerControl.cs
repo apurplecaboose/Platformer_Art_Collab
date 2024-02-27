@@ -6,67 +6,68 @@ using UnityEngine.UIElements;
 
 public class PlayerControl : MonoBehaviour
 {
+    public SlowMo refToSlowMo;
     private float _xdir;
     private Rigidbody2D _refPlayerRb;
-    [SerializeField] float _speed,_upThrust, _firePower,_blastPower;
+    [SerializeField] float _speed, _upThrust, _firePower, _blastPower;
     private Vector3 _refToMousePosition;
     public Vector2 BarrelBlastDir, blastDir;
-    public Transform ShootDirection,ShootPoint;
-    public List<Transform> TeleportPos=new List<Transform>();
+    public Transform ShootDirection, ShootPoint;
+    public Transform TeleportPos;
     public GameObject Bullet;
-    public bool IsBlast,CanTeleport,CanJump;
+    public bool IsBlast, IsDash, CanJump;
     public LayerMask CheckGroundLayer;
+
     private void Awake()
     {
         _refPlayerRb = this.GetComponent<Rigidbody2D>();
     }
+
     private void Update()
     {
-        _refToMousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition) + new Vector3(0, 0, 10);//mouse input
-        blastDir = BarrelBlastDir.normalized;//normalize the Blast vector into direction only
+
         Shoot(_firePower);
         BlastJump(_blastPower);
         TeleportLogic();
-        if (CanJump)
-        {
-            Jump(_upThrust);
-        }
-
         GroundCheck();
+        Jump(_upThrust);
+        EnterSlowMotion();
+
+        _xdir = Input.GetAxis("Horizontal");//player horizontal move input
+        _refToMousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition) + new Vector3(0, 0, 10);//mouse input
 
     }
     private void FixedUpdate()
     {
-        HorizontalMove(_speed);   
+        HorizontalMove();
     }
 
 
-    void HorizontalMove(float speed)
+    void HorizontalMove()
     {
-        _xdir = Input.GetAxis("Horizontal");
         if (_xdir == 0)
         {
-            _refPlayerRb.velocity = new Vector2(_refPlayerRb.velocity.x, _refPlayerRb.velocity.y);//avoid the override to rb velocity from x input
-        }//blast state
+            _refPlayerRb.velocity = new Vector2(_refPlayerRb.velocity.x, _refPlayerRb.velocity.y);//avoid the override to rb velocity from x input when player experience the force of barrel
+        }//blast blast state
         else
         {
-            _refPlayerRb.velocity = new Vector2(_xdir * speed, _refPlayerRb.velocity.y);
+            _refPlayerRb.velocity = new Vector2(_xdir * _speed, _refPlayerRb.velocity.y);
         }//normal state
-
     }
 
     void Jump(float upThrust)
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space) && CanJump)
         {
-            _refPlayerRb.AddForce(new Vector2(0, upThrust),ForceMode2D.Impulse);
-        }       
+            _refPlayerRb.AddForce(new Vector2(0, upThrust), ForceMode2D.Impulse);
+        }
     }
 
     public void BlastJump(float blastPower)
     {
         if (IsBlast)
         {
+            blastDir = BarrelBlastDir.normalized;//normalize the Blast vector into direction only
             _refPlayerRb.AddForce(blastDir * blastPower);
             IsBlast = false;
         }
@@ -74,16 +75,16 @@ public class PlayerControl : MonoBehaviour
 
     void TeleportLogic()
     {
-        if (CanTeleport)
+        if (IsDash)
         {
-            if (Input.GetKeyDown(KeyCode.Mouse1))
-            {
-                Time.timeScale = 0.1f;
-                transform.position = new Vector2(TeleportPos[0].transform.position.x, TeleportPos[0].transform.position.y+1);
-                _refPlayerRb.velocity = Vector2.zero;
-                CanTeleport = false;
-                TeleportPos.Clear();
-            }
+            Vector2 dashDir;
+            dashDir = TeleportPos.transform.position - transform.position;
+            float dashMultiplier = 150;
+            dashDir.Normalize();
+            float dashdistance = Vector3.Distance(TeleportPos.transform.position, transform.position);
+            dashdistance = Mathf.Clamp(dashdistance, 8, 10);
+            _refPlayerRb.AddForce(dashDir * dashdistance * dashMultiplier);
+            IsDash = false;
         }
     }
 
@@ -94,12 +95,11 @@ public class PlayerControl : MonoBehaviour
         ShootDirection.up = _dir;// shooting direction
         if (Input.GetKeyDown(KeyCode.Mouse0))
         {
-            Time.timeScale = 1;
             GameObject BulletInstance = Instantiate(Bullet, ShootPoint.position, ShootPoint.rotation);
             //using GameObject BulletInstance to save the instance of object as variabl.(If no, the instantiate object is not asigned as gameobject in game ) 
             //如果不用变量存储，脚本无法控制新生成游戏物体的组件对其进行编程（类似于Awake中绑定的步骤）
             BulletInstance.GetComponent<Rigidbody2D>().AddForce(_dir * firePower, ForceMode2D.Impulse);
-        }      
+        }
     }
 
     void GroundCheck()
@@ -114,5 +114,11 @@ public class PlayerControl : MonoBehaviour
         else { CanJump = false; }
     }
 
+    void EnterSlowMotion()
+    {
+        if (Input.GetKeyDown(KeyCode.Q))
+        {
+            Time.timeScale = 0.3f;
+        }
+    }
 }
-  

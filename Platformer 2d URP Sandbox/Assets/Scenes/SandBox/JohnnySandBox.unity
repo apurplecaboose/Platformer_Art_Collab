@@ -857,7 +857,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 8
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -2020,7 +2020,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!60 &433072051
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -2129,7 +2129,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 433072050}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6.73, y: 9.97, z: 0}
+  m_LocalPosition: {x: 6.73, y: 9.83, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -6033,7 +6033,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1094863902}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 12.74, y: 11.63, z: 0}
+  m_LocalPosition: {x: 8.58, y: 12.88, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -9681,6 +9681,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1852852282}
   - component: {fileID: 1852852281}
+  - component: {fileID: 1852852286}
   - component: {fileID: 1852852285}
   - component: {fileID: 1852852284}
   - component: {fileID: 1852852283}
@@ -9751,7 +9752,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1852852280}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.61, y: -0.5, z: 0}
+  m_LocalPosition: {x: 1.87, y: -0.28, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -9776,7 +9777,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 5
+  m_GravityScale: 3
   m_Material: {fileID: 6200000, guid: 4b408cc84d6af2c4c822265fff10475b, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
@@ -9835,6 +9836,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6bd4d0c06d02ae440b741e40f85ecbad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  refToSlowMo: {fileID: 1852852286}
   _speed: 5
   _upThrust: 10
   _firePower: 1.5
@@ -9843,14 +9845,52 @@ MonoBehaviour:
   blastDir: {x: 0, y: 0}
   ShootDirection: {fileID: 1841509417}
   ShootPoint: {fileID: 1596403995}
-  TeleportPos: []
+  TeleportPos: {fileID: 0}
   Bullet: {fileID: 6167623499802909372, guid: e2ba6657f8aa8dc45b813e7ddbed4b16, type: 3}
   IsBlast: 0
-  CanTeleport: 0
+  IsDash: 0
   CanJump: 0
   CheckGroundLayer:
     serializedVersion: 2
     m_Bits: 64
+--- !u!114 &1852852286
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1852852280}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f67f6a3ff711f44080b65bd743f602d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ReturntoNormalSpeedCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  SlowMoResourceTime: 0
+  SlowMoToggle: 0
 --- !u!1 &1858508087
 GameObject:
   m_ObjectHideFlags: 0

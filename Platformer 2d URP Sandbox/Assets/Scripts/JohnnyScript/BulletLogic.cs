@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Xml.Serialization;
 using UnityEngine;
 
 public class BulletLogic : MonoBehaviour
@@ -13,9 +14,23 @@ public class BulletLogic : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.collider.CompareTag("BlastBarrel"))
-        {           
-            BlastDir = RefToPlayer.transform.position - collision.collider.transform.position;
+        DetectBarrel(collision);
+        DetectGround(collision);
+
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        DetectCampFire(collision);
+    }
+
+
+
+    void DetectBarrel(Collision2D cl)
+    {
+        if (cl.collider.CompareTag("BlastBarrel"))
+        {
+            BlastDir = RefToPlayer.transform.position - cl.collider.transform.position;
             RefToPlayer.GetComponent<PlayerControl>().BarrelBlastDir = BlastDir;
             print("Detect" + BlastDir);
             RefToPlayer.GetComponent<PlayerControl>().IsBlast = true;
@@ -23,13 +38,21 @@ public class BulletLogic : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    void DetectCampFire(Collider2D cl)
     {
-        if (collision.CompareTag("CampFire"))
+        if (cl.CompareTag("CampFire"))
         {
-            RefToPlayer.GetComponent<PlayerControl>().TeleportPos.Add(collision.gameObject.transform);
-            RefToPlayer.GetComponent<PlayerControl>().CanTeleport = true;
+            RefToPlayer.GetComponent<PlayerControl>().TeleportPos = cl.gameObject.transform;
+            RefToPlayer.GetComponent<PlayerControl>().IsDash = true;
+            Time.timeScale = 1f;
             Destroy(gameObject);
+        }
+    }
+    void DetectGround(Collision2D cl)
+    {
+        if (cl.collider.CompareTag("Ground"))
+        {
+            GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
         }
     }
 }
