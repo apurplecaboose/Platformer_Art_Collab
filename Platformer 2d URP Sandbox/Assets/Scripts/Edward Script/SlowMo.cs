@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SlowMo : MonoBehaviour
 {
-    float _sigma_DTime = 0;
+    float _sigma_DTime = 0; // used for lerp back to regular speed sum of u
     float _slowMoTimeScale = 0.2f;
     float _eric_loves_clash_from_r6_Timer;
     public AnimationCurve ReturntoNormalSpeedCurve; // for inspector use
@@ -38,12 +38,14 @@ public class SlowMo : MonoBehaviour
         {
             if (SlowMoResourceTime <= 0) 
             {
+                //when no resource cannot activate sad mode
                 activated = false;
                 NeoTime(false);
                 SlowMoToggle = false;
             }
             else
             {
+                //when activated 
                 SlowMoResourceTime -= Time.unscaledDeltaTime;
                 _eric_loves_clash_from_r6_Timer = 0;
                 NeoTime(true);
@@ -83,7 +85,7 @@ public class SlowMo : MonoBehaviour
         }
         void ReturnFromNeoTime()
         {
-            float returnTime = 1f;
+            float returnTime = 0.45f;
             if (_sigma_DTime >= returnTime)
             {
                 Time.timeScale = 1; // just in case not exactly 1
@@ -93,8 +95,8 @@ public class SlowMo : MonoBehaviour
 
             _sigma_DTime += Time.unscaledDeltaTime;
             float dynamicSlowMoTimeScale = UnscaledLerp(_slowMoTimeScale, returnTime, _sigma_DTime);
-            Time.timeScale = dynamicSlowMoTimeScale;
-            Time.fixedDeltaTime = Time.deltaTime * dynamicSlowMoTimeScale;
+            Time.timeScale = dynamicSlowMoTimeScale; // copyed off of youtube
+            Time.fixedDeltaTime = Time.deltaTime * dynamicSlowMoTimeScale; // copyed off of youtube
 
 
             float UnscaledLerp(float start, float lerpTime, float unscaledDeltaTime)
