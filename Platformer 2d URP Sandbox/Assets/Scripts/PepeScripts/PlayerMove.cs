@@ -10,9 +10,11 @@ public class PlayerMove : MonoBehaviour
     float _jumpHight;
     float _force;
     public GameObject Prefeb;
+    LanternLight _light;
     // Start is called before the first frame update
     void Start()
     {
+        _light = GameObject.Find("LanternLight").GetComponent<LanternLight>();
         _rb = GetComponent<Rigidbody2D>();
         _speed = 4;
         _jumpHight = 7;
@@ -35,6 +37,8 @@ public class PlayerMove : MonoBehaviour
         {
             _rb.velocity = Vector2.up * _jumpHight;
             //_rb.AddForce(Vector2.up * _jumpHight,ForceMode2D.Force);
+
+            _light.HasReduced = true;
         }
 
         _rb.velocity = new Vector2(_speed * _horizontalInput, _rb.velocity.y);
