@@ -11,6 +11,7 @@ public class PlayerMovePepe : MonoBehaviour
     float _force;
     public GameObject Prefeb;
     LanternLight _light;
+    public int BulletNum;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,7 +20,7 @@ public class PlayerMovePepe : MonoBehaviour
         _speed = 4;
         _jumpHight = 7;
         _force = 5000;
-
+        BulletNum = 4;
 
     }
 

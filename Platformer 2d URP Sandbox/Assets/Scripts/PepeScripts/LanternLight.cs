@@ -10,20 +10,37 @@ using Unity.VisualScripting;
 public class LanternLight : MonoBehaviour
 {
     public Light2D Light;
-    public float LightIntensity,CurrentLightIntensity, TargetLightIntensity;
-    public float LightOuterRadius, CurrentLightOuterRadius, TargetLightOuterRadius;
-    public float FalloffStrength, CurrentFalloffStrength, TargetFalloffStrength;
     public bool HasReduced;
     public float Timer, LerpTime, T, StartLerp;
     public AnimationCurve LightCurve;
+    public PlayerMovePepe _refToPlayerSC;
 
+    float _lerpDeltaTime = 0;
+    public float[] LightIntensityValue;
+    public float[] LightOuterRadiusValue;
+    public float[] FalloffStrengthValue;
     private void Start()
     {
         Light = GetComponent<Light2D>();
         LerpTime = 3;
-        LightIntensity = Light.intensity;
-        LightOuterRadius = Light.pointLightOuterRadius;
-        FalloffStrength = Light.falloffIntensity;
+
+
+        LightIntensityValue[0] = 1f;
+        LightOuterRadiusValue[0] = 14f;
+        FalloffStrengthValue[0] = 0.6f;
+
+        LightIntensityValue[1] = 0.8f;
+        LightOuterRadiusValue[1] = 11f;
+        FalloffStrengthValue[1] = 0.65f;
+
+        LightIntensityValue[2] = 0.6f;
+        LightOuterRadiusValue[2] = 9.5f;
+        FalloffStrengthValue[2] = 0.7f;
+
+        LightIntensityValue[3] = 0.5f;
+        LightOuterRadiusValue[3] = 7f;
+        FalloffStrengthValue[3] = 0.75f;
+
     }
 
     private void Update()
@@ -41,22 +58,21 @@ public class LanternLight : MonoBehaviour
 
     public void LightLevel()
     {
-        TargetLightIntensity = LightIntensity - 0.25f;
-
         if (HasReduced)
         {
-            Timer += Time.deltaTime;
+            _lerpDeltaTime += Time.deltaTime;
+            if(_lerpDeltaTime >= 0.6f)
+            {
+                HasReduced = false;
+                _lerpDeltaTime = 0;
+            }
 
-            //lightLerp();
-
-            T = Timer / LerpTime;
-            CurrentLightIntensity = Mathf.Lerp(LightIntensity, TargetLightIntensity, T);
-            Light.intensity = CurrentLightIntensity;
-            LightIntensity = CurrentLightIntensity;
-            HasReduced = false;
         }
 
+        for (int i = 0; i<_refToPlayerSC.BulletNum; i++)
+        {
 
+        }
         //LightOuterRadius -= 0.5f;
         //Light.pointLightOuterRadius = LightOuterRadius;
 
@@ -67,7 +83,7 @@ public class LanternLight : MonoBehaviour
         
 
     }
-    float _lerpDeltaTime = 0;
+
     float BasicFloatLerp(float a, float b, float lerpTime, float dTime)
     {
         float lerpPercentage = dTime / lerpTime;
