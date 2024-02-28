@@ -1,99 +1,125 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.UIElements;
 
 public class PlayerControl : MonoBehaviour
 {
+    public SlowMo refToSlowMo;
     private float _xdir;
     private Rigidbody2D _refPlayerRb;
-    [SerializeField] float _speed,_upThrust, _firePower,_blastPower;
-    private Vector3 _refToMousePosition, _blastDirection,_blastDir;
-    public Transform ShootDirection,ShootPoint;
-    public List<Transform> TeleportPos=new List<Transform>();
+    [SerializeField] float _speed, _upThrust, _firePower, _blastPower;
+    private Vector3 _refToMousePosition;
+    public Vector2 BarrelBlastDir, blastDir;
+    public Transform ShootDirection, ShootPoint;
+    public Transform TeleportPos;
     public GameObject Bullet;
-    public bool IsBlast,CanTeleport;
-    public GameObject Barrel;
+    public bool IsBlast, IsDash, CanJump;
+    public LayerMask CheckGroundLayer;
 
     private void Awake()
     {
         _refPlayerRb = this.GetComponent<Rigidbody2D>();
     }
+
     private void Update()
     {
-        _refToMousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition) + new Vector3(0, 0, 10);//mouse input
 
-        Vector3 _dir = new Vector3(_refToMousePosition.x - ShootDirection.position.x, _refToMousePosition.y - ShootDirection.position.y);
-        ShootDirection.up = _dir;// shooting direction
-
-        Vector3 tempPos = this.transform.position- Barrel.transform.position;
-        //_blastDirection = new Vector3(Barrel.transform.position.x - transform.position.x, Barrel.transform.position.y - transform.position.y,0);//
-        _blastDir = tempPos.normalized;
-
-        Shoot(_dir, _firePower);
+        Shoot(_firePower);
         BlastJump(_blastPower);
         TeleportLogic();
-        //Jump(_upThrust);
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            _refPlayerRb.AddForce(new Vector2(100,0));
-        }
+        GroundCheck();
+        Jump(_upThrust);
+        EnterSlowMotion();
 
+        _xdir = Input.GetAxis("Horizontal");//player horizontal move input
+        _refToMousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition) + new Vector3(0, 0, 10);//mouse input
 
     }
     private void FixedUpdate()
     {
-        HorizontalMove(_speed);
-       
+        HorizontalMove();
     }
 
 
-    void HorizontalMove(float speed)
+    void HorizontalMove()
     {
-        _xdir = Input.GetAxis("Horizontal");
-        _refPlayerRb.velocity = new Vector2(_xdir * speed,_refPlayerRb.velocity.y);
+        if (_xdir == 0)
+        {
+            _refPlayerRb.velocity = new Vector2(_refPlayerRb.velocity.x, _refPlayerRb.velocity.y);//avoid the override to rb velocity from x input when player experience the force of barrel
+        }//blast blast state
+        else
+        {
+            _refPlayerRb.velocity = new Vector2(_xdir * _speed, _refPlayerRb.velocity.y);
+        }//normal state
     }
 
     void Jump(float upThrust)
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space) && CanJump)
         {
-            _refPlayerRb.AddForce(new Vector2(0, upThrust),ForceMode2D.Impulse);
-        }       
+            _refPlayerRb.AddForce(new Vector2(0, upThrust), ForceMode2D.Impulse);
+        }
     }
 
     public void BlastJump(float blastPower)
     {
         if (IsBlast)
         {
-            Vector2 blast = new Vector2(_blastDir.x, _blastDir.y);
-            print(blast);
-            _refPlayerRb.AddForce(blast * blastPower);
+            blastDir = BarrelBlastDir.normalized;//normalize the Blast vector into direction only
+            _refPlayerRb.AddForce(blastDir * blastPower);
             IsBlast = false;
         }
     }
 
     void TeleportLogic()
     {
-        if (CanTeleport)
+        if (IsDash)
         {
-            if (Input.GetKeyDown(KeyCode.Mouse1))
-            {
-                transform.position = TeleportPos[0].transform.position;
-                CanTeleport = false;
-            }
+            Vector2 dashDir;
+            dashDir = TeleportPos.transform.position - transform.position;
+            float dashMultiplier = 3f; //E: I changed the value to be smaller after changing to impulse might need further tuning
+            dashDir.Normalize();
+            float dashdistance = Vector3.Distance(TeleportPos.transform.position, transform.position);
+            dashdistance = Mathf.Clamp(dashdistance, 8, 10);
+            _refPlayerRb.AddForce(dashDir * dashdistance * dashMultiplier, ForceMode2D.Impulse); ///E: needs to be forcemode impulse
+            IsDash = false;
         }
     }
 
 
-    void Shoot(Vector3 dir,float firePower)
+    void Shoot(float firePower)
     {
+        Vector3 _dir = new Vector3(_refToMousePosition.x - ShootDirection.position.x, _refToMousePosition.y - ShootDirection.position.y);
+        ShootDirection.up = _dir;// shooting direction
         if (Input.GetKeyDown(KeyCode.Mouse0))
         {
             GameObject BulletInstance = Instantiate(Bullet, ShootPoint.position, ShootPoint.rotation);
             //using GameObject BulletInstance to save the instance of object as variabl.(If no, the instantiate object is not asigned as gameobject in game ) 
             //如果不用变量存储，脚本无法控制新生成游戏物体的组件对其进行编程（类似于Awake中绑定的步骤）
-            BulletInstance.GetComponent<Rigidbody2D>().AddForce(dir* firePower, ForceMode2D.Impulse);
-        }      
+            BulletInstance.GetComponent<Rigidbody2D>().AddForce(_dir * firePower, ForceMode2D.Impulse);
+        }
+    }
+
+    void GroundCheck()
+    {
+        float detectRange = 1f;
+        RaycastHit2D _hitGround = Physics2D.Raycast(transform.position, -transform.up, detectRange, CheckGroundLayer);
+        Debug.DrawRay(transform.position, -transform.up, Color.red, detectRange);
+        if (_hitGround)
+        {
+            CanJump = true;
+        }
+        else { CanJump = false; }
+    }
+
+    void EnterSlowMotion()
+    {
+        if (Input.GetKeyDown(KeyCode.Q))
+        {
+            refToSlowMo.SlowMoToggle = !refToSlowMo.SlowMoToggle; // E: changed back to my slow mo
+            //Time.timeScale = 0.3f;
+        }
     }
 }
