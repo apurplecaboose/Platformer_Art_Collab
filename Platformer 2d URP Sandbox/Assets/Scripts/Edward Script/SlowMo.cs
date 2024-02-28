@@ -1,11 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SocialPlatforms;
 
 public class SlowMo : MonoBehaviour
 {
     float _sigma_DTime = 0; // used for lerp back to regular speed sum of u
     float _slowMoTimeScale = 0.2f;
+    float _defaultPhysicsTimestep = 0.02f;
     float _eric_loves_clash_from_r6_Timer;
     public AnimationCurve ReturntoNormalSpeedCurve; // for inspector use
     
@@ -76,7 +78,7 @@ public class SlowMo : MonoBehaviour
         if(startingOrStopping)
         {
             Time.timeScale = _slowMoTimeScale;
-            Time.fixedDeltaTime = Time.deltaTime * _slowMoTimeScale;
+            Time.fixedDeltaTime = _defaultPhysicsTimestep * Time.timeScale; // read unity scripting API
             _sigma_DTime = 0;
         }
         else
@@ -89,14 +91,14 @@ public class SlowMo : MonoBehaviour
             if (_sigma_DTime >= returnTime)
             {
                 Time.timeScale = 1; // just in case not exactly 1
-                Time.fixedDeltaTime = 0.02f; // set it to fixed time step
+                Time.fixedDeltaTime = _defaultPhysicsTimestep * Time.timeScale; // set it to fixed time step
                 return;
             }
 
             _sigma_DTime += Time.unscaledDeltaTime;
             float dynamicSlowMoTimeScale = UnscaledLerp(_slowMoTimeScale, returnTime, _sigma_DTime);
-            Time.timeScale = dynamicSlowMoTimeScale; // copyed off of youtube
-            Time.fixedDeltaTime = Time.deltaTime * dynamicSlowMoTimeScale; // copyed off of youtube
+            Time.timeScale = dynamicSlowMoTimeScale; 
+            Time.fixedDeltaTime = _defaultPhysicsTimestep * Time.timeScale;
 
 
             float UnscaledLerp(float start, float lerpTime, float unscaledDeltaTime)

@@ -79,11 +79,11 @@ public class PlayerControl : MonoBehaviour
         {
             Vector2 dashDir;
             dashDir = TeleportPos.transform.position - transform.position;
-            float dashMultiplier = 150;
+            float dashMultiplier = 3f; //E: I changed the value to be smaller after changing to impulse might need further tuning
             dashDir.Normalize();
             float dashdistance = Vector3.Distance(TeleportPos.transform.position, transform.position);
             dashdistance = Mathf.Clamp(dashdistance, 8, 10);
-            _refPlayerRb.AddForce(dashDir * dashdistance * dashMultiplier);
+            _refPlayerRb.AddForce(dashDir * dashdistance * dashMultiplier, ForceMode2D.Impulse); ///E: needs to be forcemode impulse
             IsDash = false;
         }
     }
@@ -118,7 +118,8 @@ public class PlayerControl : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Q))
         {
-            Time.timeScale = 0.3f;
+            refToSlowMo.SlowMoToggle = !refToSlowMo.SlowMoToggle; // E: changed back to my slow mo
+            //Time.timeScale = 0.3f;
         }
     }
 }
