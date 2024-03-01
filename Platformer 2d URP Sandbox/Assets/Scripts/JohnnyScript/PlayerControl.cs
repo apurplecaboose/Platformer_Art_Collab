@@ -100,8 +100,8 @@ public class PlayerControl : MonoBehaviour
         {
             GameObject BulletInstance = Instantiate(Bullet, ShootPoint.position, ShootPoint.rotation);
             //using GameObject BulletInstance to save the instance of object as variabl.(If no, the instantiate object is not asigned as gameobject in game ) 
-            BulletIndex += 1;
-            NewBullet.Add(BulletInstance);
+            NewBullet.Add(BulletInstance);//record new bullet instantiate
+            BulletIndex=NewBullet.Count-1;
             BulletInstance.GetComponent<Rigidbody2D>().AddForce(_dir * firePower, ForceMode2D.Impulse);
         }
     }

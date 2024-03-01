@@ -9727,7 +9727,7 @@ MonoBehaviour:
   TeleportPos: {fileID: 0}
   Bullet: {fileID: 6167623499802909372, guid: e2ba6657f8aa8dc45b813e7ddbed4b16, type: 3}
   NewBullet: []
-  BulletIndex: -1
+  BulletIndex: 0
   IsBlast: 0
   IsDash: 0
   CanJump: 0
