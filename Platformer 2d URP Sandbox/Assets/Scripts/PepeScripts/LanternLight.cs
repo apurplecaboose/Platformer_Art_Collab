@@ -12,11 +12,14 @@ public class LanternLight : MonoBehaviour
     public Light2D Light;
     public AnimationCurve LightCurve;
 
+    [SerializeField] Transform _SpriteMask;
+
     int _bulletCount;
     bool _startLightLerp;
 
     float _intensityStart, _intensityEnd;
     float _outRadiusStart, _outRadiusEnd;
+    float _maskStart, _maskEnd;
 
     float _lerpDeltaTime = 0;
     float _lerpTime = 0.6f;
@@ -28,7 +31,9 @@ public class LanternLight : MonoBehaviour
 
         _intensityStart = Light.intensity;
         _outRadiusStart = Light.pointLightOuterRadius;
+        _maskStart = _SpriteMask.localScale.x;
     }
+
 
     private void Update()
     {
@@ -53,6 +58,7 @@ public class LanternLight : MonoBehaviour
             {
                 _intensityStart = Light.intensity;
                 _outRadiusStart = Light.pointLightOuterRadius;
+                _maskStart = _SpriteMask.localScale.x;
                 _startLightLerp = false;
                 _lerpDeltaTime = 0;
             }
@@ -60,14 +66,20 @@ public class LanternLight : MonoBehaviour
         }
         _intensityEnd = Intensity_Radius_Mask[_bulletCount].x;
         _outRadiusEnd = Intensity_Radius_Mask[_bulletCount].y;
+        _maskEnd = Intensity_Radius_Mask[_bulletCount].z;
 
         Light.intensity = BasicFloatLerp(_intensityStart, _intensityEnd, _lerpTime, _lerpDeltaTime);
         Light.pointLightOuterRadius = BasicFloatLerp(_outRadiusStart, _outRadiusEnd, _lerpTime, _lerpDeltaTime);
+        _SpriteMask.localScale = FloatToTransform(BasicFloatLerp(_maskStart, _maskEnd, _lerpTime, _lerpDeltaTime));
     }
     float BasicFloatLerp(float a, float b, float lerpTime, float dTime)
     {
         float lerpPercentage = dTime / lerpTime;
         float output = Mathf.Lerp(a, b, LightCurve.Evaluate(lerpPercentage));
         return output;
+    }
+    Vector3 FloatToTransform(float inputFloat)
+    {
+        return new Vector3(inputFloat, inputFloat, 1);
     }
 }
