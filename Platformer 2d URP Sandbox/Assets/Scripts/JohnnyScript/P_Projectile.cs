@@ -20,10 +20,16 @@ public class P_Projectile : MonoBehaviour
         _slowMoRef = _p_Ref.GetComponent<SlowMo>(); //temporary
     }
 
+    private void Update()
+    {
+        RemoveBulletFromList();//Remove the unit of destroied bullets 
+    }
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
         DetectBarrel(collision);
         DetectGround(collision);
+        DetectElseBullet(collision);
 
     }
 
@@ -39,11 +45,9 @@ public class P_Projectile : MonoBehaviour
         if (cl.collider.CompareTag("BlastBarrel"))
         {
             BlastDir = _p_Ref.transform.position - cl.collider.transform.position;
-            //E: changed to line below try not to use getcomponents durring runtime it will slow down the code especially when instance count increases
-            //RefToPlayer.GetComponent<PlayerControl>().BarrelBlastDir = BlastDir; 
+            //E:  try not to use getcomponents durring runtime it will slow down the code especially when instance count increases
             _playerMoveRef.BarrelBlastDir = BlastDir;
             print("Detect" + BlastDir);
-            //RefToPlayer.GetComponent<PlayerControl>().IsBlast = true;
             _playerMoveRef.IsBlast = true;
             Destroy(gameObject);
         }
@@ -68,6 +72,27 @@ public class P_Projectile : MonoBehaviour
         if (cl.collider.CompareTag("Ground"))
         {
             _rb.bodyType = RigidbodyType2D.Static;
+        }
+    }
+
+    void DetectElseBullet(Collision2D cl)
+    {
+        if (cl.collider.CompareTag("Bullet"))
+        {
+            Destroy(_playerMoveRef.NewBullet[_playerMoveRef.BulletIndex]); //Destory bullet object         
+        }
+    }
+
+    void RemoveBulletFromList()
+    {
+        for (int i = 0; i <=_playerMoveRef.BulletIndex; i++)
+        {
+            if (_playerMoveRef.NewBullet[i].gameObject == null)
+            {
+                _playerMoveRef.NewBullet.Remove(_playerMoveRef.NewBullet[i]);
+                _playerMoveRef.BulletIndex-=1;
+                print("Delete already");
+            }
         }
     }
 }
