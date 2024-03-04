@@ -10,64 +10,60 @@ using Unity.VisualScripting;
 public class LanternLight : MonoBehaviour
 {
     public Light2D Light;
-    public float LightIntensity,CurrentLightIntensity, TargetLightIntensity;
-    public float LightOuterRadius, CurrentLightOuterRadius, TargetLightOuterRadius;
-    public float FalloffStrength, CurrentFalloffStrength, TargetFalloffStrength;
-    public bool HasReduced;
-    public float Timer, LerpTime, T, StartLerp;
     public AnimationCurve LightCurve;
 
+    int _bulletCount;
+    bool _startLightLerp;
+
+    float _intensityStart, _intensityEnd;
+    float _outRadiusStart, _outRadiusEnd;
+
+    float _lerpDeltaTime = 0;
+    float _lerpTime = 0.6f;
+
+    public Vector3[] Intensity_Radius_Mask; //X component = Light Intensity float and Y component = Light Outer Radius float 
     private void Start()
     {
         Light = GetComponent<Light2D>();
-        LerpTime = 3;
-        LightIntensity = Light.intensity;
-        LightOuterRadius = Light.pointLightOuterRadius;
-        FalloffStrength = Light.falloffIntensity;
+
+        _intensityStart = Light.intensity;
+        _outRadiusStart = Light.pointLightOuterRadius;
     }
 
     private void Update()
     {
-        if(Input.GetKey(KeyCode.Mouse0))
-        {// use bool to start timer
-            _lerpDeltaTime += Time.deltaTime;
-        }
-        Light.intensity = BasicFloatLerp(5, 0.1f, 5, _lerpDeltaTime);
+        LightLevel();
 
-        Light.pointLightOuterRadius = BasicFloatLerp(14, 5, 5, _lerpDeltaTime);
-
-        Light.falloffIntensity = BasicFloatLerp(0.6f, 1, 5, _lerpDeltaTime);
     }
-
-    public void LightLevel()
+    /// <summary>
+    /// To trigger lantern light change pass in the most recent bullet count and enjoy!!!
+    /// </summary>
+    /// <param name="bulletCount"></param>
+    public void TriggerLightChange(int bulletCount)
     {
-        TargetLightIntensity = LightIntensity - 0.25f;
-
-        if (HasReduced)
-        {
-            Timer += Time.deltaTime;
-
-            //lightLerp();
-
-            T = Timer / LerpTime;
-            CurrentLightIntensity = Mathf.Lerp(LightIntensity, TargetLightIntensity, T);
-            Light.intensity = CurrentLightIntensity;
-            LightIntensity = CurrentLightIntensity;
-            HasReduced = false;
-        }
-
-
-        //LightOuterRadius -= 0.5f;
-        //Light.pointLightOuterRadius = LightOuterRadius;
-
-        //FalloffStrength += 0.05f;
-        //Light.falloffIntensity = FalloffStrength;
-
-        //HasReduced = true;
-        
-
+        _startLightLerp = true;
+        _bulletCount = bulletCount;
     }
-    float _lerpDeltaTime = 0;
+    void LightLevel()
+    {
+        if (_startLightLerp)
+        {
+            _lerpDeltaTime += Time.deltaTime;
+            if(_lerpDeltaTime >= _lerpTime)
+            {
+                _intensityStart = Light.intensity;
+                _outRadiusStart = Light.pointLightOuterRadius;
+                _startLightLerp = false;
+                _lerpDeltaTime = 0;
+            }
+
+        }
+        _intensityEnd = Intensity_Radius_Mask[_bulletCount].x;
+        _outRadiusEnd = Intensity_Radius_Mask[_bulletCount].y;
+
+        Light.intensity = BasicFloatLerp(_intensityStart, _intensityEnd, _lerpTime, _lerpDeltaTime);
+        Light.pointLightOuterRadius = BasicFloatLerp(_outRadiusStart, _outRadiusEnd, _lerpTime, _lerpDeltaTime);
+    }
     float BasicFloatLerp(float a, float b, float lerpTime, float dTime)
     {
         float lerpPercentage = dTime / lerpTime;

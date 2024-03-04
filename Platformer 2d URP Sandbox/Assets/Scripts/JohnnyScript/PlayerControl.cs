@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.UIElements;
@@ -15,6 +16,8 @@ public class PlayerControl : MonoBehaviour
     public Transform ShootDirection, ShootPoint;
     public Transform TeleportPos;
     public GameObject Bullet;
+    public List<GameObject> NewBullet;
+    public int BulletIndex=-1;
     public bool IsBlast, IsDash, CanJump;
     public LayerMask CheckGroundLayer;
 
@@ -97,7 +100,8 @@ public class PlayerControl : MonoBehaviour
         {
             GameObject BulletInstance = Instantiate(Bullet, ShootPoint.position, ShootPoint.rotation);
             //using GameObject BulletInstance to save the instance of object as variabl.(If no, the instantiate object is not asigned as gameobject in game ) 
-            //如果不用变量存储，脚本无法控制新生成游戏物体的组件对其进行编程（类似于Awake中绑定的步骤）
+            NewBullet.Add(BulletInstance);//record new bullet instantiate
+            BulletIndex=NewBullet.Count-1;
             BulletInstance.GetComponent<Rigidbody2D>().AddForce(_dir * firePower, ForceMode2D.Impulse);
         }
     }
