@@ -10,80 +10,56 @@ using Unity.VisualScripting;
 public class LanternLight : MonoBehaviour
 {
     public Light2D Light;
-    public bool HasReduced;
-    public float Timer, LerpTime, T, StartLerp;
     public AnimationCurve LightCurve;
-    public PlayerMovePepe _refToPlayerSC;
+
+    int _bulletCount;
+    bool _startLightLerp;
+
+    float _intensityStart, _intensityEnd;
+    float _outRadiusStart, _outRadiusEnd;
 
     float _lerpDeltaTime = 0;
-    public float[] LightIntensityValue;
-    public float[] LightOuterRadiusValue;
-    public float[] FalloffStrengthValue;
+    float _lerpTime = 0.6f;
+
+    public Vector2[] Intensity_Radius; //X component = Light Intensity float and Y component = Light Outer Radius float 
     private void Start()
     {
         Light = GetComponent<Light2D>();
-        LerpTime = 3;
 
-
-        LightIntensityValue[0] = 1f;
-        LightOuterRadiusValue[0] = 14f;
-        FalloffStrengthValue[0] = 0.6f;
-
-        LightIntensityValue[1] = 0.8f;
-        LightOuterRadiusValue[1] = 11f;
-        FalloffStrengthValue[1] = 0.65f;
-
-        LightIntensityValue[2] = 0.6f;
-        LightOuterRadiusValue[2] = 9.5f;
-        FalloffStrengthValue[2] = 0.7f;
-
-        LightIntensityValue[3] = 0.5f;
-        LightOuterRadiusValue[3] = 7f;
-        FalloffStrengthValue[3] = 0.75f;
-
+        _intensityStart = Light.intensity;
+        _outRadiusStart = Light.pointLightOuterRadius;
     }
 
     private void Update()
     {
-        if(Input.GetKey(KeyCode.Mouse0))
-        {// use bool to start timer
-            _lerpDeltaTime += Time.deltaTime;
-        }
-        Light.intensity = BasicFloatLerp(5, 0.1f, 5, _lerpDeltaTime);
+        LightLevel();
 
-        Light.pointLightOuterRadius = BasicFloatLerp(14, 5, 5, _lerpDeltaTime);
-
-        Light.falloffIntensity = BasicFloatLerp(0.6f, 1, 5, _lerpDeltaTime);
     }
-
-    public void LightLevel()
+    public void TriggerLightChange(int bulletCount)
     {
-        if (HasReduced)
+        _startLightLerp = true;
+        _bulletCount = bulletCount;
+    }
+    void LightLevel()
+    {
+        if (_startLightLerp)
         {
             _lerpDeltaTime += Time.deltaTime;
-            if(_lerpDeltaTime >= 0.6f)
+            if(_lerpDeltaTime >= _lerpTime)
             {
-                HasReduced = false;
+                _intensityStart = Light.intensity;
+                _outRadiusStart = Light.pointLightOuterRadius;
+                _startLightLerp = false;
                 _lerpDeltaTime = 0;
             }
 
         }
+        _intensityEnd = Intensity_Radius[_bulletCount].x;
+        _outRadiusEnd = Intensity_Radius[_bulletCount].y;
 
-        for (int i = 0; i<_refToPlayerSC.BulletNum; i++)
-        {
-
-        }
-        //LightOuterRadius -= 0.5f;
-        //Light.pointLightOuterRadius = LightOuterRadius;
-
-        //FalloffStrength += 0.05f;
-        //Light.falloffIntensity = FalloffStrength;
-
-        //HasReduced = true;
-        
-
+        Light.intensity = BasicFloatLerp(_intensityStart, _intensityEnd, _lerpTime, _lerpDeltaTime);
+        Light.pointLightOuterRadius = BasicFloatLerp(_outRadiusStart, _outRadiusEnd, _lerpTime, _lerpDeltaTime);
     }
-
     float BasicFloatLerp(float a, float b, float lerpTime, float dTime)
     {
         float lerpPercentage = dTime / lerpTime;
