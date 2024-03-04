@@ -1,11 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using System;
-using UnityEngine.Experimental.Rendering.Universal;
 using UnityEngine.Rendering.Universal;
-using System.Threading;
-using Unity.VisualScripting;
 
 public class LanternLight : MonoBehaviour
 {
