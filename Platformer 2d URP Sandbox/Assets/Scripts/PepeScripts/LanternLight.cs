@@ -21,7 +21,7 @@ public class LanternLight : MonoBehaviour
     float _lerpDeltaTime = 0;
     float _lerpTime = 0.6f;
 
-    public Vector2[] Intensity_Radius; //X component = Light Intensity float and Y component = Light Outer Radius float 
+    public Vector3[] Intensity_Radius_Mask; //X component = Light Intensity float and Y component = Light Outer Radius float 
     private void Start()
     {
         Light = GetComponent<Light2D>();
@@ -35,6 +35,10 @@ public class LanternLight : MonoBehaviour
         LightLevel();
 
     }
+    /// <summary>
+    /// To trigger lantern light change pass in the most recent bullet count and enjoy!!!
+    /// </summary>
+    /// <param name="bulletCount"></param>
     public void TriggerLightChange(int bulletCount)
     {
         _startLightLerp = true;
@@ -54,8 +58,8 @@ public class LanternLight : MonoBehaviour
             }
 
         }
-        _intensityEnd = Intensity_Radius[_bulletCount].x;
-        _outRadiusEnd = Intensity_Radius[_bulletCount].y;
+        _intensityEnd = Intensity_Radius_Mask[_bulletCount].x;
+        _outRadiusEnd = Intensity_Radius_Mask[_bulletCount].y;
 
         Light.intensity = BasicFloatLerp(_intensityStart, _intensityEnd, _lerpTime, _lerpDeltaTime);
         Light.pointLightOuterRadius = BasicFloatLerp(_outRadiusStart, _outRadiusEnd, _lerpTime, _lerpDeltaTime);
