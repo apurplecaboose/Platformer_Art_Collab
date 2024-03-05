@@ -8,9 +8,9 @@ using UnityEngine.UIElements;
 public class PlayerControl : MonoBehaviour
 {
     public SlowMo refToSlowMo;
-    private float _xdir, _xInput;
+    private float _xInput;
     private Rigidbody2D P_rb;
-    [SerializeField] float _moveForce,_speed, _upThrust, _firePower, _blastPower;
+    [SerializeField] float _moveForce, _upThrust, _firePower, _blastPower;
     private Vector3 _refToMousePosition;
     public Vector2 BarrelBlastDir, blastDir;
     public Transform ShootDirection, ShootPoint;
@@ -18,7 +18,7 @@ public class PlayerControl : MonoBehaviour
     public GameObject Bullet;
     public List<GameObject> NewBullet;
     public int BulletIndex=-1;
-    public bool IsBlast, IsDash, CanJump, Grounded;
+    public bool IsBlast, IsDash, CanJump, Grounded,CanBeKnockBack;
     public LayerMask CheckGroundLayer;
 
     private void Awake()
@@ -32,11 +32,9 @@ public class PlayerControl : MonoBehaviour
         Shoot(_firePower);
         BlastJump(_blastPower);
         TeleportLogic();
-        //GroundCheck();
         Jump(_upThrust);
         EnterSlowMotion();
 
-        _xdir = Input.GetAxis("Horizontal");//player horizontal move input
         _refToMousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition) + new Vector3(0, 0, 10);//mouse input
 
     }
@@ -62,6 +60,7 @@ public class PlayerControl : MonoBehaviour
             blastDir = BarrelBlastDir.normalized;//normalize the Blast vector into direction only
             P_rb.AddForce(blastDir * blastPower);
             IsBlast = false;
+            CanBeKnockBack=false;
         }
     }
 
@@ -141,6 +140,22 @@ public class PlayerControl : MonoBehaviour
                 }
                 else _xInput = 0; //catch case
             }
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("BlastRange"))
+        {
+            CanBeKnockBack = true;//when enter the blast range player can be knocked back.
+
+        }
+    }
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.CompareTag("BlastRange"))
+        {
+            CanBeKnockBack = false;//when leave the blast range player will not be knocked back.
         }
     }
 }
