@@ -48,7 +48,11 @@ public class P_Projectile : MonoBehaviour
             //E:  try not to use getcomponents durring runtime it will slow down the code especially when instance count increases
             _playerMoveRef.BarrelBlastDir = BlastDir;
             print("Detect" + BlastDir);
-            _playerMoveRef.IsBlast = true;
+            if (_playerMoveRef.CanBeKnockBack)//if player is in the knockback range,players then can be knocked back when bullet collide with barrels. 
+            {
+                _playerMoveRef.IsBlast = true;
+            }
+            //_playerMoveRef.IsBlast = true;
             Destroy(gameObject);
         }
     }
