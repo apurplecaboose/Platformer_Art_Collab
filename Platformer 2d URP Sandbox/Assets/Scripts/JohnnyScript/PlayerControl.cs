@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.UIElements;
@@ -7,59 +8,48 @@ using UnityEngine.UIElements;
 public class PlayerControl : MonoBehaviour
 {
     public SlowMo refToSlowMo;
-    private float _xdir;
-    private Rigidbody2D _refPlayerRb;
-    [SerializeField] float _speed, _upThrust, _firePower, _blastPower;
+    private float _xInput;
+    private Rigidbody2D P_rb;
+    [SerializeField] float _moveForce, _upThrust, _firePower, _blastPower;
     private Vector3 _refToMousePosition;
     public Vector2 BarrelBlastDir, blastDir;
     public Transform ShootDirection, ShootPoint;
     public Transform TeleportPos;
     public GameObject Bullet;
-    public bool IsBlast, IsDash, CanJump;
+    public List<GameObject> NewBullet;
+    public int BulletIndex=-1;
+    public bool IsBlast, IsDash, CanJump, Grounded,CanBeKnockBack;
     public LayerMask CheckGroundLayer;
 
     private void Awake()
     {
-        _refPlayerRb = this.GetComponent<Rigidbody2D>();
+        P_rb = this.GetComponent<Rigidbody2D>();
     }
 
     private void Update()
     {
-
+        PlayerInput();
         Shoot(_firePower);
         BlastJump(_blastPower);
         TeleportLogic();
-        GroundCheck();
         Jump(_upThrust);
         EnterSlowMotion();
 
-        _xdir = Input.GetAxis("Horizontal");//player horizontal move input
         _refToMousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition) + new Vector3(0, 0, 10);//mouse input
 
     }
     private void FixedUpdate()
     {
-        HorizontalMove();
+        Vector2 xInputVec = new Vector2(_xInput, 0);
+        P_rb.AddForce(xInputVec * _moveForce);
     }
 
-
-    void HorizontalMove()
-    {
-        if (_xdir == 0)
-        {
-            _refPlayerRb.velocity = new Vector2(_refPlayerRb.velocity.x, _refPlayerRb.velocity.y);//avoid the override to rb velocity from x input when player experience the force of barrel
-        }//blast blast state
-        else
-        {
-            _refPlayerRb.velocity = new Vector2(_xdir * _speed, _refPlayerRb.velocity.y);
-        }//normal state
-    }
 
     void Jump(float upThrust)
     {
-        if (Input.GetKeyDown(KeyCode.Space) && CanJump)
+        if (Input.GetKeyDown(KeyCode.Space) && Grounded)
         {
-            _refPlayerRb.AddForce(new Vector2(0, upThrust), ForceMode2D.Impulse);
+            P_rb.AddForce(Vector2.up * upThrust, ForceMode2D.Impulse);
         }
     }
 
@@ -68,8 +58,9 @@ public class PlayerControl : MonoBehaviour
         if (IsBlast)
         {
             blastDir = BarrelBlastDir.normalized;//normalize the Blast vector into direction only
-            _refPlayerRb.AddForce(blastDir * blastPower);
+            P_rb.AddForce(blastDir * blastPower);
             IsBlast = false;
+            CanBeKnockBack=false;
         }
     }
 
@@ -83,7 +74,7 @@ public class PlayerControl : MonoBehaviour
             dashDir.Normalize();
             float dashdistance = Vector3.Distance(TeleportPos.transform.position, transform.position);
             dashdistance = Mathf.Clamp(dashdistance, 8, 10);
-            _refPlayerRb.AddForce(dashDir * dashdistance * dashMultiplier, ForceMode2D.Impulse); ///E: needs to be forcemode impulse
+            P_rb.AddForce(dashDir * dashdistance * dashMultiplier, ForceMode2D.Impulse); ///E: needs to be forcemode impulse
             IsDash = false;
         }
     }
@@ -97,21 +88,10 @@ public class PlayerControl : MonoBehaviour
         {
             GameObject BulletInstance = Instantiate(Bullet, ShootPoint.position, ShootPoint.rotation);
             //using GameObject BulletInstance to save the instance of object as variabl.(If no, the instantiate object is not asigned as gameobject in game ) 
-            //如果不用变量存储，脚本无法控制新生成游戏物体的组件对其进行编程（类似于Awake中绑定的步骤）
+            NewBullet.Add(BulletInstance);//record new bullet instantiate
+            BulletIndex=NewBullet.Count-1;
             BulletInstance.GetComponent<Rigidbody2D>().AddForce(_dir * firePower, ForceMode2D.Impulse);
         }
-    }
-
-    void GroundCheck()
-    {
-        float detectRange = 1f;
-        RaycastHit2D _hitGround = Physics2D.Raycast(transform.position, -transform.up, detectRange, CheckGroundLayer);
-        Debug.DrawRay(transform.position, -transform.up, Color.red, detectRange);
-        if (_hitGround)
-        {
-            CanJump = true;
-        }
-        else { CanJump = false; }
     }
 
     void EnterSlowMotion()
@@ -120,6 +100,62 @@ public class PlayerControl : MonoBehaviour
         {
             refToSlowMo.SlowMoToggle = !refToSlowMo.SlowMoToggle; // E: changed back to my slow mo
             //Time.timeScale = 0.3f;
+        }
+    }
+
+    void PlayerInput()
+    {
+        if (Input.GetKey(KeyCode.A) && Input.GetKey(KeyCode.D)) _xInput = 0;
+        else
+        {
+            if (/*Input.GetKey(KeyCode.Space)*/!Grounded) // tapstrafe
+            {
+                if (Mathf.Sign(P_rb.velocity.x) != _xInput && _xInput != 0)
+                {
+                    float tapstrafeM = 0.5f; // expressed as percent momentum transfer 1 being full momentum transfer
+                    P_rb.velocity = new Vector2(-P_rb.velocity.x * tapstrafeM, P_rb.velocity.y);
+                }
+                else
+                {
+                    if (Input.GetKey(KeyCode.A))
+                    {
+                        _xInput = -1;
+                    }
+                    else if (Input.GetKey(KeyCode.D))
+                    {
+                        _xInput = 1;
+                    }
+                    else _xInput = 0; //catch case
+                }
+            }
+            else // not tapstrafe
+            {
+                if (Input.GetKey(KeyCode.A))
+                {
+                    _xInput = -1;
+                }
+                else if (Input.GetKey(KeyCode.D))
+                {
+                    _xInput = 1;
+                }
+                else _xInput = 0; //catch case
+            }
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("BlastRange"))
+        {
+            CanBeKnockBack = true;//when enter the blast range player can be knocked back.
+
+        }
+    }
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.CompareTag("BlastRange"))
+        {
+            CanBeKnockBack = false;//when leave the blast range player will not be knocked back.
         }
     }
 }

@@ -9,15 +9,16 @@ TagManager:
   - CampFire
   - Floor
   - Ground
+  - BlastRange
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Player
   - Water
   - UI
   - Ground
-  - 
+  - Bullet
   - 
   - 
   - 
