@@ -57,15 +57,16 @@ public class PlayerControl : MonoBehaviour
     {
         if (IsBlast)
         {
+            P_rb.velocity = new Vector2(P_rb.velocity.x, 0); // cancel out gravity instantly
             blastDir = BarrelBlastDir.normalized;//normalize the Blast vector into direction only
-            P_rb.AddForce(blastDir * blastPower);
+            P_rb.AddForce(blastDir * blastPower, ForceMode2D.Impulse);
             IsBlast = false;
-            CanBeKnockBack=false;
         }
     }
 
     void TeleportLogic()
     {
+
         if (IsDash)
         {
             Vector2 dashDir;
@@ -75,6 +76,7 @@ public class PlayerControl : MonoBehaviour
             float dashdistance = Vector3.Distance(TeleportPos.transform.position, transform.position);
             dashdistance = Mathf.Clamp(dashdistance, 8, 10);
             P_rb.AddForce(dashDir * dashdistance * dashMultiplier, ForceMode2D.Impulse); ///E: needs to be forcemode impulse
+
             IsDash = false;
         }
     }

@@ -6280,7 +6280,7 @@ Transform:
   m_GameObject: {fileID: 1153938243}
   m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
   m_LocalPosition: {x: 13.06, y: -0.41, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.0148056, y: 1.0148056, z: 1.0148056}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1550903365}
@@ -6358,7 +6358,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1201425713}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.31000137, y: 0.100000426, z: 0}
+  m_LocalPosition: {x: 0.53, y: 0.1, z: 0}
   m_LocalScale: {x: 5.22422, y: 5.22422, z: 5.22422}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -8280,8 +8280,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1550903364}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 6.7059817, y: 6.7059817, z: 6.705981}
+  m_LocalPosition: {x: 1.75, y: -0, z: 0}
+  m_LocalScale: {x: 8.214945, y: 8.214945, z: 8.214944}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1153938247}
@@ -9965,7 +9965,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1852852280}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 8.76, y: 0.1, z: 0}
+  m_LocalPosition: {x: 1, y: 0.52, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -10018,7 +10018,7 @@ MonoBehaviour:
   _moveForce: 25
   _upThrust: 7.5
   _firePower: 1.5
-  _blastPower: 1000
+  _blastPower: 20
   BarrelBlastDir: {x: 0, y: 0}
   blastDir: {x: 0, y: 0}
   ShootDirection: {fileID: 1841509417}

@@ -47,7 +47,6 @@ public class P_Projectile : MonoBehaviour
             BlastDir = _p_Ref.transform.position - cl.collider.transform.position;
             //E:  try not to use getcomponents durring runtime it will slow down the code especially when instance count increases
             _playerMoveRef.BarrelBlastDir = BlastDir;
-            print("Detect" + BlastDir);
             if (_playerMoveRef.CanBeKnockBack)//if player is in the knockback range,players then can be knocked back when bullet collide with barrels. 
             {
                 _playerMoveRef.IsBlast = true;
