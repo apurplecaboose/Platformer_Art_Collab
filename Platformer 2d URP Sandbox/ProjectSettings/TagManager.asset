@@ -9,6 +9,7 @@ TagManager:
   - CampFire
   - Floor
   - Ground
+  - BlastRange
   layers:
   - Default
   - TransparentFX
