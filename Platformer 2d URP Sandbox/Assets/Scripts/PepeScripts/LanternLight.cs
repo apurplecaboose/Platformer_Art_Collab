@@ -8,7 +8,7 @@ public class LanternLight : MonoBehaviour
     public Light2D Light;
     public AnimationCurve LightCurve;
 
-    [SerializeField] Transform _SpriteMask;
+    //[SerializeField] Transform _SpriteMask;
 
     int _bulletCount;
     bool _startLightLerp;
@@ -27,7 +27,7 @@ public class LanternLight : MonoBehaviour
 
         _intensityStart = Light.intensity;
         _outRadiusStart = Light.pointLightOuterRadius;
-        _maskStart = _SpriteMask.localScale.x;
+        //_maskStart = _SpriteMask.localScale.x;
     }
 
 
@@ -54,7 +54,7 @@ public class LanternLight : MonoBehaviour
             {
                 _intensityStart = Light.intensity;
                 _outRadiusStart = Light.pointLightOuterRadius;
-                _maskStart = _SpriteMask.localScale.x;
+                //_maskStart = _SpriteMask.localScale.x;
                 _startLightLerp = false;
                 _lerpDeltaTime = 0;
             }
@@ -62,11 +62,11 @@ public class LanternLight : MonoBehaviour
         }
         _intensityEnd = Intensity_Radius_Mask[_bulletCount].x;
         _outRadiusEnd = Intensity_Radius_Mask[_bulletCount].y;
-        _maskEnd = Intensity_Radius_Mask[_bulletCount].z;
+        //_maskEnd = Intensity_Radius_Mask[_bulletCount].z;
 
         Light.intensity = BasicFloatLerp(_intensityStart, _intensityEnd, _lerpTime, _lerpDeltaTime);
         Light.pointLightOuterRadius = BasicFloatLerp(_outRadiusStart, _outRadiusEnd, _lerpTime, _lerpDeltaTime);
-        _SpriteMask.localScale = FloatToTransform(BasicFloatLerp(_maskStart, _maskEnd, _lerpTime, _lerpDeltaTime));
+        //_SpriteMask.localScale = FloatToTransform(BasicFloatLerp(_maskStart, _maskEnd, _lerpTime, _lerpDeltaTime));
     }
     float BasicFloatLerp(float a, float b, float lerpTime, float dTime)
     {

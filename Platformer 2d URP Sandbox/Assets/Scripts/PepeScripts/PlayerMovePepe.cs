@@ -38,7 +38,10 @@ public class PlayerMovePepe : MonoBehaviour
         {
             _rb.velocity = Vector2.up * _jumpHight;
             //_rb.AddForce(Vector2.up * _jumpHight,ForceMode2D.Force);
+        }
 
+        if (Input.GetKeyDown(KeyCode.Mouse0))
+        {
             BulletNum--;
             _light.TriggerLightChange(BulletNum);
         }
