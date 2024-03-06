@@ -6280,7 +6280,7 @@ Transform:
   m_GameObject: {fileID: 1153938243}
   m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
   m_LocalPosition: {x: 13.06, y: -0.41, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.0148056, y: 1.0148056, z: 1.0148056}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1550903365}
@@ -6358,7 +6358,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1201425713}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.31000137, y: 0.100000426, z: 0}
+  m_LocalPosition: {x: 0.53, y: 0.1, z: 0}
   m_LocalScale: {x: 5.22422, y: 5.22422, z: 5.22422}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -8280,8 +8280,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1550903364}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 6.7059817, y: 6.7059817, z: 6.705981}
+  m_LocalPosition: {x: 1.75, y: -0, z: 0}
+  m_LocalScale: {x: 8.214945, y: 8.214945, z: 8.214944}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1153938247}
@@ -9895,6 +9895,7 @@ GameObject:
   - component: {fileID: 1852852282}
   - component: {fileID: 1852852281}
   - component: {fileID: 1852852286}
+  - component: {fileID: 1852852288}
   - component: {fileID: 1852852285}
   - component: {fileID: 1852852283}
   - component: {fileID: 1852852287}
@@ -9965,7 +9966,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1852852280}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 8.76, y: 0.1, z: 0}
+  m_LocalPosition: {x: 1, y: 0.52, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -10017,16 +10018,10 @@ MonoBehaviour:
   refToSlowMo: {fileID: 1852852286}
   _moveForce: 25
   _upThrust: 7.5
-  _firePower: 1.5
-  _blastPower: 1000
+  _blastPower: 20
   BarrelBlastDir: {x: 0, y: 0}
   blastDir: {x: 0, y: 0}
-  ShootDirection: {fileID: 1841509417}
-  ShootPoint: {fileID: 1596403995}
   TeleportPos: {fileID: 0}
-  Bullet: {fileID: 6167623499802909372, guid: e2ba6657f8aa8dc45b813e7ddbed4b16, type: 3}
-  NewBullet: []
-  BulletIndex: 0
   IsBlast: 0
   IsDash: 0
   CanJump: 0
@@ -10108,6 +10103,26 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 1, y: 2}
   m_Direction: 0
+--- !u!114 &1852852288
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1852852280}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51da7a7622090a0499b1f4c6b9512407, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _firePower: 2
+  ShootDirection: {fileID: 1841509417}
+  ShootPoint: {fileID: 1596403995}
+  NewBullet: []
+  BulletIndex: 0
+  BulletLimit: 5
+  Bullet: {fileID: 6167623499802909372, guid: e2ba6657f8aa8dc45b813e7ddbed4b16, type: 3}
+  HaveAmmo: 0
 --- !u!1 &1858508087
 GameObject:
   m_ObjectHideFlags: 0

@@ -10,14 +10,9 @@ public class PlayerControl : MonoBehaviour
     public SlowMo refToSlowMo;
     private float _xInput;
     private Rigidbody2D P_rb;
-    [SerializeField] float _moveForce, _upThrust, _firePower, _blastPower;
-    private Vector3 _refToMousePosition;
+    [SerializeField] float _moveForce, _upThrust, _blastPower;
     public Vector2 BarrelBlastDir, blastDir;
-    public Transform ShootDirection, ShootPoint;
     public Transform TeleportPos;
-    public GameObject Bullet;
-    public List<GameObject> NewBullet;
-    public int BulletIndex=-1;
     public bool IsBlast, IsDash, CanJump, Grounded,CanBeKnockBack;
     public LayerMask CheckGroundLayer;
 
@@ -29,13 +24,10 @@ public class PlayerControl : MonoBehaviour
     private void Update()
     {
         PlayerInput();
-        Shoot(_firePower);
         BlastJump(_blastPower);
         TeleportLogic();
         Jump(_upThrust);
         EnterSlowMotion();
-
-        _refToMousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition) + new Vector3(0, 0, 10);//mouse input
 
     }
     private void FixedUpdate()
@@ -57,15 +49,16 @@ public class PlayerControl : MonoBehaviour
     {
         if (IsBlast)
         {
+            P_rb.velocity = new Vector2(P_rb.velocity.x, 0); // cancel out gravity instantly
             blastDir = BarrelBlastDir.normalized;//normalize the Blast vector into direction only
-            P_rb.AddForce(blastDir * blastPower);
+            P_rb.AddForce(blastDir * blastPower, ForceMode2D.Impulse);
             IsBlast = false;
-            CanBeKnockBack=false;
         }
     }
 
     void TeleportLogic()
     {
+
         if (IsDash)
         {
             Vector2 dashDir;
@@ -75,24 +68,11 @@ public class PlayerControl : MonoBehaviour
             float dashdistance = Vector3.Distance(TeleportPos.transform.position, transform.position);
             dashdistance = Mathf.Clamp(dashdistance, 8, 10);
             P_rb.AddForce(dashDir * dashdistance * dashMultiplier, ForceMode2D.Impulse); ///E: needs to be forcemode impulse
+
             IsDash = false;
         }
     }
 
-
-    void Shoot(float firePower)
-    {
-        Vector3 _dir = new Vector3(_refToMousePosition.x - ShootDirection.position.x, _refToMousePosition.y - ShootDirection.position.y);
-        ShootDirection.up = _dir;// shooting direction
-        if (Input.GetKeyDown(KeyCode.Mouse0))
-        {
-            GameObject BulletInstance = Instantiate(Bullet, ShootPoint.position, ShootPoint.rotation);
-            //using GameObject BulletInstance to save the instance of object as variabl.(If no, the instantiate object is not asigned as gameobject in game ) 
-            NewBullet.Add(BulletInstance);//record new bullet instantiate
-            BulletIndex=NewBullet.Count-1;
-            BulletInstance.GetComponent<Rigidbody2D>().AddForce(_dir * firePower, ForceMode2D.Impulse);
-        }
-    }
 
     void EnterSlowMotion()
     {
