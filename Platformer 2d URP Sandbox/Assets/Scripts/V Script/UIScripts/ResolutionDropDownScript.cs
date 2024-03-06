@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class ResolutionDropDownScript : MonoBehaviour
 {
-
+    Resolution[] resolutions;
     private void Start()
     {
-        Screen.SetResolution(1920, 1080, true);
+        resolutions = Screen.resolutions;
     }
     public void ScreenResFunction(int val)
     {
