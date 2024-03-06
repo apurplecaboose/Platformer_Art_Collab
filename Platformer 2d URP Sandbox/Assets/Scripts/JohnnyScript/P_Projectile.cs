@@ -7,6 +7,7 @@ public class P_Projectile : MonoBehaviour
     //changed var names to fit naming convention
     GameObject _p_Ref;
     PlayerControl _playerMoveRef;
+    P_ShootLogic _p_shootLogic;
     Rigidbody2D _rb;
     SlowMo _slowMoRef;
 
@@ -18,6 +19,7 @@ public class P_Projectile : MonoBehaviour
         _playerMoveRef = _p_Ref.GetComponent<PlayerControl>(); //E: cache the reference
         _rb = this.GetComponent<Rigidbody2D>();
         _slowMoRef = _p_Ref.GetComponent<SlowMo>(); //temporary
+        _p_shootLogic=_p_Ref.GetComponent<P_ShootLogic>();
     }
 
     private void Update()
@@ -47,7 +49,6 @@ public class P_Projectile : MonoBehaviour
             BlastDir = _p_Ref.transform.position - cl.collider.transform.position;
             //E:  try not to use getcomponents durring runtime it will slow down the code especially when instance count increases
             _playerMoveRef.BarrelBlastDir = BlastDir;
-            print("Detect" + BlastDir);
             if (_playerMoveRef.CanBeKnockBack)//if player is in the knockback range,players then can be knocked back when bullet collide with barrels. 
             {
                 _playerMoveRef.IsBlast = true;
@@ -61,11 +62,7 @@ public class P_Projectile : MonoBehaviour
     {
         if (cl.CompareTag("CampFire"))
         {
-            // changed back to using slow mo toggle
-            //Time.timeScale = 1f;
             _slowMoRef.SlowMoToggle = false;
-            //RefToPlayer.GetComponent<PlayerControl>().TeleportPos = cl.gameObject.transform;
-            //RefToPlayer.GetComponent<PlayerControl>().IsDash = true;
             _playerMoveRef.TeleportPos = cl.gameObject.transform;
             _playerMoveRef.IsDash = true;
             Destroy(gameObject);
@@ -83,18 +80,18 @@ public class P_Projectile : MonoBehaviour
     {
         if (cl.collider.CompareTag("Bullet"))
         {
-            Destroy(_playerMoveRef.NewBullet[_playerMoveRef.BulletIndex]); //Destory bullet object         
+            Destroy(_p_shootLogic.NewBullet[_p_shootLogic.BulletIndex]); //Destory bullet object         
         }
     }
 
     void RemoveBulletFromList()
     {
-        for (int i = 0; i <=_playerMoveRef.BulletIndex; i++)
+        for (int i = 0; i <= _p_shootLogic.BulletIndex; i++)
         {
-            if (_playerMoveRef.NewBullet[i].gameObject == null)
+            if (_p_shootLogic.NewBullet[i].gameObject == null)
             {
-                _playerMoveRef.NewBullet.Remove(_playerMoveRef.NewBullet[i]);
-                _playerMoveRef.BulletIndex-=1;
+                _p_shootLogic.NewBullet.Remove(_p_shootLogic.NewBullet[i]);
+                _p_shootLogic.BulletIndex-=1;
                 print("Delete already");
             }
         }
