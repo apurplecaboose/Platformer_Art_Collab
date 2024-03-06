@@ -223,7 +223,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Cam: {fileID: 138741552}
-  ParallaxEffect: 0.3
+  ParallaxEffect: 0.2
 --- !u!1 &19477799
 GameObject:
   m_ObjectHideFlags: 0
