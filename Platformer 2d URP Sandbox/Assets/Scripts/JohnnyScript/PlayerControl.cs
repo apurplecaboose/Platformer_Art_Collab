@@ -10,15 +10,10 @@ public class PlayerControl : MonoBehaviour
     public SlowMo refToSlowMo;
     private float _xInput;
     private Rigidbody2D P_rb;
-    [SerializeField] float _moveForce, _upThrust, _firePower, _blastPower;
-    private Vector3 _refToMousePosition;
+    [SerializeField] float _moveForce, _upThrust, _blastPower;
     public Vector2 BarrelBlastDir, blastDir;
-    public Transform ShootDirection, ShootPoint;
     public Transform TeleportPos;
-    public GameObject Bullet;
-    public List<GameObject> NewBullet;
-    public int BulletIndex=-1,BulletLimit;
-    public bool IsBlast, IsDash, CanJump, Grounded,CanBeKnockBack, HaveAmmo;
+    public bool IsBlast, IsDash, CanJump, Grounded,CanBeKnockBack;
     public LayerMask CheckGroundLayer;
 
     private void Awake()
@@ -29,13 +24,10 @@ public class PlayerControl : MonoBehaviour
     private void Update()
     {
         PlayerInput();
-        Shoot(_firePower);
         BlastJump(_blastPower);
         TeleportLogic();
         Jump(_upThrust);
         EnterSlowMotion();
-
-        _refToMousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition) + new Vector3(0, 0, 10);//mouse input
 
     }
     private void FixedUpdate()
@@ -81,28 +73,6 @@ public class PlayerControl : MonoBehaviour
         }
     }
 
-
-    void Shoot(float firePower)
-    {
-        Vector3 _dir = new Vector3(_refToMousePosition.x - ShootDirection.position.x, _refToMousePosition.y - ShootDirection.position.y);
-        ShootDirection.up = _dir;// shooting direction
-
-        if (BulletLimit > 0)
-        {
-            HaveAmmo = true;
-        }
-        else { HaveAmmo = false; }//Setting bullet limits
-
-        if (Input.GetKeyDown(KeyCode.Mouse0)&&HaveAmmo)
-        {
-            BulletLimit -= 1;//bullet limit set is 5
-            GameObject BulletInstance = Instantiate(Bullet, ShootPoint.position, ShootPoint.rotation);
-            //using GameObject BulletInstance to save the instance of object as variabl.(If no, the instantiate object is not asigned as gameobject in game ) 
-            NewBullet.Add(BulletInstance);//record new bullet instantiate
-            BulletIndex=NewBullet.Count-1;
-            BulletInstance.GetComponent<Rigidbody2D>().AddForce(_dir * firePower, ForceMode2D.Impulse);
-        }
-    }
 
     void EnterSlowMotion()
     {
