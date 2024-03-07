@@ -1030,7 +1030,7 @@
     "m_Hidden": false,
     "m_ShaderOutputName": "Range",
     "m_StageCapability": 3,
-    "m_Value": 0.800000011920929,
+    "m_Value": 0.019999999552965165,
     "m_DefaultValue": 0.0,
     "m_Labels": []
 }
@@ -2280,10 +2280,10 @@
         "m_Expanded": true,
         "m_Position": {
             "serializedVersion": "2",
-            "x": 274.9999694824219,
-            "y": -1326.0001220703125,
-            "width": 234.0,
-            "height": 34.0
+            "x": 226.39996337890626,
+            "y": -1505.5999755859375,
+            "width": 232.800048828125,
+            "height": 33.5999755859375
         }
     },
     "m_Slots": [
