@@ -65,6 +65,8 @@ Material:
     - _Alpha_CenterStrength: 0.15
     - _Alpha_FallOffExponent: 2
     - _Alpha_FallOffStrength: 3
+    - _BG_alpha: 0.15
+    - _BG_light_Intensity: 0.8
     - _CenterFullAlphaSize: 0.3
     - _CenterStrength: 0.55
     - _FallOffExponent: 3
@@ -72,14 +74,15 @@ Material:
     - _Float: 6.2
     - _Light_CenterStrength: 0
     - _Light_FallOffExponent: 2
-    - _Light_FallOffStrength: 0.5
+    - _Light_FallOffStrength: 1.5
     - _Light_Intensity_OverallAlpha: 0
     - _Light_OverallAlpha: 0.899
     - _Light_Saturation: 0
     - _PROTOVIEW: 0.112
     - _QueueControl: 0
     - _QueueOffset: 0
-    - _background_show: 1
+    - _background_show: 0.6
+    - _bglightintsity: 1
     m_Colors:
     - _CameraGreenScreenKeyColor: {r: 0.03137255, g: 1, b: 0.03137255, a: 0}
     - _LightColor: {r: 0.9622642, g: 0.7109201, b: 0.1942684, a: 1}
