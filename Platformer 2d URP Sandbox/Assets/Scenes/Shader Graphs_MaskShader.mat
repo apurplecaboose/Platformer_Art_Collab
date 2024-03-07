@@ -73,9 +73,9 @@ Material:
     - _Light_CenterStrength: 0.63
     - _Light_FallOffExponent: 2
     - _Light_FallOffStrength: 2.5
-    - _Light_Intensity_OverallAlpha: 0.99
+    - _Light_Intensity_OverallAlpha: 0.93
     - _Light_OverallAlpha: 0.899
-    - _Light_Saturation: 0.85
+    - _Light_Saturation: 0.89
     - _PROTOVIEW: 0.112
     - _QueueControl: 0
     - _QueueOffset: 0
