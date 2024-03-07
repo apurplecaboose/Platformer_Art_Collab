@@ -62,11 +62,23 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _FallOffExponent: 4.4
-    - _FallOffStrength: 1.9
+    - _Alpha_CenterStrength: 0.55
+    - _Alpha_FallOffExponent: 2
+    - _Alpha_FallOffStrength: 3
+    - _CenterFullAlphaSize: 0.3
+    - _CenterStrength: 0.55
+    - _FallOffExponent: 3
+    - _FallOffStrength: 3
     - _Float: 6.2
+    - _Light_CenterStrength: 0.1
+    - _Light_FallOffExponent: 1.75
+    - _Light_FallOffStrength: 0.5
+    - _Light_OverallAlpha: 0.899
+    - _PROTOVIEW: 0.112
     - _QueueControl: 0
     - _QueueOffset: 0
     m_Colors:
+    - _CameraGreenScreenKeyColor: {r: 0.03137255, g: 1, b: 0.03137255, a: 0}
+    - _LightColor: {r: 0.98039216, g: 0.41568628, b: 0.09019608, a: 1}
     - _playerPos: {r: 0, g: 0, b: 0, a: 0}
   m_BuildTextureStacks: []
