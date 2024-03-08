@@ -32,7 +32,7 @@ Material:
   m_CustomRenderQueue: -1
   stringTagMap: {}
   disabledShaderPasses: []
-  m_LockedProperties: _Alpha_CenterStrength _CameraGreenScreenKeyColor
+  m_LockedProperties: 
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
@@ -71,6 +71,10 @@ Material:
     - _CenterStrength: 0.55
     - _FallOffExponent: 3
     - _FallOffStrength: 3
+    - _FlickAmount_RandomRange: 0.78666717
+    - _FlickAmount_RandomRange_1: 10
+    - _FlickSpeed_RandomRange: 24.406576
+    - _FlickerRandomRange: 28.55
     - _Float: 6.2
     - _Light_CenterStrength: 4
     - _Light_FallOffExponent: 2.5
@@ -81,8 +85,10 @@ Material:
     - _PROTOVIEW: 0.112
     - _QueueControl: 0
     - _QueueOffset: 0
+    - _RandomRange: 10
     - _background_show: 0.6
     - _bglightintsity: 1
+    - _test: 0
     m_Colors:
     - _CameraGreenScreenKeyColor: {r: 0.03137255, g: 1, b: 0.03137255, a: 0}
     - _LightColor: {r: 1, g: 0.6, b: 0, a: 1}
