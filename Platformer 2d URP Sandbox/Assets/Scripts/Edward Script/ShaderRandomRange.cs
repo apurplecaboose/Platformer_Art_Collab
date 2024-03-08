@@ -17,9 +17,9 @@ public class ShaderRandomRange : MonoBehaviour
         if(_timer1 >= _randRefresh1)
         {
             randnumb = Random.Range(5, 25f);
-            distribution = randnumb / 10;
+            distribution = randnumb / 7;
             _Renderer.material.SetFloat("_FlickSpeed_RandomRange", randnumb);
-            _randRefresh1 = Random.Range(0.65f, 1f);
+            _randRefresh1 = Random.Range(0.5f, 1f);
             _timer1 = 0;
         }
         else
