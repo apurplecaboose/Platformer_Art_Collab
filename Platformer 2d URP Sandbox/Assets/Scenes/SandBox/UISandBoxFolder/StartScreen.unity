@@ -1881,7 +1881,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1089357408
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2878,6 +2878,7 @@ GameObject:
   - component: {fileID: 1892610882}
   - component: {fileID: 1892610881}
   - component: {fileID: 1892610880}
+  - component: {fileID: 1892610884}
   - component: {fileID: 1892610883}
   m_Layer: 5
   m_Name: ResolutionDropdown
@@ -3033,11 +3034,24 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1892610878}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2701ae39d8445a441ba949f5611334eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1892610884
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1892610878}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b155d198d8724b54eb3fbcec3e11204b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  resolutionDropdown: {fileID: 1892610880}
 --- !u!1 &1924865770
 GameObject:
   m_ObjectHideFlags: 0
