@@ -29,45 +29,10 @@ public class P_Projectile : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        DetectBarrel(collision);
         DetectGround(collision);
         DetectElseBullet(collision);
-
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        DetectCampFire(collision);
-    }
-
-
-
-    void DetectBarrel(Collision2D cl)
-    {
-        if (cl.collider.CompareTag("BlastBarrel"))
-        {
-            BlastDir = _p_Ref.transform.position - cl.collider.transform.position;
-            //E:  try not to use getcomponents durring runtime it will slow down the code especially when instance count increases
-            _playerMoveRef.BarrelBlastDir = BlastDir;
-            if (_playerMoveRef.CanBeKnockBack)//if player is in the knockback range,players then can be knocked back when bullet collide with barrels. 
-            {
-                _playerMoveRef.IsBlast = true;
-            }
-            //_playerMoveRef.IsBlast = true;
-            Destroy(gameObject);
-        }
-    }
-
-    void DetectCampFire(Collider2D cl)
-    {
-        if (cl.CompareTag("CampFire"))
-        {
-            _slowMoRef.SlowMoToggle = false;
-            _playerMoveRef.TeleportPos = cl.gameObject.transform;
-            _playerMoveRef.IsDash = true;
-            Destroy(gameObject);
-        }
-    }
     void DetectGround(Collision2D cl)
     {
         if (cl.collider.CompareTag("Ground"))
