@@ -32,7 +32,7 @@ Material:
   m_CustomRenderQueue: -1
   stringTagMap: {}
   disabledShaderPasses: []
-  m_LockedProperties: _Alpha_CenterStrength
+  m_LockedProperties: _Alpha_CenterStrength _CameraGreenScreenKeyColor
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
@@ -62,19 +62,19 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _Alpha_CenterStrength: 0.15
-    - _Alpha_FallOffExponent: 2
-    - _Alpha_FallOffStrength: 3
-    - _BG_alpha: 0.15
-    - _BG_light_Intensity: 0.8
+    - _Alpha_CenterStrength: 0.45
+    - _Alpha_FallOffExponent: 3
+    - _Alpha_FallOffStrength: 2.5
+    - _BG_alpha: 0.35
+    - _BG_light_Intensity: 0.5
     - _CenterFullAlphaSize: 0.3
     - _CenterStrength: 0.55
     - _FallOffExponent: 3
     - _FallOffStrength: 3
     - _Float: 6.2
-    - _Light_CenterStrength: 0
-    - _Light_FallOffExponent: 2
-    - _Light_FallOffStrength: 1.5
+    - _Light_CenterStrength: 4
+    - _Light_FallOffExponent: 2.5
+    - _Light_FallOffStrength: 2
     - _Light_Intensity_OverallAlpha: 0
     - _Light_OverallAlpha: 0.899
     - _Light_Saturation: 0
@@ -85,6 +85,6 @@ Material:
     - _bglightintsity: 1
     m_Colors:
     - _CameraGreenScreenKeyColor: {r: 0.03137255, g: 1, b: 0.03137255, a: 0}
-    - _LightColor: {r: 0.9622642, g: 0.7109201, b: 0.1942684, a: 1}
+    - _LightColor: {r: 1, g: 0.6, b: 0, a: 1}
     - _playerPos: {r: 0, g: 0, b: 0, a: 0}
   m_BuildTextureStacks: []
