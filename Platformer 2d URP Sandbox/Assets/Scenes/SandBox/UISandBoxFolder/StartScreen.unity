@@ -1184,7 +1184,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mainMenu: {fileID: 1386192866}
   LevelSelect: {fileID: 767144174}
-  OptionsMenu: {fileID: 0}
+  OptionsMenu: {fileID: 1089357407}
 --- !u!1 &719319096
 GameObject:
   m_ObjectHideFlags: 0
@@ -2355,7 +2355,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 360p
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2879,7 +2879,6 @@ GameObject:
   - component: {fileID: 1892610881}
   - component: {fileID: 1892610880}
   - component: {fileID: 1892610884}
-  - component: {fileID: 1892610883}
   m_Layer: 5
   m_Name: ResolutionDropdown
   m_TagString: Untagged
@@ -2960,25 +2959,13 @@ MonoBehaviour:
   m_ItemImage: {fileID: 0}
   m_Value: 0
   m_Options:
-    m_Options:
-    - m_Text: 360p
-      m_Image: {fileID: 0}
-    - m_Text: 480p
-      m_Image: {fileID: 0}
-    - m_Text: 720p
-      m_Image: {fileID: 0}
-    - m_Text: 1080p
-      m_Image: {fileID: 0}
-    - m_Text: 1440p
-      m_Image: {fileID: 0}
-    - m_Text: 2160p
-      m_Image: {fileID: 0}
+    m_Options: []
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1892610883}
-        m_TargetAssemblyTypeName: ResolutionDropDownScript, Assembly-CSharp
-        m_MethodName: ScreenResFunction
+      - m_Target: {fileID: 1892610884}
+        m_TargetAssemblyTypeName: ResolutionDropDown, Assembly-CSharp
+        m_MethodName: SetResolution
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3027,18 +3014,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1892610878}
   m_CullTransparentMesh: 1
---- !u!114 &1892610883
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1892610878}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2701ae39d8445a441ba949f5611334eb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1892610884
 MonoBehaviour:
   m_ObjectHideFlags: 0

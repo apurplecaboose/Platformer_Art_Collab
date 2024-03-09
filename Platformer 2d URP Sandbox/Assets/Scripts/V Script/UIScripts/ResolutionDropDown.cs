@@ -1,18 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using TMPro;
 
 public class ResolutionDropDown : MonoBehaviour
 {
-    [SerializeField] private TMP_Dropdown resolutionDropdown;
-    private Resolution[] resolutions;
-    private List<Resolution> filteredResolutions;
+    [SerializeField]  TMP_Dropdown resolutionDropdown;
+     Resolution[] resolutions;
+     List<Resolution> filteredResolutions;
 
     float currentRefreshRate;
     int currentResolutionIndex=0;
 
-    private void Start()
+    void Start()
     {
         resolutions = Screen.resolutions;
         filteredResolutions = new List<Resolution>();
@@ -33,9 +34,16 @@ public class ResolutionDropDown : MonoBehaviour
           //  resolutionDropdown.AddOptions(option)
         }
         resolutionDropdown.AddOptions(options);
+        resolutionDropdown.value = currentResolutionIndex;
+        resolutionDropdown.RefreshShownValue();
     
     }
+    public void SetResolution(int resolutionIndex)
+    {
+        Resolution resolution = resolutions[resolutionIndex];
+        Screen.SetResolution(resolution.width,resolution.height,Screen.fullScreen);
 
+    }
     
     // Update is called once per frame
     void Update()
