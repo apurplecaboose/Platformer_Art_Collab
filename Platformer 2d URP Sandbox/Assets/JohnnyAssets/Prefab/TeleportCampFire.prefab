@@ -146,5 +146,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1cf5b8ceea8b43f47b979479b87485cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  IsDash: 0
-  dashMultiplier: 0
+  _isDash: 0
+  _dashMultiplier: 0
+  _MinandMaxCamfireForce: {x: 6, y: 8}
