@@ -17,6 +17,7 @@ public class Barrels : MonoBehaviour
         _refToPlayer = GameObject.FindGameObjectWithTag("Player");
         _p_rb = _refToPlayer.GetComponent<Rigidbody2D>();
         _refToPlayerControl= _refToPlayer.GetComponent<PlayerControl>();
+        _refToSlowMo = _refToPlayer.GetComponent<SlowMo>();
     }
     // Update is called once per frame
     void Update()
