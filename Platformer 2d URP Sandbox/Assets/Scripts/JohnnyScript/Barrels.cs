@@ -10,6 +10,7 @@ public class Barrels : MonoBehaviour
     Rigidbody2D _p_rb;
     [SerializeField] bool _isBlast;
     [SerializeField] float _blastPower;
+    SlowMo _refToSlowMo;
     Vector2 BarrelBlastDir, blastDir;
     private void Awake()
     {
@@ -39,7 +40,7 @@ public class Barrels : MonoBehaviour
     {
         if (_isBlast)
         {
-            _refToPlayerControl.refToSlowMo.SlowMoToggle = false;//J;return normal speed after shoot the barrel
+            _refToSlowMo.SlowMoToggle = false;//J;return normal speed after shoot the barrel
             _p_rb.velocity = new Vector2(_p_rb.velocity.x, 0); // cancel out gravity instantly
             blastDir = BarrelBlastDir.normalized;//normalize the Blast vector into direction only
             _p_rb.AddForce(blastDir * blastPower, ForceMode2D.Impulse);

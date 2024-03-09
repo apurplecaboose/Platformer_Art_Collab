@@ -7,6 +7,7 @@ public class Campfires : MonoBehaviour
 
     GameObject _refToPlayer;
     PlayerControl _refToPlayerControl;
+    SlowMo _refToSlowMo;
     Rigidbody2D _p_rb;
     [SerializeField] bool IsDash;
     [SerializeField] float dashMultiplier;
@@ -18,6 +19,7 @@ public class Campfires : MonoBehaviour
         _refToPlayer = GameObject.FindGameObjectWithTag("Player");
         _p_rb = _refToPlayer.GetComponent<Rigidbody2D>();
         _refToPlayerControl= _refToPlayer.GetComponent<PlayerControl>();
+        _refToSlowMo= _refToPlayer.GetComponent<SlowMo>();
     }
     private void Update()
     {
@@ -28,7 +30,7 @@ public class Campfires : MonoBehaviour
     {
         if (IsDash)
         {
-            _refToPlayerControl.refToSlowMo.SlowMoToggle = false;//J;return normal speed after shoot the campfire
+            _refToSlowMo.SlowMoToggle = false;//J;return normal speed after shoot the campfire
             Vector2 dashDir;
             dashDir = transform.position - _refToPlayer.transform.position;
             dashDir.Normalize();
