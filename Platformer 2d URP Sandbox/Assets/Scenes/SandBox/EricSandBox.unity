@@ -7037,10 +7037,17 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   Intensity_Radius_Mask:
-  - {x: 0.5, y: 7, z: 0}
-  - {x: 0.6, y: 9.5, z: 0}
-  - {x: 0.8, y: 11, z: 0}
-  - {x: 1, y: 14, z: 0}
+  - {x: 0.6, y: 3, z: 0}
+  - {x: 0.7, y: 4, z: 0}
+  - {x: 0.8, y: 5, z: 0}
+  - {x: 1, y: 6, z: 0}
+  - {x: 1.25, y: 7, z: 0}
+  - {x: 1.5, y: 8, z: 0}
+  - {x: 1.75, y: 9, z: 0}
+  - {x: 2, y: 10, z: 0}
+  - {x: 2.25, y: 11, z: 0}
+  - {x: 2.5, y: 12, z: 0}
+  - {x: 3, y: 14, z: 0}
 --- !u!114 &1253501214
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7058,7 +7065,7 @@ MonoBehaviour:
   m_BlendStyleIndex: 0
   m_FalloffIntensity: 0.6
   m_Color: {r: 0.8018868, g: 0.5330568, b: 0.3215112, a: 1}
-  m_Intensity: 1
+  m_Intensity: 3
   m_LightVolumeIntensity: 1
   m_LightVolumeIntensityEnabled: 0
   m_ApplyToSortingLayers: 00000000
@@ -10355,7 +10362,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ShootDirection: {fileID: 1841509417}
   ShootPoint: {fileID: 1596403995}
-  BulletNum: 3
+  BulletNum: 10
   Bullet: {fileID: 6167623499802909372, guid: dfdaa3208486ca34c834199ff5d082d3, type: 3}
   HaveAmmo: 0
   _p_LanternLight: {fileID: 1253501213}
