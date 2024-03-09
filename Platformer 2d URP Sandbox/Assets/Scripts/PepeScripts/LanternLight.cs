@@ -7,7 +7,6 @@ public class LanternLight : MonoBehaviour
 {
     public Light2D Light;
     public AnimationCurve LightCurve;
-
     //[SerializeField] Transform _SpriteMask;
 
     int _bulletCount;
@@ -24,7 +23,6 @@ public class LanternLight : MonoBehaviour
     private void Start()
     {
         Light = GetComponent<Light2D>();
-
         _intensityStart = Light.intensity;
         _outRadiusStart = Light.pointLightOuterRadius;
         //_maskStart = _SpriteMask.localScale.x;
@@ -34,7 +32,6 @@ public class LanternLight : MonoBehaviour
     private void Update()
     {
         LightLevel();
-
     }
     /// <summary>
     /// To trigger lantern light change pass in the most recent bullet count and enjoy!!!
