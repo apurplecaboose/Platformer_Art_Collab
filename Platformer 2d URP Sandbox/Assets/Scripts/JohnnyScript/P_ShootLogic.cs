@@ -17,7 +17,6 @@ public class P_ShootLogic : MonoBehaviour
     void Update()
     {
         Shoot(_firePower);
-        print(_refToMousePosition);
         ReLoad();//Test Only
         _refToMousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition) + new Vector3(0, 0, 10);//mouse input
     }

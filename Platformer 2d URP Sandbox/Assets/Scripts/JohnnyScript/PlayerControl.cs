@@ -10,10 +10,8 @@ public class PlayerControl : MonoBehaviour
     public SlowMo refToSlowMo;
     private float _xInput;
     private Rigidbody2D P_rb;
-    [SerializeField] float _moveForce, _upThrust, _blastPower;
-    public Vector2 BarrelBlastDir, blastDir;
-    public Transform TeleportPos;
-    public bool IsBlast, IsDash, CanJump, Grounded,CanBeKnockBack;
+    [SerializeField] float _moveForce, _upThrust;
+    public bool IsDash, CanJump, Grounded, CanBeKnockBack;
     public LayerMask CheckGroundLayer;
 
     private void Awake()
@@ -24,8 +22,6 @@ public class PlayerControl : MonoBehaviour
     private void Update()
     {
         PlayerInput();
-        BlastJump(_blastPower);
-        TeleportLogic();
         Jump(_upThrust);
         EnterSlowMotion();
 
@@ -44,35 +40,6 @@ public class PlayerControl : MonoBehaviour
             P_rb.AddForce(Vector2.up * upThrust, ForceMode2D.Impulse);
         }
     }
-
-    public void BlastJump(float blastPower)
-    {
-        if (IsBlast)
-        {
-            P_rb.velocity = new Vector2(P_rb.velocity.x, 0); // cancel out gravity instantly
-            blastDir = BarrelBlastDir.normalized;//normalize the Blast vector into direction only
-            P_rb.AddForce(blastDir * blastPower, ForceMode2D.Impulse);
-            IsBlast = false;
-        }
-    }
-
-    void TeleportLogic()
-    {
-
-        if (IsDash)
-        {
-            Vector2 dashDir;
-            dashDir = TeleportPos.transform.position - transform.position;
-            float dashMultiplier = 3f; //E: I changed the value to be smaller after changing to impulse might need further tuning
-            dashDir.Normalize();
-            float dashdistance = Vector3.Distance(TeleportPos.transform.position, transform.position);
-            dashdistance = Mathf.Clamp(dashdistance, 8, 10);
-            P_rb.AddForce(dashDir * dashdistance * dashMultiplier, ForceMode2D.Impulse); ///E: needs to be forcemode impulse
-
-            IsDash = false;
-        }
-    }
-
 
     void EnterSlowMotion()
     {
