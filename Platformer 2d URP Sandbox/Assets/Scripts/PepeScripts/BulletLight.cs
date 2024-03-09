@@ -8,7 +8,7 @@ public class BulletLight : MonoBehaviour
 
     public AnimationCurve CurveStart, CurveEnd;
     public Light2D Light;
-    P_Projectile_Pepe _p_Projectile;
+    P_Projectile _p_Projectile;
 
     [SerializeField] float _intensityStart, _intensityPeak, _intensityEnd;
     [SerializeField] float _outRadiusStart, _outRadiusPeak, _outRadiusEnd;
@@ -18,7 +18,7 @@ public class BulletLight : MonoBehaviour
 
     private void Awake()
     {
-        _p_Projectile = transform.parent.gameObject.GetComponent<P_Projectile_Pepe>();
+        _p_Projectile = transform.parent.gameObject.GetComponent<P_Projectile>();
         Light = GetComponent<Light2D>();
     }
     //void Start()

@@ -10263,11 +10263,6 @@ MonoBehaviour:
   refToSlowMo: {fileID: 1852852286}
   _moveForce: 25
   _upThrust: 7.5
-  _blastPower: 20
-  BarrelBlastDir: {x: 0, y: 0}
-  blastDir: {x: 0, y: 0}
-  TeleportPos: {fileID: 0}
-  IsBlast: 0
   IsDash: 0
   CanJump: 0
   Grounded: 0
@@ -10357,16 +10352,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 1852852280}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c79beaaebbc27cb499a6622722bbedab, type: 3}
+  m_Script: {fileID: 11500000, guid: 51da7a7622090a0499b1f4c6b9512407, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   ShootDirection: {fileID: 1841509417}
   ShootPoint: {fileID: 1596403995}
   BulletNum: 10
-  Bullet: {fileID: 6167623499802909372, guid: dfdaa3208486ca34c834199ff5d082d3, type: 3}
+  BulletPrefab: {fileID: 6167623499802909372, guid: dfdaa3208486ca34c834199ff5d082d3, type: 3}
   HaveAmmo: 0
   _p_LanternLight: {fileID: 1253501213}
-  _dir: {x: 0, y: 0, z: 0}
 --- !u!1 &1858508087
 GameObject:
   m_ObjectHideFlags: 0

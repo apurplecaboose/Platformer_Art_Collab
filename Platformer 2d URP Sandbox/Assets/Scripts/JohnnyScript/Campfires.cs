@@ -46,6 +46,7 @@ public class Campfires : MonoBehaviour
         if (collision.CompareTag("Bullet"))
         {
             IsDash = true;
+            Destroy(collision.gameObject);
         }
     }
 

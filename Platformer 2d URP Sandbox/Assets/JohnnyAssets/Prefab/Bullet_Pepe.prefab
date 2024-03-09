@@ -10,9 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 451567952679125597}
   - component: {fileID: 1897216717943622536}
-  - component: {fileID: -3659946180732528437}
   - component: {fileID: 3733528230929596284}
   - component: {fileID: 195597878528539784}
+  - component: {fileID: 1866510358520956533}
   - component: {fileID: 3071457063800531600}
   m_Layer: 7
   m_Name: Bullet_Pepe
@@ -88,81 +88,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &-3659946180732528437
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6167623499802909372}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0b3a4d088bdd5a848b9f40eef90dd50f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _firePower: 2
-  _bulletRange: 15
-  _bulletTimer: 1
-  BlastDir: {x: 0, y: 0}
-  PlayerIntialPosition: {x: 0, y: 0, z: 0}
-  _isGrounded: 0
-  CurveStart:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    - serializedVersion: 3
-      time: 1
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  CurveEnd:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    - serializedVersion: 3
-      time: 1
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  _intensityStart: 1
-  _intensityPeak: 2
-  _intensityEnd: 0.5
-  _outRadiusStart: 1
-  _outRadiusPeak: 3
-  _timeA: 0.075
-  _timeB: 0.25
-  _timeC: 5
-  _offSetTime: 0.5
 --- !u!50 &3733528230929596284
 Rigidbody2D:
   serializedVersion: 4
@@ -225,6 +150,81 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
+--- !u!114 &1866510358520956533
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6167623499802909372}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 91e53cd4fbfee634685f48435443b965, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _firePower: 20
+  _bulletRange: 15
+  _bulletTimer: 1
+  BlastDir: {x: 0, y: 0}
+  ShootDir: {x: 0, y: 0, z: 0}
+  PlayerIntialPosition: {x: 0, y: 0, z: 0}
+  CurveStart:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  CurveEnd:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  _intensityStart: 1
+  _intensityPeak: 2
+  _intensityEnd: 0.5
+  _outRadiusStart: 1
+  _outRadiusPeak: 3
+  _timeA: 0.025
+  _timeB: 0.75
+  _timeC: 5
+  _offSetTime: 0.5
 --- !u!114 &3071457063800531600
 MonoBehaviour:
   m_ObjectHideFlags: 0

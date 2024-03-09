@@ -34,6 +34,7 @@ public class Barrels : MonoBehaviour
             {
                 _isBlast = true;
             }
+            Destroy(collision.gameObject);
         }
     }
 
