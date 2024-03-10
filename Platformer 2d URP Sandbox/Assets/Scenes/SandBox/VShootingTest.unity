@@ -9581,17 +9581,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6bd4d0c06d02ae440b741e40f85ecbad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speed: 5
+  refToSlowMo: {fileID: 0}
+  _moveForce: 0
   _upThrust: 3
-  _firePower: 1.5
-  _blastPower: 750
-  ShootDirection: {fileID: 1841509417}
-  ShootPoint: {fileID: 1596403995}
-  TeleportPos: []
-  Bullet: {fileID: 1187803628889218143, guid: cff49f7b6b81a1d4ab1e0cd951106af1, type: 3}
-  IsBlast: 0
-  CanTeleport: 0
-  Barrel: {fileID: 1019591185}
+  IsDash: 0
+  CanJump: 0
+  Grounded: 0
+  CanBeKnockBack: 0
+  CheckGroundLayer:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!1 &1858508087
 GameObject:
   m_ObjectHideFlags: 0
