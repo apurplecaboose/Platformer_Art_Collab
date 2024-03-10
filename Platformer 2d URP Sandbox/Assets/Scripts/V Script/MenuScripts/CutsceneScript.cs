@@ -1,19 +1,21 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
+using UnityEngine.Video;
 
 public class CutsceneScript : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public string TargetSceneName;
+    public VideoPlayer myVideoplayer;
+    private void Start()
     {
         
+        myVideoplayer.loopPointReached += SwitchSceneOnFinish;
     }
-
-    // Update is called once per frame
-    void Update()
+    void SwitchSceneOnFinish(VideoPlayer vp)
     {
-        
+        SceneManager.LoadScene(TargetSceneName);
+        Debug.Log("requirements reached");
     }
 }
