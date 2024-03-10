@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering.Universal;
 using UnityEngine.Windows;
 
 public class Campfires : MonoBehaviour
@@ -10,7 +11,7 @@ public class Campfires : MonoBehaviour
     PlayerControl _refToPlayerControl;
     SlowMo _refToSlowMo;
     Rigidbody2D _p_rb;
-    [SerializeField] bool _isDash;
+    [SerializeField] bool _isDash, _isLightingOn;
     [SerializeField] float _dashMultiplier;
     [SerializeField] Vector2 _MinandMaxCamfireForce;
 
@@ -22,6 +23,7 @@ public class Campfires : MonoBehaviour
         _p_rb = _refToPlayer.GetComponent<Rigidbody2D>();
         _refToPlayerControl = _refToPlayer.GetComponent<PlayerControl>();
         _refToSlowMo = _refToPlayer.GetComponent<SlowMo>();
+        Light = GetComponent<Light2D>();
     }
     private void Update()
     {
@@ -56,16 +58,69 @@ public class Campfires : MonoBehaviour
             _p_rb.AddForce(dashDir * dashdistance * _dashMultiplier, ForceMode2D.Impulse); ///E: needs to be forcemode impulse
             _isDash = false;
         }
+        if (_isLightingOn)
+        {
+            CampfireLight();
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Bullet"))
+        if (!_isLightingOn)// bullets can only shoot to campfire when it's not lighted on
         {
-            _isDash = true;
-            Destroy(collision.gameObject);
+            if (collision.CompareTag("Bullet"))
+            {
+                _isLightingOn = true;
+                _isDash = true;
+                Destroy(collision.gameObject);
+            }
         }
+
     }
 
+
+    //CampFire Light
+    public AnimationCurve CurveStart, CurveEnd;
+    Light2D Light;
+
+    [SerializeField] float _intensityStart, _intensityPeak, _intensityEnd;
+    [SerializeField] float _outRadiusStart, _outRadiusPeak;
+
+    float _lerpDeltaTime = 0;
+    [SerializeField] float _timeA, _timeB, _timeC, _offSetTime;
+    /// <summary>
+    /// light on the fire arter player shot campfire, Light lerps when hit just like fireball. Campfire is disabled for some amount of time (player can shoot through it) while the light lerps back to unlit on the campfire.
+    /// </summary>
+    void CampfireLight()
+    {
+        float offset = 0.01f;
+        _lerpDeltaTime += Time.deltaTime;
+        if (_lerpDeltaTime <= _timeA + offset)
+        {
+            Light.intensity = BasicFloatLerp(_intensityStart, _intensityPeak, _timeA, _lerpDeltaTime, CurveStart);
+            Light.pointLightOuterRadius = BasicFloatLerp(_outRadiusStart, _outRadiusPeak, _timeA, _lerpDeltaTime, CurveStart);
+        }
+        else if (_lerpDeltaTime < _timeA + _timeB)
+        {
+            //middle, flat peak, nothing happens
+        }
+        else if (_lerpDeltaTime <= _timeA + _timeB + _timeC)
+        {
+            Light.intensity = BasicFloatLerp(_intensityPeak, _intensityEnd, _timeC, _lerpDeltaTime - (_timeA + _timeB), CurveEnd);
+            Light.pointLightOuterRadius = BasicFloatLerp(_outRadiusPeak, _outRadiusStart, _timeC, _lerpDeltaTime - (_timeA + _timeB), CurveEnd);
+        }
+        else if(_lerpDeltaTime > _timeA + _timeB + _timeC)//after all of light lerps, reset bool and timer
+        {
+            _isLightingOn = false;
+            _lerpDeltaTime = 0;
+        }
+
+        float BasicFloatLerp(float a, float b, float lerpTime, float dTime, AnimationCurve lerpCurve)
+        {
+            float lerpPercentage = dTime / lerpTime;
+            float output = Mathf.Lerp(a, b, lerpCurve.Evaluate(lerpPercentage));
+            return output;
+        }
+    }
 
 }
