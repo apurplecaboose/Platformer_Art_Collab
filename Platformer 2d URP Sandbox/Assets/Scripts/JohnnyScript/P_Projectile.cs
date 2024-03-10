@@ -17,7 +17,8 @@ public class P_Projectile : MonoBehaviour
 
     bool _isGrounded = false;
     public Vector3 PlayerIntialPosition;
-    //bulletLight
+
+    ParticleSystem _particleSystem;
 
     private void Awake()
     {
@@ -27,8 +28,10 @@ public class P_Projectile : MonoBehaviour
 
         //BulletShooting(_firePower);
 
-        Light = GetComponent<Light2D>();
+        _light = GetComponent<Light2D>();
         _mollyTime = _timeA + _timeB + _timeC - _offSetTime;
+
+        _particleSystem = GetComponent<ParticleSystem>();
     }
     private void Start()
     {
@@ -56,8 +59,10 @@ public class P_Projectile : MonoBehaviour
 
     void DetectGround(Collision2D collision)
     {
+        var particleGravity = _particleSystem.main;
         if (collision.collider.CompareTag("Ground"))
         {
+            particleGravity.gravityModifier = -1;//change particleGravity after bullet got on the ground
             _isGrounded = true;
             _rb.bodyType = RigidbodyType2D.Static;
             _bulletTimer = _mollyTime;//bullets will exist extra long when they collide with grounds or walls
@@ -88,11 +93,10 @@ public class P_Projectile : MonoBehaviour
 
     //Enlarge Light Function Varibles
     public AnimationCurve CurveStart, CurveEnd;
-    Light2D Light;
+    Light2D _light;
 
     [SerializeField] float _intensityStart, _intensityPeak, _intensityEnd;
     [SerializeField] float _outRadiusStart, _outRadiusPeak;
-
     float _lerpDeltaTime = 0;
     [SerializeField] float _timeA, _timeB, _timeC, _offSetTime;
     void EnlargeLight()
@@ -101,8 +105,8 @@ public class P_Projectile : MonoBehaviour
         _lerpDeltaTime += Time.deltaTime;
         if (_lerpDeltaTime <= _timeA + offset)
         {
-            Light.intensity = BasicFloatLerp(_intensityStart, _intensityPeak, _timeA, _lerpDeltaTime, CurveStart);
-            Light.pointLightOuterRadius = BasicFloatLerp(_outRadiusStart, _outRadiusPeak, _timeA, _lerpDeltaTime, CurveStart);
+            _light.intensity = BasicFloatLerp(_intensityStart, _intensityPeak, _timeA, _lerpDeltaTime, CurveStart);
+            _light.pointLightOuterRadius = BasicFloatLerp(_outRadiusStart, _outRadiusPeak, _timeA, _lerpDeltaTime, CurveStart);
         }
         else if (_lerpDeltaTime < _timeA + _timeB)
         {
@@ -110,8 +114,8 @@ public class P_Projectile : MonoBehaviour
         }
         else if (_lerpDeltaTime <= _timeA + _timeB + _timeC)
         {
-            Light.intensity = BasicFloatLerp(_intensityPeak, _intensityEnd, _timeC, _lerpDeltaTime - (_timeA + _timeB), CurveEnd);
-            Light.pointLightOuterRadius = BasicFloatLerp(_outRadiusPeak, _outRadiusStart, _timeC, _lerpDeltaTime - (_timeA + _timeB), CurveEnd);
+            _light.intensity = BasicFloatLerp(_intensityPeak, _intensityEnd, _timeC, _lerpDeltaTime - (_timeA + _timeB), CurveEnd);
+            _light.pointLightOuterRadius = BasicFloatLerp(_outRadiusPeak, _outRadiusStart, _timeC, _lerpDeltaTime - (_timeA + _timeB), CurveEnd);
         }
 
         float BasicFloatLerp(float a, float b, float lerpTime, float dTime, AnimationCurve lerpCurve)
