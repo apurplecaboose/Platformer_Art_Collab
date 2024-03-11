@@ -5,7 +5,7 @@ using UnityEngine.UI;
 using TMPro;
 
 public class ResolutionDropDown : MonoBehaviour
-{
+{//resolutionand fullscreen settings 
     [SerializeField]  TMP_Dropdown resolutionDropdown;
      Resolution[] resolutions;
      List<Resolution> filteredResolutions;
@@ -44,10 +44,11 @@ public class ResolutionDropDown : MonoBehaviour
         Screen.SetResolution(resolution.width,resolution.height,Screen.fullScreen);
 
     }
-    
-    // Update is called once per frame
-    void Update()
+
+    public void SetFullScreen(bool isFullScreen)
     {
-        
+        Screen.fullScreen = isFullScreen;
     }
+    
+    
 }
