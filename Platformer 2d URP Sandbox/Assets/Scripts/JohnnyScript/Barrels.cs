@@ -47,6 +47,7 @@ public class Barrels : MonoBehaviour
             blastDir = BarrelBlastDir.normalized;//normalize the Blast vector into direction only
             _p_rb.AddForce(blastDir * blastPower, ForceMode2D.Impulse);
             _isBlast = false;
+            Destroy(gameObject);
         }
     }
 }

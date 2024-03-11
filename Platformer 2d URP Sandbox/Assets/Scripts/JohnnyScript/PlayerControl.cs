@@ -8,6 +8,7 @@ using UnityEngine.UIElements;
 public class PlayerControl : MonoBehaviour
 {
     public SlowMo refToSlowMo;
+    public GameObject Lantern;
     private float _xInput;
     private Rigidbody2D P_rb;
     [SerializeField] float _moveForce, _upThrust;
@@ -21,6 +22,7 @@ public class PlayerControl : MonoBehaviour
 
     private void Update()
     {
+       //Lantern.transform.position = new Vector3(transform.position.x + 0.2f, transform.position.y+0.1f, 0);
         PlayerInput();
         Jump(_upThrust);
         EnterSlowMotion();
@@ -43,7 +45,7 @@ public class PlayerControl : MonoBehaviour
 
     void EnterSlowMotion()
     {
-        if (Input.GetKeyDown(KeyCode.Q))
+        if (Input.GetKeyDown(KeyCode.Mouse1))
         {
             refToSlowMo.SlowMoToggle = !refToSlowMo.SlowMoToggle; // E: changed back to my slow mo
             //Time.timeScale = 0.3f;
@@ -89,6 +91,7 @@ public class PlayerControl : MonoBehaviour
             }
         }
     }
+
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
