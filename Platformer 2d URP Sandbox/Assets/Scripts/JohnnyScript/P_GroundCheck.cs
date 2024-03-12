@@ -13,10 +13,18 @@ public class P_GroundCheck : MonoBehaviour
         {
             P_Ref.Grounded = true;
         }
+        if (collision.CompareTag("BlastBarrel"))
+        {
+            P_Ref.Grounded = true;
+        }
     }
     void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.CompareTag("Ground"))//Change the tage"Floor" into "Ground"
+        {
+            P_Ref.Grounded = false;
+        }
+        if (collision.CompareTag("BlastBarrel"))
         {
             P_Ref.Grounded = false;
         }

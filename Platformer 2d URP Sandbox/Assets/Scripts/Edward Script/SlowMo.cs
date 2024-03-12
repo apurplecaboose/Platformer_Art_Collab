@@ -13,15 +13,9 @@ public class SlowMo : MonoBehaviour
     
     public float SlowMoResourceTime;
     public bool SlowMoToggle;
+    public TextMesh TESTINGONLY_Slowmo_Text;
     void Update()
     {
-        ///other script
-        if(Input.GetKeyDown(KeyCode.N))
-        {
-            SlowMoToggle = !SlowMoToggle;
-        }
-        /// ^^^
-
         if (SlowMoResourceTime <= 0)
         {
             SlowMoToggle = false;
@@ -33,6 +27,8 @@ public class SlowMo : MonoBehaviour
         }
 
         SlowMoReady(SlowMoToggle);
+
+        TESTINGONLY_Slowmo_Text.text = SlowMoResourceTime.ToString("0.00");
     }
     void SlowMoReady(bool activated)
     {
@@ -44,6 +40,7 @@ public class SlowMo : MonoBehaviour
                 activated = false;
                 NeoTime(false);
                 SlowMoToggle = false;
+                TESTINGONLY_Slowmo_Text.gameObject.GetComponent<MeshRenderer>().enabled = false; //turn off ui
             }
             else
             {
@@ -51,10 +48,12 @@ public class SlowMo : MonoBehaviour
                 SlowMoResourceTime -= Time.unscaledDeltaTime;
                 _eric_loves_clash_from_r6_Timer = 0;
                 NeoTime(true);
+                TESTINGONLY_Slowmo_Text.gameObject.GetComponent<MeshRenderer>().enabled = true; //turn off ui
             }
         }
         if(!activated)
         {
+            TESTINGONLY_Slowmo_Text.gameObject.GetComponent<MeshRenderer>().enabled = false; //turn off ui
             NeoTime(false);
             _eric_loves_clash_from_r6_Timer += Time.unscaledDeltaTime;
 
@@ -69,7 +68,6 @@ public class SlowMo : MonoBehaviour
             else
             {
                 SlowMoResourceTime = maxSlowMoResourceTime; // catch case
-                Debug.Log("SlowMoResourceTime Overflow Catch Case!!!");
             }
         }
     }

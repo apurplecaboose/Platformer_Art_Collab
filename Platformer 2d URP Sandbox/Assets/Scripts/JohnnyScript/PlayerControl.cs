@@ -8,9 +8,9 @@ using UnityEngine.UIElements;
 public class PlayerControl : MonoBehaviour
 {
     public SlowMo refToSlowMo;
-    private float _xInput;
+    float _xInput;
     private Rigidbody2D P_rb;
-    [SerializeField] float _moveForce, _upThrust;
+    [SerializeField] float _moveForce, _jumpForce, _tapStrafeMultiplier;
     public bool IsDash, CanJump, Grounded, CanBeKnockBack;
     public LayerMask CheckGroundLayer;
 
@@ -22,7 +22,7 @@ public class PlayerControl : MonoBehaviour
     private void Update()
     {
         PlayerInput();
-        Jump(_upThrust);
+        Jump(_jumpForce);
         EnterSlowMotion();
 
     }
@@ -43,10 +43,14 @@ public class PlayerControl : MonoBehaviour
 
     void EnterSlowMotion()
     {
-        if (Input.GetKeyDown(KeyCode.Q))
+        //changed slowmo to hold not toggle
+        if (Input.GetKey(KeyCode.Mouse1))
         {
-            refToSlowMo.SlowMoToggle = !refToSlowMo.SlowMoToggle; // E: changed back to my slow mo
-            //Time.timeScale = 0.3f;
+            refToSlowMo.SlowMoToggle = true;
+        }
+        if (Input.GetKeyUp(KeyCode.Mouse1))
+        {
+            refToSlowMo.SlowMoToggle = false;
         }
     }
 
@@ -59,8 +63,8 @@ public class PlayerControl : MonoBehaviour
             {
                 if (Mathf.Sign(P_rb.velocity.x) != _xInput && _xInput != 0)
                 {
-                    float tapstrafeM = 0.5f; // expressed as percent momentum transfer 1 being full momentum transfer
-                    P_rb.velocity = new Vector2(-P_rb.velocity.x * tapstrafeM, P_rb.velocity.y);
+                   // expressed as percent momentum transfer 1 being full momentum transfer
+                    P_rb.velocity = new Vector2(-P_rb.velocity.x * _tapStrafeMultiplier, P_rb.velocity.y);
                 }
                 else
                 {

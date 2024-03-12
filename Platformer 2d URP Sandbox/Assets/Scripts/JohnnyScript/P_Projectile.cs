@@ -9,13 +9,13 @@ public class P_Projectile : MonoBehaviour
     //changed var names to fit naming convention
     [SerializeField] float _firePower, _bulletRange, _bulletTimer;
     float _mollyTime;
-    GameObject _p_Ref;
     Rigidbody2D _rb;
 
     public Vector2 BlastDir;
     public Vector3 ShootDir;
 
     bool _isGrounded = false;
+    [HideInInspector]
     public Vector3 PlayerIntialPosition;
 
     ParticleSystem _particleSystem;
@@ -23,7 +23,6 @@ public class P_Projectile : MonoBehaviour
     private void Awake()
     {
         //E: initalized all references on awake
-        _p_Ref = GameObject.FindGameObjectWithTag("Player"); //E: changed to player tag therefore name of gameobject doesnt matter
         _rb = this.GetComponent<Rigidbody2D>();
 
         //BulletShooting(_firePower);
@@ -50,30 +49,21 @@ public class P_Projectile : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        DetectGround(collision);
-        if (!_isGrounded)
-        {
-            DestroyByOtherBullets(collision);
-        }
-    }
-
-    void DetectGround(Collision2D collision)
-    {
-        var particleGravity = _particleSystem.main;
         if (collision.collider.CompareTag("Ground"))
         {
+            var particleGravity = _particleSystem.main;
             particleGravity.gravityModifier = -1;//change particleGravity after bullet got on the ground
             _isGrounded = true;
             _rb.bodyType = RigidbodyType2D.Static;
             _bulletTimer = _mollyTime;//bullets will exist extra long when they collide with grounds or walls
         }
-    }
 
-    void DestroyByOtherBullets(Collision2D collision)
-    {
-        if (collision.collider.CompareTag("Bullet"))
+        if (!_isGrounded) // if currently 
         {
-            Destroy(gameObject);
+            if (collision.collider.CompareTag("Bullet"))
+            {
+                Destroy(gameObject);
+            }
         }
     }
 

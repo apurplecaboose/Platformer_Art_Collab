@@ -165,7 +165,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _firePower: 20
-  _bulletRange: 12
+  _bulletRange: 7
   _bulletTimer: 1
   BlastDir: {x: 0, y: 0}
   ShootDir: {x: 0, y: 0, z: 0}
@@ -222,7 +222,7 @@ MonoBehaviour:
   _intensityPeak: 2
   _intensityEnd: 0.5
   _outRadiusStart: 1
-  _outRadiusPeak: 3
+  _outRadiusPeak: 5
   _timeA: 0.025
   _timeB: 0.25
   _timeC: 5

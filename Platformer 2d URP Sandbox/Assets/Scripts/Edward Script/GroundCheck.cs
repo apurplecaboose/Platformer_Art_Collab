@@ -8,9 +8,13 @@ public class GroundCheck : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collision)
     {
-
         if (collision.CompareTag("Floor"))
         {
+            P_Ref.Grounded = true;
+        }
+        if (collision.CompareTag("BlastBarrel"))
+        {
+            print(true);
             P_Ref.Grounded = true;
         }
     }
@@ -19,6 +23,11 @@ public class GroundCheck : MonoBehaviour
         if (collision.CompareTag("Floor"))
         {
             P_Ref.Grounded = false;
+        }
+        if (collision.CompareTag("BlastBarrel"))
+        {
+            P_Ref.Grounded = false;
+            print(false);
         }
     }
 }

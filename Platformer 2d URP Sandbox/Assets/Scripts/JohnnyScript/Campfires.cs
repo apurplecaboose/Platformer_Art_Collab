@@ -7,9 +7,7 @@ using UnityEngine.Windows;
 
 public class Campfires : MonoBehaviour
 {
-
     GameObject _refToPlayer;
-    PlayerControl _refToPlayerControl;
     SlowMo _refToSlowMo;
     Rigidbody2D _p_rb;
     [SerializeField] bool _isDash, _isLightingOn;
@@ -18,10 +16,9 @@ public class Campfires : MonoBehaviour
     // Update is called once per frame
     private void Awake()
     {
-        _dashMultiplier = 3f; //J;control dashing power 
+        //_dashMultiplier = 3f; //J;control dashing power //trash
         _refToPlayer = GameObject.FindGameObjectWithTag("Player");
         _p_rb = _refToPlayer.GetComponent<Rigidbody2D>();
-        _refToPlayerControl = _refToPlayer.GetComponent<PlayerControl>();
         _refToSlowMo = _refToPlayer.GetComponent<SlowMo>();
         _light = GetComponent<Light2D>();
         _particleSystem = gameObject.transform.GetComponentInChildren<ParticleSystem>();
