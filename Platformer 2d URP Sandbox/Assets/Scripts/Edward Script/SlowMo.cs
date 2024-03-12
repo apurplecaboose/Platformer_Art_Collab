@@ -1,7 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SocialPlatforms;
+using UnityEngine.Rendering; //<--- added this
+using TMPro;
+using Cinemachine;
 
 public class SlowMo : MonoBehaviour
 {
@@ -13,7 +15,10 @@ public class SlowMo : MonoBehaviour
     
     public float SlowMoResourceTime;
     public bool SlowMoToggle;
-    public TextMesh TESTINGONLY_Slowmo_Text;
+    public TMP_Text Slowmo_Text;
+    public Volume JojoTimeVolume;
+    
+    public GameObject SlowMoCanvas;
     void Update()
     {
         if (SlowMoResourceTime <= 0)
@@ -28,7 +33,7 @@ public class SlowMo : MonoBehaviour
 
         SlowMoReady(SlowMoToggle);
 
-        TESTINGONLY_Slowmo_Text.text = SlowMoResourceTime.ToString("0.00");
+        Slowmo_Text.text = SlowMoResourceTime.ToString("0.00");
     }
     void SlowMoReady(bool activated)
     {
@@ -40,7 +45,8 @@ public class SlowMo : MonoBehaviour
                 activated = false;
                 NeoTime(false);
                 SlowMoToggle = false;
-                TESTINGONLY_Slowmo_Text.gameObject.GetComponent<MeshRenderer>().enabled = false; //turn off ui
+                SlowMoCanvas.SetActive(false); //turn off ui
+                JojoTimeVolume.weight = 0;
             }
             else
             {
@@ -48,12 +54,14 @@ public class SlowMo : MonoBehaviour
                 SlowMoResourceTime -= Time.unscaledDeltaTime;
                 _eric_loves_clash_from_r6_Timer = 0;
                 NeoTime(true);
-                TESTINGONLY_Slowmo_Text.gameObject.GetComponent<MeshRenderer>().enabled = true; //turn off ui
+                SlowMoCanvas.SetActive(true); //turn off ui
+                JojoTimeVolume.weight = 1;
             }
         }
         if(!activated)
         {
-            TESTINGONLY_Slowmo_Text.gameObject.GetComponent<MeshRenderer>().enabled = false; //turn off ui
+            SlowMoCanvas.SetActive(false); //turn off ui
+            JojoTimeVolume.weight = 0;
             NeoTime(false);
             _eric_loves_clash_from_r6_Timer += Time.unscaledDeltaTime;
 

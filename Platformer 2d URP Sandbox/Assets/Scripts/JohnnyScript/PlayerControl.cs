@@ -32,13 +32,19 @@ public class PlayerControl : MonoBehaviour
         P_rb.AddForce(xInputVec * _moveForce);
     }
 
-
+    float _jumptimer, JumpCD = 0.1f;
     void Jump(float upThrust)
     {
-        if (Input.GetKeyDown(KeyCode.Space) && Grounded)
+        if(_jumptimer <= 0)
         {
-            P_rb.AddForce(Vector2.up * upThrust, ForceMode2D.Impulse);
+            if (Input.GetKeyDown(KeyCode.Space) && Grounded)
+            {
+                P_rb.AddForce(Vector2.up * upThrust, ForceMode2D.Impulse);
+                Grounded = false;
+                _jumptimer = JumpCD;
+            }
         }
+        else _jumptimer -= Time.deltaTime;
     }
 
     void EnterSlowMotion()

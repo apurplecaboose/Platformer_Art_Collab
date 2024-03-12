@@ -152,7 +152,7 @@ MonoBehaviour:
   _isDash: 0
   _isLightingOn: 0
   _dashMultiplier: 0
-  _MinandMaxCamfireForce: {x: 2, y: 8}
+  _MinandMaxCamfireForce: {x: 6, y: 8}
   CurveStart:
     serializedVersion: 2
     m_Curve:

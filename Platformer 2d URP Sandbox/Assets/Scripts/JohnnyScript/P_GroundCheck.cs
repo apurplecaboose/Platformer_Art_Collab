@@ -6,25 +6,36 @@ public class P_GroundCheck : MonoBehaviour
 {
     public PlayerControl P_Ref;
 
+    public float CoyoteTime;
+    [SerializeField]float _timer;
+    private void Awake()
+    {
+        _timer = CoyoteTime;
+    }
     void OnTriggerEnter2D(Collider2D collision)
     {
-
-        if (collision.CompareTag("Ground"))//Change the tage"Floor" into "Ground"
+        if (collision.CompareTag("Ground") || collision.CompareTag("BlastBarrel"))//Change the tage"Floor" into "Ground"
         {
             P_Ref.Grounded = true;
-        }
-        if (collision.CompareTag("BlastBarrel"))
-        {
-            P_Ref.Grounded = true;
+            _timer = CoyoteTime;
         }
     }
-    void OnTriggerExit2D(Collider2D collision)
+    void OnTriggerStay2D(Collider2D collision)
     {
-        if (collision.CompareTag("Ground"))//Change the tage"Floor" into "Ground"
+        if (collision.CompareTag("Ground") || collision.CompareTag("BlastBarrel"))//Change the tage"Floor" into "Ground"
         {
-            P_Ref.Grounded = false;
+            P_Ref.Grounded = true;
+            _timer = CoyoteTime;
         }
-        if (collision.CompareTag("BlastBarrel"))
+    }
+    void Update()
+    {
+        if (P_Ref.Grounded)
+        {
+            _timer -= Time.deltaTime;
+        }
+
+        if( _timer <= 0 && P_Ref.Grounded)
         {
             P_Ref.Grounded = false;
         }
