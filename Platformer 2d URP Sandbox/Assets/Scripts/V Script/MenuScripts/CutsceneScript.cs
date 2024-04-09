@@ -8,19 +8,33 @@ using UnityEngine.Video;
 public class CutsceneScript : MonoBehaviour
 {
     public string TargetSceneName;
-    public VideoPlayer myVideoplayer;
+    public VideoPlayer CutscenePlayer;
     public Object TargetScene;
     public GameObject TransitionCompenent;
+    float _cutsceneLength;
+    float _cutsceneTimer;
+    [SerializeField] float _videoOffset;
     private void Start()
     {
-        
-        myVideoplayer.loopPointReached += SwitchSceneOnFinish;
+        _cutsceneLength = (float)CutscenePlayer.length;
+        if (_cutsceneTimer < _videoOffset)
+        {
+            Debug.Log("Offset is larger than video length u idiot");
+        }
         TransitionCompenent.GetComponent<TransitionAnimator>().sceneNameToLoad = TargetScene.name;
     }
-    void SwitchSceneOnFinish(VideoPlayer vp)
+    private void Update()
     {
-        
-        TransitionCompenent.SetActive(true);
-        Debug.Log("requirements reached");
+        _cutsceneTimer += Time.deltaTime;
+        if(_cutsceneTimer >= _cutsceneLength - _videoOffset)
+        {
+            TransitionCompenent.SetActive(true);
+        }
     }
+    //void SwitchSceneOnFinish(VideoPlayer vp)
+    //{
+        
+    //    TransitionCompenent.SetActive(true);
+    //    Debug.Log("requirements reached");
+    //}
 }
