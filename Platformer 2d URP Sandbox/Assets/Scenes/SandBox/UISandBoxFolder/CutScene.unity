@@ -483,6 +483,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TargetSceneName: VSlomoTimerTest
   myVideoplayer: {fileID: 1919737967}
+  TargetScene: {fileID: 102900000, guid: d2a326cbd54d7fb4ebf958e17a7d34fe, type: 3}
 --- !u!1 &2011640026
 GameObject:
   m_ObjectHideFlags: 0
