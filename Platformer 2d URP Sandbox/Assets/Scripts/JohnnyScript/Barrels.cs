@@ -29,7 +29,7 @@ public class Barrels : MonoBehaviour
     {
         if (collision.collider.CompareTag("Bullet"))
         {
-            BarrelBlastDir = _refToPlayer.transform.position - collision.collider.transform.position;
+            BarrelBlastDir = _refToPlayer.transform.position - /*collision.collider.transform.position*/ this.transform.position;
             if (_refToPlayerControl.CanBeKnockBack)//if player is in the knockback range,players then can be knocked back when bullet collide with barrels. 
             {
                 _isBlast = true;
