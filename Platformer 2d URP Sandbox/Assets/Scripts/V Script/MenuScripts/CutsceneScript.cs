@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TransitionsPlus;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.Video;
@@ -14,6 +15,7 @@ public class CutsceneScript : MonoBehaviour
     {
         
         myVideoplayer.loopPointReached += SwitchSceneOnFinish;
+        TransitionCompenent.GetComponent<TransitionAnimator>().sceneNameToLoad = TargetScene.name;
     }
     void SwitchSceneOnFinish(VideoPlayer vp)
     {
