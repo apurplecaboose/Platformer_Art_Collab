@@ -9,6 +9,7 @@ public class CutsceneScript : MonoBehaviour
     public string TargetSceneName;
     public VideoPlayer myVideoplayer;
     public Object TargetScene;
+    public GameObject TransitionCompenent;
     private void Start()
     {
         
@@ -16,7 +17,8 @@ public class CutsceneScript : MonoBehaviour
     }
     void SwitchSceneOnFinish(VideoPlayer vp)
     {
-        SceneManager.LoadScene(TargetScene.name);
+        
+        TransitionCompenent.SetActive(true);
         Debug.Log("requirements reached");
     }
 }
