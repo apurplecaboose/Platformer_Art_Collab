@@ -13,6 +13,13 @@ public class PlayerControl : MonoBehaviour
     [SerializeField] float _moveForce, _jumpForce, _tapStrafeMultiplier;
     public bool IsDash, CanJump, Grounded, CanBeKnockBack;
     public LayerMask CheckGroundLayer;
+    public PlayerState RefPlayerState;
+    public enum PlayerState
+    {
+        InGame,
+        Win,
+        Lose
+    }
 
     private void Awake()
     {
@@ -21,13 +28,24 @@ public class PlayerControl : MonoBehaviour
 
     private void Update()
     {
-        PlayerInput();
-        Jump(_jumpForce);
-        EnterSlowMotion();
+        if (RefPlayerState == PlayerState.InGame)
+        {
+            PlayerInput();
+            Jump(_jumpForce);
+            EnterSlowMotion();
+        }
+        if(RefPlayerState == PlayerState.Win)
+        {
+            P_rb.bodyType = RigidbodyType2D.Static;
+        }//J:Make Player stop moving when reach the end
+      
 
     }
     private void FixedUpdate()
     {
+        //if (RefPlayerState == PlayerState.InGame)
+        //{
+        //}
         Vector2 xInputVec = new Vector2(_xInput, 0);
         P_rb.AddForce(xInputVec * _moveForce);
     }

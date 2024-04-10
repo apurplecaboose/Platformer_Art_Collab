@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -10,10 +11,12 @@ public class FlagLogic : MonoBehaviour
     PlayerControl _p_Script;
     [SerializeField] int _scene_Index;
     [SerializeField] bool _isWin;
+    TextMeshPro _endInfo;
     private void Awake()
     {
         _anime_CountDown = 3;
         _p_Script=GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerControl>();
+        _endInfo=GameObject.Find("EndInfo_Text").GetComponent<TextMeshPro>();    
     }
 
     // Update is called once per frame
@@ -26,8 +29,10 @@ public class FlagLogic : MonoBehaviour
     {
         if (_isWin)
         {
+            _p_Script.RefPlayerState = PlayerControl.PlayerState.Win;//J:limit player movement
             _anime_CountDown-=Time.deltaTime;
-            if(_anime_CountDown < 0||Input.GetKeyDown(KeyCode.E))
+            _endInfo.color += new Color(0, 0, 0, 0.1f*Time.deltaTime);//show the instruction
+            if (_anime_CountDown < 0||Input.GetKeyDown(KeyCode.Space))
             {
                 //Switch Scene
                 SceneManager.LoadScene(_scene_Index);
