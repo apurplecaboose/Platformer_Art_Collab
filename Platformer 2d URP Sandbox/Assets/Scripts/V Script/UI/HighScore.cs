@@ -7,7 +7,7 @@ using TMPro;
 public class HighScore : MonoBehaviour
 {
     public float highscore,currentScore;
-    public TextMeshProUGUI Timer;
+    public TextMeshProUGUI Timer,HighscoreTMP;
     public GameObject GM;
 
     private void Start()
@@ -16,10 +16,13 @@ public class HighScore : MonoBehaviour
     }
     private void Update()
     {
-        if (GM.GetComponent<GameMaster>().gs == GameMaster.GameStates.Win)
+        currentScore = Timer.GetComponent<Timer>().timer;
+        if (Input.GetKey(KeyCode.Alpha0))//test condition
         {
             UpdateHighScore();
+
         }
+       
     }
     public void UpdateHighScore()
     {
@@ -27,6 +30,7 @@ public class HighScore : MonoBehaviour
         {
             highscore = currentScore;
             PlayerPrefs.SetFloat("HighScore",0);
+            Debug.Log("HighScore:" + highscore);
         }
 
     }
