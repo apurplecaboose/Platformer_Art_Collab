@@ -5,16 +5,19 @@ using UnityEngine.SceneManagement;
 
 public class DestinationBehavior : MonoBehaviour
 {
+    public GameObject GM;
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.tag == "Player")
         {
-
+           
            LevelComplete();
         }
     }
     public void LevelComplete()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex+1);
+
+        GM.GetComponent<GameMaster>().gs = GameMaster.GameStates.Win;
+        /*ceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex+1);*/
     }
 }
