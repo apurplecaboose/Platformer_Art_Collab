@@ -14,6 +14,7 @@ public class PlayerControl : MonoBehaviour
     public bool IsDash, CanJump, Grounded, CanBeKnockBack;
     public LayerMask CheckGroundLayer;
     public PlayerState RefPlayerState;
+    public SpriteRenderer LanternStick, LanternStick1, Lantern,Lantern1;
     public enum PlayerState
     {
         InGame,
@@ -95,10 +96,12 @@ public class PlayerControl : MonoBehaviour
                     if (Input.GetKey(KeyCode.A))
                     {
                         _xInput = -1;
+                        transform.rotation = Quaternion.Euler(0, 180, 0);//J:rotate player when change direction
                     }
                     else if (Input.GetKey(KeyCode.D))
                     {
                         _xInput = 1;
+                        transform.rotation = Quaternion.Euler(0, 0, 0);//J:rotate player when change direction
                     }
                     else _xInput = 0; //catch case
                 }
@@ -108,10 +111,14 @@ public class PlayerControl : MonoBehaviour
                 if (Input.GetKey(KeyCode.A))
                 {
                     _xInput = -1;
+                    transform.rotation=Quaternion.Euler(0,180,0);
+
                 }
                 else if (Input.GetKey(KeyCode.D))
                 {
                     _xInput = 1;
+                    transform.rotation = Quaternion.Euler(0, 0, 0);//rotate player when change direction
+
                 }
                 else _xInput = 0; //catch case
             }

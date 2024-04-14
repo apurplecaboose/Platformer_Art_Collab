@@ -31,7 +31,7 @@ public class FlagLogic : MonoBehaviour
         {
             _p_Script.RefPlayerState = PlayerControl.PlayerState.Win;//J:limit player movement
             _anime_CountDown-=Time.deltaTime;
-            _endInfo.color += new Color(0, 0, 0, 0.1f*Time.deltaTime);//show the instruction
+            _endInfo.color += new Color(0, 0, 0, 0.2f*Time.deltaTime);//show the instruction
             if (_anime_CountDown < 0||Input.GetKeyDown(KeyCode.Space))
             {
                 //Switch Scene
