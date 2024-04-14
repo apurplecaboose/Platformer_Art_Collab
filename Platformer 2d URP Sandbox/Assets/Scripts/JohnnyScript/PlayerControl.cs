@@ -37,7 +37,8 @@ public class PlayerControl : MonoBehaviour
         }
         if(RefPlayerState == PlayerState.Win)
         {
-            P_rb.bodyType = RigidbodyType2D.Static;
+            //P_rb.bodyType = RigidbodyType2D.Static;
+            P_rb.velocity = new Vector2(0, P_rb.velocity.y);
         }//J:Make Player stop moving when reach the end
       
 

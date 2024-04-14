@@ -9,7 +9,7 @@ public class FlagLogic : MonoBehaviour
 {
     float _anime_CountDown;
     PlayerControl _p_Script;
-    [SerializeField] int _scene_Index;
+    [SerializeField] Object _sceneFile; //load scene file as object from inspector
     [SerializeField] bool _isWin;
     TextMeshPro _endInfo;
     private void Awake()
@@ -35,7 +35,7 @@ public class FlagLogic : MonoBehaviour
             if (_anime_CountDown < 0||Input.GetKeyDown(KeyCode.Space))
             {
                 //Switch Scene
-                SceneManager.LoadScene(_scene_Index);
+                SceneManager.LoadScene(_sceneFile.name);
             }
         }
     }
