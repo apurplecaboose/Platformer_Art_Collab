@@ -29,6 +29,7 @@ public class PlayerControl : MonoBehaviour
 
     private void Update()
     {
+
         if (RefPlayerState == PlayerState.InGame)
         {
             PlayerInput();
@@ -38,18 +39,19 @@ public class PlayerControl : MonoBehaviour
         if(RefPlayerState == PlayerState.Win)
         {
             //P_rb.bodyType = RigidbodyType2D.Static;
-            P_rb.velocity = new Vector2(0, P_rb.velocity.y);
-        }//J:Make Player stop moving when reach the end
-      
-
+            P_rb.velocity = new Vector2(0, P_rb.velocity.y); //remove player horizontal velocity but let player fall.
+        }
     }
     private void FixedUpdate()
     {
         //if (RefPlayerState == PlayerState.InGame)
         //{
         //}
-        Vector2 xInputVec = new Vector2(_xInput, 0);
-        P_rb.AddForce(xInputVec * _moveForce);
+        if (RefPlayerState == PlayerState.InGame) // do not allow extra forces to be added when player has won.
+        {
+            Vector2 xInputVec = new Vector2(_xInput, 0);
+            P_rb.AddForce(xInputVec * _moveForce);
+        }
     }
 
     float _jumptimer, JumpCD = 0.1f;
