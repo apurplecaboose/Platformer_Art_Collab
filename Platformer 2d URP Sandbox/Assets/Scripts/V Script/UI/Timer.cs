@@ -7,7 +7,7 @@ using TMPro;
 public class Timer : MonoBehaviour
 {
     public TextMeshProUGUI TMP;
-    float timer;
+    public float timer;
     //supposed to be a timer to calculate player progress using unscaled deltatime.
     private void Start()
     {
