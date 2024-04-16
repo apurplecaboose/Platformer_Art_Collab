@@ -6,11 +6,11 @@ using UnityEngine.UIElements;
 public class P_ShootLogic : MonoBehaviour
 {
     private Vector3 _refToMousePosition;
-    public Transform ShootDirection, ShootPoint;
+    public Transform ShootDirection, ShootPoint,RightShootPoint,LeftShootPoint;
     public int BulletNum;
     public GameObject BulletPrefab;
     public bool HaveAmmo;
-
+    public PlayerControl refToPlayerCl;
     public LanternLight _p_LanternLight;
 
     //public Vector3 _dir;
@@ -34,11 +34,10 @@ public class P_ShootLogic : MonoBehaviour
         }
         else { HaveAmmo = false; }//Setting bullet limits
 
-        if (Input.GetKeyDown(KeyCode.Mouse0) && HaveAmmo)
+        if (Input.GetKeyDown(KeyCode.Mouse0) && HaveAmmo && refToPlayerCl.IsRight)
         {
             BulletNum -= 1;//bullet limit set is 10
-            GameObject BulletInstance = Instantiate(BulletPrefab, ShootPoint.position, transform.rotation);//J:Change the shooting position
-            
+            GameObject BulletInstance = Instantiate(BulletPrefab, RightShootPoint.position, transform.rotation);//J:Change the shooting position           
             P_Projectile projectileScript = BulletInstance.GetComponent<P_Projectile>(); // cache script ref
             Vector3 shootdir = new Vector3(_refToMousePosition.x - transform.position.x, _refToMousePosition.y - transform.position.y);
             projectileScript.ShootDir = shootdir;
