@@ -114,8 +114,7 @@ public class PlayerControl : MonoBehaviour
                 if (Input.GetKey(KeyCode.A))
                 {
                     _xInput = -1;
-                    transform.rotation=Quaternion.Euler(0,180,0);
-
+                    transform.rotation = Quaternion.Euler(0, 180, 0);
                 }
                 else if (Input.GetKey(KeyCode.D))
                 {
