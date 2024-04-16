@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -16,7 +15,7 @@ public class FlagLogic : MonoBehaviour
     {
         _anime_CountDown = 3;
         _p_Script=GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerControl>();
-        _endInfo=GameObject.Find("EndInfo_Text").GetComponent<TextMeshPro>();    
+        _endInfo= transform.GetChild(0).GetComponent<TextMeshPro>();//Get texmesh pro component as child of flag
     }
 
     // Update is called once per frame
