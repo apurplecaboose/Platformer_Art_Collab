@@ -115,7 +115,7 @@ public class PlayerControl : MonoBehaviour
                     _xInput = -1;
                     GetComponent<SpriteRenderer>().flipX = true;//J:Switch player Sprite
 
-                    IsRight= false;
+                    IsRight= false;//switch shooting point
 
                     Lantern1.GetComponent<SpriteRenderer>().color = Color.white;
                     LanternStick1.GetComponent<SpriteRenderer>().color = Color.white;
@@ -128,7 +128,7 @@ public class PlayerControl : MonoBehaviour
                     _xInput = 1;
                     GetComponent<SpriteRenderer>().flipX = false;//J:Switch player Sprite
 
-                    IsRight = true;
+                    IsRight = true;//switch shooting point
 
                     Lantern1.GetComponent<SpriteRenderer>().color = Color.clear;
                     LanternStick1.GetComponent<SpriteRenderer>().color = Color.clear;
@@ -141,6 +141,7 @@ public class PlayerControl : MonoBehaviour
             }
         }
     }
+
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
