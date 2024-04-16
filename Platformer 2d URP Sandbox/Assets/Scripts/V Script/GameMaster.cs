@@ -5,12 +5,13 @@ using UnityEngine;
 public class GameMaster : MonoBehaviour
 {
     float WiningUnscaledCountDown;//Countdown for game wininig cinematics or whatever effects
-    
+    public bool recording;
     public enum GameStates
     {
         Menu,
         Playing,
         Death,
+        Record,
         Win
     }
     public GameStates gs;
@@ -24,9 +25,16 @@ public class GameMaster : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (gs == GameStates.Win)
+        if (gs == GameStates.Record)
         {
-            WiningUnscaledCountDown -= Time.deltaTime;
+            recording = true;
+            gs = GameStates.Win;
+           
         }
+        else
+        {
+            recording = false;
+        }
+
     }
 }

@@ -18,16 +18,16 @@ public class HighScore : MonoBehaviour
     {
         HighscoreTMP.text = highscore + "";
         currentScore = Timer.GetComponent<Timer>().timer;
-        if (Input.GetKey(KeyCode.Alpha0))//test condition
+        if (GM.GetComponent<GameMaster>().recording) //test condition
         {
             UpdateHighScore();
-
+            
         }
 
     }
     public void UpdateHighScore()
     {
-        if (highscore > currentScore)
+        if (highscore < currentScore)
         {
             highscore = currentScore;
             PlayerPrefs.SetFloat("HighScore", 0);

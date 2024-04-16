@@ -17,9 +17,16 @@ public class DestinationBehavior : MonoBehaviour
     }
     public void LevelComplete()
     {
-        GM.GetComponent<GameMaster>().gs = GameMaster.GameStates.Win;
+        GM.GetComponent<GameMaster>().gs = GameMaster.GameStates.Record;
 
 
         /*ceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex+1);*/
+    }
+    private void OnTriggerEnter(Collider collision)
+    {
+        if (collision.transform.tag == "Player")
+        {
+            GM.GetComponent<GameMaster>().gs = GameMaster.GameStates.Record;
+        }
     }
 }
