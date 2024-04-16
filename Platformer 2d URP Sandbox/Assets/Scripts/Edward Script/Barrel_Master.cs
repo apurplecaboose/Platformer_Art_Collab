@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.ShaderGraph.Internal;
 using UnityEngine;
 
 public class Barrel_Master : MonoBehaviour
@@ -7,7 +8,7 @@ public class Barrel_Master : MonoBehaviour
     public GameObject MiniBarrelPrefab;
 
     BoxCollider2D _collider;
-    float _x_colliderSize;
+    Vector2 _colliderSize;
     [SerializeField] int _SubBarrels;
 
     [HideInInspector] public GameObject P_Ref;
@@ -19,20 +20,27 @@ public class Barrel_Master : MonoBehaviour
     void Awake()
     {
         _collider = this.GetComponent<BoxCollider2D>();
-        _x_colliderSize = _collider.size.x;
+        _colliderSize = _collider.size;
+        
         if (_SubBarrels > 0) //check div/0 case
         {
-            float leftBound = -_x_colliderSize / 2;
-            float subIntervalSize = _x_colliderSize / _SubBarrels;
+            float leftBound = -_colliderSize.x / 2;
+            float subIntervalSize = _colliderSize.x / _SubBarrels;
             float halfSubValue = subIntervalSize / 2;
             float firstSpawnPoint = leftBound + halfSubValue;
             for (int i = 0; i < _SubBarrels; i++)
             {
-                GameObject subBarrel = Instantiate(MiniBarrelPrefab, new Vector3(firstSpawnPoint + i * subIntervalSize, 0, 0), Quaternion.identity, this.transform);
-                subBarrel.transform.localScale = new Vector3(subIntervalSize, 1, 1);
+                GameObject subBarrel = Instantiate(MiniBarrelPrefab, this.transform, false); //instantiate in local space
+                subBarrel.transform.localPosition = new Vector3(firstSpawnPoint + i * subIntervalSize, 0, 0); // set local position
+                subBarrel.transform.localScale = new Vector3(subIntervalSize, 1, 1); //set local scale
+                subBarrel.GetComponent<BoxCollider2D>().size = new Vector2(subBarrel.GetComponent<BoxCollider2D>().size.x, _colliderSize.y); //adjust y size to the same as parent
             }
         }
-        else Debug.Log("Error: Divide by interval > 0");
+        else if (_SubBarrels == 0)
+        {
+            GameObject subBarrel = Instantiate(MiniBarrelPrefab, this.transform, false); //instantiate in local space
+        }
+        else Debug.Log("Error: Divide by interval is negative");
 
         P_Ref = GameObject.FindGameObjectWithTag("Player");
         P_rb = P_Ref.GetComponent<Rigidbody2D>();

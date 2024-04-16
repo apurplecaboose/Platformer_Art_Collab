@@ -15,12 +15,13 @@ public class SubBarrel : MonoBehaviour
         if (collision.CompareTag("Bullet"))
         {
             _blastDir = _master.P_Ref.transform.position - this.transform.position;
-            if (_master.PlayerInRange)//if player is in the knockback range,players then can be knocked back when bullet collide with barrels. 
+            if (_master.PlayerInRange)//if player is in range players barrel can activate
             {
                 KaBOOM();
+                //Destroy(transform.parent.gameObject, 0.025f); // destroy BarrelMaster after set time
+
             }
             Destroy(collision.gameObject);
-            Destroy(transform.parent.gameObject); // destroy BarrelMaster
         }
     }
     void KaBOOM()
