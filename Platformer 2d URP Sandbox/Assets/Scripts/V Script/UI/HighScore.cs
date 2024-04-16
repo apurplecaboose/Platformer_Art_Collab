@@ -6,8 +6,8 @@ using TMPro;
 
 public class HighScore : MonoBehaviour
 {
-    public float highscore,currentScore;
-    public TextMeshProUGUI Timer,HighscoreTMP;
+    public float highscore, currentScore;
+    public TextMeshProUGUI Timer, HighscoreTMP;
     public GameObject GM;
 
     private void Start()
@@ -16,20 +16,21 @@ public class HighScore : MonoBehaviour
     }
     private void Update()
     {
+        HighscoreTMP.text = highscore + "";
         currentScore = Timer.GetComponent<Timer>().timer;
         if (Input.GetKey(KeyCode.Alpha0))//test condition
         {
             UpdateHighScore();
 
         }
-       
+
     }
     public void UpdateHighScore()
     {
         if (highscore > currentScore)
         {
             highscore = currentScore;
-            PlayerPrefs.SetFloat("HighScore",0);
+            PlayerPrefs.SetFloat("HighScore", 0);
             Debug.Log("HighScore:" + highscore);
         }
 
