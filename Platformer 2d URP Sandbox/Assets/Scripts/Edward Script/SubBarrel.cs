@@ -18,8 +18,10 @@ public class SubBarrel : MonoBehaviour
             if (_master.PlayerInRange)//if player is in range players barrel can activate
             {
                 KaBOOM();
-                //Destroy(transform.parent.gameObject, 0.025f); // destroy BarrelMaster after set time
-
+                if(!_master.InvincibleBarrel)
+                {
+                    Destroy(transform.parent.gameObject, 0.025f); // destroy BarrelMaster after set time
+                }
             }
             Destroy(collision.gameObject);
         }

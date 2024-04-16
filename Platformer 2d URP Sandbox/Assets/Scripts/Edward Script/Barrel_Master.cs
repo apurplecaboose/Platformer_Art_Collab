@@ -10,12 +10,12 @@ public class Barrel_Master : MonoBehaviour
     BoxCollider2D _collider;
     Vector2 _colliderSize;
     [SerializeField] int _SubBarrels;
+    public float BarrelPower;
+    public bool InvincibleBarrel;
 
     [HideInInspector] public GameObject P_Ref;
     [HideInInspector] public Rigidbody2D P_rb;
-    public float BarrelPower;
-
-    public bool PlayerInRange;
+    [HideInInspector] public bool PlayerInRange;
 
     void Awake()
     {
@@ -36,11 +36,7 @@ public class Barrel_Master : MonoBehaviour
                 subBarrel.GetComponent<BoxCollider2D>().size = new Vector2(subBarrel.GetComponent<BoxCollider2D>().size.x, _colliderSize.y); //adjust y size to the same as parent
             }
         }
-        else if (_SubBarrels == 0)
-        {
-            GameObject subBarrel = Instantiate(MiniBarrelPrefab, this.transform, false); //instantiate in local space
-        }
-        else Debug.Log("Error: Divide by interval is negative");
+        else Debug.Log("Error: Divide by interval is <= 0");
 
         P_Ref = GameObject.FindGameObjectWithTag("Player");
         P_rb = P_Ref.GetComponent<Rigidbody2D>();
