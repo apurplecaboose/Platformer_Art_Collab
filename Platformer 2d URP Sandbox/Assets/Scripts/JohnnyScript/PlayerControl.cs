@@ -8,12 +8,19 @@ using UnityEngine.UIElements;
 public class PlayerControl : MonoBehaviour
 {
     public SlowMo refToSlowMo;
-    public GameObject Lantern;
-    private float _xInput;
+    float _xInput;
     private Rigidbody2D P_rb;
-    [SerializeField] float _moveForce, _upThrust;
+    [SerializeField] float _moveForce, _jumpForce, _tapStrafeMultiplier;
     public bool IsDash, CanJump, Grounded, CanBeKnockBack;
     public LayerMask CheckGroundLayer;
+    public PlayerState RefPlayerState;
+    public SpriteRenderer LanternStick, LanternStick1, Lantern,Lantern1;
+    public enum PlayerState
+    {
+        InGame,
+        Win,
+        Lose
+    }
 
     private void Awake()
     {
@@ -22,33 +29,56 @@ public class PlayerControl : MonoBehaviour
 
     private void Update()
     {
-       //Lantern.transform.position = new Vector3(transform.position.x + 0.2f, transform.position.y+0.1f, 0);
-        PlayerInput();
-        Jump(_upThrust);
-        EnterSlowMotion();
 
+        if (RefPlayerState == PlayerState.InGame)
+        {
+            PlayerInput();
+            Jump(_jumpForce);
+            EnterSlowMotion();
+        }
+        if(RefPlayerState == PlayerState.Win)
+        {
+            //P_rb.bodyType = RigidbodyType2D.Static;
+            P_rb.velocity = new Vector2(0, P_rb.velocity.y); //remove player horizontal velocity but let player fall.
+        }
     }
     private void FixedUpdate()
     {
-        Vector2 xInputVec = new Vector2(_xInput, 0);
-        P_rb.AddForce(xInputVec * _moveForce);
+        //if (RefPlayerState == PlayerState.InGame)
+        //{
+        //}
+        if (RefPlayerState == PlayerState.InGame) // do not allow extra forces to be added when player has won.
+        {
+            Vector2 xInputVec = new Vector2(_xInput, 0);
+            P_rb.AddForce(xInputVec * _moveForce);
+        }
     }
 
-
+    float _jumptimer, JumpCD = 0.1f;
     void Jump(float upThrust)
     {
-        if (Input.GetKeyDown(KeyCode.Space) && Grounded)
+        if(_jumptimer <= 0)
         {
-            P_rb.AddForce(Vector2.up * upThrust, ForceMode2D.Impulse);
+            if (Input.GetKeyDown(KeyCode.Space) && Grounded)
+            {
+                P_rb.AddForce(Vector2.up * upThrust, ForceMode2D.Impulse);
+                Grounded = false;
+                _jumptimer = JumpCD;
+            }
         }
+        else _jumptimer -= Time.deltaTime;
     }
 
     void EnterSlowMotion()
     {
-        if (Input.GetKeyDown(KeyCode.Mouse1))
+        //changed slowmo to hold not toggle
+        if (Input.GetKey(KeyCode.Mouse1))
         {
-            refToSlowMo.SlowMoToggle = !refToSlowMo.SlowMoToggle; // E: changed back to my slow mo
-            //Time.timeScale = 0.3f;
+            refToSlowMo.SlowMoToggle = true;
+        }
+        if (Input.GetKeyUp(KeyCode.Mouse1))
+        {
+            refToSlowMo.SlowMoToggle = false;
         }
     }
 
@@ -61,18 +91,20 @@ public class PlayerControl : MonoBehaviour
             {
                 if (Mathf.Sign(P_rb.velocity.x) != _xInput && _xInput != 0)
                 {
-                    float tapstrafeM = 0.5f; // expressed as percent momentum transfer 1 being full momentum transfer
-                    P_rb.velocity = new Vector2(-P_rb.velocity.x * tapstrafeM, P_rb.velocity.y);
+                   // expressed as percent momentum transfer 1 being full momentum transfer
+                    P_rb.velocity = new Vector2(-P_rb.velocity.x * _tapStrafeMultiplier, P_rb.velocity.y);
                 }
                 else
                 {
                     if (Input.GetKey(KeyCode.A))
                     {
                         _xInput = -1;
+                        transform.rotation = Quaternion.Euler(0, 180, 0);//J:rotate player when change direction
                     }
                     else if (Input.GetKey(KeyCode.D))
                     {
                         _xInput = 1;
+                        transform.rotation = Quaternion.Euler(0, 0, 0);//J:rotate player when change direction
                     }
                     else _xInput = 0; //catch case
                 }
@@ -82,16 +114,18 @@ public class PlayerControl : MonoBehaviour
                 if (Input.GetKey(KeyCode.A))
                 {
                     _xInput = -1;
+                    transform.rotation = Quaternion.Euler(0, 180, 0);
                 }
                 else if (Input.GetKey(KeyCode.D))
                 {
                     _xInput = 1;
+                    transform.rotation = Quaternion.Euler(0, 0, 0);//rotate player when change direction
+
                 }
                 else _xInput = 0; //catch case
             }
         }
     }
-
 
     private void OnTriggerEnter2D(Collider2D collision)
     {

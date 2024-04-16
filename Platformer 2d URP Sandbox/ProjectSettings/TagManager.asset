@@ -7,7 +7,6 @@ TagManager:
   - BlastBarrel
   - Bullet
   - CampFire
-  - Floor
   - Ground
   - BlastRange
   layers:
@@ -19,7 +18,7 @@ TagManager:
   - UI
   - Ground
   - Bullet
-  - 
+  - BarrelCollider
   - 
   - 
   - 

@@ -1,7 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SocialPlatforms;
+using UnityEngine.Rendering; //<--- added this
+using TMPro;
+using Cinemachine;
 
 public class SlowMo : MonoBehaviour
 {
@@ -12,16 +14,21 @@ public class SlowMo : MonoBehaviour
     public AnimationCurve ReturntoNormalSpeedCurve; // for inspector use
     
     public float SlowMoResourceTime;
+    float _maxSlowMoTime;
     public bool SlowMoToggle;
+    public TMP_Text Slowmo_Text;
+    public GameObject CM_VirtualCamRef;
+    Volume _JojoTimeVolume, _JojoTimeVolume2;
+
+    public GameObject SlowMoCanvas;
+    private void Awake()
+    {
+        _JojoTimeVolume = CM_VirtualCamRef.GetComponents<Volume>()[0];
+        _JojoTimeVolume2 = CM_VirtualCamRef.GetComponents<Volume>()[1];
+        _maxSlowMoTime = SlowMoResourceTime; // set time in script as it is editable in inspector
+    }
     void Update()
     {
-        ///other script
-        if(Input.GetKeyDown(KeyCode.N))
-        {
-            SlowMoToggle = !SlowMoToggle;
-        }
-        /// ^^^
-
         if (SlowMoResourceTime <= 0)
         {
             SlowMoToggle = false;
@@ -33,6 +40,8 @@ public class SlowMo : MonoBehaviour
         }
 
         SlowMoReady(SlowMoToggle);
+
+        Slowmo_Text.text = SlowMoResourceTime.ToString("0.00");
     }
     void SlowMoReady(bool activated)
     {
@@ -44,6 +53,9 @@ public class SlowMo : MonoBehaviour
                 activated = false;
                 NeoTime(false);
                 SlowMoToggle = false;
+                SlowMoCanvas.SetActive(false); //turn off ui
+                _JojoTimeVolume.weight = 0;
+                _JojoTimeVolume2.weight = 0;
             }
             else
             {
@@ -51,10 +63,20 @@ public class SlowMo : MonoBehaviour
                 SlowMoResourceTime -= Time.unscaledDeltaTime;
                 _eric_loves_clash_from_r6_Timer = 0;
                 NeoTime(true);
+                SlowMoCanvas.SetActive(true); //turn off ui
+                if(_JojoTimeVolume.weight <= 1)
+                {
+                    _JojoTimeVolume.weight += 10 * Time.unscaledDeltaTime;
+                }
+                //JojoTimeVolume.weight = SlowMoResourceTime / _maxSlowMoTime;
+                _JojoTimeVolume2.weight = 1 - SlowMoResourceTime / _maxSlowMoTime;
             }
         }
         if(!activated)
         {
+            SlowMoCanvas.SetActive(false); //turn off ui
+            _JojoTimeVolume.weight = 0;
+            _JojoTimeVolume2.weight = 0;
             NeoTime(false);
             _eric_loves_clash_from_r6_Timer += Time.unscaledDeltaTime;
 
@@ -69,7 +91,6 @@ public class SlowMo : MonoBehaviour
             else
             {
                 SlowMoResourceTime = maxSlowMoResourceTime; // catch case
-                Debug.Log("SlowMoResourceTime Overflow Catch Case!!!");
             }
         }
     }

@@ -654,7 +654,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 66862412}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.26100007, y: -0.12800002, z: 0}
+  m_LocalPosition: {x: 0.26100007, y: -0.119, z: 0}
   m_LocalScale: {x: 0.10728, y: 0.10728, z: 0.10728}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -6446,8 +6446,8 @@ Transform:
   m_LocalScale: {x: 4, y: 2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1175420379}
   - {fileID: 496870452}
+  - {fileID: 1175420379}
   - {fileID: 66862413}
   m_Father: {fileID: 1852852282}
   m_RootOrder: -1
@@ -7891,6 +7891,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   P_Ref: {fileID: 1852852285}
+  CoyoteTime: 0
+  _timer: 0
 --- !u!1 &1374525652
 GameObject:
   m_ObjectHideFlags: 0
@@ -10240,9 +10242,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   refToSlowMo: {fileID: 1852852286}
-  Lantern: {fileID: 1204974041}
   _moveForce: 25
-  _upThrust: 20
+  _jumpForce: 0
+  _tapStrafeMultiplier: 0
   IsDash: 0
   CanJump: 0
   Grounded: 0
@@ -10257,7 +10259,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1852852280}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7f67f6a3ff711f44080b65bd743f602d, type: 3}
   m_Name: 
@@ -10288,6 +10290,9 @@ MonoBehaviour:
     m_RotationOrder: 4
   SlowMoResourceTime: 0
   SlowMoToggle: 0
+  Slowmo_Text: {fileID: 0}
+  JojoTimeVolume: {fileID: 0}
+  SlowMoCanvas: {fileID: 0}
 --- !u!70 &1852852287
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

@@ -9,26 +9,28 @@ public class P_Projectile : MonoBehaviour
     //changed var names to fit naming convention
     [SerializeField] float _firePower, _bulletRange, _bulletTimer;
     float _mollyTime;
-    GameObject _p_Ref;
     Rigidbody2D _rb;
 
     public Vector2 BlastDir;
     public Vector3 ShootDir;
 
     bool _isGrounded = false;
+    [HideInInspector]
     public Vector3 PlayerIntialPosition;
-    //bulletLight
+
+    ParticleSystem _particleSystem;
 
     private void Awake()
     {
         //E: initalized all references on awake
-        _p_Ref = GameObject.FindGameObjectWithTag("Player"); //E: changed to player tag therefore name of gameobject doesnt matter
         _rb = this.GetComponent<Rigidbody2D>();
 
         //BulletShooting(_firePower);
 
-        Light = GetComponent<Light2D>();
+        _light = GetComponent<Light2D>();
         _mollyTime = _timeA + _timeB + _timeC - _offSetTime;
+
+        _particleSystem = GetComponent<ParticleSystem>();
     }
     private void Start()
     {
@@ -47,28 +49,21 @@ public class P_Projectile : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        DetectGround(collision);
-        if (!_isGrounded)
-        {
-            DestroyByOtherBullets(collision);
-        }
-    }
-
-    void DetectGround(Collision2D collision)
-    {
         if (collision.collider.CompareTag("Ground"))
         {
+            var particleGravity = _particleSystem.main;
+            particleGravity.gravityModifier = -1;//change particleGravity after bullet got on the ground
             _isGrounded = true;
             _rb.bodyType = RigidbodyType2D.Static;
             _bulletTimer = _mollyTime;//bullets will exist extra long when they collide with grounds or walls
         }
-    }
 
-    void DestroyByOtherBullets(Collision2D collision)
-    {
-        if (collision.collider.CompareTag("Bullet"))
+        if (!_isGrounded) // if currently 
         {
-            Destroy(gameObject);
+            if (collision.collider.CompareTag("Bullet"))
+            {
+                Destroy(gameObject);
+            }
         }
     }
 
@@ -88,11 +83,10 @@ public class P_Projectile : MonoBehaviour
 
     //Enlarge Light Function Varibles
     public AnimationCurve CurveStart, CurveEnd;
-    Light2D Light;
+    Light2D _light;
 
     [SerializeField] float _intensityStart, _intensityPeak, _intensityEnd;
     [SerializeField] float _outRadiusStart, _outRadiusPeak;
-
     float _lerpDeltaTime = 0;
     [SerializeField] float _timeA, _timeB, _timeC, _offSetTime;
     void EnlargeLight()
@@ -101,8 +95,8 @@ public class P_Projectile : MonoBehaviour
         _lerpDeltaTime += Time.deltaTime;
         if (_lerpDeltaTime <= _timeA + offset)
         {
-            Light.intensity = BasicFloatLerp(_intensityStart, _intensityPeak, _timeA, _lerpDeltaTime, CurveStart);
-            Light.pointLightOuterRadius = BasicFloatLerp(_outRadiusStart, _outRadiusPeak, _timeA, _lerpDeltaTime, CurveStart);
+            _light.intensity = BasicFloatLerp(_intensityStart, _intensityPeak, _timeA, _lerpDeltaTime, CurveStart);
+            _light.pointLightOuterRadius = BasicFloatLerp(_outRadiusStart, _outRadiusPeak, _timeA, _lerpDeltaTime, CurveStart);
         }
         else if (_lerpDeltaTime < _timeA + _timeB)
         {
@@ -110,8 +104,8 @@ public class P_Projectile : MonoBehaviour
         }
         else if (_lerpDeltaTime <= _timeA + _timeB + _timeC)
         {
-            Light.intensity = BasicFloatLerp(_intensityPeak, _intensityEnd, _timeC, _lerpDeltaTime - (_timeA + _timeB), CurveEnd);
-            Light.pointLightOuterRadius = BasicFloatLerp(_outRadiusPeak, _outRadiusStart, _timeC, _lerpDeltaTime - (_timeA + _timeB), CurveEnd);
+            _light.intensity = BasicFloatLerp(_intensityPeak, _intensityEnd, _timeC, _lerpDeltaTime - (_timeA + _timeB), CurveEnd);
+            _light.pointLightOuterRadius = BasicFloatLerp(_outRadiusPeak, _outRadiusStart, _timeC, _lerpDeltaTime - (_timeA + _timeB), CurveEnd);
         }
 
         float BasicFloatLerp(float a, float b, float lerpTime, float dTime, AnimationCurve lerpCurve)

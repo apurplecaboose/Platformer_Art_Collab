@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SandBox/UISandBoxFolder/StartScreen.unity
     guid: f9cf47e6674e10b4da620882d1a544e6
+  - enabled: 1
+    path: Assets/Scenes/SandBox/Johnny2Scene.unity
+    guid: c7e15068cb28a494aa8bdcafa2048adc
   m_configObjects: {}
