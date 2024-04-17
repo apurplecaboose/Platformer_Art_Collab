@@ -63,6 +63,7 @@ public class P_ShootLogic : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.R))
         {
             BulletNum = 10;
+            _p_LanternLight.TriggerLightChange(BulletNum);
         }
 
     }
