@@ -13,6 +13,9 @@ public class Campfires : MonoBehaviour
     [SerializeField] bool _isDash, _isLightingOn;
     [SerializeField] float _dashMultiplier;
     [SerializeField] Vector2 _MinandMaxCamfireForce;
+
+    [SerializeField] Particle_Master _particlePrefab;
+    [SerializeField] float _particlePrefabScale;
     // Update is called once per frame
     private void Awake()
     {
@@ -68,6 +71,8 @@ public class Campfires : MonoBehaviour
         {
             if (collision.CompareTag("Bullet"))
             {
+                New_OnLightingBurstParticles();
+
                 _isLightingOn = true;
                 _isDash = true;
                 Destroy(collision.gameObject);
@@ -79,6 +84,8 @@ public class Campfires : MonoBehaviour
             {
                 if (_light.pointLightOuterRadius < _turnOffParticleEmissionDueToOuterRadius)//turn off particle emission when light is too small
                 {
+                    New_OnLightingBurstParticles();
+
                     _lerpDeltaTime = 0;
                     _isLightingOn = true;
                     _isDash = true;
@@ -86,13 +93,19 @@ public class Campfires : MonoBehaviour
                 }
             }
         }
+        void New_OnLightingBurstParticles()
+        {
+            Particle_Master Kachow = Instantiate(_particlePrefab, this.transform.position, Quaternion.identity);
+            Kachow.transform.localScale = new Vector3(_particlePrefabScale, _particlePrefabScale, 0);
+            Kachow.Lifetime = 0.75f;
+        }
     }
 
 
     //CampFire Light
     public AnimationCurve CurveStart, CurveEnd;
-    [SerializeField] Light2D _light, _spriteLight;
-
+    [SerializeField] Light2D _spriteLight;
+    Light2D _light;
     [SerializeField] float _intensityStart, _intensityPeak, _intensityEnd;
     [SerializeField] float _outRadiusStart, _outRadiusPeak;
     [SerializeField] float _s_intensityStart, _s_intensityPeak;
@@ -113,7 +126,7 @@ public class Campfires : MonoBehaviour
             _light.intensity = BasicFloatLerp(_intensityStart, _intensityPeak, _timeA, _lerpDeltaTime, CurveStart);
             _light.pointLightOuterRadius = BasicFloatLerp(_outRadiusStart, _outRadiusPeak, _timeA, _lerpDeltaTime, CurveStart);
             _spriteLight.intensity = BasicFloatLerp(_s_intensityStart, _s_intensityPeak, _timeA, _lerpDeltaTime, CurveStart);
-            emission.enabled = true;
+            emission.enabled = true; // turn on particle system
         }
         else if (_lerpDeltaTime < _timeA + _timeB)
         {
