@@ -20,6 +20,10 @@ public class SubBarrel : MonoBehaviour
                 KaBOOM();
                 if(!_master.InvincibleBarrel)
                 {
+                    Particle_Master Kachow = Instantiate(_master.ParticlePrefab, this.transform.position, Quaternion.identity);
+                    Kachow.transform.localScale = new Vector3(_master.ParticleScale, _master.ParticleScale, 0);
+                    Kachow.Lifetime = 0.5f;
+
                     Destroy(transform.parent.gameObject, 0.025f); // destroy BarrelMaster after set time
                 }
             }
