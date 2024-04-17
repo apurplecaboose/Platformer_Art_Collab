@@ -153,6 +153,8 @@ MonoBehaviour:
   _isLightingOn: 0
   _dashMultiplier: 0
   _MinandMaxCamfireForce: {x: 6, y: 8}
+  _particlePrefab: {fileID: 8883285903315602185, guid: 4a5b04d45f2b7f441a520bf8201ec6a9, type: 3}
+  _particlePrefabScale: 0.5
   CurveStart:
     serializedVersion: 2
     m_Curve:
@@ -201,7 +203,6 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  _light: {fileID: 0}
   _spriteLight: {fileID: 3757721621901950285}
   _intensityStart: 0
   _intensityPeak: 2
