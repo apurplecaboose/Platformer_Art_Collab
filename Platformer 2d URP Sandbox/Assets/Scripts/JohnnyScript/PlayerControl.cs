@@ -15,6 +15,7 @@ public class PlayerControl : MonoBehaviour
     public LayerMask CheckGroundLayer;
     public PlayerState RefPlayerState;
     public SpriteRenderer LanternStick, LanternStick1, Lantern,Lantern1;
+    public bool IsRight;
     public enum PlayerState
     {
         InGame,
@@ -99,12 +100,10 @@ public class PlayerControl : MonoBehaviour
                     if (Input.GetKey(KeyCode.A))
                     {
                         _xInput = -1;
-                        transform.rotation = Quaternion.Euler(0, 180, 0);//J:rotate player when change direction
                     }
                     else if (Input.GetKey(KeyCode.D))
                     {
                         _xInput = 1;
-                        transform.rotation = Quaternion.Euler(0, 0, 0);//J:rotate player when change direction
                     }
                     else _xInput = 0; //catch case
                 }
@@ -114,18 +113,35 @@ public class PlayerControl : MonoBehaviour
                 if (Input.GetKey(KeyCode.A))
                 {
                     _xInput = -1;
-                    transform.rotation = Quaternion.Euler(0, 180, 0);
+                    GetComponent<SpriteRenderer>().flipX = true;//J:Switch player Sprite
+
+                    IsRight= false;//switch shooting point
+
+                    Lantern1.GetComponent<SpriteRenderer>().color = Color.white;
+                    LanternStick1.GetComponent<SpriteRenderer>().color = Color.white;
+                    Lantern.GetComponent<SpriteRenderer>().color = Color.clear;
+                    LanternStick.GetComponent<SpriteRenderer>().color = Color.clear;
+                    //Switch lantern 
                 }
                 else if (Input.GetKey(KeyCode.D))
                 {
                     _xInput = 1;
-                    transform.rotation = Quaternion.Euler(0, 0, 0);//rotate player when change direction
+                    GetComponent<SpriteRenderer>().flipX = false;//J:Switch player Sprite
+
+                    IsRight = true;//switch shooting point
+
+                    Lantern1.GetComponent<SpriteRenderer>().color = Color.clear;
+                    LanternStick1.GetComponent<SpriteRenderer>().color = Color.clear;
+                    Lantern.GetComponent<SpriteRenderer>().color = Color.white;
+                    LanternStick.GetComponent<SpriteRenderer>().color = Color.white;
+                    //J:Switch lantern 
 
                 }
                 else _xInput = 0; //catch case
             }
         }
     }
+
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
