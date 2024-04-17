@@ -10,7 +10,7 @@ public class FlagLogic : MonoBehaviour
     float _anime_CountDown;
     PlayerControl _p_Script;
 
-    [SerializeField] string _TargetScene; //load scene file as object from inspector
+    [SerializeField] SceneEnum.SceneList _TargetScene;
     bool _isWin, _trigger;
     TextMeshPro _endInfo;
     public TransitionProfile TransitionProfile;
@@ -25,9 +25,7 @@ public class FlagLogic : MonoBehaviour
     void Update()
     {
         AnimationTimer();
-
     }
-
     void AnimationTimer()
     {
         if (_isWin)
@@ -40,10 +38,9 @@ public class FlagLogic : MonoBehaviour
                 //Switch Scene
                 if (!_trigger)
                 {
-                    TransitionAnimator.Start(TransitionProfile, false, 0, _TargetScene);
-                    _trigger = false;
+                    TransitionAnimator.Start(TransitionProfile, false, 0, _TargetScene.ToString());
+                    _trigger = true;
                 }
-
             }
         }
     }

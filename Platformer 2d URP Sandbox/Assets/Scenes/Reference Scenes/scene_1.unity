@@ -11312,7 +11312,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 313abb2965048874fbc84ecf4b4558c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _TargetScene: StartScreen
+  _TargetScene: 3
   TransitionProfile: {fileID: 11400000, guid: 5acacaf6c9661a64280922b6af864e94, type: 2}
 --- !u!50 &4761902580775961238
 Rigidbody2D:

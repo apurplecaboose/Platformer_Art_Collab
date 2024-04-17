@@ -5,24 +5,10 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
-    public GameObject mainMenu,LevelSelect,OptionsMenu;
-    // Start is called before the first frame update
   public void PlayGame()
     {
-        SceneManager.LoadScene("Level 1");
+        SceneManager.LoadScene(SceneEnum.SceneList.scene_1.ToString());
     }
-    //public void LevelSelection()
-    //{
-    //    mainMenu.SetActive(false);
-    //    LevelSelect.SetActive(true);
-    //    SceneManager.LoadScene("Level Selection Scene");
-    //}
-    //public void Options()
-    //{
-    //    mainMenu.SetActive(false);
-    //    OptionsMenu.SetActive(true);
-    //    SceneManager.LoadScene("Options Scene");
-    //}
     public void QuitGame()
     {
         Application.Quit();

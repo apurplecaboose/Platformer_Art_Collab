@@ -8,7 +8,7 @@ using UnityEngine.Video;
 public class CutsceneScript : MonoBehaviour
 {
     public VideoPlayer CutscenePlayer;
-    public Object _sceneFile;
+    [SerializeField] SceneEnum.SceneList _TargetScene;
     public TransitionProfile TransitionProfile;
     float _cutsceneLength;
     float _cutsceneTimer;
@@ -26,7 +26,7 @@ public class CutsceneScript : MonoBehaviour
         _cutsceneTimer += Time.deltaTime;
         if(_cutsceneTimer >= _cutsceneLength - _videoOffset)
         {
-            TransitionAnimator.Start(TransitionProfile, false, 0, _sceneFile.name, LoadSceneMode.Single);
+            TransitionAnimator.Start(TransitionProfile, false, 0, _TargetScene.ToString(), LoadSceneMode.Single);
         }
     }
 }

@@ -173,7 +173,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 313abb2965048874fbc84ecf4b4558c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _TargetScene: 
+  _TargetScene: 0
   TransitionProfile: {fileID: 0}
 --- !u!61 &3115357224022426611
 BoxCollider2D:
