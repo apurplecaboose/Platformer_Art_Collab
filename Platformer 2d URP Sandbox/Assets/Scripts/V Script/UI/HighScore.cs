@@ -12,7 +12,7 @@ public class HighScore : MonoBehaviour
 
     private void Start()
     {
-        highscore = PlayerPrefs.GetInt("HighScore", 0);
+        highscore = PlayerPrefs.GetFloat("HighScore", 0);
     }
     private void Update()
     {
