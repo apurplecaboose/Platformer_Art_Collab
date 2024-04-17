@@ -1,21 +1,32 @@
 using System.Collections;
 using System.Collections.Generic;
+using TransitionsPlus;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.Video;
 
 public class CutsceneScript : MonoBehaviour
 {
-    public string TargetSceneName;
-    public VideoPlayer myVideoplayer;
+    public VideoPlayer CutscenePlayer;
+    public Object _sceneFile;
+    public TransitionProfile TransitionProfile;
+    float _cutsceneLength;
+    float _cutsceneTimer;
+    [SerializeField] float _videoOffset;
     private void Start()
     {
-        
-        myVideoplayer.loopPointReached += SwitchSceneOnFinish;
+        _cutsceneLength = (float)CutscenePlayer.length;
+        if (_cutsceneTimer < _videoOffset)
+        {
+            Debug.Log("Offset is larger than video length u idiot");
+        }
     }
-    void SwitchSceneOnFinish(VideoPlayer vp)
+    private void Update()
     {
-        SceneManager.LoadScene(TargetSceneName);
-        Debug.Log("requirements reached");
+        _cutsceneTimer += Time.deltaTime;
+        if(_cutsceneTimer >= _cutsceneLength - _videoOffset)
+        {
+            TransitionAnimator.Start(TransitionProfile, false, 0, _sceneFile.name, LoadSceneMode.Single);
+        }
     }
 }
