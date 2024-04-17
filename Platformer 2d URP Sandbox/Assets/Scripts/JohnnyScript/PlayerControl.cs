@@ -26,6 +26,7 @@ public class PlayerControl : MonoBehaviour
     private void Awake()
     {
         P_rb = this.GetComponent<Rigidbody2D>();
+        IsRight = true;
     }
 
     private void Update()
