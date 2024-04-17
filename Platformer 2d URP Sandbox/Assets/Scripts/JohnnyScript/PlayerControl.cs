@@ -13,6 +13,15 @@ public class PlayerControl : MonoBehaviour
     [SerializeField] float _moveForce, _jumpForce, _tapStrafeMultiplier;
     public bool IsDash, CanJump, Grounded, CanBeKnockBack;
     public LayerMask CheckGroundLayer;
+    public PlayerState RefPlayerState;
+    public SpriteRenderer LanternStick, LanternStick1, Lantern,Lantern1;
+    public bool IsRight;
+    public enum PlayerState
+    {
+        InGame,
+        Win,
+        Lose
+    }
 
     private void Awake()
     {
@@ -21,15 +30,29 @@ public class PlayerControl : MonoBehaviour
 
     private void Update()
     {
-        PlayerInput();
-        Jump(_jumpForce);
-        EnterSlowMotion();
 
+        if (RefPlayerState == PlayerState.InGame)
+        {
+            PlayerInput();
+            Jump(_jumpForce);
+            EnterSlowMotion();
+        }
+        if(RefPlayerState == PlayerState.Win)
+        {
+            //P_rb.bodyType = RigidbodyType2D.Static;
+            P_rb.velocity = new Vector2(0, P_rb.velocity.y); //remove player horizontal velocity but let player fall.
+        }
     }
     private void FixedUpdate()
     {
-        Vector2 xInputVec = new Vector2(_xInput, 0);
-        P_rb.AddForce(xInputVec * _moveForce);
+        //if (RefPlayerState == PlayerState.InGame)
+        //{
+        //}
+        if (RefPlayerState == PlayerState.InGame) // do not allow extra forces to be added when player has won.
+        {
+            Vector2 xInputVec = new Vector2(_xInput, 0);
+            P_rb.AddForce(xInputVec * _moveForce);
+        }
     }
 
     float _jumptimer, JumpCD = 0.1f;
@@ -90,15 +113,35 @@ public class PlayerControl : MonoBehaviour
                 if (Input.GetKey(KeyCode.A))
                 {
                     _xInput = -1;
+                    GetComponent<SpriteRenderer>().flipX = true;//J:Switch player Sprite
+
+                    IsRight= false;//switch shooting point
+
+                    Lantern1.GetComponent<SpriteRenderer>().color = Color.white;
+                    LanternStick1.GetComponent<SpriteRenderer>().color = Color.white;
+                    Lantern.GetComponent<SpriteRenderer>().color = Color.clear;
+                    LanternStick.GetComponent<SpriteRenderer>().color = Color.clear;
+                    //Switch lantern 
                 }
                 else if (Input.GetKey(KeyCode.D))
                 {
                     _xInput = 1;
+                    GetComponent<SpriteRenderer>().flipX = false;//J:Switch player Sprite
+
+                    IsRight = true;//switch shooting point
+
+                    Lantern1.GetComponent<SpriteRenderer>().color = Color.clear;
+                    LanternStick1.GetComponent<SpriteRenderer>().color = Color.clear;
+                    Lantern.GetComponent<SpriteRenderer>().color = Color.white;
+                    LanternStick.GetComponent<SpriteRenderer>().color = Color.white;
+                    //J:Switch lantern 
+
                 }
                 else _xInput = 0; //catch case
             }
         }
     }
+
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
