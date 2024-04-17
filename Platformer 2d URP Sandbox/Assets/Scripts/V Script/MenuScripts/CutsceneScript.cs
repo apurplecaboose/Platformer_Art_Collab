@@ -7,10 +7,9 @@ using UnityEngine.Video;
 
 public class CutsceneScript : MonoBehaviour
 {
-    public string TargetSceneName;
     public VideoPlayer CutscenePlayer;
-    public Object TargetScene;
-    public GameObject TransitionCompenent;
+    public Object _sceneFile;
+    public TransitionProfile TransitionProfile;
     float _cutsceneLength;
     float _cutsceneTimer;
     [SerializeField] float _videoOffset;
@@ -21,20 +20,13 @@ public class CutsceneScript : MonoBehaviour
         {
             Debug.Log("Offset is larger than video length u idiot");
         }
-        TransitionCompenent.GetComponent<TransitionAnimator>().sceneNameToLoad = TargetScene.name;
     }
     private void Update()
     {
         _cutsceneTimer += Time.deltaTime;
         if(_cutsceneTimer >= _cutsceneLength - _videoOffset)
         {
-            TransitionCompenent.SetActive(true);
+            TransitionAnimator.Start(TransitionProfile, false, 0, _sceneFile.name, LoadSceneMode.Single);
         }
     }
-    //void SwitchSceneOnFinish(VideoPlayer vp)
-    //{
-        
-    //    TransitionCompenent.SetActive(true);
-    //    Debug.Log("requirements reached");
-    //}
 }
