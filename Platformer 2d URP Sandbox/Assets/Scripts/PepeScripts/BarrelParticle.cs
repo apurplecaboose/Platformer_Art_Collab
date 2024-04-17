@@ -4,11 +4,18 @@ using UnityEngine;
 
 public class BarrelParticle : MonoBehaviour
 {
-    public delegate void OnBarrelDestroy();
-    public static event OnBarrelDestroy onBarrelDestroy;
 
-    public void BarrelParticleActivate()
+    private void OnEnable()
     {
+        BarrelParticleEvent.EnableBarrelParticle += OnEnableBarrelParticle;
+    }
+    private void OnDisable()
+    {
+        BarrelParticleEvent.EnableBarrelParticle -= OnEnableBarrelParticle;
+    }
 
+    private void OnEnableBarrelParticle()
+    {
+        gameObject.SetActive(true);
     }
 }
