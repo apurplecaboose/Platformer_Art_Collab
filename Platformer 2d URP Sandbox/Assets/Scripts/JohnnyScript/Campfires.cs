@@ -24,7 +24,8 @@ public class Campfires : MonoBehaviour
         _p_rb = _refToPlayer.GetComponent<Rigidbody2D>();
         _refToSlowMo = _refToPlayer.GetComponent<SlowMo>();
         _light = GetComponent<Light2D>();
-        _particleSystem = gameObject.transform.GetComponentInChildren<ParticleSystem>();
+        //_particleSystem = gameObject.transform.GetComponentInChildren<ParticleSystem>();
+        //_frieParticle = gameObject.transform.GetComponentInChildren<ParticleSystem>();
     }
     private void Update()
     {
@@ -82,7 +83,7 @@ public class Campfires : MonoBehaviour
         {
             if (collision.CompareTag("Bullet"))
             {
-                if (_light.pointLightOuterRadius < _turnOffParticleEmissionDueToOuterRadius)//turn off particle emission when light is too small
+                if (_light.pointLightOuterRadius < _turnOffParticleEmissionDueToOuterRadius1)//turn off inside fire particle emission when light is too small
                 {
                     New_OnLightingBurstParticles();
 
@@ -111,14 +112,16 @@ public class Campfires : MonoBehaviour
     [SerializeField] float _s_intensityStart, _s_intensityPeak;
     float _lerpDeltaTime = 0;
     [SerializeField] float _timeA, _timeB, _timeC, _offSetTime;
-    [SerializeField] float _turnOffParticleEmissionDueToOuterRadius;
-    ParticleSystem _particleSystem;
+    [SerializeField] float _turnOffParticleEmissionDueToOuterRadius1, _turnOffParticleEmissionDueToOuterRadius23;//1 for in insidefire, 23 for fire and smoke
+    [SerializeField] ParticleSystem _insideFireParticle, _frieParticle, _smokeParticle;
     /// <summary>
     /// light on the fire arter player shot campfire, Light lerps when hit just like fireball. Campfire is disabled for some amount of time (player can shoot through it) while the light lerps back to unlit on the campfire.
     /// </summary>
     void CampfireLight()
     {
-        var emission = _particleSystem.emission;
+        var emission1 = _insideFireParticle.emission;
+        var emission2 = _frieParticle.emission;
+        var emission3 = _smokeParticle.emission;
         float offset = 0.01f;
         _lerpDeltaTime += Time.deltaTime;
         if (_lerpDeltaTime <= _timeA + offset)
@@ -126,7 +129,9 @@ public class Campfires : MonoBehaviour
             _light.intensity = BasicFloatLerp(_intensityStart, _intensityPeak, _timeA, _lerpDeltaTime, CurveStart);
             _light.pointLightOuterRadius = BasicFloatLerp(_outRadiusStart, _outRadiusPeak, _timeA, _lerpDeltaTime, CurveStart);
             _spriteLight.intensity = BasicFloatLerp(_s_intensityStart, _s_intensityPeak, _timeA, _lerpDeltaTime, CurveStart);
-            emission.enabled = true; // turn on particle system
+            emission1.enabled = true; // turn on particle system
+            emission2.enabled = true;
+            emission3.enabled = true;
         }
         else if (_lerpDeltaTime < _timeA + _timeB)
         {
@@ -137,9 +142,14 @@ public class Campfires : MonoBehaviour
             _light.intensity = BasicFloatLerp(_intensityPeak, _intensityEnd, _timeC, _lerpDeltaTime - (_timeA + _timeB), CurveEnd);
             _light.pointLightOuterRadius = BasicFloatLerp(_outRadiusPeak, _outRadiusStart, _timeC, _lerpDeltaTime - (_timeA + _timeB), CurveEnd);
             _spriteLight.intensity = BasicFloatLerp(_s_intensityPeak, _s_intensityStart, _timeC, _lerpDeltaTime - (_timeA + _timeB), CurveStart);
-            if (_light.pointLightOuterRadius < _turnOffParticleEmissionDueToOuterRadius)//turn off particle emission when light is too small
+            if (_light.pointLightOuterRadius < _turnOffParticleEmissionDueToOuterRadius1)//turn off inside fire particle emission when light is too small
             {
-                emission.enabled = false;
+                emission1.enabled = false;
+            }
+            if (_light.pointLightOuterRadius < _turnOffParticleEmissionDueToOuterRadius23)//turn off fire and smoke particle emission when light is too small
+            {
+                emission2.enabled = false;
+                emission3.enabled = false;
             }
         }
         else if (_lerpDeltaTime > _timeA + _timeB + _timeC)//after all of light lerps, reset bool and timer
