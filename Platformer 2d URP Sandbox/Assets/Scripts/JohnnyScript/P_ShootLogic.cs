@@ -18,7 +18,7 @@ public class P_ShootLogic : MonoBehaviour
     void Update()
     {
         Shoot();
-        ReLoad();//Test Only
+        ReloadFireBullets();//Test Only
         _refToMousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition) + new Vector3(0, 0, 10);//mouse input
     }
 
@@ -41,7 +41,7 @@ public class P_ShootLogic : MonoBehaviour
             {
                 GameObject BulletInstance = Instantiate(BulletPrefab, RightShootPoint.position, transform.rotation);//J:Change the shooting position    
                 P_Projectile projectileScript = BulletInstance.GetComponent<P_Projectile>(); // cache script ref
-                Vector3 shootdir = new Vector3(_refToMousePosition.x - transform.position.x, _refToMousePosition.y - transform.position.y);
+                Vector3 shootdir = new Vector3(_refToMousePosition.x - RightShootPoint.position.x/*transform.position.x*/, _refToMousePosition.y - RightShootPoint.position.y/*transform.position.y*/);
                 projectileScript.ShootDir = shootdir;
                 projectileScript.PlayerIntialPosition = this.transform.position;
                 _p_LanternLight.TriggerLightChange(BulletNum);
@@ -50,21 +50,20 @@ public class P_ShootLogic : MonoBehaviour
             {
                 GameObject BulletInstance = Instantiate(BulletPrefab, LeftShootPoint.position, transform.rotation);//J:Change the shooting position    
                 P_Projectile projectileScript = BulletInstance.GetComponent<P_Projectile>(); // cache script ref
-                Vector3 shootdir = new Vector3(_refToMousePosition.x - transform.position.x, _refToMousePosition.y - transform.position.y);
+                Vector3 shootdir = new Vector3(_refToMousePosition.x - LeftShootPoint.position.x/*transform.position.x*/, _refToMousePosition.y - LeftShootPoint.position.y/*transform.position.y*/);
                 projectileScript.ShootDir = shootdir;
                 projectileScript.PlayerIntialPosition = this.transform.position;
                 _p_LanternLight.TriggerLightChange(BulletNum);
             }
-
-
         }
     }
 
-    void ReLoad()
+    void ReloadFireBullets()
     {
         if (Input.GetKeyDown(KeyCode.R))
         {
             BulletNum = 10;
+            _p_LanternLight.TriggerLightChange(BulletNum);
         }
 
     }

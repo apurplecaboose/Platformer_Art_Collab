@@ -1,11 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor.ShaderGraph.Internal;
 using UnityEngine;
 
 public class Barrel_Master : MonoBehaviour
 {
     public GameObject MiniBarrelPrefab;
+    public Particle_Master ParticlePrefab;
 
     BoxCollider2D _collider;
     Vector2 _colliderSize;
@@ -16,7 +16,9 @@ public class Barrel_Master : MonoBehaviour
     [HideInInspector] public GameObject P_Ref;
     [HideInInspector] public Rigidbody2D P_rb;
     [HideInInspector] public bool PlayerInRange;
+    public float ExtraBlastUP;
 
+    public float ParticleScale; 
     void Awake()
     {
         _collider = this.GetComponent<BoxCollider2D>();

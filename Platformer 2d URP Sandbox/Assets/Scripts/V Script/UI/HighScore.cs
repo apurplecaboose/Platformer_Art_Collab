@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Unity.UI;
 using TMPro;
 
 public class HighScore : MonoBehaviour
@@ -12,25 +11,37 @@ public class HighScore : MonoBehaviour
 
     private void Start()
     {
-        highscore = PlayerPrefs.GetInt("HighScore", 0);
+        
+        highscore = PlayerPrefs.GetFloat("HighScore", 101);
     }
     private void Update()
     {
-        HighscoreTMP.text = highscore + "";
+        //if (highscore > 100)
+        //{
+        //    HighscoreTMP.text = "Highscore:N/A";
+        //}
+        if (highscore < 100)
+        {
+            HighscoreTMP.text = highscore + "";
+
+        }
+        else
+        {
+            HighscoreTMP.text = "Highscore:N/A";
+        }
         currentScore = Timer.GetComponent<Timer>().timer;
         if (GM.GetComponent<GameMaster>().recording) //test condition
         {
             UpdateHighScore();
-            
         }
 
     }
     public void UpdateHighScore()
     {
-        if (highscore < currentScore)
+        if (highscore > currentScore)
         {
             highscore = currentScore;
-            PlayerPrefs.SetFloat("HighScore", 0);
+            PlayerPrefs.SetFloat("HighScore", highscore);
             Debug.Log("HighScore:" + highscore);
         }
 

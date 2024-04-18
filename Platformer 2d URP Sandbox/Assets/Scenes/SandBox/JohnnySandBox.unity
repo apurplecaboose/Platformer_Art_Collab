@@ -9082,14 +9082,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51da7a7622090a0499b1f4c6b9512407, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _firePower: 2
   ShootDirection: {fileID: 1841509417}
   ShootPoint: {fileID: 1596403995}
-  NewBullet: []
-  BulletIndex: 0
-  BulletLimit: 5
-  Bullet: {fileID: 6167623499802909372, guid: e2ba6657f8aa8dc45b813e7ddbed4b16, type: 3}
+  BulletNum: 0
+  BulletPrefab: {fileID: 6167623499802909372, guid: dfdaa3208486ca34c834199ff5d082d3, type: 3}
   HaveAmmo: 0
+  _p_LanternLight: {fileID: 0}
 --- !u!1 &1858508087
 GameObject:
   m_ObjectHideFlags: 0
