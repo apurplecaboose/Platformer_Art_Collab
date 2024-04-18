@@ -218,7 +218,7 @@ MonoBehaviour:
   _timeC: 1
   _offSetTime: 0
   _turnOffParticleEmissionDueToOuterRadius1: 0.5
-  _turnOffParticleEmissionDueToOuterRadius23: 5
+  _turnOffParticleEmissionDueToOuterRadius23: 6
   _insideFireParticle: {fileID: 7483947297587460034}
   _frieParticle: {fileID: 1392039250637155592}
   _smokeParticle: {fileID: 8070336781536805036}

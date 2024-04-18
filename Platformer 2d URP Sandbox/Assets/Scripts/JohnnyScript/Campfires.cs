@@ -119,9 +119,9 @@ public class Campfires : MonoBehaviour
     /// </summary>
     void CampfireLight()
     {
-        var emission1 = _insideFireParticle.emission;
-        var emission2 = _frieParticle.emission;
-        var emission3 = _smokeParticle.emission;
+        var insideFireParticleEmission = _insideFireParticle.emission;
+        var frieParticleEmission = _frieParticle.emission;
+        var smokeParticleEmission = _smokeParticle.emission;
         float offset = 0.01f;
         _lerpDeltaTime += Time.deltaTime;
         if (_lerpDeltaTime <= _timeA + offset)
@@ -129,9 +129,9 @@ public class Campfires : MonoBehaviour
             _light.intensity = BasicFloatLerp(_intensityStart, _intensityPeak, _timeA, _lerpDeltaTime, CurveStart);
             _light.pointLightOuterRadius = BasicFloatLerp(_outRadiusStart, _outRadiusPeak, _timeA, _lerpDeltaTime, CurveStart);
             _spriteLight.intensity = BasicFloatLerp(_s_intensityStart, _s_intensityPeak, _timeA, _lerpDeltaTime, CurveStart);
-            emission1.enabled = true; // turn on particle system
-            emission2.enabled = true;
-            emission3.enabled = true;
+            insideFireParticleEmission.enabled = true; // turn on particle system
+            frieParticleEmission.enabled = true;
+            smokeParticleEmission.enabled = true;
         }
         else if (_lerpDeltaTime < _timeA + _timeB)
         {
@@ -144,12 +144,12 @@ public class Campfires : MonoBehaviour
             _spriteLight.intensity = BasicFloatLerp(_s_intensityPeak, _s_intensityStart, _timeC, _lerpDeltaTime - (_timeA + _timeB), CurveStart);
             if (_light.pointLightOuterRadius < _turnOffParticleEmissionDueToOuterRadius1)//turn off inside fire particle emission when light is too small
             {
-                emission1.enabled = false;
+                insideFireParticleEmission.enabled = false;
             }
             if (_light.pointLightOuterRadius < _turnOffParticleEmissionDueToOuterRadius23)//turn off fire and smoke particle emission when light is too small
             {
-                emission2.enabled = false;
-                emission3.enabled = false;
+                frieParticleEmission.enabled = false;
+                smokeParticleEmission.enabled = false;
             }
         }
         else if (_lerpDeltaTime > _timeA + _timeB + _timeC)//after all of light lerps, reset bool and timer
