@@ -12,6 +12,7 @@ public class DestinationIndicator : MonoBehaviour
     float _orthoSize;
     float _screenHeight;
     float _screenWidth;
+    float upRange;
 
 
     Camera _cam;
@@ -41,9 +42,29 @@ public class DestinationIndicator : MonoBehaviour
     {
         _orthoSize = _cam.orthographicSize;
         float screenWidthOffset = (_orthoSize * (32 / 9))/2;
+        float m =flag.transform.position.y/flag.transform.position.x;
         Waypoints[0].transform.position = this.transform.position + new Vector3(screenWidthOffset, _orthoSize, 0);//some position;
-          Waypoints[1].transform.position = transform.position+ new Vector3(-screenWidthOffset,_orthoSize,0);
-            //Waypoints[2].transform.position = transform.position+new Vector3(screenWidthOffset,_;
-            //Waypoints[3].transform.position = //some position;
+        Waypoints[1].transform.position = transform.position+ new Vector3(-screenWidthOffset,_orthoSize,0);
+        //Waypoints[2].transform.position = transform.position+new Vector3(screenWidthOffset,_;
+        //Waypoints[3].transform.position = //some position;
+        //Waypoints[2].transform.position = transform.position+new Vector3(screenWidthOffset)
+        //check up and down
+        if (flag.transform.position.y > transform.position.y + _orthoSize)
+        {
+            Debug.Log("its above me");
+        }
+        else if (flag.transform.position.y < transform.position.y - _orthoSize)
+        {
+            Debug.Log("its below me");
+        }
+        if (flag.transform.position.x > transform.position.x + screenWidthOffset)
+        {
+            Debug.Log("its on my right");
+        }
+        else if (flag.transform.position.y < transform.position.y - screenWidthOffset)
+        {
+            Debug.Log("its on my left");
+        }
+
     }
 }
