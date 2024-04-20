@@ -5,7 +5,7 @@ using UnityEngine;
 public class DestinationIndicator : MonoBehaviour
 {//reference flag and camera, attatch
 
-    public GameObject flag;//or destination whatever it is
+    public GameObject flag,indicator;//or destination whatever it is
     Transform flagTransform;
     // Start is called before the first frame update
     public GameObject[] Waypoints;
@@ -56,6 +56,7 @@ public class DestinationIndicator : MonoBehaviour
         else if (flag.transform.position.y < transform.position.y - _orthoSize)
         {
             Debug.Log("its below me");
+            //indicator.transform.position = new Vector3(flag.transform.position.x, -_orthoSize+1);
         }
         if (flag.transform.position.x > transform.position.x + screenWidthOffset)
         {
