@@ -1,16 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Android;
 using UnityEngine.Rendering.Universal;
-using UnityEngine.Windows;
 
 public class Campfires : MonoBehaviour
 {
     GameObject _refToPlayer;
     SlowMo _refToSlowMo;
     Rigidbody2D _p_rb;
-    [SerializeField] bool _isDash, _isLightingOn;
+    bool _isDash, _isLightingOn;
     [SerializeField] float _dashMultiplier;
     [SerializeField] Vector2 _MinandMaxCamfireForce;
 
@@ -21,31 +19,22 @@ public class Campfires : MonoBehaviour
     // Update is called once per frame
     private void Awake()
     {
-        //_dashMultiplier = 3f; //J;control dashing power //trash
+        _SR_Color = _SR.color;
         _refToPlayer = GameObject.FindGameObjectWithTag("Player");
         _p_rb = _refToPlayer.GetComponent<Rigidbody2D>();
         _refToSlowMo = _refToPlayer.GetComponent<SlowMo>();
         _light = GetComponent<Light2D>();
         _SR = GetComponent<SpriteRenderer>();
-        _SR_Color = _SR.color;
-        //_particleSystem = gameObject.transform.GetComponentInChildren<ParticleSystem>();
-        //_frieParticle = gameObject.transform.GetComponentInChildren<ParticleSystem>();
+        _insideFireParticle = gameObject.transform.GetChild(0).GetComponent<ParticleSystem>();
+        _fireParticle = gameObject.transform.GetChild(1).GetComponent<ParticleSystem>();
+        _smokeParticle = gameObject.transform.GetChild(2).GetComponent<ParticleSystem>();
+        _spriteLightRed = gameObject.transform.GetChild(3).GetComponent<Light2D>();
+        _slowMoSpriteLight = gameObject.transform.GetChild(4).GetComponent<Light2D>();
     }
     private void Update()
     {
-        CampFiresTp();//J: gather the function for campfire dashing in saperate script
-                      //J;already save the campfire as profab,create variants prefab for different dashing power.
-
-        if(Time.timeScale <= 0.2f)
-        {
-            _SR_Color.a = 1f;
-            _SR.color = _SR_Color;
-        }
-        else
-        {
-            _SR_Color.a = 0f;
-            _SR.color = _SR_Color;
-        }
+        CampFiresTp();
+        SlowMoVisible();
     }
     void CampFiresTp()
     {
@@ -117,25 +106,23 @@ public class Campfires : MonoBehaviour
         }
     }
 
-
     //CampFire Light
     public AnimationCurve CurveStart, CurveEnd;
-    [SerializeField] Light2D _spriteLight;
-    Light2D _light;
+    Light2D _light, _spriteLightRed, _slowMoSpriteLight;
     [SerializeField] float _intensityStart, _intensityPeak, _intensityEnd;
     [SerializeField] float _outRadiusStart, _outRadiusPeak;
     [SerializeField] float _s_intensityStart, _s_intensityPeak;
     float _lerpDeltaTime = 0;
     [SerializeField] float _timeA, _timeB, _timeC, _offSetTime;
     [SerializeField] float _turnOffParticleEmissionDueToOuterRadius1, _turnOffParticleEmissionDueToOuterRadius23;//1 for in insidefire, 23 for fire and smoke
-    [SerializeField] ParticleSystem _insideFireParticle, _frieParticle, _smokeParticle;
+    ParticleSystem _insideFireParticle, _fireParticle, _smokeParticle;
     /// <summary>
     /// light on the fire arter player shot campfire, Light lerps when hit just like fireball. Campfire is disabled for some amount of time (player can shoot through it) while the light lerps back to unlit on the campfire.
     /// </summary>
     void CampfireLight()
     {
         var insideFireParticleEmission = _insideFireParticle.emission;
-        var frieParticleEmission = _frieParticle.emission;
+        var frieParticleEmission = _fireParticle.emission;
         var smokeParticleEmission = _smokeParticle.emission;
         float offset = 0.01f;
         _lerpDeltaTime += Time.deltaTime;
@@ -143,20 +130,17 @@ public class Campfires : MonoBehaviour
         {
             _light.intensity = BasicFloatLerp(_intensityStart, _intensityPeak, _timeA, _lerpDeltaTime, CurveStart);
             _light.pointLightOuterRadius = BasicFloatLerp(_outRadiusStart, _outRadiusPeak, _timeA, _lerpDeltaTime, CurveStart);
-            _spriteLight.intensity = BasicFloatLerp(_s_intensityStart, _s_intensityPeak, _timeA, _lerpDeltaTime, CurveStart);
+            _spriteLightRed.intensity = BasicFloatLerp(_s_intensityStart, _s_intensityPeak, _timeA, _lerpDeltaTime, CurveStart);
             insideFireParticleEmission.enabled = true; // turn on particle system
             frieParticleEmission.enabled = true;
             smokeParticleEmission.enabled = true;
         }
-        else if (_lerpDeltaTime < _timeA + _timeB)
-        {
-            //middle, flat peak, nothing happens
-        }
+        else if (_lerpDeltaTime < _timeA + _timeB) ;//middle, flat peak, nothing happens
         else if (_lerpDeltaTime <= _timeA + _timeB + _timeC)
         {
             _light.intensity = BasicFloatLerp(_intensityPeak, _intensityEnd, _timeC, _lerpDeltaTime - (_timeA + _timeB), CurveEnd);
             _light.pointLightOuterRadius = BasicFloatLerp(_outRadiusPeak, _outRadiusStart, _timeC, _lerpDeltaTime - (_timeA + _timeB), CurveEnd);
-            _spriteLight.intensity = BasicFloatLerp(_s_intensityPeak, _s_intensityStart, _timeC, _lerpDeltaTime - (_timeA + _timeB), CurveStart);
+            _spriteLightRed.intensity = BasicFloatLerp(_s_intensityPeak, _s_intensityStart, _timeC, _lerpDeltaTime - (_timeA + _timeB), CurveStart);
             if (_light.pointLightOuterRadius < _turnOffParticleEmissionDueToOuterRadius1)//turn off inside fire particle emission when light is too small
             {
                 insideFireParticleEmission.enabled = false;
@@ -180,5 +164,25 @@ public class Campfires : MonoBehaviour
             return output;
         }
     }
-
+    void SlowMoVisible()
+    {
+        if (Time.timeScale <= 0.2f)
+        {//SlowMo Active
+            _SR_Color.a = 1f;
+            _SR.color = _SR_Color;
+            _slowMoSpriteLight.enabled = true;
+        }
+        else if (Time.timeScale != 1)
+        {//Deactivating
+            float alphaLerp = Mathf.Lerp(1, 0, Time.timeScale);
+            _SR_Color.a = alphaLerp;
+            _SR.color = _SR_Color;
+        }
+        else
+        {//deactive
+            _SR_Color.a = 0f;
+            _SR.color = _SR_Color;
+            _slowMoSpriteLight.enabled = false;
+        }
+    }
 }

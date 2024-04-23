@@ -36,6 +36,7 @@ Transform:
   - {fileID: 1137243941619717476}
   - {fileID: 1436264389073639424}
   - {fileID: 5609555395381268015}
+  - {fileID: 1650030736843163872}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -151,8 +152,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1cf5b8ceea8b43f47b979479b87485cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _isDash: 0
-  _isLightingOn: 0
   _dashMultiplier: 0
   _MinandMaxCamfireForce: {x: 6, y: 8}
   _particlePrefab: {fileID: 8883285903315602185, guid: 4a5b04d45f2b7f441a520bf8201ec6a9, type: 3}
@@ -205,7 +204,6 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  _spriteLight: {fileID: 3757721621901950285}
   _intensityStart: 0
   _intensityPeak: 2
   _intensityEnd: 0.5
@@ -219,9 +217,6 @@ MonoBehaviour:
   _offSetTime: 0
   _turnOffParticleEmissionDueToOuterRadius1: 0.5
   _turnOffParticleEmissionDueToOuterRadius23: 6
-  _insideFireParticle: {fileID: 7483947297587460034}
-  _frieParticle: {fileID: 1392039250637155592}
-  _smokeParticle: {fileID: 8070336781536805036}
 --- !u!114 &5091436054885374376
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -312,7 +307,7 @@ GameObject:
   - component: {fileID: 5609555395381268015}
   - component: {fileID: 3757721621901950285}
   m_Layer: 0
-  m_Name: SpriteLight
+  m_Name: SpriteLight Red Fire (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -349,7 +344,7 @@ MonoBehaviour:
   m_LightType: 2
   m_BlendStyleIndex: 0
   m_FalloffIntensity: 0.5
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 0, b: 0, a: 1}
   m_Intensity: 0
   m_LightVolumeIntensity: 1
   m_LightVolumeIntensityEnabled: 0
@@ -406,7 +401,7 @@ GameObject:
   - component: {fileID: 8070336781536805036}
   - component: {fileID: 4565455044908829151}
   m_Layer: 0
-  m_Name: SmokeParticle
+  m_Name: SmokeParticle (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5292,7 +5287,7 @@ GameObject:
   - component: {fileID: 1392039250637155592}
   - component: {fileID: 8849472487366344735}
   m_Layer: 0
-  m_Name: FireParticle
+  m_Name: FireParticle (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10178,7 +10173,7 @@ GameObject:
   - component: {fileID: 7483947297587460034}
   - component: {fileID: 2376182867141511591}
   m_Layer: 0
-  m_Name: InsideFireParticle
+  m_Name: InsideFireParticle (0)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -14994,3 +14989,96 @@ ParticleSystemRenderer:
   m_MeshWeighting2: 1
   m_MeshWeighting3: 1
   m_MaskInteraction: 0
+--- !u!1 &6289380118693776749
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1650030736843163872}
+  - component: {fileID: 1671268875551581022}
+  m_Layer: 0
+  m_Name: SlowMoSpriteLight (4)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1650030736843163872
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6289380118693776749}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5714677401872066938}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1671268875551581022
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6289380118693776749}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 073797afb82c5a1438f328866b10b3f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ComponentVersion: 1
+  m_LightType: 2
+  m_BlendStyleIndex: 0
+  m_FalloffIntensity: 0.5
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Intensity: 0.25
+  m_LightVolumeIntensity: 1
+  m_LightVolumeIntensityEnabled: 0
+  m_ApplyToSortingLayers: 00000000
+  m_LightCookieSprite: {fileID: 7482667652216324306, guid: 75f5f34dc1b5347e0b8351032682f224, type: 3}
+  m_DeprecatedPointLightCookieSprite: {fileID: 0}
+  m_LightOrder: 0
+  m_AlphaBlendOnOverlap: 0
+  m_OverlapOperation: 0
+  m_NormalMapDistance: 3
+  m_NormalMapQuality: 2
+  m_UseNormalMap: 0
+  m_ShadowIntensityEnabled: 0
+  m_ShadowIntensity: 0.75
+  m_ShadowVolumeIntensityEnabled: 0
+  m_ShadowVolumeIntensity: 0.75
+  m_Vertices:
+  - position: {x: 0.5, y: -0.28866667, z: 0}
+    color: {r: 0, g: 0, b: 0, a: 1}
+    uv: {x: 1, y: 0}
+  - position: {x: 0, y: 0.57852083, z: 0}
+    color: {r: 0, g: 0, b: 0, a: 1}
+    uv: {x: 0.5, y: 0.8671875}
+  - position: {x: -0.5, y: -0.28866667, z: 0}
+    color: {r: 0, g: 0, b: 0, a: 1}
+    uv: {x: 0, y: 0}
+  m_Triangles: 020001000000
+  m_LocalBounds:
+    m_Center: {x: 0, y: 0.14492708, z: 0}
+    m_Extent: {x: 0.5, y: 0.43359375, z: 0}
+  m_PointLightInnerAngle: 360
+  m_PointLightOuterAngle: 360
+  m_PointLightInnerRadius: 0
+  m_PointLightOuterRadius: 1
+  m_ShapeLightParametricSides: 5
+  m_ShapeLightParametricAngleOffset: 0
+  m_ShapeLightParametricRadius: 1
+  m_ShapeLightFalloffSize: 0.5
+  m_ShapeLightFalloffOffset: {x: 0, y: 0}
+  m_ShapePath:
+  - {x: -0.5, y: -0.5, z: 0}
+  - {x: 0.5, y: -0.5, z: 0}
+  - {x: 0.5, y: 0.5, z: 0}
+  - {x: -0.5, y: 0.5, z: 0}
