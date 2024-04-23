@@ -5,16 +5,19 @@ using UnityEngine.UIElements;
 
 public class P_ShootLogic : MonoBehaviour
 {
-    private Vector3 _refToMousePosition;
-    public Transform ShootDirection, ShootPoint,RightShootPoint,LeftShootPoint;
-    public int BulletNum;
+    Vector3 _refToMousePosition;
+    public Transform RightShootPoint,LeftShootPoint;
+    public int BulletNum = 10;
     public GameObject BulletPrefab;
     public bool HaveAmmo;
-    public PlayerControl refToPlayerCl;
+    PlayerControl PlayerControlRef;
     public LanternLight _p_LanternLight;
 
-    //public Vector3 _dir;
-    // Update is called once per frame
+    void Awake()
+    {
+        PlayerControlRef = this.GetComponent<PlayerControl>();
+    }
+
     void Update()
     {
         Shoot();
@@ -37,7 +40,7 @@ public class P_ShootLogic : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Mouse0) && HaveAmmo)
         {
             BulletNum -= 1;//bullet limit set is 10
-            if(refToPlayerCl.IsRight)//switch shooting point
+            if(PlayerControlRef.IsRight)//switch shooting point
             {
                 GameObject BulletInstance = Instantiate(BulletPrefab, RightShootPoint.position, transform.rotation);//J:Change the shooting position    
                 P_Projectile projectileScript = BulletInstance.GetComponent<P_Projectile>(); // cache script ref
@@ -46,7 +49,7 @@ public class P_ShootLogic : MonoBehaviour
                 projectileScript.PlayerIntialPosition = this.transform.position;
                 _p_LanternLight.TriggerLightChange(BulletNum);
             }
-            if (refToPlayerCl.IsRight==false)//switch shooting point
+            if (PlayerControlRef.IsRight==false)//switch shooting point
             {
                 GameObject BulletInstance = Instantiate(BulletPrefab, LeftShootPoint.position, transform.rotation);//J:Change the shooting position    
                 P_Projectile projectileScript = BulletInstance.GetComponent<P_Projectile>(); // cache script ref
@@ -65,6 +68,5 @@ public class P_ShootLogic : MonoBehaviour
             BulletNum = 10;
             _p_LanternLight.TriggerLightChange(BulletNum);
         }
-
     }
 }

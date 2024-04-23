@@ -12,17 +12,19 @@ public class SlowMo : MonoBehaviour
     float _defaultPhysicsTimestep = 0.02f;
     float _eric_loves_clash_from_r6_Timer;
     public AnimationCurve ReturntoNormalSpeedCurve; // for inspector use
-    
-    public float SlowMoResourceTime;
+    public float SlowMoResourceTime = 7f;
     float _maxSlowMoTime;
+    [SerializeField] float _rechargeRate = 1.5f, _Clash_From_r6_cooldown = 1f;
     public bool SlowMoToggle;
-    public TMP_Text Slowmo_Text;
-    public GameObject CM_VirtualCamRef;
+    TMP_Text _Slowmo_Text;
     Volume _JojoTimeVolume, _JojoTimeVolume2;
 
-    public GameObject SlowMoCanvas;
+    GameObject _SlowMoCanvas;
     private void Awake()
     {
+        _SlowMoCanvas = Camera.main.transform.GetChild(1).gameObject;
+        _Slowmo_Text = _SlowMoCanvas.transform.GetChild(0).GetComponent<TMP_Text>();
+        GameObject CM_VirtualCamRef = Camera.main.transform.GetChild(0).gameObject;
         _JojoTimeVolume = CM_VirtualCamRef.GetComponents<Volume>()[0];
         _JojoTimeVolume2 = CM_VirtualCamRef.GetComponents<Volume>()[1];
         _maxSlowMoTime = SlowMoResourceTime; // set time in script as it is editable in inspector
@@ -41,7 +43,7 @@ public class SlowMo : MonoBehaviour
 
         SlowMoReady(SlowMoToggle);
 
-        Slowmo_Text.text = SlowMoResourceTime.ToString("0.00");
+        _Slowmo_Text.text = SlowMoResourceTime.ToString("0.00");
     }
     void SlowMoReady(bool activated)
     {
@@ -53,7 +55,7 @@ public class SlowMo : MonoBehaviour
                 activated = false;
                 NeoTime(false);
                 SlowMoToggle = false;
-                SlowMoCanvas.SetActive(false); //turn off ui
+                _SlowMoCanvas.SetActive(false); //turn off ui
                 _JojoTimeVolume.weight = 0;
                 _JojoTimeVolume2.weight = 0;
             }
@@ -63,34 +65,32 @@ public class SlowMo : MonoBehaviour
                 SlowMoResourceTime -= Time.unscaledDeltaTime;
                 _eric_loves_clash_from_r6_Timer = 0;
                 NeoTime(true);
-                SlowMoCanvas.SetActive(true); //turn off ui
+                _SlowMoCanvas.SetActive(true); //turn off ui
                 if(_JojoTimeVolume.weight <= 1)
                 {
                     _JojoTimeVolume.weight += 10 * Time.unscaledDeltaTime;
                 }
-                //JojoTimeVolume.weight = SlowMoResourceTime / _maxSlowMoTime;
                 _JojoTimeVolume2.weight = 1 - SlowMoResourceTime / _maxSlowMoTime;
             }
         }
         if(!activated)
         {
-            SlowMoCanvas.SetActive(false); //turn off ui
+            _SlowMoCanvas.SetActive(false); //turn off ui
             _JojoTimeVolume.weight = 0;
             _JojoTimeVolume2.weight = 0;
             NeoTime(false);
             _eric_loves_clash_from_r6_Timer += Time.unscaledDeltaTime;
 
-            float maxSlowMoResourceTime = 5f;
-            if (SlowMoResourceTime < maxSlowMoResourceTime)
+            if (SlowMoResourceTime < _maxSlowMoTime)
             {
-                if(_eric_loves_clash_from_r6_Timer > 1f)
+                if(_eric_loves_clash_from_r6_Timer > _Clash_From_r6_cooldown)
                 {
-                    SlowMoResourceTime += 0.5f * Time.unscaledDeltaTime;
+                    SlowMoResourceTime += _rechargeRate * Time.unscaledDeltaTime;
                 }
             }
             else
             {
-                SlowMoResourceTime = maxSlowMoResourceTime; // catch case
+                SlowMoResourceTime = _maxSlowMoTime; // catch case
             }
         }
     }

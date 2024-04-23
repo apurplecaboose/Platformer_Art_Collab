@@ -19,7 +19,11 @@ public class Campfires : MonoBehaviour
     // Update is called once per frame
     private void Awake()
     {
+        AwakeRef();
         _SR_Color = _SR.color;
+    }
+    void AwakeRef()
+    {
         _refToPlayer = GameObject.FindGameObjectWithTag("Player");
         _p_rb = _refToPlayer.GetComponent<Rigidbody2D>();
         _refToSlowMo = _refToPlayer.GetComponent<SlowMo>();

@@ -1,21 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
-using UnityEngine.UIElements;
 
 public class PlayerControl : MonoBehaviour
 {
-    public SlowMo refToSlowMo;
+    SlowMo refToSlowMo;
     float _xInput;
-    private Rigidbody2D P_rb;
-    [SerializeField] float _moveForce, _jumpForce, _tapStrafeMultiplier;
-    public bool IsDash, CanJump, Grounded, CanBeKnockBack;
+    Rigidbody2D P_rb;
+    [SerializeField] float _moveForce = 20f, _jumpForce = 7f, _tapStrafeMultiplier = 0.3f;
+    [HideInInspector] public bool IsDash, CanJump, Grounded, CanBeKnockBack;
     public LayerMask CheckGroundLayer;
     public PlayerState RefPlayerState;
-    public SpriteRenderer LanternStick, LanternStick1, Lantern,Lantern1;
-    public bool IsRight;
+    [HideInInspector] public bool IsRight;
     public enum PlayerState
     {
         InGame,
@@ -25,6 +22,7 @@ public class PlayerControl : MonoBehaviour
 
     private void Awake()
     {
+        refToSlowMo = this.GetComponent<SlowMo>();
         P_rb = this.GetComponent<Rigidbody2D>();
         IsRight = true;
     }
@@ -117,12 +115,6 @@ public class PlayerControl : MonoBehaviour
                     GetComponent<SpriteRenderer>().flipX = true;//J:Switch player Sprite
 
                     IsRight= false;//switch shooting point
-
-                    Lantern1.GetComponent<SpriteRenderer>().color = Color.white;
-                    LanternStick1.GetComponent<SpriteRenderer>().color = Color.white;
-                    Lantern.GetComponent<SpriteRenderer>().color = Color.clear;
-                    LanternStick.GetComponent<SpriteRenderer>().color = Color.clear;
-                    //Switch lantern 
                 }
                 else if (Input.GetKey(KeyCode.D))
                 {
@@ -130,13 +122,6 @@ public class PlayerControl : MonoBehaviour
                     GetComponent<SpriteRenderer>().flipX = false;//J:Switch player Sprite
 
                     IsRight = true;//switch shooting point
-
-                    Lantern1.GetComponent<SpriteRenderer>().color = Color.clear;
-                    LanternStick1.GetComponent<SpriteRenderer>().color = Color.clear;
-                    Lantern.GetComponent<SpriteRenderer>().color = Color.white;
-                    LanternStick.GetComponent<SpriteRenderer>().color = Color.white;
-                    //J:Switch lantern 
-
                 }
                 else _xInput = 0; //catch case
             }

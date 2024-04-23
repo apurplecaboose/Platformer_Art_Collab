@@ -307,7 +307,7 @@ GameObject:
   - component: {fileID: 5609555395381268015}
   - component: {fileID: 3757721621901950285}
   m_Layer: 0
-  m_Name: SpriteLight Red Fire (3)
+  m_Name: SpriteLight Red Fire [3]
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -401,7 +401,7 @@ GameObject:
   - component: {fileID: 8070336781536805036}
   - component: {fileID: 4565455044908829151}
   m_Layer: 0
-  m_Name: SmokeParticle (2)
+  m_Name: SmokeParticle [2]
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5287,7 +5287,7 @@ GameObject:
   - component: {fileID: 1392039250637155592}
   - component: {fileID: 8849472487366344735}
   m_Layer: 0
-  m_Name: FireParticle (1)
+  m_Name: FireParticle [1]
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10173,7 +10173,7 @@ GameObject:
   - component: {fileID: 7483947297587460034}
   - component: {fileID: 2376182867141511591}
   m_Layer: 0
-  m_Name: InsideFireParticle (0)
+  m_Name: InsideFireParticle [0]
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -15000,7 +15000,7 @@ GameObject:
   - component: {fileID: 1650030736843163872}
   - component: {fileID: 1671268875551581022}
   m_Layer: 0
-  m_Name: SlowMoSpriteLight (4)
+  m_Name: SlowMoSpriteLight [4]
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
