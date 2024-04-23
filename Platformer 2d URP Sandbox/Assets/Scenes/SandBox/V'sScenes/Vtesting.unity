@@ -10714,6 +10714,67 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1001 &2091784526578164583
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2730962929420420911, guid: 1b88aef6f6f93c84c84b94fcef9ea2c9, type: 3}
+      propertyPath: m_RootOrder
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 2730962929420420911, guid: 1b88aef6f6f93c84c84b94fcef9ea2c9, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -3.8684847
+      objectReference: {fileID: 0}
+    - target: {fileID: 2730962929420420911, guid: 1b88aef6f6f93c84c84b94fcef9ea2c9, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.2790685
+      objectReference: {fileID: 0}
+    - target: {fileID: 2730962929420420911, guid: 1b88aef6f6f93c84c84b94fcef9ea2c9, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.0922124
+      objectReference: {fileID: 0}
+    - target: {fileID: 2730962929420420911, guid: 1b88aef6f6f93c84c84b94fcef9ea2c9, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2730962929420420911, guid: 1b88aef6f6f93c84c84b94fcef9ea2c9, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2730962929420420911, guid: 1b88aef6f6f93c84c84b94fcef9ea2c9, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2730962929420420911, guid: 1b88aef6f6f93c84c84b94fcef9ea2c9, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2730962929420420911, guid: 1b88aef6f6f93c84c84b94fcef9ea2c9, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2730962929420420911, guid: 1b88aef6f6f93c84c84b94fcef9ea2c9, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2730962929420420911, guid: 1b88aef6f6f93c84c84b94fcef9ea2c9, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4026059829667530800, guid: 1b88aef6f6f93c84c84b94fcef9ea2c9, type: 3}
+      propertyPath: m_Name
+      value: BulletUI
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 1b88aef6f6f93c84c84b94fcef9ea2c9, type: 3}
 --- !u!4 &2138113047718242847
 Transform:
   m_ObjectHideFlags: 0
@@ -12498,12 +12559,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MiniBarrelPrefab: {fileID: 1843342861861357863, guid: 1f1b15f7266bd2149b1226aac872ecbc, type: 3}
+  ParticlePrefab: {fileID: 4214816541134391666, guid: 0ed307156eb7f3641bc618e2983ea022, type: 3}
   _SubBarrels: 3
   BarrelPower: 15
   InvincibleBarrel: 0
   P_Ref: {fileID: 0}
   P_rb: {fileID: 0}
   PlayerInRange: 0
+  ExtraBlastUP: 0
+  ParticleScale: 0
 --- !u!4 &5177826054610871388
 Transform:
   m_ObjectHideFlags: 0
@@ -12942,6 +13006,8 @@ MonoBehaviour:
   _isLightingOn: 0
   _dashMultiplier: 7
   _MinandMaxCamfireForce: {x: 2, y: 8}
+  _particlePrefab: {fileID: 0}
+  _particlePrefabScale: 0
   CurveStart:
     serializedVersion: 2
     m_Curve:
@@ -12990,7 +13056,6 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  _light: {fileID: 0}
   _spriteLight: {fileID: 3757721620541174149}
   _intensityStart: 0
   _intensityPeak: 2
@@ -13020,6 +13085,8 @@ MonoBehaviour:
   _isLightingOn: 0
   _dashMultiplier: 5
   _MinandMaxCamfireForce: {x: 5, y: 8}
+  _particlePrefab: {fileID: 0}
+  _particlePrefabScale: 0
   CurveStart:
     serializedVersion: 2
     m_Curve:
@@ -13068,7 +13135,6 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  _light: {fileID: 0}
   _spriteLight: {fileID: 3757721621041513353}
   _intensityStart: 0
   _intensityPeak: 2
@@ -13648,7 +13714,7 @@ MonoBehaviour:
   m_IsGlobal: 1
   priority: 0
   blendDistance: 0
-  weight: 1
+  weight: 0
   sharedProfile: {fileID: 11400000, guid: 9671f4439c6525c4da9c69858eae9332, type: 2}
 --- !u!114 &7477580568472795536
 MonoBehaviour:
@@ -13665,7 +13731,7 @@ MonoBehaviour:
   m_IsGlobal: 1
   priority: 1
   blendDistance: 0
-  weight: 1
+  weight: 0
   sharedProfile: {fileID: 11400000, guid: 10ff0432edaacaa41a17cd4ffc9b2142, type: 2}
 --- !u!114 &7477580568472795537
 MonoBehaviour:
