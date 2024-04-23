@@ -16,6 +16,7 @@ public class Barrel_Master : MonoBehaviour
     [HideInInspector] public GameObject P_Ref;
     [HideInInspector] public Rigidbody2D P_rb;
     [HideInInspector] public bool PlayerInRange;
+    public float ExtraBlastUP;
 
     public float ParticleScale; 
     void Awake()

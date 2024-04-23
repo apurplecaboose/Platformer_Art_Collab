@@ -18,7 +18,15 @@ public class EnemyPatrol : MonoBehaviour
     }
     private void Update()
     {
-        _time += Time.deltaTime;
-        enemy.transform.position = Vector2.Lerp(_pointA.position, _pointB.position, Mathf.PingPong(_time / _targetTime, 1f));
+        if(enemy != null)
+        {
+            _time += Time.deltaTime;
+            enemy.transform.position = Vector2.Lerp(_pointA.position, _pointB.position, Mathf.PingPong(_time / _targetTime, 1f));
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+
     }
 }
