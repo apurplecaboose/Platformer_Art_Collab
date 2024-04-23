@@ -16,7 +16,8 @@ public class Campfires : MonoBehaviour
 
     [SerializeField] Particle_Master _particlePrefab;
     [SerializeField] float _particlePrefabScale;
-    private Color _thisColor;
+    private Color _SR_Color;
+    SpriteRenderer _SR;
     // Update is called once per frame
     private void Awake()
     {
@@ -25,7 +26,8 @@ public class Campfires : MonoBehaviour
         _p_rb = _refToPlayer.GetComponent<Rigidbody2D>();
         _refToSlowMo = _refToPlayer.GetComponent<SlowMo>();
         _light = GetComponent<Light2D>();
-        _thisColor = GetComponent<SpriteRenderer>().color;
+        _SR = GetComponent<SpriteRenderer>();
+        _SR_Color = _SR.color;
         //_particleSystem = gameObject.transform.GetComponentInChildren<ParticleSystem>();
         //_frieParticle = gameObject.transform.GetComponentInChildren<ParticleSystem>();
     }
@@ -34,15 +36,15 @@ public class Campfires : MonoBehaviour
         CampFiresTp();//J: gather the function for campfire dashing in saperate script
                       //J;already save the campfire as profab,create variants prefab for different dashing power.
 
-        if(Time.timeScale != 1)
+        if(Time.timeScale <= 0.2f)
         {
-            _thisColor.a = 1f;
-            this.GetComponent<SpriteRenderer>().color = _thisColor;
+            _SR_Color.a = 1f;
+            _SR.color = _SR_Color;
         }
         else
         {
-            _thisColor.a = 0f;
-            this.GetComponent<SpriteRenderer>().color = _thisColor;
+            _SR_Color.a = 0f;
+            _SR.color = _SR_Color;
         }
     }
     void CampFiresTp()
