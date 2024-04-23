@@ -7,6 +7,7 @@ public class BulletUI : MonoBehaviour
 {
     GameObject _playerRef;
     P_ShootLogic _bulletref;
+    [SerializeField] TextMeshProUGUI _bulletTMPref;
 
     private void Start()
     {
@@ -16,5 +17,6 @@ public class BulletUI : MonoBehaviour
     private void Update()
     {
         Debug.Log(_bulletref.BulletNum);
+        _bulletTMPref.text = _bulletref.BulletNum+"";
     }
 }
