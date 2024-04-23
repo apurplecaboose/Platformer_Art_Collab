@@ -12559,7 +12559,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MiniBarrelPrefab: {fileID: 1843342861861357863, guid: 1f1b15f7266bd2149b1226aac872ecbc, type: 3}
-  ParticlePrefab: {fileID: 0}
+  ParticlePrefab: {fileID: 4214816541134391666, guid: 0ed307156eb7f3641bc618e2983ea022, type: 3}
   _SubBarrels: 3
   BarrelPower: 15
   InvincibleBarrel: 0
