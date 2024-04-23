@@ -156,7 +156,7 @@ MonoBehaviour:
   _dashMultiplier: 0
   _MinandMaxCamfireForce: {x: 6, y: 8}
   _particlePrefab: {fileID: 8883285903315602185, guid: 4a5b04d45f2b7f441a520bf8201ec6a9, type: 3}
-  _particlePrefabScale: 0.5
+  _particlePrefabScale: 1
   CurveStart:
     serializedVersion: 2
     m_Curve:
