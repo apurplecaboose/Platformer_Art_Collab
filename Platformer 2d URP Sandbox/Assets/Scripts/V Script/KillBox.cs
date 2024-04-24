@@ -15,6 +15,7 @@ public class KillBox : MonoBehaviour
     }
     public void CollideWithKillBox()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        GameManager.SceneCache = SceneEnum.ParseEnum<SceneEnum.SceneList>(SceneManager.GetActiveScene().name);
+        SceneManager.LoadScene(SceneEnum.SceneList.YouDied.ToString());
     }
 }

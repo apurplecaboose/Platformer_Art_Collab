@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -13,5 +14,11 @@ public class SceneEnum : MonoBehaviour
         PreCutScene1,
         PreCutScene2,
         PreCutScene3,
+        YouDied,
+    }
+
+    public static T ParseEnum<T>(string value)
+    {
+        return (T)Enum.Parse(typeof(T), value, true);
     }
 }
