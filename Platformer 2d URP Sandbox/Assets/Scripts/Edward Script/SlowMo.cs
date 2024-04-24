@@ -44,6 +44,11 @@ public class SlowMo : MonoBehaviour
         SlowMoReady(SlowMoToggle);
 
         _Slowmo_Text.text = SlowMoResourceTime.ToString("0.00");
+
+        if(GameManager.P_state == GameManager.PlayerState.Win)
+        {
+            SlowMoWinDisable();
+        }
     }
     void SlowMoReady(bool activated)
     {
@@ -129,5 +134,18 @@ public class SlowMo : MonoBehaviour
                 return output;
             }
         }
+    }
+
+    public void SlowMoWinDisable()
+    {
+        SlowMoReady(false);//set to off
+
+        //just in case
+        _SlowMoCanvas.SetActive(false);
+        _JojoTimeVolume.weight = 0;
+        _JojoTimeVolume2.weight = 0;
+
+        //disable script
+        this.enabled = false;
     }
 }

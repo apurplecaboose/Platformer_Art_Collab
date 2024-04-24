@@ -8,8 +8,6 @@ using UnityEngine.SceneManagement;
 public class FlagLogic : MonoBehaviour
 {
     float _anime_CountDown;
-    PlayerControl _p_Script;
-
     [SerializeField] SceneEnum.SceneList _TargetScene;
     bool _isWin, _trigger;
     TextMeshPro _endInfo;
@@ -17,11 +15,9 @@ public class FlagLogic : MonoBehaviour
     private void Start()
     {
         _anime_CountDown = 3;
-        _p_Script = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerControl>();
         _endInfo = transform.GetChild(0).GetComponent<TextMeshPro>();//Get texmesh pro component as child of flag
     }
 
-    // Update is called once per frame
     void Update()
     {
         AnimationTimer();
@@ -30,7 +26,7 @@ public class FlagLogic : MonoBehaviour
     {
         if (_isWin)
         {
-            _p_Script.RefPlayerState = PlayerControl.PlayerState.Win;//J:limit player movement
+            GameManager.P_state = GameManager.PlayerState.Win;//J:limit player movement
             
             _anime_CountDown -= Time.deltaTime;
             _endInfo.color += new Color(0, 0, 0, 0.25f * Time.deltaTime);//show the instruction

@@ -20,9 +20,12 @@ public class P_ShootLogic : MonoBehaviour
 
     void Update()
     {
-        Shoot();
-        ReloadFireBullets();//Test Only
-        _refToMousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition) + new Vector3(0, 0, 10);//mouse input
+        if(GameManager.P_state == GameManager.PlayerState.Playing)
+        {
+            Shoot();
+            ReloadFireBullets();//Test Only
+            _refToMousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition) + new Vector3(0, 0, 10);//mouse input
+        }
     }
 
     void Shoot()
