@@ -5,9 +5,6 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
   - enabled: 1
     path: Assets/Scenes/Reference Scenes/Menu.unity
     guid: 54e4f47dac7435a41bf45f6d660e5d0e
@@ -17,6 +14,18 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Reference Scenes/scene_1.unity
     guid: d2a326cbd54d7fb4ebf958e17a7d34fe
+  - enabled: 1
+    path: Assets/Scenes/Reference Scenes/PreCutScene2.unity
+    guid: 3b666e74fa3dfdc4ba0cf722e69f1358
+  - enabled: 1
+    path: Assets/Scenes/Reference Scenes/scene_2.unity
+    guid: 734e38e8de0cac941bf3eb496677e0bb
+  - enabled: 1
+    path: Assets/Scenes/Reference Scenes/PreCutScene3.unity
+    guid: 9ecc42004c27a894988e3e06cd0d96c5
+  - enabled: 1
+    path: Assets/Scenes/Reference Scenes/scene_3.unity
+    guid: 13b88c31c83e6fd45a44f13137c53f03
   - enabled: 1
     path: Assets/Scenes/Reference Scenes/YouDied.unity
     guid: dbd6bcc538f2b43468f27e238b022d1c
