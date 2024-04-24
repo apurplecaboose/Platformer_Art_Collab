@@ -484,6 +484,7 @@ GameObject:
   - component: {fileID: 570280261}
   - component: {fileID: 570280263}
   - component: {fileID: 570280262}
+  - component: {fileID: 570280264}
   m_Layer: 5
   m_Name: Cheat Skip Text
   m_TagString: Untagged
@@ -608,6 +609,27 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 570280260}
   m_CullTransparentMesh: 1
+--- !u!95 &570280264
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 570280260}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 4d8906bfaf0d2874482d915af6008596, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &822193887
 GameObject:
   m_ObjectHideFlags: 0
@@ -786,8 +808,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 3372220415
-  m_fontColor: {r: 1, g: 1, b: 1, a: 0.78431374}
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -1070,7 +1092,7 @@ VideoPlayer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1919737966}
   m_Enabled: 1
-  m_VideoClip: {fileID: 32900000, guid: 52c72219787faf04cbf2fa626bcbd39d, type: 3}
+  m_VideoClip: {fileID: 32900000, guid: 3baa41f02b5c3bd47b4a2f861a777f1e, type: 3}
   m_TargetCameraAlpha: 1
   m_TargetCamera3DLayout: 0
   m_TargetCamera: {fileID: 18250483}

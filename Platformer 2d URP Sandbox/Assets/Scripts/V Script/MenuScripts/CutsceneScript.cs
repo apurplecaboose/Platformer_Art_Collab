@@ -17,7 +17,7 @@ public class CutsceneScript : MonoBehaviour
     [SerializeField] Image Dial;
     [SerializeField] GameObject CHEATERSkipUI;
 
-    float _cutsceneLength, _cutsceneTimer, _skipTimer, _skipcutscenebuttonholdtime = 1.5f;
+    float _cutsceneLength, _cutsceneTimer, _skipTimer, _skipcutscenebuttonholdtime = 1.25f;
     bool _toggle;
     private void Start()
     {
@@ -59,7 +59,7 @@ public class CutsceneScript : MonoBehaviour
             SkipUI.SetActive(false);
         }
      
-        if(_cutsceneTimer > 1.5f)
+        if(_cutsceneTimer > 5f)
         {
             CHEATERSkipUI.SetActive(false);
         }
