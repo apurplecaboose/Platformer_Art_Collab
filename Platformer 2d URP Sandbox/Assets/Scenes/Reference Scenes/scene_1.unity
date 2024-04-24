@@ -12183,7 +12183,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 120468102872494345, guid: 298547d3a442dcc40960b582f82c6795, type: 3}
       propertyPath: MinRange_MaxRange.y
-      value: 4
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 1712284344621253041, guid: 298547d3a442dcc40960b582f82c6795, type: 3}
       propertyPath: m_RootOrder
