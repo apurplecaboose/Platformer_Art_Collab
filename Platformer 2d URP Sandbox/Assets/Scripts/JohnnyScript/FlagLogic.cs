@@ -31,6 +31,7 @@ public class FlagLogic : MonoBehaviour
         if (_isWin)
         {
             _p_Script.RefPlayerState = PlayerControl.PlayerState.Win;//J:limit player movement
+            
             _anime_CountDown -= Time.deltaTime;
             _endInfo.color += new Color(0, 0, 0, 0.25f * Time.deltaTime);//show the instruction
             if (_anime_CountDown < 0 || Input.GetKeyDown(KeyCode.Space))

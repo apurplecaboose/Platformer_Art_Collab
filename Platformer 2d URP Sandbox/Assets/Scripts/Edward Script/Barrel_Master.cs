@@ -17,6 +17,7 @@ public class Barrel_Master : MonoBehaviour
     [HideInInspector] public Rigidbody2D P_rb;
     [HideInInspector] public bool PlayerInRange;
     public float ExtraBlastUP;
+    public Vector2 MinRange_MaxRange = new Vector2 (1,4);
 
     public float ParticleScale; 
     void Awake()
@@ -49,7 +50,6 @@ public class Barrel_Master : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             PlayerInRange = true;//when enter the blast range player can be knocked back.
-
         }
     }
     private void OnTriggerExit2D(Collider2D collision)

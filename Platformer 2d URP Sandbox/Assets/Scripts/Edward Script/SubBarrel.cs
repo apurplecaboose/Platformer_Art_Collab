@@ -33,8 +33,11 @@ public class SubBarrel : MonoBehaviour
     }
     void KaBOOM()
     {
+        float distancefrombarrel = Vector2.Distance(_master.P_Ref.transform.position, this.transform.position);
+        distancefrombarrel = Mathf.Clamp(distancefrombarrel, _master.MinRange_MaxRange.x, _master.MinRange_MaxRange.y);
+        float distanceModifier = Mathf.InverseLerp(_master.MinRange_MaxRange.y, _master.MinRange_MaxRange.x, distancefrombarrel);
         _master.P_rb.velocity = new Vector2(_master.P_rb.velocity.x, 0); // cancel out gravity instantly
         _blastDir = _blastDir.normalized;//normalize the Blast vector into direction only
-        _master.P_rb.AddForce((_blastDir + _master.ExtraBlastUP * Vector2.up)* _master.BarrelPower, ForceMode2D.Impulse);// use impulse for slow mo time
+        _master.P_rb.AddForce(_master.BarrelPower * distanceModifier * (_blastDir + new Vector2(0, _master.ExtraBlastUP)), ForceMode2D.Impulse);// use impulse for slow mo time
     }
 }

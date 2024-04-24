@@ -5368,6 +5368,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1671268875551581022, guid: db6377a85e9b2e84db9a7d58dd436bdd, type: 3}
+      propertyPath: m_Intensity
+      value: 0.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 1671268875551581022, guid: db6377a85e9b2e84db9a7d58dd436bdd, type: 3}
       propertyPath: m_Vertices.Array.size
       value: 3
       objectReference: {fileID: 0}
@@ -7394,36 +7398,40 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1671268875551581022, guid: db6377a85e9b2e84db9a7d58dd436bdd, type: 3}
+      propertyPath: m_Intensity
+      value: 0.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 1671268875551581022, guid: db6377a85e9b2e84db9a7d58dd436bdd, type: 3}
       propertyPath: m_Vertices.Array.size
-      value: 21
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1671268875551581022, guid: db6377a85e9b2e84db9a7d58dd436bdd, type: 3}
       propertyPath: m_Triangles.Array.size
-      value: 21
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1671268875551581022, guid: db6377a85e9b2e84db9a7d58dd436bdd, type: 3}
       propertyPath: m_LocalBounds.m_Center.y
-      value: 0
+      value: 0.14492708
       objectReference: {fileID: 0}
     - target: {fileID: 1671268875551581022, guid: db6377a85e9b2e84db9a7d58dd436bdd, type: 3}
       propertyPath: m_LocalBounds.m_Extent.x
-      value: 1.28
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 1671268875551581022, guid: db6377a85e9b2e84db9a7d58dd436bdd, type: 3}
       propertyPath: m_LocalBounds.m_Extent.y
-      value: 1.26
+      value: 0.43359375
       objectReference: {fileID: 0}
     - target: {fileID: 1671268875551581022, guid: db6377a85e9b2e84db9a7d58dd436bdd, type: 3}
       propertyPath: m_Triangles.Array.data[0]
-      value: 8
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1671268875551581022, guid: db6377a85e9b2e84db9a7d58dd436bdd, type: 3}
       propertyPath: m_Triangles.Array.data[1]
-      value: 7
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1671268875551581022, guid: db6377a85e9b2e84db9a7d58dd436bdd, type: 3}
       propertyPath: m_Triangles.Array.data[2]
-      value: 5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1671268875551581022, guid: db6377a85e9b2e84db9a7d58dd436bdd, type: 3}
       propertyPath: m_Triangles.Array.data[3]
@@ -7499,27 +7507,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1671268875551581022, guid: db6377a85e9b2e84db9a7d58dd436bdd, type: 3}
       propertyPath: m_Vertices.Array.data[0].uv.x
-      value: 0.6796875
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1671268875551581022, guid: db6377a85e9b2e84db9a7d58dd436bdd, type: 3}
       propertyPath: m_Vertices.Array.data[0].uv.y
-      value: 0.9921875
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1671268875551581022, guid: db6377a85e9b2e84db9a7d58dd436bdd, type: 3}
       propertyPath: m_Vertices.Array.data[1].uv.x
-      value: 1
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 1671268875551581022, guid: db6377a85e9b2e84db9a7d58dd436bdd, type: 3}
       propertyPath: m_Vertices.Array.data[1].uv.y
-      value: 0.33984375
+      value: 0.8671875
       objectReference: {fileID: 0}
     - target: {fileID: 1671268875551581022, guid: db6377a85e9b2e84db9a7d58dd436bdd, type: 3}
       propertyPath: m_Vertices.Array.data[2].uv.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1671268875551581022, guid: db6377a85e9b2e84db9a7d58dd436bdd, type: 3}
       propertyPath: m_Vertices.Array.data[2].uv.y
-      value: 0.59375
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1671268875551581022, guid: db6377a85e9b2e84db9a7d58dd436bdd, type: 3}
       propertyPath: m_Vertices.Array.data[3].uv.x
@@ -7611,27 +7619,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1671268875551581022, guid: db6377a85e9b2e84db9a7d58dd436bdd, type: 3}
       propertyPath: m_Vertices.Array.data[0].position.x
-      value: 0.46
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 1671268875551581022, guid: db6377a85e9b2e84db9a7d58dd436bdd, type: 3}
       propertyPath: m_Vertices.Array.data[0].position.y
-      value: 1.26
+      value: -0.28866667
       objectReference: {fileID: 0}
     - target: {fileID: 1671268875551581022, guid: db6377a85e9b2e84db9a7d58dd436bdd, type: 3}
       propertyPath: m_Vertices.Array.data[1].position.x
-      value: 1.28
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1671268875551581022, guid: db6377a85e9b2e84db9a7d58dd436bdd, type: 3}
       propertyPath: m_Vertices.Array.data[1].position.y
-      value: -0.41
+      value: 0.57852083
       objectReference: {fileID: 0}
     - target: {fileID: 1671268875551581022, guid: db6377a85e9b2e84db9a7d58dd436bdd, type: 3}
       propertyPath: m_Vertices.Array.data[2].position.x
-      value: 1.28
+      value: -0.5
       objectReference: {fileID: 0}
     - target: {fileID: 1671268875551581022, guid: db6377a85e9b2e84db9a7d58dd436bdd, type: 3}
       propertyPath: m_Vertices.Array.data[2].position.y
-      value: 0.24
+      value: -0.28866667
       objectReference: {fileID: 0}
     - target: {fileID: 1671268875551581022, guid: db6377a85e9b2e84db9a7d58dd436bdd, type: 3}
       propertyPath: m_Vertices.Array.data[3].position.x
@@ -13332,12 +13340,13 @@ MonoBehaviour:
   MiniBarrelPrefab: {fileID: 1843342861861357863, guid: 1f1b15f7266bd2149b1226aac872ecbc, type: 3}
   ParticlePrefab: {fileID: 4214816541134391666, guid: 0ed307156eb7f3641bc618e2983ea022, type: 3}
   _SubBarrels: 3
-  BarrelPower: 30
+  BarrelPower: 15
   InvincibleBarrel: 0
   P_Ref: {fileID: 0}
   P_rb: {fileID: 0}
   PlayerInRange: 0
-  ExtraBlastUP: 0
+  ExtraBlastUP: 1
+  MinRange_MaxRange: {x: 1.5, y: 8}
   ParticleScale: 1
 --- !u!114 &6953050718758117700
 MonoBehaviour:

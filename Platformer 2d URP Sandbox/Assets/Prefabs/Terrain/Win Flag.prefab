@@ -174,7 +174,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _TargetScene: 0
-  TransitionProfile: {fileID: 0}
+  TransitionProfile: {fileID: 11400000, guid: 5acacaf6c9661a64280922b6af864e94, type: 2}
 --- !u!61 &3115357224022426611
 BoxCollider2D:
   m_ObjectHideFlags: 0

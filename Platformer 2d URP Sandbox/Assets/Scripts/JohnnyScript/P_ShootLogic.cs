@@ -9,7 +9,7 @@ public class P_ShootLogic : MonoBehaviour
     public Transform RightShootPoint,LeftShootPoint;
     public int BulletNum = 10;
     public GameObject BulletPrefab;
-    public bool HaveAmmo;
+    [HideInInspector]public bool HaveAmmo;
     PlayerControl PlayerControlRef;
     public LanternLight _p_LanternLight;
 

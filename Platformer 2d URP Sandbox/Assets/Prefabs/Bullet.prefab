@@ -165,7 +165,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _firePower: 20
-  _bulletRange: 7
+  _bulletRange: 6.5
   _bulletTimer: 1
   BlastDir: {x: 0, y: 0}
   ShootDir: {x: 0, y: 0, z: 0}
