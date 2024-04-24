@@ -5750,11 +5750,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5714677401872066938, guid: db6377a85e9b2e84db9a7d58dd436bdd, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 11.81
+      value: 10.29
       objectReference: {fileID: 0}
     - target: {fileID: 5714677401872066938, guid: db6377a85e9b2e84db9a7d58dd436bdd, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.37
+      value: 6.32
       objectReference: {fileID: 0}
     - target: {fileID: 5714677401872066938, guid: db6377a85e9b2e84db9a7d58dd436bdd, type: 3}
       propertyPath: m_LocalPosition.z
@@ -12479,7 +12479,6 @@ MonoBehaviour:
   CheckGroundLayer:
     serializedVersion: 2
     m_Bits: 64
-  RefPlayerState: 0
   IsRight: 0
 --- !u!114 &4897522116653683650
 MonoBehaviour:
