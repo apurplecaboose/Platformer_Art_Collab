@@ -68,9 +68,7 @@ public class PlayerControl : MonoBehaviour
                 Grounded = false;
                 _jumptimer = JumpCD;
                 //-------------------------------------------------------
-                P_anime.IsPlayJump = true;//Play Jump Animation
-                P_anime.IsPlayRun = false;
-                P_anime.IsPlayIdle = false;
+
                 //-------------------------------------------------------
             }
         }
@@ -111,6 +109,14 @@ public class PlayerControl : MonoBehaviour
             }
 
         }
+        else if (Mathf.Sign(P_rb.velocity.y) > 0 && Grounded == false)
+        {
+            P_anime.IsPlayJump = true;//Play Jump Animation
+            P_anime.IsPlayRun = false;
+            P_anime.IsPlayIdle = false;
+            P_anime.IsGrounded = false;
+        }
+
     }
     //----------------------------------------------------------
 
@@ -164,8 +170,8 @@ public class PlayerControl : MonoBehaviour
                     if (Grounded)
                     {
                         P_anime.IsPlayRun = true;
-                        P_anime.IsPlayJump = false;
                         P_anime.IsPlayIdle = false;
+                        P_anime.IsGrounded = true;
 
                     }//StartAnimation
                     //-------------------------------------------------------
@@ -189,8 +195,8 @@ public class PlayerControl : MonoBehaviour
                     if (Grounded)
                     {
                         P_anime.IsPlayRun = true;
-                        P_anime.IsPlayJump = false;
                         P_anime.IsPlayIdle = false;
+                        P_anime.IsGrounded = true;
                     }//StartAnimation
                      //-------------------------------------------------------
                 }

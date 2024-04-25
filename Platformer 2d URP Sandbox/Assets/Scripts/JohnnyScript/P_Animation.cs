@@ -14,7 +14,7 @@ public class P_Animation : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (IsPlayRun)
+        if (IsPlayRun&& IsGrounded)
         {
             Run();
         }

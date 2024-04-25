@@ -13123,7 +13123,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  _spriteLight: {fileID: 3757721620541174149}
+  _spriteLight: {fileID: 5091436054672790880}
   _intensityStart: 0
   _intensityPeak: 2
   _intensityEnd: 0.5
@@ -13135,7 +13135,7 @@ MonoBehaviour:
   _timeB: 0.25
   _timeC: 1
   _offSetTime: 0
-  _turnOffParticleEmissionDueToOuterRadius: 0.5
+  _turnOffParticleEmissionDueToOuterRadius: 0
 --- !u!114 &5802710682779061420
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13202,7 +13202,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  _spriteLight: {fileID: 3757721621041513353}
+  _spriteLight: {fileID: 5091436054158124908}
   _intensityStart: 0
   _intensityPeak: 2
   _intensityEnd: 0.5
@@ -13214,7 +13214,7 @@ MonoBehaviour:
   _timeB: 0.25
   _timeC: 1
   _offSetTime: 0
-  _turnOffParticleEmissionDueToOuterRadius: 0.5
+  _turnOffParticleEmissionDueToOuterRadius: 0
 --- !u!114 &5904462312665182371
 MonoBehaviour:
   m_ObjectHideFlags: 0
