@@ -12182,8 +12182,12 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 120468102872494345, guid: 298547d3a442dcc40960b582f82c6795, type: 3}
+      propertyPath: BarrelPower
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 120468102872494345, guid: 298547d3a442dcc40960b582f82c6795, type: 3}
       propertyPath: MinRange_MaxRange.y
-      value: 6
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 1712284344621253041, guid: 298547d3a442dcc40960b582f82c6795, type: 3}
       propertyPath: m_RootOrder
@@ -13629,8 +13633,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6bd4d0c06d02ae440b741e40f85ecbad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _moveForce: 15
-  _jumpForce: 6
+  _moveForce: 12
+  _jumpForce: 13
   _tapStrafeMultiplier: 0.3
   IsDash: 0
   CanJump: 0
@@ -14171,13 +14175,13 @@ MonoBehaviour:
   MiniBarrelPrefab: {fileID: 1843342861861357863, guid: 1f1b15f7266bd2149b1226aac872ecbc, type: 3}
   ParticlePrefab: {fileID: 4214816541134391666, guid: 0ed307156eb7f3641bc618e2983ea022, type: 3}
   _SubBarrels: 3
-  BarrelPower: 35
+  BarrelPower: 40
   InvincibleBarrel: 0
   P_Ref: {fileID: 0}
   P_rb: {fileID: 0}
   PlayerInRange: 0
   ExtraBlastUP: 0.25
-  MinRange_MaxRange: {x: 1, y: 7}
+  MinRange_MaxRange: {x: 1, y: 8}
   ParticleScale: 1
 --- !u!114 &6953050718758117700
 MonoBehaviour:
