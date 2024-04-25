@@ -7476,6 +7476,7 @@ GameObject:
   - component: {fileID: 1723335982}
   - component: {fileID: 1723335983}
   - component: {fileID: 1723335984}
+  - component: {fileID: 1723335985}
   m_Layer: 0
   m_Name: idle1_0
   m_TagString: Untagged
@@ -7571,6 +7572,24 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1723335985
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1723335981}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff3825037c771a246b2d153463e1080f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  IsPlayRun: 0
+  IsPlayIdle: 0
+  IsPlayFall: 0
+  IsPlayFire: 0
+  IsPlayJump: 0
+  IsGrounded: 0
 --- !u!1 &1725588341
 GameObject:
   m_ObjectHideFlags: 0
@@ -12249,7 +12268,9 @@ MonoBehaviour:
   LanternStick1: {fileID: 6994964863798726308}
   Lantern: {fileID: 4559703215348923535}
   Lantern1: {fileID: 80122747419907862}
+  P_Anime_Sprite: {fileID: 1723335983}
   IsRight: 0
+  P_anime: {fileID: 1723335985}
 --- !u!114 &4897522116653683650
 MonoBehaviour:
   m_ObjectHideFlags: 0
