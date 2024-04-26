@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class P_Animation : MonoBehaviour
 {
-    public bool IsPlayRun, IsPlayIdle, IsPlayFall, IsPlayFire, IsPlayJump, IsGrounded;
+    public bool IsPlayRun, IsPlayIdle, IsPlayFire, IsPlayJump;
     Animator p_animation;
     private void Awake()
     {
@@ -26,10 +26,19 @@ public class P_Animation : MonoBehaviour
         {
             Idle();
         }
-        if (IsPlayFall)
+        if (IsPlayFire && IsPlayRun)
         {
             Fire();
         }
+        if (IsPlayFire && IsPlayJump)
+        {
+            Fire();
+        }
+        if (IsPlayFire && IsPlayIdle)
+        {
+            Fire();
+        }
+
     }
     void Run()
     {

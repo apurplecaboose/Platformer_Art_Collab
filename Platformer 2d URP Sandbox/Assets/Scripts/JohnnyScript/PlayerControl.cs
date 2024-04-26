@@ -168,10 +168,11 @@ public class PlayerControl : MonoBehaviour
                 else
                 {
                     _xInput = 0; //catch case
-                                 //-------------------------------------------------------
+                    //-------------------------------------------------------
                     P_anime.IsPlayRun = false;
                     P_anime.IsPlayJump = false;
                     P_anime.IsPlayIdle = true;
+
                     //-------------------------------------------------------
                 }
             }
