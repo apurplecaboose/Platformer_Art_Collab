@@ -107,10 +107,14 @@ public class PlayerControl : MonoBehaviour
                     if (Input.GetKey(KeyCode.A))
                     {
                         _xInput = -1;
+
+                        P_Anime_Sprite.flipX = true;//J:Switch animation Sprite
                     }
                     else if (Input.GetKey(KeyCode.D))
                     {
                         _xInput = 1;
+
+                        P_Anime_Sprite.flipX = false;//J:Switch animation Sprite
                     }
                     else
                     {
