@@ -12,6 +12,7 @@ public class P_ShootLogic : MonoBehaviour
     public bool HaveAmmo;
     public PlayerControl refToPlayerCl;
     public LanternLight _p_LanternLight;
+    public P_Animation _p_anime;
 
     //public Vector3 _dir;
     // Update is called once per frame
@@ -36,6 +37,11 @@ public class P_ShootLogic : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Mouse0) && HaveAmmo)
         {
+            _p_anime.IsPlayFire = true;
+            _p_anime.IsPlayJump = false;
+            _p_anime.IsPlayIdle = false;
+            _p_anime.IsPlayRun = false;
+
             BulletNum -= 1;//bullet limit set is 10
             if(refToPlayerCl.IsRight)//switch shooting point
             {

@@ -32,7 +32,6 @@ public class PlayerControl : MonoBehaviour
 
     private void Update()
     {
-        DetectFalling();
         if (RefPlayerState == PlayerState.InGame)
         {
             PlayerInput();
@@ -68,7 +67,9 @@ public class PlayerControl : MonoBehaviour
                 Grounded = false;
                 _jumptimer = JumpCD;
                 //-------------------------------------------------------
-
+                P_anime.IsPlayJump = true;
+                P_anime.IsPlayRun = false;
+                P_anime.IsPlayIdle = false;
                 //-------------------------------------------------------
             }
         }
@@ -88,37 +89,6 @@ public class PlayerControl : MonoBehaviour
         }
     }
 
-    //-------------------------------------------------------
-    float _originalValueDown;
-    bool _isRecordValueDown;
-    void DetectFalling()
-    {
-        if (Mathf.Sign(P_rb.velocity.y) < 0 && Grounded == false)
-        {
-
-            if (_isRecordValueDown == false)
-            {
-                _originalValueDown = transform.position.y;
-                _isRecordValueDown = true;
-            }
-            if (Mathf.Abs(transform.position.y - _originalValueDown) > 0.5f)
-            {
-                P_anime.IsPlayFall = true;
-                _isRecordValueDown = false;
-                _originalValueDown = 0;
-            }
-
-        }
-        else if (Mathf.Sign(P_rb.velocity.y) > 0 && Grounded == false)
-        {
-            P_anime.IsPlayJump = true;//Play Jump Animation
-            P_anime.IsPlayRun = false;
-            P_anime.IsPlayIdle = false;
-            P_anime.IsGrounded = false;
-        }
-
-    }
-    //----------------------------------------------------------
 
     void PlayerInput()
     {
@@ -167,13 +137,10 @@ public class PlayerControl : MonoBehaviour
                     //Switch lantern 
 
                     //-------------------------------------------------------
-                    if (Grounded)
-                    {
-                        P_anime.IsPlayRun = true;
-                        P_anime.IsPlayIdle = false;
-                        P_anime.IsGrounded = true;
-
-                    }//StartAnimation
+                    P_anime.IsPlayRun = true;
+                    P_anime.IsPlayJump = false;
+                    P_anime.IsPlayIdle = false;
+                    //StartAnimation
                     //-------------------------------------------------------
                 }
                 else if (Input.GetKey(KeyCode.D))
@@ -192,22 +159,19 @@ public class PlayerControl : MonoBehaviour
                     //J:Switch lantern 
 
                     //-------------------------------------------------------
-                    if (Grounded)
-                    {
-                        P_anime.IsPlayRun = true;
-                        P_anime.IsPlayIdle = false;
-                        P_anime.IsGrounded = true;
-                    }//StartAnimation
-                     //-------------------------------------------------------
+                    P_anime.IsPlayRun = true;
+                    P_anime.IsPlayJump = false;
+                    P_anime.IsPlayIdle = false;
+                    //StartAnimation
+                    //-------------------------------------------------------
                 }
                 else
                 {
                     _xInput = 0; //catch case
-                    //-------------------------------------------------------
-                    P_anime.IsPlayIdle = true;
+                                 //-------------------------------------------------------
+                    P_anime.IsPlayRun = false;
                     P_anime.IsPlayJump = false;
-                    P_anime.IsPlayRun = false;//setting idle animation
-                    P_anime.IsPlayFall = false;
+                    P_anime.IsPlayIdle = true;
                     //-------------------------------------------------------
                 }
             }
