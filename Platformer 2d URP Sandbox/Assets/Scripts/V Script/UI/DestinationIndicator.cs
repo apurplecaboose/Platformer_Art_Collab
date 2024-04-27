@@ -9,11 +9,13 @@ public class DestinationIndicator : MonoBehaviour
     Transform flagTransform;
     // Start is called before the first frame update
     public GameObject[] Waypoints;
-    float _orthoSize;
+    float _orthoSize;//y
     float _screenHeight;
-    float _screenWidth;
+    float _screenWidth;//x
     float upRange;
-    Vector3 _flagCamRelative;
+    float _camUpBound, _camBotBound, _camLeftBound, _camRightBound;
+    Vector3 _flagCamRelativePos;
+    Color flagColor;
 
 
     Camera _cam;
@@ -22,13 +24,16 @@ public class DestinationIndicator : MonoBehaviour
         _cam = this.GetComponent<Camera>();
         flag = GameObject.Find("flag");
         flagTransform = flag.transform;
-        _flagCamRelative = flagTransform.InverseTransformPoint(transform.position);
+        _flagCamRelativePos = flagTransform.InverseTransformPoint(transform.position);
+        _screenWidth= (_orthoSize * (32 / 9)) / 2;
+        _camLeftBound=- (_orthoSize * (32 / 9)) / 2;
+        flagColor = flag.GetComponent<SpriteRenderer>().color;
     }
 
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(_flagCamRelative);
+        Debug.Log(_flagCamRelativePos);
         //ArrowBehavior();
         screensize();
     }
@@ -71,4 +76,27 @@ public class DestinationIndicator : MonoBehaviour
         }
 
     }
+    bool IsTargetOnScreen()
+    {
+        if (_flagCamRelativePos.x >_camLeftBound&&_flagCamRelativePos.x<_camRightBound)
+        {
+            if (_flagCamRelativePos.y > _camBotBound)
+            {
+
+                return true;
+            }
+            return true;
+        }
+        else
+        {
+            flagColor.a = 1;
+            flag.GetComponent<SpriteRenderer>().color=flagColor;
+            return false;
+        }
+    }
+    //bool EdgeCheck()
+    //{
+    //    if (_flagCamRelativePos.x == 0) 
+            
+    //}
 }
