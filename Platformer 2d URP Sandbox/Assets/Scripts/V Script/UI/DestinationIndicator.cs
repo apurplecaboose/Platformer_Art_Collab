@@ -37,6 +37,7 @@ public class DestinationIndicator : MonoBehaviour
         //ArrowRotation();
         screensize();
         IsTargetOnScreen();
+        EdgeCheck();
     }
     void ArrowRotation()
     {
@@ -99,18 +100,37 @@ public class DestinationIndicator : MonoBehaviour
     {
         if (_flagCamRelativePos.x == 0)
         {
+
             if (_flagCamRelativePos.y > 0)
             {
                 //flage is top
                 return true;
             }
-            else if (_flagCamRelativePos.y < 0)
+            else
             {
                 //flag is below
                 return true;
             }
+            return true;
         }
-
+        else if (_flagCamRelativePos.y == 0)
+        {
+            if (_flagCamRelativePos.x > 0)
+            {
+                //flag is right
+                return true;
+            }
+            if (_flagCamRelativePos.x < 0)
+            {
+                //flag is left
+                return true;
+            }
+            return true;
+        }
+        else
+        {
+            return false;
+        }
 
     }
 }
