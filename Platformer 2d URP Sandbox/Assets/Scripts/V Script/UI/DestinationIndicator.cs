@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class DestinationIndicator : MonoBehaviour
-{//reference flag and camera, attatch
+{//attach on flag
 
     public GameObject flag,indicator;//or destination whatever it is
     Transform flagTransform;
@@ -21,8 +21,8 @@ public class DestinationIndicator : MonoBehaviour
     Camera _cam;
     void Start()
     {
-        _cam = this.GetComponent<Camera>();
-        flag = GameObject.Find("flag");
+        _cam = Camera.main;
+        flag = this.gameObject;
         flagTransform = flag.transform;
         _flagCamRelativePos = flagTransform.InverseTransformPoint(transform.position);
         _screenWidth= (_orthoSize * (32 / 9)) / 2;
@@ -34,10 +34,11 @@ public class DestinationIndicator : MonoBehaviour
     void Update()
     {
         Debug.Log(_flagCamRelativePos);
-        //ArrowBehavior();
+        //ArrowRotation();
         screensize();
+        IsTargetOnScreen();
     }
-    void ArrowBehavior()
+    void ArrowRotation()
     {
         if (flagTransform != null)
         {
@@ -94,9 +95,22 @@ public class DestinationIndicator : MonoBehaviour
             return false;
         }
     }
-    //bool EdgeCheck()
-    //{
-    //    if (_flagCamRelativePos.x == 0) 
-            
-    //}
+    bool EdgeCheck()
+    {
+        if (_flagCamRelativePos.x == 0)
+        {
+            if (_flagCamRelativePos.y > 0)
+            {
+                //flage is top
+                return true;
+            }
+            else if (_flagCamRelativePos.y < 0)
+            {
+                //flag is below
+                return true;
+            }
+        }
+
+
+    }
 }
