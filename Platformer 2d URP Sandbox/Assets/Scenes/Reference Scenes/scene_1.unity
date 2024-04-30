@@ -11211,6 +11211,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BulletUI
       objectReference: {fileID: 0}
+    - target: {fileID: 8284696440141257697, guid: 1b88aef6f6f93c84c84b94fcef9ea2c9, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: d4a9e257c7dac264bb101286cb42b183, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -13292,7 +13296,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 50
   m_Sprite: {fileID: -9095717837082945937, guid: 511396be69499574b9dcb507084013c6, type: 3}
-  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_Color: {r: 1, g: 0, b: 0, a: 0}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -14445,15 +14449,15 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 51
-  m_Sprite: {fileID: 21300000, guid: 798153251f5f27d4182b2423c1dd6f38, type: 3}
+  m_Sprite: {fileID: 2057891134, guid: eb4f024714eeddf46939845da436403f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1.44, y: 1.44}
+  m_Size: {x: 1.3653333, y: 1.3653333}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &7347465433361745114
