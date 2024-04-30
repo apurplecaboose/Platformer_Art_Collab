@@ -18,7 +18,7 @@ public class FlagLogic : MonoBehaviour
     {
         _anime_CountDown = 3;
         _p_Script = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerControl>();
-        _endInfo = transform.GetChild(0).GetComponent<TextMeshPro>();//Get texmesh pro component as child of flag
+        _endInfo = transform.GetChild(0).GetComponent<TextMeshPro>();//Get texmesh pro component as child of _flag
     }
 
     // Update is called once per frame

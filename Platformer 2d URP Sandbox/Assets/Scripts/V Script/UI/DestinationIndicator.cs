@@ -3,31 +3,33 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class DestinationIndicator : MonoBehaviour
-{//attach on flag
+{//attach on _flag
 
-    public GameObject flag,indicator;//or destination whatever it is
+    public GameObject _flag,_indicator;//or destination whatever it is
     Transform flagTransform;
     // Start is called before the first frame update
-    public GameObject[] Waypoints;
+    //public GameObject[] Waypoints;
     float _orthoSize;//y
     float _screenHeight;
     float _screenWidth;//x
     float upRange;
     float _camUpBound, _camBotBound, _camLeftBound, _camRightBound;
     Vector3 _flagCamRelativePos;
-    Color flagColor;
+   [SerializeField]Color _indicatorColor;
 
 
     Camera _cam;
     void Start()
     {
         _cam = Camera.main;
-        flag = this.gameObject;
-        flagTransform = flag.transform;
-        _flagCamRelativePos = flagTransform.InverseTransformPoint(transform.position);
+        _flag = this.gameObject;
+        flagTransform = _flag.transform;
+        _flagCamRelativePos = _cam.transform.InverseTransformPoint(transform.position);
+        _orthoSize = _cam.orthographicSize;
         _screenWidth= (_orthoSize * (32 / 9)) / 2;
         _camLeftBound=- (_orthoSize * (32 / 9)) / 2;
-        flagColor = flag.GetComponent<SpriteRenderer>().color;
+        _indicator = gameObject.transform.GetChild(0).gameObject;
+        _indicatorColor = _indicator.GetComponent<SpriteRenderer>().color;
     }
 
     // Update is called once per frame
@@ -52,27 +54,27 @@ public class DestinationIndicator : MonoBehaviour
     //{
     //    _orthoSize = _cam.orthographicSize;
     //    float screenWidthOffset = (_orthoSize * (32 / 9))/2;
-    //    float m =flag.transform.position.y/flag.transform.position.x;
+    //    float m =_flag.transform.position.y/_flag.transform.position.x;
     //    Waypoints[0].transform.position = this.transform.position + new Vector3(screenWidthOffset, _orthoSize, 0);//some position;
     //    Waypoints[1].transform.position = transform.position+ new Vector3(-screenWidthOffset,_orthoSize,0);
     //    //Waypoints[2].transform.position = transform.position+new Vector3(screenWidthOffset,_;
     //    //Waypoints[3].transform.position = //some position;
     //    //Waypoints[2].transform.position = transform.position+new Vector3(screenWidthOffset)
     //    //check up and down
-    //    if (flag.transform.position.y > transform.position.y + _orthoSize)
+    //    if (_flag.transform.position.y > transform.position.y + _orthoSize)
     //    {
     //        Debug.Log("its above me");
     //    }
-    //    else if (flag.transform.position.y < transform.position.y - _orthoSize)
+    //    else if (_flag.transform.position.y < transform.position.y - _orthoSize)
     //    {
     //        Debug.Log("its below me");
-    //        //indicator.transform.position = new Vector3(flag.transform.position.x, -_orthoSize+1);
+    //        //_indicator.transform.position = new Vector3(_flag.transform.position.x, -_orthoSize+1);
     //    }
-    //    if (flag.transform.position.x > transform.position.x + screenWidthOffset)
+    //    if (_flag.transform.position.x > transform.position.x + screenWidthOffset)
     //    {
     //        Debug.Log("its on my right");
     //    }
-    //    else if (flag.transform.position.y < transform.position.y - screenWidthOffset)
+    //    else if (_flag.transform.position.y < transform.position.y - screenWidthOffset)
     //    {
     //        Debug.Log("its on my left");
     //    }
@@ -91,8 +93,8 @@ public class DestinationIndicator : MonoBehaviour
         }
         else
         {
-            flagColor.a = 1;
-            flag.GetComponent<SpriteRenderer>().color=flagColor;
+            _indicatorColor.a = 1;
+            _indicator.GetComponent<SpriteRenderer>().color=_indicatorColor;
             return false;
         }
     }
@@ -103,12 +105,14 @@ public class DestinationIndicator : MonoBehaviour
 
             if (_flagCamRelativePos.y > 0)
             {
-                //flage is top
+                //flag is top
+                _indicator.transform.position = new Vector2(_cam.transform.position.x, _orthoSize);
                 return true;
             }
-            else
+            else if (_flagCamRelativePos.y < 0)
             {
-                //flag is below
+                //_flag is below
+                _indicator.transform.position = new Vector2(0, -_orthoSize);
                 return true;
             }
             return true;
@@ -117,18 +121,21 @@ public class DestinationIndicator : MonoBehaviour
         {
             if (_flagCamRelativePos.x > 0)
             {
-                //flag is right
+                //_flag is right
+                _indicator.transform.position = new Vector2(_orthoSize,0);
                 return true;
             }
-            if (_flagCamRelativePos.x < 0)
+            else if (_flagCamRelativePos.x < 0)
             {
-                //flag is left
+                //_flag is left
+                _indicator.transform.position = new Vector2( -_orthoSize,0);
                 return true;
             }
             return true;
         }
         else
         {
+
             return false;
         }
 
