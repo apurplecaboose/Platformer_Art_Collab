@@ -12,6 +12,8 @@ public class PlayerControl : MonoBehaviour
     [HideInInspector] public bool IsDash, CanJump, Grounded, CanBeKnockBack;
     public LayerMask CheckGroundLayer;
     [HideInInspector] public bool IsRight;
+    public SpriteRenderer P_Anime_Sprite;
+    public P_Animation P_anime;
 
     private void Awake()
     {
@@ -28,7 +30,7 @@ public class PlayerControl : MonoBehaviour
             Jump(_jumpForce);
             EnterSlowMotion();
         }
-        if(GameManager.P_state == GameManager.PlayerState.Win)
+        if (GameManager.P_state == GameManager.PlayerState.Win)
         {
             P_rb.velocity = new Vector2(0, P_rb.velocity.y); //remove player horizontal velocity but let player fall.
         }
@@ -45,13 +47,18 @@ public class PlayerControl : MonoBehaviour
     float _jumptimer, JumpCD = 0.1f;
     void Jump(float upThrust)
     {
-        if(_jumptimer <= 0)
+        if (_jumptimer <= 0)
         {
             if (Input.GetKeyDown(KeyCode.Space) && Grounded)
             {
                 P_rb.AddForce(Vector2.up * upThrust, ForceMode2D.Impulse);
                 Grounded = false;
                 _jumptimer = JumpCD;
+                //-------------------------------------------------------
+                P_anime.IsPlayJump = true;
+                P_anime.IsPlayRun = false;
+                P_anime.IsPlayIdle = false;
+                //-------------------------------------------------------
             }
         }
         else _jumptimer -= Time.deltaTime;
@@ -79,7 +86,7 @@ public class PlayerControl : MonoBehaviour
             {
                 if (Mathf.Sign(P_rb.velocity.x) != _xInput && _xInput != 0)
                 {
-                   // expressed as percent momentum transfer 1 being full momentum transfer
+                    // expressed as percent momentum transfer 1 being full momentum transfer
                     P_rb.velocity = new Vector2(-P_rb.velocity.x * _tapStrafeMultiplier, P_rb.velocity.y);
                 }
                 else
@@ -91,8 +98,13 @@ public class PlayerControl : MonoBehaviour
                     else if (Input.GetKey(KeyCode.D))
                     {
                         _xInput = 1;
+
+                        P_Anime_Sprite.flipX = false;//J:Switch animation Sprite
                     }
-                    else _xInput = 0; //catch case
+                    else
+                    {
+                        _xInput = 0; //catch case
+                    }
                 }
             }
             else // not tapstrafe
@@ -101,17 +113,42 @@ public class PlayerControl : MonoBehaviour
                 {
                     _xInput = -1;
                     GetComponent<SpriteRenderer>().flipX = true;//J:Switch player Sprite
+                    P_Anime_Sprite.flipX = true;//J:Switch animation Sprite
 
-                    IsRight= false;//switch shooting point
+                    IsRight = false;//switch shooting point
+
+                    //-------------------------------------------------------
+                    P_anime.IsPlayRun = true;
+                    P_anime.IsPlayJump = false;
+                    P_anime.IsPlayIdle = false;
+                    //StartAnimation
+                    //-------------------------------------------------------
                 }
                 else if (Input.GetKey(KeyCode.D))
                 {
                     _xInput = 1;
                     GetComponent<SpriteRenderer>().flipX = false;//J:Switch player Sprite
+                    P_Anime_Sprite.flipX = false;//J:Switch animation Sprite
+
 
                     IsRight = true;//switch shooting point
+                    //-------------------------------------------------------
+                    P_anime.IsPlayRun = true;
+                    P_anime.IsPlayJump = false;
+                    P_anime.IsPlayIdle = false;
+                    //StartAnimation
+                    //-------------------------------------------------------
                 }
-                else _xInput = 0; //catch case
+                else
+                {
+                    _xInput = 0; //catch case
+                    //-------------------------------------------------------
+                    P_anime.IsPlayRun = false;
+                    P_anime.IsPlayJump = false;
+                    P_anime.IsPlayIdle = true;
+
+                    //-------------------------------------------------------
+                }
             }
         }
     }

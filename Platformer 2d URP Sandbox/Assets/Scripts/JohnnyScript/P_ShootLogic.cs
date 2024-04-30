@@ -12,6 +12,7 @@ public class P_ShootLogic : MonoBehaviour
     [HideInInspector]public bool HaveAmmo;
     PlayerControl PlayerControlRef;
     public LanternLight _p_LanternLight;
+    public P_Animation _p_anime;
 
     void Awake()
     {
@@ -30,9 +31,6 @@ public class P_ShootLogic : MonoBehaviour
 
     void Shoot()
     {
-        //        _dir = new Vector3(_refToMousePosition.x - ShootDirection.position.x, _refToMousePosition.y - ShootDirection.position.y);
-        //        ShootDirection.up = _dir;// shooting direction
-        //ShootDirection.up = _dir;// shooting direction
 
         if (BulletNum > 0)
         {
@@ -42,6 +40,9 @@ public class P_ShootLogic : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Mouse0) && HaveAmmo)
         {
+            //------------------------
+            _p_anime.IsPlayFire = true;
+            //------------------------
             BulletNum -= 1;//bullet limit set is 10
             if(PlayerControlRef.IsRight)//switch shooting point
             {
@@ -61,6 +62,10 @@ public class P_ShootLogic : MonoBehaviour
                 projectileScript.PlayerIntialPosition = this.transform.position;
                 _p_LanternLight.TriggerLightChange(BulletNum);
             }
+        }
+        if(Input.GetMouseButtonUp(0))
+        {
+            _p_anime.IsPlayFire = false;//turn off fire animation
         }
     }
 
