@@ -1,55 +1,43 @@
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
-using UnityEngine.UIElements;
 
 public class PlayerControl : MonoBehaviour
 {
-    public SlowMo refToSlowMo;
+    SlowMo refToSlowMo;
     float _xInput;
-    private Rigidbody2D P_rb;
-    [SerializeField] float _moveForce, _jumpForce, _tapStrafeMultiplier;
-    public bool IsDash, CanJump, Grounded, CanBeKnockBack;
+    Rigidbody2D P_rb;
+    [SerializeField] float _moveForce = 20f, _jumpForce = 7f, _tapStrafeMultiplier = 0.3f;
+    [HideInInspector] public bool IsDash, CanJump, Grounded, CanBeKnockBack;
     public LayerMask CheckGroundLayer;
-    public PlayerState RefPlayerState;
-    public SpriteRenderer LanternStick, LanternStick1, Lantern, Lantern1, P_Anime_Sprite;
-    public bool IsRight;
+    [HideInInspector] public bool IsRight;
+    public SpriteRenderer P_Anime_Sprite;
     public P_Animation P_anime;
-    public enum PlayerState
-    {
-        InGame,
-        Win,
-        Lose
-    }
 
     private void Awake()
     {
+        refToSlowMo = this.GetComponent<SlowMo>();
         P_rb = this.GetComponent<Rigidbody2D>();
         IsRight = true;
     }
 
     private void Update()
     {
-        if (RefPlayerState == PlayerState.InGame)
+        if (GameManager.P_state == GameManager.PlayerState.Playing)
         {
             PlayerInput();
             Jump(_jumpForce);
             EnterSlowMotion();
         }
-        if (RefPlayerState == PlayerState.Win)
+        if (GameManager.P_state == GameManager.PlayerState.Win)
         {
-            //P_rb.bodyType = RigidbodyType2D.Static;
             P_rb.velocity = new Vector2(0, P_rb.velocity.y); //remove player horizontal velocity but let player fall.
         }
     }
     private void FixedUpdate()
     {
-        //if (RefPlayerState == PlayerState.InGame)
-        //{
-        //}
-        if (RefPlayerState == PlayerState.InGame) // do not allow extra forces to be added when player has won.
+        if (GameManager.P_state == GameManager.PlayerState.Playing) // do not allow extra forces to be added when player has won.
         {
             Vector2 xInputVec = new Vector2(_xInput, 0);
             P_rb.AddForce(xInputVec * _moveForce);
@@ -89,7 +77,6 @@ public class PlayerControl : MonoBehaviour
         }
     }
 
-
     void PlayerInput()
     {
         if (Input.GetKey(KeyCode.A) && Input.GetKey(KeyCode.D)) _xInput = 0;
@@ -107,8 +94,6 @@ public class PlayerControl : MonoBehaviour
                     if (Input.GetKey(KeyCode.A))
                     {
                         _xInput = -1;
-
-                        P_Anime_Sprite.flipX = true;//J:Switch animation Sprite
                     }
                     else if (Input.GetKey(KeyCode.D))
                     {
@@ -119,8 +104,6 @@ public class PlayerControl : MonoBehaviour
                     else
                     {
                         _xInput = 0; //catch case
-
-
                     }
                 }
             }
@@ -133,12 +116,6 @@ public class PlayerControl : MonoBehaviour
                     P_Anime_Sprite.flipX = true;//J:Switch animation Sprite
 
                     IsRight = false;//switch shooting point
-
-                    Lantern1.GetComponent<SpriteRenderer>().color = Color.white;
-                    LanternStick1.GetComponent<SpriteRenderer>().color = Color.white;
-                    Lantern.GetComponent<SpriteRenderer>().color = Color.clear;
-                    LanternStick.GetComponent<SpriteRenderer>().color = Color.clear;
-                    //Switch lantern 
 
                     //-------------------------------------------------------
                     P_anime.IsPlayRun = true;
@@ -155,13 +132,6 @@ public class PlayerControl : MonoBehaviour
 
 
                     IsRight = true;//switch shooting point
-
-                    Lantern1.GetComponent<SpriteRenderer>().color = Color.clear;
-                    LanternStick1.GetComponent<SpriteRenderer>().color = Color.clear;
-                    Lantern.GetComponent<SpriteRenderer>().color = Color.white;
-                    LanternStick.GetComponent<SpriteRenderer>().color = Color.white;
-                    //J:Switch lantern 
-
                     //-------------------------------------------------------
                     P_anime.IsPlayRun = true;
                     P_anime.IsPlayJump = false;
