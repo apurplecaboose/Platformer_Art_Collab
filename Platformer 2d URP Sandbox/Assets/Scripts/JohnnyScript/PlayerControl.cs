@@ -13,12 +13,13 @@ public class PlayerControl : MonoBehaviour
     public LayerMask CheckGroundLayer;
     [HideInInspector] public bool IsRight;
     public SpriteRenderer P_Anime_Sprite;
-    public P_Animation P_anime;
+    P_Animation _P_anime;
 
     private void Awake()
     {
         refToSlowMo = this.GetComponent<SlowMo>();
         P_rb = this.GetComponent<Rigidbody2D>();
+        _P_anime = P_Anime_Sprite.gameObject.GetComponent<P_Animation>();
         IsRight = true;
     }
 
@@ -55,9 +56,9 @@ public class PlayerControl : MonoBehaviour
                 Grounded = false;
                 _jumptimer = JumpCD;
                 //-------------------------------------------------------
-                P_anime.IsPlayJump = true;
-                P_anime.IsPlayRun = false;
-                P_anime.IsPlayIdle = false;
+                _P_anime.IsPlayJump = true;
+                _P_anime.IsPlayRun = false;
+                _P_anime.IsPlayIdle = false;
                 //-------------------------------------------------------
             }
         }
@@ -118,9 +119,9 @@ public class PlayerControl : MonoBehaviour
                     IsRight = false;//switch shooting point
 
                     //-------------------------------------------------------
-                    P_anime.IsPlayRun = true;
-                    P_anime.IsPlayJump = false;
-                    P_anime.IsPlayIdle = false;
+                    _P_anime.IsPlayRun = true;
+                    _P_anime.IsPlayJump = false;
+                    _P_anime.IsPlayIdle = false;
                     //StartAnimation
                     //-------------------------------------------------------
                 }
@@ -133,9 +134,9 @@ public class PlayerControl : MonoBehaviour
 
                     IsRight = true;//switch shooting point
                     //-------------------------------------------------------
-                    P_anime.IsPlayRun = true;
-                    P_anime.IsPlayJump = false;
-                    P_anime.IsPlayIdle = false;
+                    _P_anime.IsPlayRun = true;
+                    _P_anime.IsPlayJump = false;
+                    _P_anime.IsPlayIdle = false;
                     //StartAnimation
                     //-------------------------------------------------------
                 }
@@ -143,9 +144,9 @@ public class PlayerControl : MonoBehaviour
                 {
                     _xInput = 0; //catch case
                     //-------------------------------------------------------
-                    P_anime.IsPlayRun = false;
-                    P_anime.IsPlayJump = false;
-                    P_anime.IsPlayIdle = true;
+                    _P_anime.IsPlayRun = false;
+                    _P_anime.IsPlayJump = false;
+                    _P_anime.IsPlayIdle = true;
 
                     //-------------------------------------------------------
                 }
