@@ -222,7 +222,7 @@ ParticleSystem:
     startColor:
       serializedVersion: 2
       minMaxState: 2
-      minColor: {r: 1, g: 0.5801887, b: 0.5801887, a: 1}
+      minColor: {r: 0, g: 0, b: 0, a: 1}
       maxColor: {r: 0.8301887, g: 0.18405126, b: 0.18405126, a: 1}
       maxGradient:
         serializedVersion: 2
@@ -1196,10 +1196,10 @@ ParticleSystem:
         m_RotationOrder: 4
     separateAxes: 0
   RotationModule:
-    enabled: 0
+    enabled: 1
     x:
       serializedVersion: 2
-      minMaxState: 0
+      minMaxState: 3
       scalar: 0
       minScalar: 0
       maxCurve:
@@ -1252,7 +1252,7 @@ ParticleSystem:
         m_RotationOrder: 4
     y:
       serializedVersion: 2
-      minMaxState: 0
+      minMaxState: 3
       scalar: 0
       minScalar: 0
       maxCurve:
@@ -1305,9 +1305,9 @@ ParticleSystem:
         m_RotationOrder: 4
     curve:
       serializedVersion: 2
-      minMaxState: 0
-      scalar: 0.7853982
-      minScalar: 0.7853982
+      minMaxState: 3
+      scalar: 3.4906585
+      minScalar: 0.08726646
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -4932,8 +4932,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26146b1bf4c3bf643832ac21c254e873, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  explosion: {fileID: 2401189259832596298}
-  smoke: {fileID: 8326807266656478023}
   Lifetime: 0
 --- !u!1 &8326807266656478023
 GameObject:

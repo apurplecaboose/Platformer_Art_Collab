@@ -16,7 +16,6 @@ public class BulletUI : MonoBehaviour
     }
     private void Update()
     {
-        Debug.Log(_bulletref.BulletNum);
         _bulletTMPref.text = _bulletref.BulletNum+"";
     }
 }
