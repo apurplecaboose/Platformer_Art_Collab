@@ -4,15 +4,29 @@ using UnityEngine;
 
 public class TestPurposeMovement : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    void Movement()
     {
-        
+        float speed = 0.1f;
+        if (Input.GetKey(KeyCode.W))
+        {
+            transform.position += new Vector3(0, speed);
+        }
+        if (Input.GetKey(KeyCode.S))
+        {
+            transform.position += new Vector3(0, -speed);
+        }
+        if (Input.GetKey(KeyCode.A))
+        {
+            transform.position += new Vector3(-speed,0 );
+        }
+        if (Input.GetKey(KeyCode.D))
+        {
+            transform.position += new Vector3( speed,0);
+        }
+    }
+    private void Update()
+    {
+        Movement();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

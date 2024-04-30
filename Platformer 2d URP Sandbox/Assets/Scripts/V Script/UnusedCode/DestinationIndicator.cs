@@ -24,10 +24,11 @@ public class DestinationIndicator : MonoBehaviour
         _cam = Camera.main;
         _flag = this.gameObject;
         flagTransform = _flag.transform;
-        _flagCamRelativePos = _cam.transform.InverseTransformPoint(transform.position);
+        _flagCamRelativePos = transform.InverseTransformPoint(_cam.transform.position);
         _orthoSize = _cam.orthographicSize;
         _screenWidth= (_orthoSize * (32 / 9)) / 2;
-        _camLeftBound=- (_orthoSize * (32 / 9)) / 2;
+        _camRightBound = (_orthoSize * (32 / 9)) / 2;
+        _camLeftBound = -_camRightBound;
         _indicator = gameObject.transform.GetChild(0).gameObject;
         _indicatorColor = _indicator.GetComponent<SpriteRenderer>().color;
     }
@@ -35,7 +36,9 @@ public class DestinationIndicator : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        _flagCamRelativePos = transform.InverseTransformPoint(_cam.transform.position);
         Debug.Log(_flagCamRelativePos);
+        Debug.Log(_camLeftBound);
         //ArrowRotation();
         //screensize();
         IsTargetOnScreen();
@@ -106,7 +109,7 @@ public class DestinationIndicator : MonoBehaviour
             if (_flagCamRelativePos.y > 0)
             {
                 //flag is top
-                _indicator.transform.position = new Vector2(_cam.transform.position.x, _orthoSize);
+                _indicator.transform.position = new Vector2(0, _orthoSize);
                 return true;
             }
             else if (_flagCamRelativePos.y < 0)
