@@ -72,7 +72,7 @@ namespace TransitionsPlus {
         [Tooltip("When fading to a second camera, keep second camera active while performing the transition.")]
         public bool keepSecondCameraActive;
 
-        [Tooltip("Makes the center of the animation follow a target gameobject")]
+        [Tooltip("Makes the center of the animation follow a _flagTransform gameobject")]
         public bool autoFollow;
         public Transform followTarget;
         [Tooltip("An optional offset that can be added to the position of the followed gameobject. Useful to make the transition focus on certain part of the object.")]
