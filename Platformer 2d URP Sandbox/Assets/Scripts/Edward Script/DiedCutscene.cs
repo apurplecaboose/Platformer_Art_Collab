@@ -9,9 +9,13 @@ public class DiedCutscene : MonoBehaviour
     bool  _trigger;
     public TransitionProfile TransitionProfile;
 
+    private void Awake()
+    {
+        Time.timeScale = 1; // fix slowmo death bug
+    }
     void Update()
     {
-        CutsceneTimer -= Time.deltaTime;
+        CutsceneTimer -= Time.unscaledDeltaTime;
         if (CutsceneTimer < 0 || Input.GetKeyDown(KeyCode.Space))
         {
             //Switch Scene
