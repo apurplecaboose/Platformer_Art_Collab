@@ -95,6 +95,7 @@ public class PlayerControl : MonoBehaviour
                     if (Input.GetKey(KeyCode.A))
                     {
                         _xInput = -1;
+                        P_Anime_Sprite.flipX = true;//J:Switch animation Sprite
                     }
                     else if (Input.GetKey(KeyCode.D))
                     {
@@ -105,6 +106,9 @@ public class PlayerControl : MonoBehaviour
                     else
                     {
                         _xInput = 0; //catch case
+                        _P_anime.IsPlayJump = true;
+                        _P_anime.IsPlayIdle = false;
+                        _P_anime.IsPlayRun = false;//--------May 1st modify the anime
                     }
                 }
             }
@@ -144,10 +148,13 @@ public class PlayerControl : MonoBehaviour
                 {
                     _xInput = 0; //catch case
                     //-------------------------------------------------------
-                    _P_anime.IsPlayRun = false;
-                    _P_anime.IsPlayJump = false;
-                    _P_anime.IsPlayIdle = true;
-
+                    if (Grounded)
+                    {
+                        print("Work1");
+                        _P_anime.IsPlayRun = false;
+                        _P_anime.IsPlayJump = false;
+                        _P_anime.IsPlayIdle = true;
+                    }
                     //-------------------------------------------------------
                 }
             }
