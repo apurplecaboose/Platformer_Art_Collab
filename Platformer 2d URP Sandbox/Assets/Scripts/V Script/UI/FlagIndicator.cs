@@ -48,10 +48,13 @@ public class FlagIndicator : MonoBehaviour
     }
     void RotateIndicator()
     {
-        float angleoffset = -30;
+        //float angleoffset = -30;
+        //Vector2 direction = _flagTransform.position - _cam.transform.position;
+        //float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+        //this.transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward) * Quaternion.Euler(0,0, angleoffset);
+
         Vector2 direction = _flagTransform.position - _cam.transform.position;
-        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-        this.transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward) * Quaternion.Euler(0,0, angleoffset);
+        transform.right = direction;
     }
     void DistanceBasedModifiers(float distance)
     {
