@@ -66,7 +66,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 947236e70994bfc408881bfff34019b0, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 4bf17ade9fc7b42409184a40ef3c339d, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -347,7 +347,7 @@ Transform:
   m_Children:
   - {fileID: 1488464708642303259}
   m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &8611905359265654346
 MonoBehaviour:
