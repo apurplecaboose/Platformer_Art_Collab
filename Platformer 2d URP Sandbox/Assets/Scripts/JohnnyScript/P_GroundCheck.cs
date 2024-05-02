@@ -8,6 +8,8 @@ public class P_GroundCheck : MonoBehaviour
 
     public float CoyoteTime;
     [SerializeField]float _timer;
+    bool _framespikePrevention = false;
+    int _deltaTimeBuffer = 1;
     private void Awake()
     {
         _timer = CoyoteTime;
@@ -18,6 +20,12 @@ public class P_GroundCheck : MonoBehaviour
         {
             P_Ref.Grounded = true;
             _timer = CoyoteTime;
+            _framespikePrevention = true;
+            _deltaTimeBuffer = 1;
+            if(Time.timeScale <1)
+            {
+                _timer = CoyoteTime + 0.2f;
+            }
         }
     }
     void OnTriggerStay2D(Collider2D collision)
@@ -26,16 +34,34 @@ public class P_GroundCheck : MonoBehaviour
         {
             P_Ref.Grounded = true;
             _timer = CoyoteTime;
+            _framespikePrevention = true;
+            _deltaTimeBuffer = 1;
+            if (Time.timeScale < 1)
+            {
+                _timer = CoyoteTime + 0.2f;
+            }
         }
+    }
+    private void FixedUpdate()
+    {
+        _deltaTimeBuffer -= 1;
     }
     void Update()
     {
-        if (P_Ref.Grounded)
+        if(_deltaTimeBuffer <= 0)
         {
-            _timer -= Time.deltaTime;
+            _framespikePrevention = false;
         }
 
-        if( _timer <= 0 && P_Ref.Grounded)
+    }
+    private void LateUpdate()
+    {
+        if (P_Ref.Grounded && !_framespikePrevention)
+        {
+            _timer -= Time.unscaledDeltaTime;
+        }
+
+        if (_timer <= 0 && P_Ref.Grounded)
         {
             P_Ref.Grounded = false;
         }

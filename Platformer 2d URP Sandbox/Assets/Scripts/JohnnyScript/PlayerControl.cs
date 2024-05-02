@@ -25,6 +25,7 @@ public class PlayerControl : MonoBehaviour
 
     private void Update()
     {
+        print(Grounded);
         if (GameManager.P_state == GameManager.PlayerState.Playing)
         {
             PlayerInput();
@@ -147,14 +148,10 @@ public class PlayerControl : MonoBehaviour
                 else
                 {
                     _xInput = 0; //catch case
-                    //-------------------------------------------------------
-                    if (Grounded)
-                    {
-                        print("Work1");
-                        _P_anime.IsPlayRun = false;
-                        _P_anime.IsPlayJump = false;
-                        _P_anime.IsPlayIdle = true;
-                    }
+                                 //-------------------------------------------------------
+                    _P_anime.IsPlayRun = false;
+                    _P_anime.IsPlayJump = false;
+                    _P_anime.IsPlayIdle = true;
                     //-------------------------------------------------------
                 }
             }

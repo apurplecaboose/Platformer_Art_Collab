@@ -2718,7 +2718,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &444114557
 Transform:
   m_ObjectHideFlags: 0
@@ -8629,13 +8629,14 @@ GameObject:
   m_Component:
   - component: {fileID: 1470906068}
   - component: {fileID: 1470906067}
+  - component: {fileID: 1470906069}
   m_Layer: 0
   m_Name: Level1n2 bg big
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!212 &1470906067
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -8703,6 +8704,27 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &1470906069
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1470906066}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 23.622046, y: 18.897636, z: 0.19999999}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1470921331
 GameObject:
   m_ObjectHideFlags: 0
@@ -13352,6 +13374,10 @@ MonoBehaviour:
   HaveAmmo: 0
   _p_LanternLight: {fileID: 4897522116653683650}
   _p_anime: {fileID: 4363064167467277007}
+  IsAwake: 0
+  CanShoot: 0
+  CountDown_fire_anime: 0
+  Shoot_Interval: 0
 --- !u!1 &1671217926443665368
 GameObject:
   m_ObjectHideFlags: 0
@@ -13450,7 +13476,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   P_Ref: {fileID: 4851252655895297208}
-  CoyoteTime: 0.04
+  CoyoteTime: 0.15
   _timer: 0
 --- !u!114 &2262478862314174188
 MonoBehaviour:
@@ -14020,6 +14046,7 @@ MonoBehaviour:
   IsPlayIdle: 0
   IsPlayFire: 0
   IsPlayJump: 0
+  IsJumpByShoot: 0
 --- !u!61 &4420611086869274650
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -14052,7 +14079,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.15}
+  m_Offset: {x: -0.057928324, y: -0.6469364}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -14063,7 +14090,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.15, y: 0.5}
+  m_Size: {x: 1.2658565, y: 1.4938729}
   m_EdgeRadius: 0
 --- !u!4 &4554664164101146050
 Transform:
