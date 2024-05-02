@@ -30,8 +30,8 @@ public class FlagLogic : MonoBehaviour
             Panime.Play("Win");
             GameManager.P_state = GameManager.PlayerState.Win;//J:limit player movement
             
-            _anime_CountDown -= Time.deltaTime;
-            _endInfo.color += new Color(0, 0, 0, 0.25f * Time.deltaTime);//show the instruction
+            _anime_CountDown -= Time.unscaledDeltaTime;
+            _endInfo.color += new Color(0, 0, 0, 0.25f * Time.unscaledDeltaTime);//show the instruction
             if (_anime_CountDown < 0 || Input.GetKeyDown(KeyCode.Space))
             {
                 //Switch Scene
@@ -50,6 +50,7 @@ public class FlagLogic : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             _isWin = true;
+
         }
     }
 }

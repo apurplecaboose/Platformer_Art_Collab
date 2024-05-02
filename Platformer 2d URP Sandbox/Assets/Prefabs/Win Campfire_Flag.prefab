@@ -36,7 +36,7 @@ Transform:
   - {fileID: 83581568798979713}
   - {fileID: 4640896889095479691}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &4507357772160353386
 SpriteRenderer:
@@ -104,6 +104,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _TargetScene: 5
   TransitionProfile: {fileID: 11400000, guid: 5acacaf6c9661a64280922b6af864e94, type: 2}
+  Panime: {fileID: 0}
 --- !u!61 &8177219601187182875
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5397,7 +5398,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  - {fileID: -3857552992424295662, guid: 65e091cc8a8f25144a7d36b30aa572fc, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -5441,8 +5442,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Press Space To Continue
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 65e091cc8a8f25144a7d36b30aa572fc, type: 2}
+  m_sharedMaterial: {fileID: -3857552992424295662, guid: 65e091cc8a8f25144a7d36b30aa572fc, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -5473,7 +5474,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
+  m_HorizontalAlignment: 2
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
