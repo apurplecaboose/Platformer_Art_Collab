@@ -12,6 +12,7 @@ public class FlagLogic : MonoBehaviour
     bool _isWin, _trigger;
     TextMeshPro _endInfo;
     public TransitionProfile TransitionProfile;
+    public Animator Panime;
     private void Start()
     {
         _anime_CountDown = 3;
@@ -26,6 +27,7 @@ public class FlagLogic : MonoBehaviour
     {
         if (_isWin)
         {
+            Panime.Play("Win");
             GameManager.P_state = GameManager.PlayerState.Win;//J:limit player movement
             
             _anime_CountDown -= Time.deltaTime;

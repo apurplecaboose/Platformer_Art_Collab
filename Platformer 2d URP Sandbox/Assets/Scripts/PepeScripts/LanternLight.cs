@@ -47,7 +47,7 @@ public class LanternLight : MonoBehaviour
         if (_startLightLerp)
         {
             _lerpDeltaTime += Time.deltaTime;
-            if(_lerpDeltaTime >= _lerpTime)
+            if (_lerpDeltaTime >= _lerpTime)
             {
                 _intensityStart = Light.intensity;
                 _outRadiusStart = Light.pointLightOuterRadius;

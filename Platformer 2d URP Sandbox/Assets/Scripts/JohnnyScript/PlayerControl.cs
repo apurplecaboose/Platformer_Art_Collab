@@ -25,7 +25,6 @@ public class PlayerControl : MonoBehaviour
 
     private void Update()
     {
-        print(Grounded);
         if (GameManager.P_state == GameManager.PlayerState.Playing)
         {
             PlayerInput();

@@ -112,6 +112,7 @@ public class Campfires : MonoBehaviour
 
     //CampFire Light
     public AnimationCurve CurveStart, CurveEnd;
+    public AnimationCurve SpriteCurveStart;
     Light2D _light, _spriteLightRed, _slowMoSpriteLight;
     [SerializeField] float _intensityStart, _intensityPeak, _intensityEnd;
     [SerializeField] float _outRadiusStart, _outRadiusPeak;
@@ -134,7 +135,7 @@ public class Campfires : MonoBehaviour
         {
             _light.intensity = BasicFloatLerp(_intensityStart, _intensityPeak, _timeA, _lerpDeltaTime, CurveStart);
             _light.pointLightOuterRadius = BasicFloatLerp(_outRadiusStart, _outRadiusPeak, _timeA, _lerpDeltaTime, CurveStart);
-            _spriteLightRed.intensity = BasicFloatLerp(_s_intensityStart, _s_intensityPeak, _timeA, _lerpDeltaTime, CurveStart);
+            _spriteLightRed.intensity = BasicFloatLerp(_s_intensityStart, _s_intensityPeak, _timeA, _lerpDeltaTime, SpriteCurveStart);
             insideFireParticleEmission.enabled = true; // turn on particle system
             frieParticleEmission.enabled = true;
             smokeParticleEmission.enabled = true;
@@ -144,7 +145,7 @@ public class Campfires : MonoBehaviour
         {
             _light.intensity = BasicFloatLerp(_intensityPeak, _intensityEnd, _timeC, _lerpDeltaTime - (_timeA + _timeB), CurveEnd);
             _light.pointLightOuterRadius = BasicFloatLerp(_outRadiusPeak, _outRadiusStart, _timeC, _lerpDeltaTime - (_timeA + _timeB), CurveEnd);
-            _spriteLightRed.intensity = BasicFloatLerp(_s_intensityPeak, _s_intensityStart, _timeC, _lerpDeltaTime - (_timeA + _timeB), CurveStart);
+            //_spriteLightRed.intensity = BasicFloatLerp(_s_intensityPeak, _s_intensityStart, _timeC, _lerpDeltaTime - (_timeA + _timeB), SpriteCurveStart);
             if (_light.pointLightOuterRadius < _turnOffParticleEmissionDueToOuterRadius1)//turn off inside fire particle emission when light is too small
             {
                 insideFireParticleEmission.enabled = false;
@@ -157,6 +158,7 @@ public class Campfires : MonoBehaviour
         }
         else if (_lerpDeltaTime > _timeA + _timeB + _timeC)//after all of light lerps, reset bool and timer
         {
+            _spriteLightRed.intensity = 0;
             _isLightingOn = false;
             _lerpDeltaTime = 0;
         }
