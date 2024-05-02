@@ -460,7 +460,7 @@ MonoBehaviour:
   MiniBarrelPrefab: {fileID: 1843342861861357863, guid: 1f1b15f7266bd2149b1226aac872ecbc, type: 3}
   ParticlePrefab: {fileID: 4214816541134391666, guid: 0ed307156eb7f3641bc618e2983ea022, type: 3}
   _SubBarrels: 3
-  BarrelPower: 15
+  BarrelPower: 20
   InvincibleBarrel: 0
   P_Ref: {fileID: 0}
   P_rb: {fileID: 0}
@@ -38036,7 +38036,7 @@ MonoBehaviour:
   P_Ref: {fileID: 0}
   P_rb: {fileID: 0}
   PlayerInRange: 0
-  ExtraBlastUP: 0.25
+  ExtraBlastUP: 0.6
   MinRange_MaxRange: {x: 1, y: 8}
   ParticleScale: 1
 --- !u!61 &965548970
@@ -75339,11 +75339,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5714677401872066938, guid: db6377a85e9b2e84db9a7d58dd436bdd, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.5166607
+      value: 1.18
       objectReference: {fileID: 0}
     - target: {fileID: 5714677401872066938, guid: db6377a85e9b2e84db9a7d58dd436bdd, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -11.435119
+      value: -10.53
       objectReference: {fileID: 0}
     - target: {fileID: 5714677401872066938, guid: db6377a85e9b2e84db9a7d58dd436bdd, type: 3}
       propertyPath: m_LocalPosition.z
@@ -84043,7 +84043,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 390334567030860859}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.18, y: -1.5999999, z: -10}
+  m_LocalPosition: {x: -2.13, y: -1.6199999, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -84985,7 +84985,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9160066803238013682}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3.18, y: -3.35, z: 0}
+  m_LocalPosition: {x: -2.13, y: -3.37, z: 0}
   m_LocalScale: {x: 0.2, y: 0.4, z: 0.8}
   m_ConstrainProportionsScale: 1
   m_Children:
