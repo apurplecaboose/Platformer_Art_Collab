@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class P_Animation : MonoBehaviour
 {
-    public bool IsPlayRun, IsPlayIdle, IsPlayFire, IsPlayJump;
+    public bool IsPlayRun, IsPlayIdle, IsPlayFire, IsPlayJump,IsJumpByShoot;
     Animator p_animation;
     private void Awake()
     {
@@ -71,6 +71,7 @@ public class P_Animation : MonoBehaviour
         p_animation.SetBool("IsIdle", false);
         p_animation.SetBool("IsFiring", true);
     }
+
 
 
 }
