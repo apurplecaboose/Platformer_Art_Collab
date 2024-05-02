@@ -21,6 +21,9 @@ public class PlayerControl : MonoBehaviour
         P_rb = this.GetComponent<Rigidbody2D>();
         _P_anime = P_Anime_Sprite.gameObject.GetComponent<P_Animation>();
         IsRight = true;
+
+        Time.timeScale = 1;
+        Time.fixedDeltaTime = 0.02f;
     }
 
     private void Update()

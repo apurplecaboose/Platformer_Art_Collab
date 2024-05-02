@@ -147,8 +147,7 @@ public class SlowMo : MonoBehaviour
 
         //disable script
         this.enabled = false;
-
         Time.timeScale = 1;
-        Time.fixedDeltaTime = 0.2f;
+        Time.fixedDeltaTime = 0.02f;
     }
 }

@@ -50,7 +50,8 @@ public class FlagLogic : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             _isWin = true;
-
+            Time.timeScale = 1;
+            Time.fixedDeltaTime = 0.02f;
         }
     }
 }
