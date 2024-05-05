@@ -1,20 +1,23 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CampfireRELOAD : MonoBehaviour
 {
     P_ShootLogic P_shoot;
     [SerializeField] int _reloadAmount;
-    public Particle_Master ParticlePrefab;
+    public Particle_Master ParticlePrefab, ParticlePrefabUI;
     public float ParticleScale;
     bool _InReloadRange;
     public GameObject _CampfireReloadText;
     SlowMo SlowMoRef;
+    Image _reloadUI;
     private void Awake()
     {
         P_shoot = GameObject.FindGameObjectWithTag("Player").GetComponent<P_ShootLogic>();
         SlowMoRef = GameObject.FindGameObjectWithTag("Player").GetComponent<SlowMo>();
+        _reloadUI = GameObject.FindGameObjectWithTag("Reload_Particle_Point").GetComponent<Image>();
     }
 
     void Update()
@@ -34,11 +37,20 @@ public class CampfireRELOAD : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Mouse0) && _InReloadRange) 
         {
             Particle_Master Kachow = Instantiate(ParticlePrefab, this.transform.position, Quaternion.identity);
-            Kachow.transform.localScale = new Vector3(ParticleScale, ParticleScale, 0);
+            Kachow.transform.localScale = new Vector3(ParticleScale, ParticleScale, 1);
             Kachow.Lifetime = 0.5f;
+
+
+            Vector3 bulletCountUIPosition = Camera.main.ScreenToWorldPoint(_reloadUI.rectTransform.transform.position);
+            Particle_Master KachowUI = Instantiate(ParticlePrefabUI, bulletCountUIPosition, Quaternion.identity);
+            KachowUI.transform.localScale = new Vector3(ParticleScale, ParticleScale , 1);
+            KachowUI.Lifetime = 0.5f;
+
+
             P_shoot.ReloadFireBullets(_reloadAmount);
             SlowMoRef.ReloadSlowMoTime();
             _InReloadRange = false;
+
         }
     }
     private void OnTriggerEnter2D(Collider2D collision)

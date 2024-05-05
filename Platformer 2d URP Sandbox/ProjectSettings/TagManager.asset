@@ -9,6 +9,7 @@ TagManager:
   - CampFire
   - Ground
   - BlastRange
+  - Reload_Particle_Point
   layers:
   - Default
   - TransparentFX
