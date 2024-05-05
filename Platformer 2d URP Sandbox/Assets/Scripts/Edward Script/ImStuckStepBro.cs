@@ -5,7 +5,7 @@ using TMPro;
 
 public class ImStuckStepBro : MonoBehaviour
 {
-    public GameObject stuckText;   
+    GameObject stuckText;   
     P_ShootLogic _p_shoot;
     void Awake()
     {
@@ -16,10 +16,7 @@ public class ImStuckStepBro : MonoBehaviour
     {
         if(collision.CompareTag("Player"))
         {
-            if (_p_shoot.CanShoot && _p_shoot.BulletNum <= 0)
-            {
-                stuckText.SetActive(true);
-            }
+            if (_p_shoot.CanShoot && _p_shoot.BulletNum <= 0) stuckText.SetActive(true);
         }
     }
 }
