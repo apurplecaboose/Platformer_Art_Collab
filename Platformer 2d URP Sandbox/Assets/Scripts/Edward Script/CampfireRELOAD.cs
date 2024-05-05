@@ -43,14 +43,14 @@ public class CampfireRELOAD : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        _InReloadRange = true;
+        if (collision.CompareTag("Player")) _InReloadRange = true;
     }
     private void OnTriggerStay2D(Collider2D collision)
     {
-        _InReloadRange = true;
+        if (collision.CompareTag("Player")) _InReloadRange = true;
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
-        _InReloadRange = false;
+        if (collision.CompareTag("Player")) _InReloadRange = false;
     }
 }
