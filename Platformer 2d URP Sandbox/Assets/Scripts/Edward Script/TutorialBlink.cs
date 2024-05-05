@@ -8,6 +8,7 @@ public class TutorialBlink : MonoBehaviour
     Animator _animator;
     P_ShootLogic _P_shoot;
     bool _triggerSlowMoUI,_triggerShootUI;
+    float _slowMoHoldTimer;
     enum TutorialBlinkObjectType 
     {
         SnowmanTutorial,
@@ -18,7 +19,7 @@ public class TutorialBlink : MonoBehaviour
     private void Awake()
     {
         _animator = this.GetComponent<Animator>(); //get animator component off of self
-        if (TutorialBlinkObjectType.SnowmanTutorial == _objType) 
+        if (TutorialBlinkObjectType.SnowmanTutorial == _objType || TutorialBlinkObjectType.ShootTutorial == _objType) 
         {
             _P_shoot = GameObject.FindGameObjectWithTag("Player").GetComponent<P_ShootLogic>();
         }
@@ -35,7 +36,14 @@ public class TutorialBlink : MonoBehaviour
                 if(_triggerSlowMoUI)
                 {
                     _animator.SetBool("TriggerTutorial", true);
-                    Destroy(this);//destroys script not gameobject
+                    if(Input.GetKey(KeyCode.Mouse1))
+                    {
+                        _slowMoHoldTimer += Time.unscaledDeltaTime;
+                    }
+                    if(_slowMoHoldTimer >= 0.75f)
+                    {
+                        Destroy(this.gameObject);
+                    }
                 }
                 break;
             case TutorialBlinkObjectType.ShootTutorial:
@@ -67,9 +75,9 @@ public class TutorialBlink : MonoBehaviour
         }
         else Debug.Log("Object isnt here dummy it got destroyed");
     }
-    private void OnTriggerEnter2D(Collider collider)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collider.CompareTag("Player"))
+        if (collision.CompareTag("Player"))
         {
             _triggerSlowMoUI = true;
         }
