@@ -135,6 +135,22 @@ public class SlowMo : MonoBehaviour
             }
         }
     }
+    public void ReloadSlowMoTime()
+    {
+        SlowMoResourceTime = _maxSlowMoTime;
+    }
+    public void ReloadSlowMoTime(float add_time)
+    {
+        SlowMoResourceTime += add_time;
+        if(SlowMoResourceTime >= _maxSlowMoTime)
+        {
+            SlowMoResourceTime = _maxSlowMoTime;
+        }
+        else
+        {
+            return;
+        }
+    }
 
     public void SlowMoWinDisable()
     {
