@@ -25,7 +25,7 @@ EditorBuildSettings:
     guid: 9ecc42004c27a894988e3e06cd0d96c5
   - enabled: 1
     path: Assets/Scenes/Reference Scenes/scene_3.unity
-    guid: 13b88c31c83e6fd45a44f13137c53f03
+    guid: 71d9c81368246464a9701a90dc2e76ac
   - enabled: 1
     path: Assets/Scenes/Reference Scenes/YouDied.unity
     guid: dbd6bcc538f2b43468f27e238b022d1c
