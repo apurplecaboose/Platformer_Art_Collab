@@ -15,6 +15,7 @@ public class SceneEnum : MonoBehaviour
         PreCutScene2,
         PreCutScene3,
         YouDied,
+        EndCutScene,
     }
 
     public static T ParseEnum<T>(string value)

@@ -108,6 +108,7 @@ public class PlayerControl : MonoBehaviour
                     }
                     else
                     {
+                        // E: Play falling animation
                         _xInput = 0; //catch case
                         _P_anime.IsPlayJump = true;
                         _P_anime.IsPlayIdle = false;

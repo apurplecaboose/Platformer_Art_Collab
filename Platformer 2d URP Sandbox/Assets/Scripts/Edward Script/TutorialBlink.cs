@@ -7,19 +7,22 @@ public class TutorialBlink : MonoBehaviour
 {
     Animator _animator;
     P_ShootLogic _P_shoot;
-    bool _triggerSlowMoUI,_triggerShootUI;
+    bool _triggerSlowMoUI;
     float _slowMoHoldTimer;
+    [SerializeField] GameObject SlowMoCanvas;
     enum TutorialBlinkObjectType 
     {
-        SnowmanTutorial,
+        Snowman_ShootTutorial,
         SlowMoTutorial,
-        ShootTutorial,
+        TorchTutorial
     }
     [SerializeField] TutorialBlinkObjectType _objType;
+
+
     private void Awake()
     {
         _animator = this.GetComponent<Animator>(); //get animator component off of self
-        if (TutorialBlinkObjectType.SnowmanTutorial == _objType || TutorialBlinkObjectType.ShootTutorial == _objType) 
+        if (TutorialBlinkObjectType.Snowman_ShootTutorial == _objType) 
         {
             _P_shoot = GameObject.FindGameObjectWithTag("Player").GetComponent<P_ShootLogic>();
         }
@@ -29,8 +32,8 @@ public class TutorialBlink : MonoBehaviour
     {
         switch (_objType)
         {
-            case TutorialBlinkObjectType.SnowmanTutorial:
-                SnowmanTutorialBlink();
+            case TutorialBlinkObjectType.Snowman_ShootTutorial:
+                Snowman_ShootTutorialBlink();
                 break;
             case TutorialBlinkObjectType.SlowMoTutorial:
                 if(_triggerSlowMoUI)
@@ -46,34 +49,26 @@ public class TutorialBlink : MonoBehaviour
                     }
                 }
                 break;
-            case TutorialBlinkObjectType.ShootTutorial:
-                if (_animator != null) // double check
-                {
-                    if (_P_shoot.CanShoot && _P_shoot.BulletNum != 0 && !_triggerShootUI)
-                    {
-                        _animator.SetBool("TriggerTutorial", true);
-                        _triggerShootUI = true;
-                    }
-                    if(Input.GetKeyDown(KeyCode.Mouse0) && _triggerShootUI)
-                    {
-                        Destroy(this.gameObject);
-                    }
-                }
-                else Debug.Log("Object isnt here dummy it got destroyed");
+            case TutorialBlinkObjectType.TorchTutorial:
+                if (SlowMoCanvas.activeSelf) this.transform.GetChild(0).gameObject.SetActive(true);
+                else this.transform.GetChild(0).gameObject.SetActive(false);
                 break;
         }
     }
-    void SnowmanTutorialBlink()
+    void Snowman_ShootTutorialBlink()
     {
         if (_animator != null) // double check
         {
             if (_P_shoot.CanShoot && _P_shoot.BulletNum != 0)
             {
                 _animator.SetBool("TriggerTutorial", true);
-                Destroy(this);//destroys script not gameobject
+                if(this.transform.childCount > 0)
+                {
+                    this.transform.GetChild(0).GetComponent<Animator>().SetBool("TriggerTutorial", true);
+                }
+                Destroy(this);
             }
         }
-        else Debug.Log("Object isnt here dummy it got destroyed");
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
