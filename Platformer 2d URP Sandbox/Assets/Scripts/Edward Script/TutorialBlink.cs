@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using Unity.Jobs.LowLevel.Unsafe;
 using UnityEngine;
 
@@ -10,11 +11,15 @@ public class TutorialBlink : MonoBehaviour
     bool _triggerSlowMoUI;
     float _slowMoHoldTimer;
     [SerializeField] GameObject SlowMoCanvas;
+    SpriteRenderer _p_SR;
+    TMP_Text _snowmanShootText;
     enum TutorialBlinkObjectType 
     {
-        Snowman_ShootTutorial,
+        ShootTutorial,
         SlowMoTutorial,
-        TorchTutorial
+        TorchTutorial,
+        ShootTorchText,
+        SnowManShootingTutorial
     }
     [SerializeField] TutorialBlinkObjectType _objType;
 
@@ -22,9 +27,14 @@ public class TutorialBlink : MonoBehaviour
     private void Awake()
     {
         _animator = this.GetComponent<Animator>(); //get animator component off of self
-        if (TutorialBlinkObjectType.Snowman_ShootTutorial == _objType) 
+        if (TutorialBlinkObjectType.ShootTutorial == _objType) 
         {
             _P_shoot = GameObject.FindGameObjectWithTag("Player").GetComponent<P_ShootLogic>();
+        }
+        if (TutorialBlinkObjectType.SnowManShootingTutorial == _objType)
+        {
+            _snowmanShootText = this.GetComponent<TMP_Text>();
+            _p_SR = transform.parent.GetComponent<SpriteRenderer>();
         }
     }
 
@@ -32,8 +42,8 @@ public class TutorialBlink : MonoBehaviour
     {
         switch (_objType)
         {
-            case TutorialBlinkObjectType.Snowman_ShootTutorial:
-                Snowman_ShootTutorialBlink();
+            case TutorialBlinkObjectType.ShootTutorial:
+                ShootTutorialBlink();
                 break;
             case TutorialBlinkObjectType.SlowMoTutorial:
                 if(_triggerSlowMoUI)
@@ -53,9 +63,15 @@ public class TutorialBlink : MonoBehaviour
                 if (SlowMoCanvas.activeSelf) this.transform.GetChild(0).gameObject.SetActive(true);
                 else this.transform.GetChild(0).gameObject.SetActive(false);
                 break;
+            case TutorialBlinkObjectType.ShootTorchText:
+                if (SlowMoCanvas == null) this.GetComponent<TMP_Text>().alpha = 1.0f;
+                    break;
+            case TutorialBlinkObjectType.SnowManShootingTutorial:
+                _snowmanShootText.alpha = _p_SR.color.a;
+                break;
         }
     }
-    void Snowman_ShootTutorialBlink()
+    void ShootTutorialBlink()
     {
         if (_animator != null) // double check
         {
