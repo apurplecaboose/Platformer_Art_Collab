@@ -13,15 +13,18 @@ public class PlayerControl : MonoBehaviour
     public LayerMask CheckGroundLayer;
     [HideInInspector] public bool IsRight;
     public SpriteRenderer P_Anime_Sprite;
-    P_Animation _P_anime;
+    public Animator _p_Anime;
+    public P_ShootLogic refToShootLogic;
+    float _jump_Intervel, _jumpTimer_anime;
+    public bool _startJump,_startFalling;
 
     private void Awake()
     {
         refToSlowMo = this.GetComponent<SlowMo>();
         P_rb = this.GetComponent<Rigidbody2D>();
-        _P_anime = P_Anime_Sprite.gameObject.GetComponent<P_Animation>();
         IsRight = true;
 
+        _jump_Intervel = 0.1f;
         Time.timeScale = 1;
         Time.fixedDeltaTime = 0.02f;
     }
@@ -33,6 +36,8 @@ public class PlayerControl : MonoBehaviour
             PlayerInput();
             Jump(_jumpForce);
             EnterSlowMotion();
+            DetectFalling();
+
         }
         if (GameManager.P_state == GameManager.PlayerState.Win)
         {
@@ -55,17 +60,46 @@ public class PlayerControl : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.Space) && Grounded)
             {
+                _startJump = true;
                 P_rb.AddForce(Vector2.up * upThrust, ForceMode2D.Impulse);
                 Grounded = false;
                 _jumptimer = JumpCD;
                 //-------------------------------------------------------
-                _P_anime.IsPlayJump = true;
-                _P_anime.IsPlayRun = false;
-                _P_anime.IsPlayIdle = false;
+
                 //-------------------------------------------------------
             }
         }
         else _jumptimer -= Time.deltaTime;
+    }
+
+    void DetectFalling()
+    {
+        if (!Grounded)
+        {
+            _startFalling=true;
+            if (_startFalling && !_startJump)
+            {
+                _p_Anime.SetBool("IsFalling", true);
+                _p_Anime.SetBool("IsJumping", false);
+            }
+        }
+        if (Grounded)
+        {
+            _startFalling = false;
+        }
+        if (_startJump)
+        {
+            _p_Anime.SetBool("IsJumping", true);
+            _p_Anime.SetBool("IsFalling", false);
+            _jumpTimer_anime += Time.deltaTime;
+            if (_jumpTimer_anime >= _jump_Intervel)
+            {
+                _startJump = false;
+                _startFalling = true;
+                _jumpTimer_anime = 0f;
+            }
+        }
+
     }
 
     void EnterSlowMotion()
@@ -98,21 +132,27 @@ public class PlayerControl : MonoBehaviour
                     if (Input.GetKey(KeyCode.A))
                     {
                         _xInput = -1;
-                        P_Anime_Sprite.flipX = true;//J:Switch animation Sprite
+                        if (!refToShootLogic.IsShootFlip)
+                        {
+                            P_Anime_Sprite.flipX = true;//J:Switch animation Sprite
+                        }
+
                     }
                     else if (Input.GetKey(KeyCode.D))
                     {
                         _xInput = 1;
-
-                        P_Anime_Sprite.flipX = false;//J:Switch animation Sprite
+                        if (!refToShootLogic.IsShootFlip)
+                        {
+                            P_Anime_Sprite.flipX = false;//J:Switch animation Sprite
+                        }
                     }
                     else
                     {
                         // E: Play falling animation
                         _xInput = 0; //catch case
-                        _P_anime.IsPlayJump = true;
-                        _P_anime.IsPlayIdle = false;
-                        _P_anime.IsPlayRun = false;//--------May 1st modify the anime
+                        _p_Anime.SetBool("IsJumping", true);//--------May 1st modify the anime
+                        _p_Anime.SetBool("IsIdle", false);
+                        _p_Anime.SetBool("IsRunning", false);
                     }
                 }
             }
@@ -121,40 +161,42 @@ public class PlayerControl : MonoBehaviour
                 if (Input.GetKey(KeyCode.A))
                 {
                     _xInput = -1;
-                    GetComponent<SpriteRenderer>().flipX = true;//J:Switch player Sprite
-                    P_Anime_Sprite.flipX = true;//J:Switch animation Sprite
+                    if (!refToShootLogic.IsShootFlip)
+                    {
+                        P_Anime_Sprite.flipX = true;//J:Switch animation Sprite
+                        _p_Anime.SetBool("IsRunning", true);
+                    }
+                    else
+                    {
+                        _p_Anime.SetBool("IsRunning", false);
+                    }
 
                     IsRight = false;//switch shooting point
-
-                    //-------------------------------------------------------
-                    _P_anime.IsPlayRun = true;
-                    _P_anime.IsPlayJump = false;
-                    _P_anime.IsPlayIdle = false;
-                    //StartAnimation
-                    //-------------------------------------------------------
                 }
                 else if (Input.GetKey(KeyCode.D))
                 {
                     _xInput = 1;
-                    GetComponent<SpriteRenderer>().flipX = false;//J:Switch player Sprite
-                    P_Anime_Sprite.flipX = false;//J:Switch animation Sprite
-
-
+                    if (!refToShootLogic.IsShootFlip)
+                    {
+                        P_Anime_Sprite.flipX = false;//J:Switch animation Sprite
+                        _p_Anime.SetBool("IsRunning", true);
+                    }
+                    else
+                    {
+                        _p_Anime.SetBool("IsRunning", false);
+                    }
                     IsRight = true;//switch shooting point
-                    //-------------------------------------------------------
-                    _P_anime.IsPlayRun = true;
-                    _P_anime.IsPlayJump = false;
-                    _P_anime.IsPlayIdle = false;
-                    //StartAnimation
-                    //-------------------------------------------------------
+
+                    _p_Anime.SetBool("IsJumping", false);
                 }
                 else
                 {
                     _xInput = 0; //catch case
                                  //-------------------------------------------------------
-                    _P_anime.IsPlayRun = false;
-                    _P_anime.IsPlayJump = false;
-                    _P_anime.IsPlayIdle = true;
+                    _p_Anime.SetBool("IsIdle", true);
+                    _p_Anime.SetBool("IsRunning", false);
+                    _p_Anime.SetBool("IsJumping", false);
+                    _p_Anime.SetBool("IsFalling", false);
                     //-------------------------------------------------------
                 }
             }
