@@ -12,14 +12,18 @@ public class P_ShootLogic : MonoBehaviour
     [HideInInspector] public bool HaveAmmo;
     PlayerControl PlayerControlRef;
     public LanternLight _p_LanternLight;
-    public P_Animation _p_anime;
-    public bool IsAwake, CanShoot;
-    public float CountDown_fire_anime, Shoot_Interval;
+    public bool IsAwake, IsShootFlip,CanShoot;
+    public float CountDown_fire_anime, Shoot_Interval,Flip_Interval,Flip_Timer;
+    public Animator P_Anime;
+    public AnimationClip ShootAnimationClip;
+    public SpriteRenderer P_Anime_Sprite;
 
     void Awake()
     {
         PlayerControlRef = this.GetComponent<PlayerControl>();
         Shoot_Interval = 0.1f;
+        Flip_Interval = ShootAnimationClip.length;
+        IsShootFlip = false;
         CanShoot = true;
     }
     void Start()
@@ -46,10 +50,22 @@ public class P_ShootLogic : MonoBehaviour
         }
         else { HaveAmmo = false; }//Setting bullet limits
 
-        if (Input.GetKeyDown(KeyCode.Mouse0) && HaveAmmo && CanShoot)
+        if (Input.GetKeyDown(KeyCode.Mouse0) && HaveAmmo&& CanShoot)
         {
+            IsShootFlip=true;
+            if (_refToMousePosition.x > transform.position.x)
+            {
+                P_Anime_Sprite.flipX = false;
+                
+            }
+            if (_refToMousePosition.x < transform.position.x)
+            {
+                P_Anime_Sprite.flipX = true;
+            }
             //------------------------
-            _p_anime.IsPlayFire = true;
+            P_Anime.SetBool("IsFiring",true);
+            P_Anime.Play("Shoot", 0, 0);
+
             CanShoot = false;
             CountDown_fire_anime = 0.1f;
             //------------------------
@@ -73,6 +89,7 @@ public class P_ShootLogic : MonoBehaviour
                 _p_LanternLight.TriggerLightChange(BulletNum);
             }
         }
+
         if (CanShoot == false)
         {
             Shoot_Interval -= Time.deltaTime;
@@ -80,19 +97,19 @@ public class P_ShootLogic : MonoBehaviour
             {
                 CanShoot = true;
                 Shoot_Interval = 0.1f;
-                CountDown_fire_anime = 0.15f;
-                _p_anime.IsPlayIdle = false;
+                PlayerControlRef._p_Anime.SetBool("IsIdle", false);
 
             }
         }
-        if (CountDown_fire_anime > 0)
-        {
-            CountDown_fire_anime -= Time.smoothDeltaTime;
-            if (CountDown_fire_anime <= 0)
-            {
-                _p_anime.IsPlayFire = false;
-                CountDown_fire_anime = 0.1f;
 
+        if (IsShootFlip == true)
+        {
+            Flip_Timer += Time.deltaTime;
+            if (Flip_Timer >= Flip_Interval)
+            {
+                IsShootFlip = false;
+                P_Anime.SetBool("IsFiring", false);
+                Flip_Timer = 0;
             }
         }
 
