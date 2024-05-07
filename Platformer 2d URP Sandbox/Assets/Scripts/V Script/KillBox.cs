@@ -9,7 +9,6 @@ public class KillBox : MonoBehaviour
     {
         if (collision.tag == "Player")
         {
-
             CollideWithKillBox();
         }
     }

@@ -26,7 +26,11 @@ public class TutorialBlink : MonoBehaviour
 
     private void Awake()
     {
-        _animator = this.GetComponent<Animator>(); //get animator component off of self
+        if (TutorialBlinkObjectType.SnowManShootingTutorial != _objType && TutorialBlinkObjectType.ShootTorchText != _objType)
+        {
+            _animator = this.GetComponent<Animator>(); //get animator component off of self
+        }
+        
         if (TutorialBlinkObjectType.ShootTutorial == _objType) 
         {
             _P_shoot = GameObject.FindGameObjectWithTag("Player").GetComponent<P_ShootLogic>();
@@ -78,10 +82,6 @@ public class TutorialBlink : MonoBehaviour
             if (_P_shoot.CanShoot && _P_shoot.BulletNum != 0)
             {
                 _animator.SetBool("TriggerTutorial", true);
-                if(this.transform.childCount > 0)
-                {
-                    this.transform.GetChild(0).GetComponent<Animator>().SetBool("TriggerTutorial", true);
-                }
                 Destroy(this);
             }
         }
