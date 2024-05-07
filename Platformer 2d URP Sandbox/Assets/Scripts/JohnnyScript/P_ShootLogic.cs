@@ -12,19 +12,20 @@ public class P_ShootLogic : MonoBehaviour
     [HideInInspector] public bool HaveAmmo;
     PlayerControl PlayerControlRef;
     public LanternLight _p_LanternLight;
-    public bool IsAwake, IsShootFlip,CanShoot;
-    public float CountDown_fire_anime, Shoot_Interval,Flip_Interval,Flip_Timer;
+    public bool IsAwake, IsShootFlip, CanShoot;
+    float _Shoot_Interval, _Flip_Interval,_Flip_Timer;
     public Animator P_Anime;
     public AnimationClip ShootAnimationClip;
-    public SpriteRenderer P_Anime_Sprite;
+    SpriteRenderer _P_Anime_SR;
 
     void Awake()
     {
         PlayerControlRef = this.GetComponent<PlayerControl>();
-        Shoot_Interval = 0.1f;
-        Flip_Interval = ShootAnimationClip.length;
+        _Shoot_Interval = 0.1f;
+        _Flip_Interval = ShootAnimationClip.length;
         IsShootFlip = false;
         CanShoot = true;
+        _P_Anime_SR = P_Anime.gameObject.GetComponent<SpriteRenderer>();
     }
     void Start()
     {
@@ -55,19 +56,18 @@ public class P_ShootLogic : MonoBehaviour
             IsShootFlip=true;
             if (_refToMousePosition.x > transform.position.x)
             {
-                P_Anime_Sprite.flipX = false;
+                _P_Anime_SR.flipX = false;
                 
             }
             if (_refToMousePosition.x < transform.position.x)
             {
-                P_Anime_Sprite.flipX = true;
+                _P_Anime_SR.flipX = true;
             }
             //------------------------
             P_Anime.SetBool("IsFiring",true);
             P_Anime.Play("Shoot", 0, 0);
 
             CanShoot = false;
-            CountDown_fire_anime = 0.1f;
             //------------------------
             BulletNum -= 1;//bullet limit set is 10
             if (PlayerControlRef.IsRight)//switch shooting point
@@ -92,11 +92,11 @@ public class P_ShootLogic : MonoBehaviour
 
         if (CanShoot == false)
         {
-            Shoot_Interval -= Time.deltaTime;
-            if (Shoot_Interval <= 0)
+            _Shoot_Interval -= Time.deltaTime;
+            if (_Shoot_Interval <= 0)
             {
                 CanShoot = true;
-                Shoot_Interval = 0.1f;
+                _Shoot_Interval = 0.1f;
                 PlayerControlRef._p_Anime.SetBool("IsIdle", false);
 
             }
@@ -104,12 +104,12 @@ public class P_ShootLogic : MonoBehaviour
 
         if (IsShootFlip == true)
         {
-            Flip_Timer += Time.deltaTime;
-            if (Flip_Timer >= Flip_Interval)
+            _Flip_Timer += Time.deltaTime;
+            if (_Flip_Timer >= _Flip_Interval)
             {
                 IsShootFlip = false;
                 P_Anime.SetBool("IsFiring", false);
-                Flip_Timer = 0;
+                _Flip_Timer = 0;
             }
         }
 

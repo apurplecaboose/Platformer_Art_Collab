@@ -12,9 +12,9 @@ public class PlayerControl : MonoBehaviour
     [HideInInspector] public bool IsDash, CanJump, Grounded, CanBeKnockBack;
     public LayerMask CheckGroundLayer;
     [HideInInspector] public bool IsRight;
-    public SpriteRenderer P_Anime_Sprite;
+    SpriteRenderer _P_Anime_SR;
     public Animator _p_Anime;
-    public P_ShootLogic refToShootLogic;
+    P_ShootLogic _P_Shoot;
     float _jump_Intervel, _jumpTimer_anime;
     public bool _startJump,_startFalling;
 
@@ -22,6 +22,8 @@ public class PlayerControl : MonoBehaviour
     {
         refToSlowMo = this.GetComponent<SlowMo>();
         P_rb = this.GetComponent<Rigidbody2D>();
+        _P_Shoot = this.GetComponent<P_ShootLogic>();
+        _P_Anime_SR = _p_Anime.gameObject.GetComponent<SpriteRenderer>();
         IsRight = true;
 
         _jump_Intervel = 0.1f;
@@ -132,18 +134,18 @@ public class PlayerControl : MonoBehaviour
                     if (Input.GetKey(KeyCode.A))
                     {
                         _xInput = -1;
-                        if (!refToShootLogic.IsShootFlip)
+                        if (!_P_Shoot.IsShootFlip)
                         {
-                            P_Anime_Sprite.flipX = true;//J:Switch animation Sprite
+                            _P_Anime_SR.flipX = true;//J:Switch animation Sprite
                         }
 
                     }
                     else if (Input.GetKey(KeyCode.D))
                     {
                         _xInput = 1;
-                        if (!refToShootLogic.IsShootFlip)
+                        if (!_P_Shoot.IsShootFlip)
                         {
-                            P_Anime_Sprite.flipX = false;//J:Switch animation Sprite
+                            _P_Anime_SR.flipX = false;//J:Switch animation Sprite
                         }
                     }
                     else
@@ -161,9 +163,9 @@ public class PlayerControl : MonoBehaviour
                 if (Input.GetKey(KeyCode.A))
                 {
                     _xInput = -1;
-                    if (!refToShootLogic.IsShootFlip)
+                    if (!_P_Shoot.IsShootFlip)
                     {
-                        P_Anime_Sprite.flipX = true;//J:Switch animation Sprite
+                        _P_Anime_SR.flipX = true;//J:Switch animation Sprite
                         _p_Anime.SetBool("IsRunning", true);
                     }
                     else
@@ -176,9 +178,9 @@ public class PlayerControl : MonoBehaviour
                 else if (Input.GetKey(KeyCode.D))
                 {
                     _xInput = 1;
-                    if (!refToShootLogic.IsShootFlip)
+                    if (!_P_Shoot.IsShootFlip)
                     {
-                        P_Anime_Sprite.flipX = false;//J:Switch animation Sprite
+                        _P_Anime_SR.flipX = false;//J:Switch animation Sprite
                         _p_Anime.SetBool("IsRunning", true);
                     }
                     else
