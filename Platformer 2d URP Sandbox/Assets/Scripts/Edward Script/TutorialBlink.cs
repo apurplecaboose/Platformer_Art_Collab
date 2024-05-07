@@ -34,7 +34,7 @@ public class TutorialBlink : MonoBehaviour
         if (TutorialBlinkObjectType.SnowManShootingTutorial == _objType)
         {
             _snowmanShootText = this.GetComponent<TMP_Text>();
-            _p_SR = transform.parent.GetComponent<SpriteRenderer>();
+            _p_SR = SlowMoCanvas.GetComponent<SpriteRenderer>();
         }
     }
 
