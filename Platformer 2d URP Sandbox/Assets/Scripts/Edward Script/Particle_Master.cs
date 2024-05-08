@@ -8,6 +8,7 @@ public class Particle_Master : MonoBehaviour
     [HideInInspector] public float Lifetime;
     void Start()
     {
+        if(Lifetime == 0) Lifetime = 5f; // default case if lifetime not set
         _thisTransform = this.transform.localScale;
         foreach (Transform child in transform)
         {
