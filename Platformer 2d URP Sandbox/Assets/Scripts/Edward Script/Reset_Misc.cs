@@ -7,6 +7,12 @@ public class Reset_Misc : MonoBehaviour
 {
     [SerializeField] SceneEnum.SceneList _MenuMainScene;
     public POOF_MagicSmoke Poof;
+    public static Reset_Misc instance;
+    void Awake()
+    {
+        if (instance == null) instance = this;
+        else Debug.Log("2 of these bitches in the scene" + this.gameObject);
+    }
     void Update()
     {
         //if(Input.GetKeyDown(KeyCode.F))
