@@ -39181,7 +39181,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 21
+  m_RootOrder: 22
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 81.1}
 --- !u!1 &781713227
 GameObject:
@@ -40841,6 +40841,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b19a30f5a370864694fc41026d2d8f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Poof: {fileID: 0}
 --- !u!61 &814498756
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -41719,7 +41720,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 25
+  m_RootOrder: 26
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 42.9}
 --- !u!1 &832456772
 GameObject:
@@ -42911,7 +42912,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 23
+  m_RootOrder: 24
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &850853389
 GameObject:
@@ -66061,7 +66062,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 22
+  m_RootOrder: 23
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 55.9}
 --- !u!1 &1078293807
 GameObject:
@@ -75885,7 +75886,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 24
+  m_RootOrder: 25
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 45.3}
 --- !u!1 &1303446478
 GameObject:
@@ -89403,7 +89404,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 26
+  m_RootOrder: 27
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1613935794 stripped
 Transform:
@@ -92246,7 +92247,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 27
+  m_RootOrder: 28
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1666517782
 GameObject:
@@ -96871,6 +96872,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b19a30f5a370864694fc41026d2d8f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Poof: {fileID: 0}
 --- !u!61 &1737965363
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -115331,7 +115333,6 @@ GameObject:
   - component: {fileID: 8028635065162336376}
   - component: {fileID: 696135250591826316}
   - component: {fileID: 2262478862314174188}
-  - component: {fileID: 8414830528542442022}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -116118,7 +116119,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 390334567030860859}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 22.2, y: -38.66, z: -10}
+  m_LocalPosition: {x: -2.72, y: -1.4000001, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -116647,6 +116648,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b19a30f5a370864694fc41026d2d8f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Poof: {fileID: 0}
 --- !u!114 &6190641629678954637
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -117049,7 +117051,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9160066803238013682}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 22.2, y: -40.41, z: 0}
+  m_LocalPosition: {x: -2.72, y: -3.15, z: 0}
   m_LocalScale: {x: 0.2, y: 0.4, z: 0.8}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -117112,19 +117114,6 @@ Camera:
   m_OcclusionCulling: 0
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
---- !u!114 &8414830528542442022
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 390334567030860859}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cf9575fdb7dc3614ea1656dd2abb65a6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _MenuMainScene: 0
 --- !u!95 &8423415827552858865
 Animator:
   serializedVersion: 5
@@ -117200,7 +117189,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf9575fdb7dc3614ea1656dd2abb65a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _MenuMainScene: 0
+  _MenuMainScene: 3
+  Poof: {fileID: 6830913802423105872, guid: 5e2644caf4a35bd408dfe906942a0095, type: 3}
 --- !u!1 &9185362744957411127
 GameObject:
   m_ObjectHideFlags: 0
