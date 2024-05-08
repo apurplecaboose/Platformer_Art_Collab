@@ -37,8 +37,11 @@ public class Campfires : MonoBehaviour
     }
     private void Update()
     {
-        CampFiresTp();
-        SlowMoVisible();
+        if(_refToPlayer != null)
+        {
+            CampFiresTp();
+            SlowMoVisible();
+        }
     }
     void CampFiresTp()
     {

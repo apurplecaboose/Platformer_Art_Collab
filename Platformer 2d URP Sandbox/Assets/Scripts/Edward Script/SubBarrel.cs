@@ -13,7 +13,7 @@ public class SubBarrel : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Bullet"))
+        if (collision.CompareTag("Bullet") && _master.P_Ref != null)
         {
             _blastDir = _master.P_Ref.transform.position - this.transform.position;
             if (_master.PlayerInRange)//if player is in range players barrel can activate

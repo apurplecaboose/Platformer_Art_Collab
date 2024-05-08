@@ -19,7 +19,7 @@ public class Reset_Misc : MonoBehaviour
         //{
         //    SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         //}
-        if (Input.GetKeyDown(KeyCode.F))
+        if (Input.GetKeyDown(KeyCode.F) && GameManager.P_state == GameManager.PlayerState.Playing)
         {
             POOF_MagicSmoke poof = Instantiate(Poof, this.transform.position, Quaternion.identity);
             poof.Player = this.gameObject;
