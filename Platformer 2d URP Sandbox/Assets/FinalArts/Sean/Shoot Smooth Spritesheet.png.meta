@@ -1,0 +1,2732 @@
+fileFormatVersion: 2
+guid: 602476a1f6aeeef40b790327d5906d8a
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 2
+    compressionQuality: 100
+    crunchedCompression: 1
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Shoot Smooth Spritesheet_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1861.8181
+        width: 186.18182
+        height: 186.18182
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 98fedc3bb6a57834d9889be283523941
+      internalID: 1181563367
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoot Smooth Spritesheet_1
+      rect:
+        serializedVersion: 2
+        x: 186
+        y: 1861.8181
+        width: 186.18182
+        height: 186.18182
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 685dec2090e3264428a753321cbed377
+      internalID: -1414722300
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoot Smooth Spritesheet_2
+      rect:
+        serializedVersion: 2
+        x: 372
+        y: 1861.8181
+        width: 186.18182
+        height: 186.18182
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5dd1773d15cefb442888e7de247cceab
+      internalID: 1096351704
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoot Smooth Spritesheet_3
+      rect:
+        serializedVersion: 2
+        x: 558
+        y: 1861.8181
+        width: 186.18182
+        height: 186.18182
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 987be998f9ae0134299ecaaa650a553a
+      internalID: -1725982746
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoot Smooth Spritesheet_4
+      rect:
+        serializedVersion: 2
+        x: 744
+        y: 1861.8181
+        width: 186.18182
+        height: 186.18182
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 385639387aea8a542943edd86e67d321
+      internalID: -31594228
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoot Smooth Spritesheet_5
+      rect:
+        serializedVersion: 2
+        x: 930
+        y: 1861.8181
+        width: 186.18182
+        height: 186.18182
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5361b8e7ca8071842ac67db190f521c2
+      internalID: -23768682
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoot Smooth Spritesheet_6
+      rect:
+        serializedVersion: 2
+        x: 1116
+        y: 1861.8181
+        width: 186.18182
+        height: 186.18182
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8ea4e2c1b84eec44ca4b00f67bd245b5
+      internalID: -797432328
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoot Smooth Spritesheet_7
+      rect:
+        serializedVersion: 2
+        x: 1302
+        y: 1861.8181
+        width: 186.18182
+        height: 186.18182
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7acf018b4e773c34a948e4b46a00249d
+      internalID: 556315091
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoot Smooth Spritesheet_8
+      rect:
+        serializedVersion: 2
+        x: 1488
+        y: 1861.8181
+        width: 186.18182
+        height: 186.18182
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0889ea57653fd5a4cb97086ae85c6fa8
+      internalID: 755467636
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoot Smooth Spritesheet_9
+      rect:
+        serializedVersion: 2
+        x: 1674
+        y: 1861.8181
+        width: 186.18182
+        height: 186.18182
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ad6a6e037709deb4fbcce73eec98bad9
+      internalID: 835684168
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoot Smooth Spritesheet_10
+      rect:
+        serializedVersion: 2
+        x: 1860
+        y: 1861.8181
+        width: 186.18182
+        height: 186.18182
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b9fce1b4e7ce26e449dda8031ade38f9
+      internalID: -1361866684
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoot Smooth Spritesheet_11
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1675.8181
+        width: 186.18182
+        height: 186.18182
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cf68fd1e3b377fa40a5dc5c3a8d92e8c
+      internalID: -569245891
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoot Smooth Spritesheet_12
+      rect:
+        serializedVersion: 2
+        x: 186
+        y: 1675.8181
+        width: 186.18182
+        height: 186.18182
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 58db726dba94ac94b963284fa49ff0bc
+      internalID: 864108783
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoot Smooth Spritesheet_13
+      rect:
+        serializedVersion: 2
+        x: 372
+        y: 1675.8181
+        width: 186.18182
+        height: 186.18182
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ebe3447bee525fb429197c6fef886936
+      internalID: 1734877708
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoot Smooth Spritesheet_14
+      rect:
+        serializedVersion: 2
+        x: 558
+        y: 1675.8181
+        width: 186.18182
+        height: 186.18182
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4c1ed37241aa90a458d2bb15ee941d7c
+      internalID: -463745329
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoot Smooth Spritesheet_15
+      rect:
+        serializedVersion: 2
+        x: 744
+        y: 1675.8181
+        width: 186.18182
+        height: 186.18182
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 023ab1982b770df47be1725438d17422
+      internalID: -306295366
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoot Smooth Spritesheet_16
+      rect:
+        serializedVersion: 2
+        x: 930
+        y: 1675.8181
+        width: 186.18182
+        height: 186.18182
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6ac9807530110af45966f1516dbde4cd
+      internalID: -532499654
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoot Smooth Spritesheet_17
+      rect:
+        serializedVersion: 2
+        x: 1116
+        y: 1675.8181
+        width: 186.18182
+        height: 186.18182
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2036778a074ab13488487feb26f23248
+      internalID: 298778496
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoot Smooth Spritesheet_18
+      rect:
+        serializedVersion: 2
+        x: 1302
+        y: 1675.8181
+        width: 186.18182
+        height: 186.18182
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3d9cf887565937f4cbf0432f73188bd5
+      internalID: -1216772439
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoot Smooth Spritesheet_19
+      rect:
+        serializedVersion: 2
+        x: 1488
+        y: 1675.8181
+        width: 186.18182
+        height: 186.18182
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4d991095eba472e48a79ccbf98c0b6ad
+      internalID: 543292763
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoot Smooth Spritesheet_20
+      rect:
+        serializedVersion: 2
+        x: 1674
+        y: 1675.8181
+        width: 186.18182
+        height: 186.18182
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e147cd37ee1b49349976ae38a2250c30
+      internalID: -689449673
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoot Smooth Spritesheet_21
+      rect:
+        serializedVersion: 2
+        x: 1860
+        y: 1675.8181
+        width: 186.18182
+        height: 186.18182
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4e5076c79a8eae94480b1414f0998b4d
+      internalID: 1916167670
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoot Smooth Spritesheet_22
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1489.8181
+        width: 186.18182
+        height: 186.18182
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 947884f5c497772419a03f541df9c228
+      internalID: 159834485
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoot Smooth Spritesheet_23
+      rect:
+        serializedVersion: 2
+        x: 186
+        y: 1489.8181
+        width: 186.18182
+        height: 186.18182
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3308df0541e2f084480e1a3cf6eb879d
+      internalID: -407163608
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoot Smooth Spritesheet_24
+      rect:
+        serializedVersion: 2
+        x: 372
+        y: 1489.8181
+        width: 186.18182
+        height: 186.18182
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 73f61add51278ff4284420fde2ca82c8
+      internalID: -158140326
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoot Smooth Spritesheet_25
+      rect:
+        serializedVersion: 2
+        x: 558
+        y: 1489.8181
+        width: 186.18182
+        height: 186.18182
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b7feef30ca41cd044a743d47204cf34e
+      internalID: -760858571
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoot Smooth Spritesheet_26
+      rect:
+        serializedVersion: 2
+        x: 744
+        y: 1489.8181
+        width: 186.18182
+        height: 186.18182
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9dcf6270c331ccd4b87aa852299ed521
+      internalID: 1047417092
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoot Smooth Spritesheet_27
+      rect:
+        serializedVersion: 2
+        x: 930
+        y: 1489.8181
+        width: 186.18182
+        height: 186.18182
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c3e553e816a4a934cbd16f392523c3c3
+      internalID: -396579357
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoot Smooth Spritesheet_28
+      rect:
+        serializedVersion: 2
+        x: 1116
+        y: 1489.8181
+        width: 186.18182
+        height: 186.18182
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e11933d311a1c594bb8d58305087ddd2
+      internalID: -570160555
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoot Smooth Spritesheet_29
+      rect:
+        serializedVersion: 2
+        x: 1302
+        y: 1489.8181
+        width: 186.18182
+        height: 186.18182
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 661cef01ea04a894abad30392b24d64e
+      internalID: -1437237696
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoot Smooth Spritesheet_30
+      rect:
+        serializedVersion: 2
+        x: 1488
+        y: 1489.8181
+        width: 186.18182
+        height: 186.18182
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a259cddaf528c91478cb20a804ea47a3
+      internalID: 1355854982
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoot Smooth Spritesheet_31
+      rect:
+        serializedVersion: 2
+        x: 1674
+        y: 1489.8181
+        width: 186.18182
+        height: 186.18182
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f41cf2aa149184046af05729ee6dec96
+      internalID: -1948102750
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoot Smooth Spritesheet_32
+      rect:
+        serializedVersion: 2
+        x: 1860
+        y: 1489.8181
+        width: 186.18182
+        height: 186.18182
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4505ee62072b2004fb60a5d2226a0c06
+      internalID: 1222377981
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoot Smooth Spritesheet_33
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1303.8181
+        width: 186.18182
+        height: 186.18182
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cc744b4d69da4c74d8aad2adf0f4e026
+      internalID: 1590575372
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoot Smooth Spritesheet_34
+      rect:
+        serializedVersion: 2
+        x: 186
+        y: 1303.8181
+        width: 186.18182
+        height: 186.18182
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bb68406df97640c4684b9d1c717a4002
+      internalID: -188980935
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoot Smooth Spritesheet_35
+      rect:
+        serializedVersion: 2
+        x: 372
+        y: 1303.8181
+        width: 186.18182
+        height: 186.18182
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fdb1a3169a287c242a8af3268cf6327b
+      internalID: 642602392
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoot Smooth Spritesheet_36
+      rect:
+        serializedVersion: 2
+        x: 558
+        y: 1303.8181
+        width: 186.18182
+        height: 186.18182
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aa66cfabbae25e042a7cf463dfd6d307
+      internalID: 1412323350
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoot Smooth Spritesheet_37
+      rect:
+        serializedVersion: 2
+        x: 744
+        y: 1303.8181
+        width: 186.18182
+        height: 186.18182
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b780334ef6ad6f44aa21caa2072a7868
+      internalID: -1145673854
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoot Smooth Spritesheet_38
+      rect:
+        serializedVersion: 2
+        x: 930
+        y: 1303.8181
+        width: 186.18182
+        height: 186.18182
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 37976b0eebea2d847ab078882486e1d9
+      internalID: 2104872968
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoot Smooth Spritesheet_39
+      rect:
+        serializedVersion: 2
+        x: 1116
+        y: 1303.8181
+        width: 186.18182
+        height: 186.18182
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 24525601944baf84fad481bad9eeee6b
+      internalID: 183852389
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoot Smooth Spritesheet_40
+      rect:
+        serializedVersion: 2
+        x: 1302
+        y: 1303.8181
+        width: 186.18182
+        height: 186.18182
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d7c313634b727ae41bf64e7517b3a3c5
+      internalID: -1992783319
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoot Smooth Spritesheet_41
+      rect:
+        serializedVersion: 2
+        x: 1488
+        y: 1303.8181
+        width: 186.18182
+        height: 186.18182
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c26cc6cd8a84c2849b3981892d164241
+      internalID: 1199756107
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoot Smooth Spritesheet_42
+      rect:
+        serializedVersion: 2
+        x: 1674
+        y: 1303.8181
+        width: 186.18182
+        height: 186.18182
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ad752f040a9673e468479cd9e76b5875
+      internalID: 1842062178
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoot Smooth Spritesheet_43
+      rect:
+        serializedVersion: 2
+        x: 1860
+        y: 1303.8181
+        width: 186.18182
+        height: 186.18182
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c11b20db1b8ea804ea9537998da94721
+      internalID: -744833933
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoot Smooth Spritesheet_44
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1117.8181
+        width: 186.18182
+        height: 186.18182
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 21db8d43ed0ed7e4ab0418be42bdc29c
+      internalID: -987321950
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoot Smooth Spritesheet_45
+      rect:
+        serializedVersion: 2
+        x: 186
+        y: 1117.8181
+        width: 186.18182
+        height: 186.18182
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3f781e77a53d7874bbd321da4202771f
+      internalID: -807438642
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoot Smooth Spritesheet_46
+      rect:
+        serializedVersion: 2
+        x: 372
+        y: 1117.8181
+        width: 186.18182
+        height: 186.18182
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5b1379bb15d472c449a72415e6ae311b
+      internalID: -434215670
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoot Smooth Spritesheet_47
+      rect:
+        serializedVersion: 2
+        x: 558
+        y: 1117.8181
+        width: 186.18182
+        height: 186.18182
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d4436e8a7c523c84695f4b59bba9e03c
+      internalID: -424219653
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoot Smooth Spritesheet_48
+      rect:
+        serializedVersion: 2
+        x: 744
+        y: 1117.8181
+        width: 186.18182
+        height: 186.18182
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7e46fc5c7a9ec194f84e7ff405a2804b
+      internalID: 1054285783
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoot Smooth Spritesheet_49
+      rect:
+        serializedVersion: 2
+        x: 930
+        y: 1117.8181
+        width: 186.18182
+        height: 186.18182
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fc97a64d55c72d249ade865f0d3432f4
+      internalID: -1286884645
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoot Smooth Spritesheet_50
+      rect:
+        serializedVersion: 2
+        x: 1116
+        y: 1117.8181
+        width: 186.18182
+        height: 186.18182
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eebc511e83bf4fc4683773df44ed55e5
+      internalID: 1494658516
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoot Smooth Spritesheet_51
+      rect:
+        serializedVersion: 2
+        x: 1302
+        y: 1117.8181
+        width: 186.18182
+        height: 186.18182
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d5ea5358e7fee4b4ea30dd9a6e061f14
+      internalID: 508106839
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoot Smooth Spritesheet_52
+      rect:
+        serializedVersion: 2
+        x: 1488
+        y: 1117.8181
+        width: 186.18182
+        height: 186.18182
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5d12d01445d01354da9296902b5c0f93
+      internalID: 1423553230
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoot Smooth Spritesheet_53
+      rect:
+        serializedVersion: 2
+        x: 1674
+        y: 1117.8181
+        width: 186.18182
+        height: 186.18182
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6decbbd3c7ffaee4587f4ed77fe29b79
+      internalID: 1276258500
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoot Smooth Spritesheet_54
+      rect:
+        serializedVersion: 2
+        x: 1860
+        y: 1117.8181
+        width: 186.18182
+        height: 186.18182
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ab7c9b4c7afc7944f92cb9af1464c568
+      internalID: 162299191
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoot Smooth Spritesheet_55
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 931.8182
+        width: 186.18182
+        height: 186.18182
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 965a368b53cd2784ab51ddd0112e248c
+      internalID: 1490662147
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoot Smooth Spritesheet_56
+      rect:
+        serializedVersion: 2
+        x: 186
+        y: 931.8182
+        width: 186.18182
+        height: 186.18182
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f74c45b97c97d09499a99f5819ff988b
+      internalID: 1831454216
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoot Smooth Spritesheet_57
+      rect:
+        serializedVersion: 2
+        x: 372
+        y: 931.8182
+        width: 186.18182
+        height: 186.18182
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 22b9253863d3fbf4fbeef82bfa80e200
+      internalID: -949239448
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoot Smooth Spritesheet_58
+      rect:
+        serializedVersion: 2
+        x: 558
+        y: 931.8182
+        width: 186.18182
+        height: 186.18182
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5b88ffd2ae4130d409768a9ce6c6872e
+      internalID: 1183135661
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoot Smooth Spritesheet_59
+      rect:
+        serializedVersion: 2
+        x: 744
+        y: 931.8182
+        width: 186.18182
+        height: 186.18182
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b2789cd2ab89a574b90238b09b1bfcce
+      internalID: 919924027
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoot Smooth Spritesheet_60
+      rect:
+        serializedVersion: 2
+        x: 930
+        y: 931.8182
+        width: 186.18182
+        height: 186.18182
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ee3078a0bd155b94a8ddc0b0af4b99ed
+      internalID: 1972914301
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoot Smooth Spritesheet_61
+      rect:
+        serializedVersion: 2
+        x: 1116
+        y: 931.8182
+        width: 186.18182
+        height: 186.18182
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 68d37bb362a243e4d9f8232c63dcc2f7
+      internalID: 207664359
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoot Smooth Spritesheet_62
+      rect:
+        serializedVersion: 2
+        x: 1302
+        y: 931.8182
+        width: 186.18182
+        height: 186.18182
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f4dd80f40f3b3b24193b5288c6e4400c
+      internalID: 1582501474
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoot Smooth Spritesheet_63
+      rect:
+        serializedVersion: 2
+        x: 1488
+        y: 931.8182
+        width: 186.18182
+        height: 186.18182
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8bffcd36ed71ac4469f79eb2b3d2cce9
+      internalID: -264670141
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoot Smooth Spritesheet_64
+      rect:
+        serializedVersion: 2
+        x: 1674
+        y: 931.8182
+        width: 186.18182
+        height: 186.18182
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5b8981292c2274647b35b42e670c2ed1
+      internalID: -165446122
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoot Smooth Spritesheet_65
+      rect:
+        serializedVersion: 2
+        x: 1860
+        y: 931.8182
+        width: 186.18182
+        height: 186.18182
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bf3b4af1823a64f46bce9a09195174bd
+      internalID: -136344728
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoot Smooth Spritesheet_66
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 745.8182
+        width: 186.18182
+        height: 186.18182
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cad6ebe9c16f87849b55ae3aa112e468
+      internalID: 822798431
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoot Smooth Spritesheet_67
+      rect:
+        serializedVersion: 2
+        x: 186
+        y: 745.8182
+        width: 186.18182
+        height: 186.18182
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1909c30f93a74de409fd8162a628913c
+      internalID: -120369058
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoot Smooth Spritesheet_68
+      rect:
+        serializedVersion: 2
+        x: 372
+        y: 745.8182
+        width: 186.18182
+        height: 186.18182
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2e4fdfc29d70a8a409896d2361af2f11
+      internalID: 306929149
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoot Smooth Spritesheet_69
+      rect:
+        serializedVersion: 2
+        x: 558
+        y: 745.8182
+        width: 186.18182
+        height: 186.18182
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c9176985cc63eae4fafc6c68a4772aae
+      internalID: 709554697
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoot Smooth Spritesheet_70
+      rect:
+        serializedVersion: 2
+        x: 744
+        y: 745.8182
+        width: 186.18182
+        height: 186.18182
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ff547c902d455fc4588f26abc6f48271
+      internalID: -429556636
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoot Smooth Spritesheet_71
+      rect:
+        serializedVersion: 2
+        x: 930
+        y: 745.8182
+        width: 186.18182
+        height: 186.18182
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 07baeaec231119e4d9b38aeecf71142c
+      internalID: -561944537
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoot Smooth Spritesheet_72
+      rect:
+        serializedVersion: 2
+        x: 1116
+        y: 745.8182
+        width: 186.18182
+        height: 186.18182
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8267657961ede62478aeda691dbaabc8
+      internalID: 317517916
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoot Smooth Spritesheet_73
+      rect:
+        serializedVersion: 2
+        x: 1302
+        y: 745.8182
+        width: 186.18182
+        height: 186.18182
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3f90607882248194c96288884a4b4dd9
+      internalID: 655142407
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoot Smooth Spritesheet_74
+      rect:
+        serializedVersion: 2
+        x: 1488
+        y: 745.8182
+        width: 186.18182
+        height: 186.18182
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c552c7b2ddb1c6c469722643ba65519f
+      internalID: -1404109948
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoot Smooth Spritesheet_75
+      rect:
+        serializedVersion: 2
+        x: 1674
+        y: 745.8182
+        width: 186.18182
+        height: 186.18182
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0a7689695fdfad04180f3b65423f7e80
+      internalID: -1628782156
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoot Smooth Spritesheet_76
+      rect:
+        serializedVersion: 2
+        x: 1860
+        y: 745.8182
+        width: 186.18182
+        height: 186.18182
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9c1d3e71ce9e0784bb73ccff7e5ac708
+      internalID: -767357119
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoot Smooth Spritesheet_77
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 559.8182
+        width: 186.18182
+        height: 186.18182
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ed366d874c7958342b892b79afa198df
+      internalID: -1180595726
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoot Smooth Spritesheet_78
+      rect:
+        serializedVersion: 2
+        x: 186
+        y: 559.8182
+        width: 186.18182
+        height: 186.18182
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3fa486b04af70f340b1d6743263d20fb
+      internalID: 1318368089
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoot Smooth Spritesheet_79
+      rect:
+        serializedVersion: 2
+        x: 372
+        y: 559.8182
+        width: 186.18182
+        height: 186.18182
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 70488b03cdaf70a4ea560479529d4814
+      internalID: -857846444
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoot Smooth Spritesheet_80
+      rect:
+        serializedVersion: 2
+        x: 558
+        y: 559.8182
+        width: 186.18182
+        height: 186.18182
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3cdc87a3cb3445442962cd5fa778ea9c
+      internalID: 675157587
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoot Smooth Spritesheet_81
+      rect:
+        serializedVersion: 2
+        x: 744
+        y: 559.8182
+        width: 186.18182
+        height: 186.18182
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9ca02ce929bda4b4abae487ee5dde004
+      internalID: -798193133
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoot Smooth Spritesheet_82
+      rect:
+        serializedVersion: 2
+        x: 930
+        y: 559.8182
+        width: 186.18182
+        height: 186.18182
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2f9ffadea22dd054791429d5aa26fa0c
+      internalID: -4004575
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoot Smooth Spritesheet_83
+      rect:
+        serializedVersion: 2
+        x: 1116
+        y: 559.8182
+        width: 186.18182
+        height: 186.18182
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 777b8e67064d69f429d3c95c6d136449
+      internalID: -211952753
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoot Smooth Spritesheet_84
+      rect:
+        serializedVersion: 2
+        x: 1302
+        y: 559.8182
+        width: 186.18182
+        height: 186.18182
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 19225a4a8baffe04bb2c24bde405f37a
+      internalID: 495033884
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoot Smooth Spritesheet_85
+      rect:
+        serializedVersion: 2
+        x: 1488
+        y: 559.8182
+        width: 186.18182
+        height: 186.18182
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b8152bd3877243449bd2b25728162883
+      internalID: -318139768
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoot Smooth Spritesheet_86
+      rect:
+        serializedVersion: 2
+        x: 1674
+        y: 559.8182
+        width: 186.18182
+        height: 186.18182
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e6935b17a360e37408ceff5b903cc67a
+      internalID: 149559045
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoot Smooth Spritesheet_87
+      rect:
+        serializedVersion: 2
+        x: 1860
+        y: 559.8182
+        width: 186.18182
+        height: 186.18182
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 62b0c29a571c81f42b2f29a6b3744e93
+      internalID: 1172625074
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoot Smooth Spritesheet_88
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 373.81818
+        width: 186.18182
+        height: 186.18182
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3a4753bb06b6a7540857f4d3eee07735
+      internalID: 339827793
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoot Smooth Spritesheet_89
+      rect:
+        serializedVersion: 2
+        x: 186
+        y: 373.81818
+        width: 186.18182
+        height: 186.18182
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1a013bddf7f72f54b83023226586b802
+      internalID: 308992891
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoot Smooth Spritesheet_90
+      rect:
+        serializedVersion: 2
+        x: 372
+        y: 373.81818
+        width: 186.18182
+        height: 186.18182
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5ea7ae841d801244fb6f7abd1481d631
+      internalID: 938845314
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoot Smooth Spritesheet_91
+      rect:
+        serializedVersion: 2
+        x: 558
+        y: 373.81818
+        width: 186.18182
+        height: 186.18182
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5da6097dd5d56d44092646c8d4f1adaa
+      internalID: 400442577
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoot Smooth Spritesheet_92
+      rect:
+        serializedVersion: 2
+        x: 744
+        y: 373.81818
+        width: 186.18182
+        height: 186.18182
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 71432e7a6c195b246aed20f258c4c0a5
+      internalID: 354212070
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoot Smooth Spritesheet_93
+      rect:
+        serializedVersion: 2
+        x: 930
+        y: 373.81818
+        width: 186.18182
+        height: 186.18182
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a72d16d4acc71c54a858d60cc4052417
+      internalID: 1531477414
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoot Smooth Spritesheet_94
+      rect:
+        serializedVersion: 2
+        x: 1116
+        y: 373.81818
+        width: 186.18182
+        height: 186.18182
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 973628e195e3c3d4884dafbf1ade89bc
+      internalID: 1809341141
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoot Smooth Spritesheet_95
+      rect:
+        serializedVersion: 2
+        x: 1302
+        y: 373.81818
+        width: 186.18182
+        height: 186.18182
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 25f839350cc6c464b819792ed58353ff
+      internalID: 1675954056
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoot Smooth Spritesheet_96
+      rect:
+        serializedVersion: 2
+        x: 1488
+        y: 373.81818
+        width: 186.18182
+        height: 186.18182
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2bde3f403b7b28944a0228afa362d358
+      internalID: -2040569097
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoot Smooth Spritesheet_97
+      rect:
+        serializedVersion: 2
+        x: 1674
+        y: 373.81818
+        width: 186.18182
+        height: 186.18182
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1b31830a02227fc48aa2438ecb8c2a10
+      internalID: 1770207585
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoot Smooth Spritesheet_98
+      rect:
+        serializedVersion: 2
+        x: 1860
+        y: 373.81818
+        width: 186.18182
+        height: 186.18182
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 55155a9c7d80dc0439189eba7d95b54b
+      internalID: -906559634
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoot Smooth Spritesheet_99
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 187.81818
+        width: 186.18182
+        height: 186.18182
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 088778b24038ea64881f610073cec588
+      internalID: 1645489467
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoot Smooth Spritesheet_100
+      rect:
+        serializedVersion: 2
+        x: 186
+        y: 187.81818
+        width: 186.18182
+        height: 186.18182
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 73cf333a471227b49ace4a471a680151
+      internalID: -2025695245
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoot Smooth Spritesheet_101
+      rect:
+        serializedVersion: 2
+        x: 372
+        y: 187.81818
+        width: 186.18182
+        height: 186.18182
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 02d4c3eb7e5a23d41b3edff9a3278ce9
+      internalID: -30436456
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoot Smooth Spritesheet_102
+      rect:
+        serializedVersion: 2
+        x: 558
+        y: 187.81818
+        width: 186.18182
+        height: 186.18182
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9a1c045179ace314c858cda3ce86abeb
+      internalID: -2005804558
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoot Smooth Spritesheet_103
+      rect:
+        serializedVersion: 2
+        x: 744
+        y: 187.81818
+        width: 186.18182
+        height: 186.18182
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 40972d0d236f4df43b97453bb70857fc
+      internalID: 907511586
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoot Smooth Spritesheet_104
+      rect:
+        serializedVersion: 2
+        x: 930
+        y: 187.81818
+        width: 186.18182
+        height: 186.18182
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dc6a69f26b3fe084397099a123842838
+      internalID: -1465676302
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoot Smooth Spritesheet_105
+      rect:
+        serializedVersion: 2
+        x: 1116
+        y: 187.81818
+        width: 186.18182
+        height: 186.18182
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 28f2cdff13f74e54bb34a527743cc4a6
+      internalID: -2085335101
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoot Smooth Spritesheet_106
+      rect:
+        serializedVersion: 2
+        x: 1302
+        y: 187.81818
+        width: 186.18182
+        height: 186.18182
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: adbdf87e5ff9fdc48953aba5d2c1e8c0
+      internalID: 377728490
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoot Smooth Spritesheet_107
+      rect:
+        serializedVersion: 2
+        x: 1488
+        y: 187.81818
+        width: 186.18182
+        height: 186.18182
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 462785a0e0bd43346a8351cdbc8061b1
+      internalID: -2011762513
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoot Smooth Spritesheet_108
+      rect:
+        serializedVersion: 2
+        x: 1674
+        y: 187.81818
+        width: 186.18182
+        height: 186.18182
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 45bac4f8b438c714d8c87ee2fe21bca4
+      internalID: 779295385
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoot Smooth Spritesheet_109
+      rect:
+        serializedVersion: 2
+        x: 1860
+        y: 187.81818
+        width: 186.18182
+        height: 186.18182
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e582d1d5113ec5b438ccd41d535db23d
+      internalID: -782423043
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoot Smooth Spritesheet_110
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1.8181763
+        width: 186.18182
+        height: 186.18182
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b6708a93f7f54b540b7a3909373a9830
+      internalID: -1037676781
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoot Smooth Spritesheet_111
+      rect:
+        serializedVersion: 2
+        x: 186
+        y: 1.8181763
+        width: 186.18182
+        height: 186.18182
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 26ec4a30bcb504e40bf484336618c9d2
+      internalID: -1855020017
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoot Smooth Spritesheet_112
+      rect:
+        serializedVersion: 2
+        x: 372
+        y: 1.8181763
+        width: 186.18182
+        height: 186.18182
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 63a07bed3f8319946b0f143636bb21ac
+      internalID: -615959888
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoot Smooth Spritesheet_113
+      rect:
+        serializedVersion: 2
+        x: 558
+        y: 1.8181763
+        width: 186.18182
+        height: 186.18182
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d8b2966b1b007b2468ebb91efc65a8ca
+      internalID: 1686023273
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoot Smooth Spritesheet_114
+      rect:
+        serializedVersion: 2
+        x: 930
+        y: 1.8181763
+        width: 186.18182
+        height: 186.18182
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4e76a179bc5261743b2b0f547d9bdfc9
+      internalID: 303342775
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoot Smooth Spritesheet_115
+      rect:
+        serializedVersion: 2
+        x: 1302
+        y: 1.8181763
+        width: 186.18182
+        height: 186.18182
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2b3d79837d40f9245a6465e7c06de758
+      internalID: 1885169760
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoot Smooth Spritesheet_116
+      rect:
+        serializedVersion: 2
+        x: 1674
+        y: 1.8181763
+        width: 186.18182
+        height: 186.18182
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 14b40e0a7fdbb8041b8eef3e2c4798bb
+      internalID: 320394789
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoot Smooth Spritesheet_117
+      rect:
+        serializedVersion: 2
+        x: 1860
+        y: 1.8181763
+        width: 186.18182
+        height: 186.18182
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f4750de6a51e345429982d3bb487ec2b
+      internalID: -464210720
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Shoot Smooth Spritesheet_0: 1181563367
+      Shoot Smooth Spritesheet_1: -1414722300
+      Shoot Smooth Spritesheet_10: -1361866684
+      Shoot Smooth Spritesheet_100: -2025695245
+      Shoot Smooth Spritesheet_101: -30436456
+      Shoot Smooth Spritesheet_102: -2005804558
+      Shoot Smooth Spritesheet_103: 907511586
+      Shoot Smooth Spritesheet_104: -1465676302
+      Shoot Smooth Spritesheet_105: -2085335101
+      Shoot Smooth Spritesheet_106: 377728490
+      Shoot Smooth Spritesheet_107: -2011762513
+      Shoot Smooth Spritesheet_108: 779295385
+      Shoot Smooth Spritesheet_109: -782423043
+      Shoot Smooth Spritesheet_11: -569245891
+      Shoot Smooth Spritesheet_110: -1037676781
+      Shoot Smooth Spritesheet_111: -1855020017
+      Shoot Smooth Spritesheet_112: -615959888
+      Shoot Smooth Spritesheet_113: 1686023273
+      Shoot Smooth Spritesheet_114: 303342775
+      Shoot Smooth Spritesheet_115: 1885169760
+      Shoot Smooth Spritesheet_116: 320394789
+      Shoot Smooth Spritesheet_117: -464210720
+      Shoot Smooth Spritesheet_12: 864108783
+      Shoot Smooth Spritesheet_13: 1734877708
+      Shoot Smooth Spritesheet_14: -463745329
+      Shoot Smooth Spritesheet_15: -306295366
+      Shoot Smooth Spritesheet_16: -532499654
+      Shoot Smooth Spritesheet_17: 298778496
+      Shoot Smooth Spritesheet_18: -1216772439
+      Shoot Smooth Spritesheet_19: 543292763
+      Shoot Smooth Spritesheet_2: 1096351704
+      Shoot Smooth Spritesheet_20: -689449673
+      Shoot Smooth Spritesheet_21: 1916167670
+      Shoot Smooth Spritesheet_22: 159834485
+      Shoot Smooth Spritesheet_23: -407163608
+      Shoot Smooth Spritesheet_24: -158140326
+      Shoot Smooth Spritesheet_25: -760858571
+      Shoot Smooth Spritesheet_26: 1047417092
+      Shoot Smooth Spritesheet_27: -396579357
+      Shoot Smooth Spritesheet_28: -570160555
+      Shoot Smooth Spritesheet_29: -1437237696
+      Shoot Smooth Spritesheet_3: -1725982746
+      Shoot Smooth Spritesheet_30: 1355854982
+      Shoot Smooth Spritesheet_31: -1948102750
+      Shoot Smooth Spritesheet_32: 1222377981
+      Shoot Smooth Spritesheet_33: 1590575372
+      Shoot Smooth Spritesheet_34: -188980935
+      Shoot Smooth Spritesheet_35: 642602392
+      Shoot Smooth Spritesheet_36: 1412323350
+      Shoot Smooth Spritesheet_37: -1145673854
+      Shoot Smooth Spritesheet_38: 2104872968
+      Shoot Smooth Spritesheet_39: 183852389
+      Shoot Smooth Spritesheet_4: -31594228
+      Shoot Smooth Spritesheet_40: -1992783319
+      Shoot Smooth Spritesheet_41: 1199756107
+      Shoot Smooth Spritesheet_42: 1842062178
+      Shoot Smooth Spritesheet_43: -744833933
+      Shoot Smooth Spritesheet_44: -987321950
+      Shoot Smooth Spritesheet_45: -807438642
+      Shoot Smooth Spritesheet_46: -434215670
+      Shoot Smooth Spritesheet_47: -424219653
+      Shoot Smooth Spritesheet_48: 1054285783
+      Shoot Smooth Spritesheet_49: -1286884645
+      Shoot Smooth Spritesheet_5: -23768682
+      Shoot Smooth Spritesheet_50: 1494658516
+      Shoot Smooth Spritesheet_51: 508106839
+      Shoot Smooth Spritesheet_52: 1423553230
+      Shoot Smooth Spritesheet_53: 1276258500
+      Shoot Smooth Spritesheet_54: 162299191
+      Shoot Smooth Spritesheet_55: 1490662147
+      Shoot Smooth Spritesheet_56: 1831454216
+      Shoot Smooth Spritesheet_57: -949239448
+      Shoot Smooth Spritesheet_58: 1183135661
+      Shoot Smooth Spritesheet_59: 919924027
+      Shoot Smooth Spritesheet_6: -797432328
+      Shoot Smooth Spritesheet_60: 1972914301
+      Shoot Smooth Spritesheet_61: 207664359
+      Shoot Smooth Spritesheet_62: 1582501474
+      Shoot Smooth Spritesheet_63: -264670141
+      Shoot Smooth Spritesheet_64: -165446122
+      Shoot Smooth Spritesheet_65: -136344728
+      Shoot Smooth Spritesheet_66: 822798431
+      Shoot Smooth Spritesheet_67: -120369058
+      Shoot Smooth Spritesheet_68: 306929149
+      Shoot Smooth Spritesheet_69: 709554697
+      Shoot Smooth Spritesheet_7: 556315091
+      Shoot Smooth Spritesheet_70: -429556636
+      Shoot Smooth Spritesheet_71: -561944537
+      Shoot Smooth Spritesheet_72: 317517916
+      Shoot Smooth Spritesheet_73: 655142407
+      Shoot Smooth Spritesheet_74: -1404109948
+      Shoot Smooth Spritesheet_75: -1628782156
+      Shoot Smooth Spritesheet_76: -767357119
+      Shoot Smooth Spritesheet_77: -1180595726
+      Shoot Smooth Spritesheet_78: 1318368089
+      Shoot Smooth Spritesheet_79: -857846444
+      Shoot Smooth Spritesheet_8: 755467636
+      Shoot Smooth Spritesheet_80: 675157587
+      Shoot Smooth Spritesheet_81: -798193133
+      Shoot Smooth Spritesheet_82: -4004575
+      Shoot Smooth Spritesheet_83: -211952753
+      Shoot Smooth Spritesheet_84: 495033884
+      Shoot Smooth Spritesheet_85: -318139768
+      Shoot Smooth Spritesheet_86: 149559045
+      Shoot Smooth Spritesheet_87: 1172625074
+      Shoot Smooth Spritesheet_88: 339827793
+      Shoot Smooth Spritesheet_89: 308992891
+      Shoot Smooth Spritesheet_9: 835684168
+      Shoot Smooth Spritesheet_90: 938845314
+      Shoot Smooth Spritesheet_91: 400442577
+      Shoot Smooth Spritesheet_92: 354212070
+      Shoot Smooth Spritesheet_93: 1531477414
+      Shoot Smooth Spritesheet_94: 1809341141
+      Shoot Smooth Spritesheet_95: 1675954056
+      Shoot Smooth Spritesheet_96: -2040569097
+      Shoot Smooth Spritesheet_97: 1770207585
+      Shoot Smooth Spritesheet_98: -906559634
+      Shoot Smooth Spritesheet_99: 1645489467
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

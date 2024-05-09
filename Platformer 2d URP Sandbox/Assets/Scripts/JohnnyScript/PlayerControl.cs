@@ -18,6 +18,7 @@ public class PlayerControl : MonoBehaviour
     float _jump_Intervel, _jumpTimer_anime;
     public bool _startJump,_startFalling;
 
+    public ParticleSystem Dust;
     private void Awake()
     {
         refToSlowMo = this.GetComponent<SlowMo>();
@@ -66,9 +67,7 @@ public class PlayerControl : MonoBehaviour
                 P_rb.AddForce(Vector2.up * upThrust, ForceMode2D.Impulse);
                 Grounded = false;
                 _jumptimer = JumpCD;
-                //-------------------------------------------------------
-
-                //-------------------------------------------------------
+                Dust.Play();
             }
         }
         else _jumptimer -= Time.deltaTime;
@@ -88,6 +87,7 @@ public class PlayerControl : MonoBehaviour
         if (Grounded)
         {
             _startFalling = false;
+            _p_Anime.SetBool("IsFalling", false);
         }
         if (_startJump)
         {
