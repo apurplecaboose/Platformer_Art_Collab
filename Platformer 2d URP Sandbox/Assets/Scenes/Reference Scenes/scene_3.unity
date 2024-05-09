@@ -63662,7 +63662,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf9575fdb7dc3614ea1656dd2abb65a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _MenuMainScene: 0
+  _MenuMainScene: 3
   Poof: {fileID: 6830913802423105872, guid: 5e2644caf4a35bd408dfe906942a0095, type: 3}
 --- !u!1 &9185362744957411127
 GameObject:
