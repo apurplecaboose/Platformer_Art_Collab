@@ -16,7 +16,7 @@ public class Lv3FlagLogic : MonoBehaviour
             Time.timeScale = 1;
             Time.fixedDeltaTime = 0.02f;
 
-            Invoke("TriggerTransition", .5f);
+            Invoke("TriggerTransition", .35f);
         }
     }
     void TriggerTransition()

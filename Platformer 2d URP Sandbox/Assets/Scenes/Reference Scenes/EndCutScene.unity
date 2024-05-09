@@ -1092,7 +1092,7 @@ VideoPlayer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1919737966}
   m_Enabled: 1
-  m_VideoClip: {fileID: 32900000, guid: 52c72219787faf04cbf2fa626bcbd39d, type: 3}
+  m_VideoClip: {fileID: 32900000, guid: b55b1cf4197409d45b0d3f44d89f6820, type: 3}
   m_TargetCameraAlpha: 1
   m_TargetCamera3DLayout: 0
   m_TargetCamera: {fileID: 18250483}
@@ -1148,7 +1148,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CutscenePlayer: {fileID: 1919737967}
-  _TargetScene: 2
+  _TargetScene: 3
   TransitionProfile: {fileID: 11400000, guid: 5acacaf6c9661a64280922b6af864e94, type: 2}
   _videoOffset: 2
   _cutsceneNumber: 1

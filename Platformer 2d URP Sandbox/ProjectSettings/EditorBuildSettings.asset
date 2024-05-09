@@ -27,6 +27,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Reference Scenes/scene_3.unity
     guid: 71d9c81368246464a9701a90dc2e76ac
   - enabled: 1
+    path: Assets/Scenes/Reference Scenes/EndCutScene.unity
+    guid: 60374cc4b6032694cbbeb533de2e4f48
+  - enabled: 1
     path: Assets/Scenes/Reference Scenes/YouDied.unity
     guid: dbd6bcc538f2b43468f27e238b022d1c
   m_configObjects: {}
