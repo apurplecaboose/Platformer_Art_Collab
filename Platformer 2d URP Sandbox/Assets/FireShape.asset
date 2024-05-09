@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: FireShape
   m_EditorClassIdentifier: 
   type: 4
-  invert: 1
+  invert: 0
   timeMultiplier: 1
   colorMode: 1
   color: {r: 0, g: 0, b: 0, a: 0.78431374}

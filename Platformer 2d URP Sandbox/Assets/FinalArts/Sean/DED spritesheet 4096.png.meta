@@ -1,0 +1,3656 @@
+fileFormatVersion: 2
+guid: 9fd87bcd8307c8a429715c6843f8bcc3
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 2
+    compressionQuality: 100
+    crunchedCompression: 1
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: DED spritesheet 4096_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 3780.923
+        width: 315.07693
+        height: 315.07693
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aabd1ffbbd0d75e438cb0895723f6da6
+      internalID: -1017247543
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DED spritesheet 4096_1
+      rect:
+        serializedVersion: 2
+        x: 315
+        y: 3780.923
+        width: 315.07693
+        height: 315.07693
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 94f5897a041b02d469e3002c93b67ca5
+      internalID: 1489040642
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DED spritesheet 4096_2
+      rect:
+        serializedVersion: 2
+        x: 630
+        y: 3780.923
+        width: 315.07693
+        height: 315.07693
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 05f570e1fab21ff43823b575e4f20a77
+      internalID: 118712766
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DED spritesheet 4096_3
+      rect:
+        serializedVersion: 2
+        x: 945
+        y: 3780.923
+        width: 315.07693
+        height: 315.07693
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0c20d736566d82e489801db9a6d7ff7d
+      internalID: 2121436879
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DED spritesheet 4096_4
+      rect:
+        serializedVersion: 2
+        x: 1260
+        y: 3780.923
+        width: 315.07693
+        height: 315.07693
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f117abbccc1dd0448acd1644e2c55355
+      internalID: -1613529199
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DED spritesheet 4096_5
+      rect:
+        serializedVersion: 2
+        x: 1575
+        y: 3780.923
+        width: 315.07693
+        height: 315.07693
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 22cb1c5fbcf8e824094709224d4c04d4
+      internalID: -1536532835
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DED spritesheet 4096_6
+      rect:
+        serializedVersion: 2
+        x: 1890
+        y: 3780.923
+        width: 315.07693
+        height: 315.07693
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 652f48b6310fd10429be87b6bd11f349
+      internalID: 60539876
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DED spritesheet 4096_7
+      rect:
+        serializedVersion: 2
+        x: 2205
+        y: 3780.923
+        width: 315.07693
+        height: 315.07693
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3caf4839c4165f14697a9582f9d2869d
+      internalID: -1571287558
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DED spritesheet 4096_8
+      rect:
+        serializedVersion: 2
+        x: 2520
+        y: 3780.923
+        width: 315.07693
+        height: 315.07693
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a12d017514d4d574e9dbc4acf9f27313
+      internalID: 1955118538
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DED spritesheet 4096_9
+      rect:
+        serializedVersion: 2
+        x: 2835
+        y: 3780.923
+        width: 315.07693
+        height: 315.07693
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c13c402595eabe041a4e7e04664db1a8
+      internalID: 2051638582
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DED spritesheet 4096_10
+      rect:
+        serializedVersion: 2
+        x: 3150
+        y: 3780.923
+        width: 315.07693
+        height: 315.07693
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3904c1acc1bc1ef429cd3603f84e0cb7
+      internalID: 803910870
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DED spritesheet 4096_11
+      rect:
+        serializedVersion: 2
+        x: 3465
+        y: 3780.923
+        width: 315.07693
+        height: 315.07693
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f0eb98bd2f8c71f419f82ab58029ba96
+      internalID: 1030724596
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DED spritesheet 4096_12
+      rect:
+        serializedVersion: 2
+        x: 3780
+        y: 3780.923
+        width: 315.07693
+        height: 315.07693
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4e8c499742a65cf46a01b9d2b5cac054
+      internalID: -625226747
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DED spritesheet 4096_13
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 3465.923
+        width: 315.07693
+        height: 315.07693
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a36311de996ccef4390d8fc8f020f1e9
+      internalID: -985487293
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DED spritesheet 4096_14
+      rect:
+        serializedVersion: 2
+        x: 315
+        y: 3465.923
+        width: 315.07693
+        height: 315.07693
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8bb28a47151e17c46933beb350bf4858
+      internalID: -1769258622
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DED spritesheet 4096_15
+      rect:
+        serializedVersion: 2
+        x: 630
+        y: 3465.923
+        width: 315.07693
+        height: 315.07693
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6723177b80d639d49918c69ab53f09b2
+      internalID: -2009206176
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DED spritesheet 4096_16
+      rect:
+        serializedVersion: 2
+        x: 945
+        y: 3465.923
+        width: 315.07693
+        height: 315.07693
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f0955997968706647bf446bdd6aa5849
+      internalID: 105550716
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DED spritesheet 4096_17
+      rect:
+        serializedVersion: 2
+        x: 1260
+        y: 3465.923
+        width: 315.07693
+        height: 315.07693
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4cfcc3a7c737a5344a2220956d484ac6
+      internalID: -2035283446
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DED spritesheet 4096_18
+      rect:
+        serializedVersion: 2
+        x: 1575
+        y: 3465.923
+        width: 315.07693
+        height: 315.07693
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 712da608a346dbc4ebc335bde5ac0fcf
+      internalID: -1883798311
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DED spritesheet 4096_19
+      rect:
+        serializedVersion: 2
+        x: 1890
+        y: 3465.923
+        width: 315.07693
+        height: 315.07693
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: afa47364075a8a2499a7b30c980b58d8
+      internalID: -989047442
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DED spritesheet 4096_20
+      rect:
+        serializedVersion: 2
+        x: 2205
+        y: 3465.923
+        width: 315.07693
+        height: 315.07693
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 99768ad5b0b106f43be425de6d8a5a7c
+      internalID: 1774489815
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DED spritesheet 4096_21
+      rect:
+        serializedVersion: 2
+        x: 2520
+        y: 3465.923
+        width: 315.07693
+        height: 315.07693
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 97726e1e06d17cc4c96f2102833af189
+      internalID: 976546241
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DED spritesheet 4096_22
+      rect:
+        serializedVersion: 2
+        x: 2835
+        y: 3465.923
+        width: 315.07693
+        height: 315.07693
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 65c7eb5652606d649b90f3905675082d
+      internalID: 473890347
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DED spritesheet 4096_23
+      rect:
+        serializedVersion: 2
+        x: 3150
+        y: 3465.923
+        width: 315.07693
+        height: 315.07693
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0d5a2f226e6e50e4080c7caf8847d9d8
+      internalID: 230669038
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DED spritesheet 4096_24
+      rect:
+        serializedVersion: 2
+        x: 3465
+        y: 3465.923
+        width: 315.07693
+        height: 315.07693
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 11a76e3422a7575428f61e4666c93d9e
+      internalID: -1640192933
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DED spritesheet 4096_25
+      rect:
+        serializedVersion: 2
+        x: 3780
+        y: 3465.923
+        width: 315.07693
+        height: 315.07693
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 11264b14613a9604b8d796e3ddbdb9ec
+      internalID: 2097173033
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DED spritesheet 4096_26
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 3150.923
+        width: 315.07693
+        height: 315.07693
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b2192c57dd8c6ae4b95f552f468a7135
+      internalID: -1437844487
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DED spritesheet 4096_27
+      rect:
+        serializedVersion: 2
+        x: 315
+        y: 3150.923
+        width: 315.07693
+        height: 315.07693
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6c8d981d455465a418d528cef7906cb1
+      internalID: -643407864
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DED spritesheet 4096_28
+      rect:
+        serializedVersion: 2
+        x: 630
+        y: 3150.923
+        width: 315.07693
+        height: 315.07693
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4bc7df3039aed5546ba60d88a4fa879e
+      internalID: -144909165
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DED spritesheet 4096_29
+      rect:
+        serializedVersion: 2
+        x: 945
+        y: 3150.923
+        width: 315.07693
+        height: 315.07693
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 243626dba44f68e4a8a759060126bf17
+      internalID: 2101798018
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DED spritesheet 4096_30
+      rect:
+        serializedVersion: 2
+        x: 1260
+        y: 3150.923
+        width: 315.07693
+        height: 315.07693
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7501df999e45aef4b8706d46382762c7
+      internalID: -367771554
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DED spritesheet 4096_31
+      rect:
+        serializedVersion: 2
+        x: 1575
+        y: 3150.923
+        width: 315.07693
+        height: 315.07693
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aa72d02574c1af74b8c20420faf82d30
+      internalID: 259294989
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DED spritesheet 4096_32
+      rect:
+        serializedVersion: 2
+        x: 1890
+        y: 3150.923
+        width: 315.07693
+        height: 315.07693
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a80d3c4bdc9fbe341b011858bbf7c0b8
+      internalID: -683771983
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DED spritesheet 4096_33
+      rect:
+        serializedVersion: 2
+        x: 2205
+        y: 3150.923
+        width: 315.07693
+        height: 315.07693
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a96cb041d3a33294b9d23f98dad8cb0b
+      internalID: -1215688075
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DED spritesheet 4096_34
+      rect:
+        serializedVersion: 2
+        x: 2520
+        y: 3150.923
+        width: 315.07693
+        height: 315.07693
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e1cda62b3038e084cb28e05ed163e549
+      internalID: 1782813508
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DED spritesheet 4096_35
+      rect:
+        serializedVersion: 2
+        x: 2835
+        y: 3150.923
+        width: 315.07693
+        height: 315.07693
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5264f46fbc231d4488faf9ea386aa622
+      internalID: 1682606753
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DED spritesheet 4096_36
+      rect:
+        serializedVersion: 2
+        x: 3150
+        y: 3150.923
+        width: 315.07693
+        height: 315.07693
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fe56b48bb4b0b1143a40e571b43e5471
+      internalID: -1763252316
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DED spritesheet 4096_37
+      rect:
+        serializedVersion: 2
+        x: 3465
+        y: 3150.923
+        width: 315.07693
+        height: 315.07693
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 88520e93c8f71584584ed61b3c35623e
+      internalID: 1271563294
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DED spritesheet 4096_38
+      rect:
+        serializedVersion: 2
+        x: 3780
+        y: 3150.923
+        width: 315.07693
+        height: 315.07693
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 774778b6b7768b147a0ae2c282547987
+      internalID: 981869571
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DED spritesheet 4096_39
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2835.923
+        width: 315.07693
+        height: 315.07693
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 190e5f65b156ca94cabd37f5aeaa1c4e
+      internalID: -562113328
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DED spritesheet 4096_40
+      rect:
+        serializedVersion: 2
+        x: 315
+        y: 2835.923
+        width: 315.07693
+        height: 315.07693
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1b00d1c481db61543bef5aae807e22f1
+      internalID: -1997189150
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DED spritesheet 4096_41
+      rect:
+        serializedVersion: 2
+        x: 630
+        y: 2835.923
+        width: 315.07693
+        height: 315.07693
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 558ca2908d0c4104f8898020c37efe91
+      internalID: 1711224334
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DED spritesheet 4096_42
+      rect:
+        serializedVersion: 2
+        x: 945
+        y: 2835.923
+        width: 315.07693
+        height: 315.07693
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 27d8c980351d06746a15b4571f9bf0e3
+      internalID: 2046864886
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DED spritesheet 4096_43
+      rect:
+        serializedVersion: 2
+        x: 1260
+        y: 2835.923
+        width: 315.07693
+        height: 315.07693
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 752072c91b34697408c3c82e17d615c9
+      internalID: 154180763
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DED spritesheet 4096_44
+      rect:
+        serializedVersion: 2
+        x: 1575
+        y: 2835.923
+        width: 315.07693
+        height: 315.07693
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 35d6bbed632a9254b867f9b6dbed6bd2
+      internalID: -558661005
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DED spritesheet 4096_45
+      rect:
+        serializedVersion: 2
+        x: 1890
+        y: 2835.923
+        width: 315.07693
+        height: 315.07693
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b6b5188d94fbcaa47ad2314c35a45387
+      internalID: 1848871654
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DED spritesheet 4096_46
+      rect:
+        serializedVersion: 2
+        x: 2205
+        y: 2835.923
+        width: 315.07693
+        height: 315.07693
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 309d1140d3b5d1741a68d3ef46fb0996
+      internalID: -1397848269
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DED spritesheet 4096_47
+      rect:
+        serializedVersion: 2
+        x: 2520
+        y: 2835.923
+        width: 315.07693
+        height: 315.07693
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1c7845245e44efb4db785aeceabdad68
+      internalID: 574655647
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DED spritesheet 4096_48
+      rect:
+        serializedVersion: 2
+        x: 2835
+        y: 2835.923
+        width: 315.07693
+        height: 315.07693
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f398df5da0f68604b8f8089b1dbbc9e3
+      internalID: 1796898119
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DED spritesheet 4096_49
+      rect:
+        serializedVersion: 2
+        x: 3150
+        y: 2835.923
+        width: 315.07693
+        height: 315.07693
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f8043d465c01c274dbd27ab80a97fae0
+      internalID: 1491530359
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DED spritesheet 4096_50
+      rect:
+        serializedVersion: 2
+        x: 3465
+        y: 2835.923
+        width: 315.07693
+        height: 315.07693
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c26fa83839c12204d9796879228063fd
+      internalID: -1627100220
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DED spritesheet 4096_51
+      rect:
+        serializedVersion: 2
+        x: 3780
+        y: 2835.923
+        width: 315.07693
+        height: 315.07693
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9d93b3cbcbd6c77488a13e3a656a42a6
+      internalID: -2054121505
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DED spritesheet 4096_52
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2520.923
+        width: 315.07693
+        height: 315.07693
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 10233325b7330a84390b4aafa53cbba7
+      internalID: -1536699437
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DED spritesheet 4096_53
+      rect:
+        serializedVersion: 2
+        x: 315
+        y: 2520.923
+        width: 315.07693
+        height: 315.07693
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d43312284bd493e4e8c445fbfe009577
+      internalID: -1345121628
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DED spritesheet 4096_54
+      rect:
+        serializedVersion: 2
+        x: 630
+        y: 2520.923
+        width: 315.07693
+        height: 315.07693
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: badee7871b1914c4896f24b2e89fb944
+      internalID: 1257549448
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DED spritesheet 4096_55
+      rect:
+        serializedVersion: 2
+        x: 945
+        y: 2520.923
+        width: 315.07693
+        height: 315.07693
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f724bd842851edf4fa9c20071ce0080a
+      internalID: 256402347
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DED spritesheet 4096_56
+      rect:
+        serializedVersion: 2
+        x: 1260
+        y: 2520.923
+        width: 315.07693
+        height: 315.07693
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 71617b329031220478f86e17ba609402
+      internalID: -1075789390
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DED spritesheet 4096_57
+      rect:
+        serializedVersion: 2
+        x: 1575
+        y: 2520.923
+        width: 315.07693
+        height: 315.07693
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7bdf4ffa51760b240a88b8ee68e0462e
+      internalID: 1577021736
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DED spritesheet 4096_58
+      rect:
+        serializedVersion: 2
+        x: 1890
+        y: 2520.923
+        width: 315.07693
+        height: 315.07693
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7d1d2ccd90345ec479e1ddfe3c4bc71d
+      internalID: -296908854
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DED spritesheet 4096_59
+      rect:
+        serializedVersion: 2
+        x: 2205
+        y: 2520.923
+        width: 315.07693
+        height: 315.07693
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 843945b9c4f604b45ad0ed9bcab04f04
+      internalID: 1492541777
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DED spritesheet 4096_60
+      rect:
+        serializedVersion: 2
+        x: 2520
+        y: 2520.923
+        width: 315.07693
+        height: 315.07693
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 29ed59513ca436143813ce9a8ad91d8f
+      internalID: -476612554
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DED spritesheet 4096_61
+      rect:
+        serializedVersion: 2
+        x: 2835
+        y: 2520.923
+        width: 315.07693
+        height: 315.07693
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 446f7de9baa86db48bba81563f0cb619
+      internalID: -1005872612
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DED spritesheet 4096_62
+      rect:
+        serializedVersion: 2
+        x: 3150
+        y: 2520.923
+        width: 315.07693
+        height: 315.07693
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aaafd9a39362d544f86e847b8ecfcb67
+      internalID: 827072376
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DED spritesheet 4096_63
+      rect:
+        serializedVersion: 2
+        x: 3465
+        y: 2520.923
+        width: 315.07693
+        height: 315.07693
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 324440fba6c04654898017aa94f9ac3a
+      internalID: -1966611500
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DED spritesheet 4096_64
+      rect:
+        serializedVersion: 2
+        x: 3780
+        y: 2520.923
+        width: 315.07693
+        height: 315.07693
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4a35d6c8a784b2644b9d1d5f58c1e8f7
+      internalID: -1294000129
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DED spritesheet 4096_65
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2205.923
+        width: 315.07693
+        height: 315.07693
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3b3388e3e8a3a13428d9e821dc446baa
+      internalID: 248297430
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DED spritesheet 4096_66
+      rect:
+        serializedVersion: 2
+        x: 315
+        y: 2205.923
+        width: 315.07693
+        height: 315.07693
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0dee2440226f71d4c9cf3d7b7a7255ca
+      internalID: -1461968583
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DED spritesheet 4096_67
+      rect:
+        serializedVersion: 2
+        x: 630
+        y: 2205.923
+        width: 315.07693
+        height: 315.07693
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1a1acf8fb5a35814da4fc8a0fbd5aac7
+      internalID: 653827464
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DED spritesheet 4096_68
+      rect:
+        serializedVersion: 2
+        x: 945
+        y: 2205.923
+        width: 315.07693
+        height: 315.07693
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 681ae003acedef44cb77bb879eee1107
+      internalID: 1376383745
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DED spritesheet 4096_69
+      rect:
+        serializedVersion: 2
+        x: 1260
+        y: 2205.923
+        width: 315.07693
+        height: 315.07693
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bd71f3aa83d87d54d9cdd06276b185f1
+      internalID: -1339243447
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DED spritesheet 4096_70
+      rect:
+        serializedVersion: 2
+        x: 1575
+        y: 2205.923
+        width: 315.07693
+        height: 315.07693
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ca74ebc9e5c4bb34bb004e1012828c45
+      internalID: 1553885804
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DED spritesheet 4096_71
+      rect:
+        serializedVersion: 2
+        x: 1890
+        y: 2205.923
+        width: 315.07693
+        height: 315.07693
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4367a2ae122a2674c9856924836f3621
+      internalID: -448711039
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DED spritesheet 4096_72
+      rect:
+        serializedVersion: 2
+        x: 2205
+        y: 2205.923
+        width: 315.07693
+        height: 315.07693
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3e688cefd1c0cb04fb12789b434e106d
+      internalID: 1027093181
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DED spritesheet 4096_73
+      rect:
+        serializedVersion: 2
+        x: 2520
+        y: 2205.923
+        width: 315.07693
+        height: 315.07693
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 856a26c8154a6df4a97854218a336509
+      internalID: -791929109
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DED spritesheet 4096_74
+      rect:
+        serializedVersion: 2
+        x: 2835
+        y: 2205.923
+        width: 315.07693
+        height: 315.07693
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5f2f2e01936abc7458770f352e41550f
+      internalID: 522738347
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DED spritesheet 4096_75
+      rect:
+        serializedVersion: 2
+        x: 3150
+        y: 2205.923
+        width: 315.07693
+        height: 315.07693
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7819aa3a71f4e12419be9fda2139dfc5
+      internalID: -448102533
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DED spritesheet 4096_76
+      rect:
+        serializedVersion: 2
+        x: 3465
+        y: 2205.923
+        width: 315.07693
+        height: 315.07693
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 07a32b6bacd365b41b471e026c2d30c2
+      internalID: -1629740831
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DED spritesheet 4096_77
+      rect:
+        serializedVersion: 2
+        x: 3780
+        y: 2205.923
+        width: 315.07693
+        height: 315.07693
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d7ab625790968764ab2de38e1a9dfa3e
+      internalID: 472995459
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DED spritesheet 4096_78
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1890.9231
+        width: 315.07693
+        height: 315.07693
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eb3c76d8ebf890143a1ec9aa173726f9
+      internalID: 2090157358
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DED spritesheet 4096_79
+      rect:
+        serializedVersion: 2
+        x: 315
+        y: 1890.9231
+        width: 315.07693
+        height: 315.07693
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3c6c786ebe4d7b84d8a1d4b5e466e182
+      internalID: -1672103533
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DED spritesheet 4096_80
+      rect:
+        serializedVersion: 2
+        x: 630
+        y: 1890.9231
+        width: 315.07693
+        height: 315.07693
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 66efc075c90f3e24f8326f13300ae6e2
+      internalID: 1339411778
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DED spritesheet 4096_81
+      rect:
+        serializedVersion: 2
+        x: 945
+        y: 1890.9231
+        width: 315.07693
+        height: 315.07693
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ae86f0e72808d6949be91e63f769fb13
+      internalID: 713923706
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DED spritesheet 4096_82
+      rect:
+        serializedVersion: 2
+        x: 1260
+        y: 1890.9231
+        width: 315.07693
+        height: 315.07693
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dc5986e564f98c6499ab426e8e567e75
+      internalID: -672644006
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DED spritesheet 4096_83
+      rect:
+        serializedVersion: 2
+        x: 1575
+        y: 1890.9231
+        width: 315.07693
+        height: 315.07693
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6bcce38f574626241aef2d50a20dd99f
+      internalID: 2032484668
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DED spritesheet 4096_84
+      rect:
+        serializedVersion: 2
+        x: 1890
+        y: 1890.9231
+        width: 315.07693
+        height: 315.07693
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8a4e240eace08c342ab053392e97c69e
+      internalID: 1457306234
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DED spritesheet 4096_85
+      rect:
+        serializedVersion: 2
+        x: 2205
+        y: 1890.9231
+        width: 315.07693
+        height: 315.07693
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 02d2a3ef1425c294e8fca79c6e84a9ad
+      internalID: 164823137
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DED spritesheet 4096_86
+      rect:
+        serializedVersion: 2
+        x: 2520
+        y: 1890.9231
+        width: 315.07693
+        height: 315.07693
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 742c0cf382c075a49afcbbb605777736
+      internalID: 1468315126
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DED spritesheet 4096_87
+      rect:
+        serializedVersion: 2
+        x: 2835
+        y: 1890.9231
+        width: 315.07693
+        height: 315.07693
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 499aa218b719252408fc82b43a8edad3
+      internalID: -2105884300
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DED spritesheet 4096_88
+      rect:
+        serializedVersion: 2
+        x: 3150
+        y: 1890.9231
+        width: 315.07693
+        height: 315.07693
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b474e796ac162854eaf56fd1ea9612f9
+      internalID: -1935075315
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DED spritesheet 4096_89
+      rect:
+        serializedVersion: 2
+        x: 3465
+        y: 1890.9231
+        width: 315.07693
+        height: 315.07693
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dcdb02d716bb12841bb599dd0e16ea9a
+      internalID: -316347419
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DED spritesheet 4096_90
+      rect:
+        serializedVersion: 2
+        x: 3780
+        y: 1890.9231
+        width: 315.07693
+        height: 315.07693
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 18a474c788b05e3488e0f336fd61bc6f
+      internalID: -1426547094
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DED spritesheet 4096_91
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1575.9231
+        width: 315.07693
+        height: 315.07693
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1a8d6159459b3d24c9b08e0ce1580a62
+      internalID: -1979199749
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DED spritesheet 4096_92
+      rect:
+        serializedVersion: 2
+        x: 315
+        y: 1575.9231
+        width: 315.07693
+        height: 315.07693
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d704e6c773d3c5143b16917f5e717b6d
+      internalID: 533363716
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DED spritesheet 4096_93
+      rect:
+        serializedVersion: 2
+        x: 630
+        y: 1575.9231
+        width: 315.07693
+        height: 315.07693
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1718f8d90cb286e47aaa65ea00bd60d3
+      internalID: -1334143514
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DED spritesheet 4096_94
+      rect:
+        serializedVersion: 2
+        x: 945
+        y: 1575.9231
+        width: 315.07693
+        height: 315.07693
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aa39e8d8d4fe4bd4ab5c06bdb6dd97db
+      internalID: 110458286
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DED spritesheet 4096_95
+      rect:
+        serializedVersion: 2
+        x: 1260
+        y: 1575.9231
+        width: 315.07693
+        height: 315.07693
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 98a33fa8643109949abcb2354c1b8852
+      internalID: -446978974
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DED spritesheet 4096_96
+      rect:
+        serializedVersion: 2
+        x: 1575
+        y: 1575.9231
+        width: 315.07693
+        height: 315.07693
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8f40add413c85024ba631623c7a883f4
+      internalID: -1181063974
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DED spritesheet 4096_97
+      rect:
+        serializedVersion: 2
+        x: 1890
+        y: 1575.9231
+        width: 315.07693
+        height: 315.07693
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d896e866b031cca4f87ab43baccf4e30
+      internalID: 939279483
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DED spritesheet 4096_98
+      rect:
+        serializedVersion: 2
+        x: 2205
+        y: 1575.9231
+        width: 315.07693
+        height: 315.07693
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 81f2fa86b812065498536456194c373b
+      internalID: -1988426473
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DED spritesheet 4096_99
+      rect:
+        serializedVersion: 2
+        x: 2520
+        y: 1575.9231
+        width: 315.07693
+        height: 315.07693
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 479091ee39bd0ea49a18e098964f596d
+      internalID: -230318381
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DED spritesheet 4096_100
+      rect:
+        serializedVersion: 2
+        x: 2835
+        y: 1575.9231
+        width: 315.07693
+        height: 315.07693
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ae2a9e6098bb8f64e95555c5b0cae156
+      internalID: 1868469302
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DED spritesheet 4096_101
+      rect:
+        serializedVersion: 2
+        x: 3150
+        y: 1575.9231
+        width: 315.07693
+        height: 315.07693
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b967747fd70a19d488c1129eaf4266a3
+      internalID: -1136185488
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DED spritesheet 4096_102
+      rect:
+        serializedVersion: 2
+        x: 3465
+        y: 1575.9231
+        width: 315.07693
+        height: 315.07693
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7df28b46b6eec74438ee6ceffc19ab20
+      internalID: 801620712
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DED spritesheet 4096_103
+      rect:
+        serializedVersion: 2
+        x: 3780
+        y: 1575.9231
+        width: 315.07693
+        height: 315.07693
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 12ddb082fea99204b8122afa8e8f446d
+      internalID: -1735691147
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DED spritesheet 4096_104
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1260.9231
+        width: 315.07693
+        height: 315.07693
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 95380aaf2eca90b4ebb35ff53034b3ea
+      internalID: 988782914
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DED spritesheet 4096_105
+      rect:
+        serializedVersion: 2
+        x: 315
+        y: 1260.9231
+        width: 315.07693
+        height: 315.07693
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a48338936da6f2649a5252e1bf8a8c62
+      internalID: 680949426
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DED spritesheet 4096_106
+      rect:
+        serializedVersion: 2
+        x: 630
+        y: 1260.9231
+        width: 315.07693
+        height: 315.07693
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f81fbaf9cf7184e488e3a06fde4a45f1
+      internalID: 1488083858
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DED spritesheet 4096_107
+      rect:
+        serializedVersion: 2
+        x: 945
+        y: 1260.9231
+        width: 315.07693
+        height: 315.07693
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d1ef0b2fc83d8e54fb4e358211a4d1ee
+      internalID: 1559996263
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DED spritesheet 4096_108
+      rect:
+        serializedVersion: 2
+        x: 1260
+        y: 1260.9231
+        width: 315.07693
+        height: 315.07693
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f33a53dd375806c42a59a3db8d5536d0
+      internalID: 967345954
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DED spritesheet 4096_109
+      rect:
+        serializedVersion: 2
+        x: 1575
+        y: 1260.9231
+        width: 315.07693
+        height: 315.07693
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a835ac88b9beaf9408972c0ba83285f8
+      internalID: 536807435
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DED spritesheet 4096_110
+      rect:
+        serializedVersion: 2
+        x: 1890
+        y: 1260.9231
+        width: 315.07693
+        height: 315.07693
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b150a3e0007baa54a9c18dd8f1967402
+      internalID: 1986776618
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DED spritesheet 4096_111
+      rect:
+        serializedVersion: 2
+        x: 2205
+        y: 1260.9231
+        width: 315.07693
+        height: 315.07693
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 37f541498280e1d449b346c238efe94d
+      internalID: 1384416056
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DED spritesheet 4096_112
+      rect:
+        serializedVersion: 2
+        x: 2520
+        y: 1260.9231
+        width: 315.07693
+        height: 315.07693
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: caadbd8e0f32e06449817a0803d76af2
+      internalID: 907649688
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DED spritesheet 4096_113
+      rect:
+        serializedVersion: 2
+        x: 2835
+        y: 1260.9231
+        width: 315.07693
+        height: 315.07693
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 807cccd63460822458b1d0df455d5fcb
+      internalID: 1339256950
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DED spritesheet 4096_114
+      rect:
+        serializedVersion: 2
+        x: 3150
+        y: 1260.9231
+        width: 315.07693
+        height: 315.07693
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3602390fcb6d97749918dac6c085032e
+      internalID: 597233570
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DED spritesheet 4096_115
+      rect:
+        serializedVersion: 2
+        x: 3465
+        y: 1260.9231
+        width: 315.07693
+        height: 315.07693
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1fc28e7e5eabde140892358c6dcd4f36
+      internalID: 1293351502
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DED spritesheet 4096_116
+      rect:
+        serializedVersion: 2
+        x: 3780
+        y: 1260.9231
+        width: 315.07693
+        height: 315.07693
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9cec39f500e45124fa0e5bef812813bb
+      internalID: 374350750
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DED spritesheet 4096_117
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 945.9231
+        width: 315.07693
+        height: 315.07693
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b66d52c9b14e6d74dbe5463a76e62538
+      internalID: 1250513378
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DED spritesheet 4096_118
+      rect:
+        serializedVersion: 2
+        x: 315
+        y: 945.9231
+        width: 315.07693
+        height: 315.07693
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 41adb117d4a29d345a749bbf4f678793
+      internalID: -1005847388
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DED spritesheet 4096_119
+      rect:
+        serializedVersion: 2
+        x: 630
+        y: 945.9231
+        width: 315.07693
+        height: 315.07693
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1e44dea037db41c4fa317b0ab050675a
+      internalID: -263091682
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DED spritesheet 4096_120
+      rect:
+        serializedVersion: 2
+        x: 945
+        y: 945.9231
+        width: 315.07693
+        height: 315.07693
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ee8a410e045fb6f4090ee09b9aafbb1d
+      internalID: 1852339935
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DED spritesheet 4096_121
+      rect:
+        serializedVersion: 2
+        x: 1260
+        y: 945.9231
+        width: 315.07693
+        height: 315.07693
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bca80ab632d265f4399ac0a599709fe2
+      internalID: -512281414
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DED spritesheet 4096_122
+      rect:
+        serializedVersion: 2
+        x: 1575
+        y: 945.9231
+        width: 315.07693
+        height: 315.07693
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0d2d5976f60ec7949a36037b2301fdb6
+      internalID: 463394336
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DED spritesheet 4096_123
+      rect:
+        serializedVersion: 2
+        x: 1890
+        y: 945.9231
+        width: 315.07693
+        height: 315.07693
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9163e8b447bb8304f8e7b545dac16cbd
+      internalID: 187386599
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DED spritesheet 4096_124
+      rect:
+        serializedVersion: 2
+        x: 2205
+        y: 945.9231
+        width: 315.07693
+        height: 315.07693
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ca43c622b2d174040add16996528c00f
+      internalID: -986185255
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DED spritesheet 4096_125
+      rect:
+        serializedVersion: 2
+        x: 2520
+        y: 945.9231
+        width: 315.07693
+        height: 315.07693
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f268f0f83b6a42647b0307ba0b493399
+      internalID: -1040696757
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DED spritesheet 4096_126
+      rect:
+        serializedVersion: 2
+        x: 2835
+        y: 945.9231
+        width: 315.07693
+        height: 315.07693
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 113f42a5b5aea6247a0bc3a77cba213a
+      internalID: 640305810
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DED spritesheet 4096_127
+      rect:
+        serializedVersion: 2
+        x: 3150
+        y: 945.9231
+        width: 315.07693
+        height: 315.07693
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ee380e8d8e222ea4a956b2ccf4ef1efd
+      internalID: 2036348931
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DED spritesheet 4096_128
+      rect:
+        serializedVersion: 2
+        x: 3465
+        y: 945.9231
+        width: 315.07693
+        height: 315.07693
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cb5c3560c025b1645987fa3dff8ee9d8
+      internalID: 1267123310
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DED spritesheet 4096_129
+      rect:
+        serializedVersion: 2
+        x: 3780
+        y: 945.9231
+        width: 315.07693
+        height: 315.07693
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b20cff7a38a3ddf4297bb5a0f486e529
+      internalID: -667396967
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DED spritesheet 4096_130
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 630.9231
+        width: 315.07693
+        height: 315.07693
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 61a1d76f6868fcd45931cfd2cbae7d03
+      internalID: -1594697355
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DED spritesheet 4096_131
+      rect:
+        serializedVersion: 2
+        x: 315
+        y: 630.9231
+        width: 315.07693
+        height: 315.07693
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 71ac31aec474410448bd2515a7f9544f
+      internalID: -2026112951
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DED spritesheet 4096_132
+      rect:
+        serializedVersion: 2
+        x: 630
+        y: 630.9231
+        width: 315.07693
+        height: 315.07693
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bcd1da40e4acf91489864ddcddf83435
+      internalID: 664184780
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DED spritesheet 4096_133
+      rect:
+        serializedVersion: 2
+        x: 945
+        y: 630.9231
+        width: 315.07693
+        height: 315.07693
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3d31895f81f822e42a9608ef067dd968
+      internalID: 438925229
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DED spritesheet 4096_134
+      rect:
+        serializedVersion: 2
+        x: 1260
+        y: 630.9231
+        width: 315.07693
+        height: 315.07693
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1e67e5ab1d8df0740a1ba1cdb1858a30
+      internalID: 2037498023
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DED spritesheet 4096_135
+      rect:
+        serializedVersion: 2
+        x: 1575
+        y: 630.9231
+        width: 315.07693
+        height: 315.07693
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 508e5c73a9926004b8bf06c13291adcf
+      internalID: 718519463
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DED spritesheet 4096_136
+      rect:
+        serializedVersion: 2
+        x: 1890
+        y: 630.9231
+        width: 315.07693
+        height: 315.07693
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 92778750fb484b8458d1b1a14a4266e0
+      internalID: 2122711135
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DED spritesheet 4096_137
+      rect:
+        serializedVersion: 2
+        x: 2205
+        y: 630.9231
+        width: 315.07693
+        height: 315.07693
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 973314df504cfc84ebebaa69ca4367c0
+      internalID: 541280682
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DED spritesheet 4096_138
+      rect:
+        serializedVersion: 2
+        x: 2520
+        y: 630.9231
+        width: 315.07693
+        height: 315.07693
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 185fc5964b5bea34d96e872cd5a70e14
+      internalID: -1590420411
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DED spritesheet 4096_139
+      rect:
+        serializedVersion: 2
+        x: 2835
+        y: 630.9231
+        width: 315.07693
+        height: 315.07693
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ae828b90343729741bb695199db9c76d
+      internalID: -214093899
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DED spritesheet 4096_140
+      rect:
+        serializedVersion: 2
+        x: 3150
+        y: 630.9231
+        width: 315.07693
+        height: 315.07693
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f9ed4cd3fcfb7c449864f350de58ad91
+      internalID: 1947833740
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DED spritesheet 4096_141
+      rect:
+        serializedVersion: 2
+        x: 3465
+        y: 630.9231
+        width: 315.07693
+        height: 315.07693
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e52a913235b3bf34b94c33b2bb9a8caf
+      internalID: 288072889
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DED spritesheet 4096_142
+      rect:
+        serializedVersion: 2
+        x: 3780
+        y: 630.9231
+        width: 315.07693
+        height: 315.07693
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1697aad577ab1ca449e9348af023ec24
+      internalID: -1098100735
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DED spritesheet 4096_143
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 315.92307
+        width: 315.07693
+        height: 315.07693
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7a9df3d4a37fa4f4ea37260993731d48
+      internalID: 549642046
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DED spritesheet 4096_144
+      rect:
+        serializedVersion: 2
+        x: 315
+        y: 315.92307
+        width: 315.07693
+        height: 315.07693
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 01a529dd55a64bc48a018fa9166f465a
+      internalID: 2136840500
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DED spritesheet 4096_145
+      rect:
+        serializedVersion: 2
+        x: 630
+        y: 315.92307
+        width: 315.07693
+        height: 315.07693
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d7d2c4bd0ec02b64ca4107fbb4255db8
+      internalID: 260805630
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DED spritesheet 4096_146
+      rect:
+        serializedVersion: 2
+        x: 945
+        y: 315.92307
+        width: 315.07693
+        height: 315.07693
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 02cf3ccd5096a0c479384580fc0bbd2b
+      internalID: -1247148495
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DED spritesheet 4096_147
+      rect:
+        serializedVersion: 2
+        x: 1260
+        y: 315.92307
+        width: 315.07693
+        height: 315.07693
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 807280e26dc292845bb1c23977b13799
+      internalID: 343869440
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DED spritesheet 4096_148
+      rect:
+        serializedVersion: 2
+        x: 1575
+        y: 315.92307
+        width: 315.07693
+        height: 315.07693
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bbe02e7f7a9f5d04ba7062b93a2df0ed
+      internalID: -722985324
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DED spritesheet 4096_149
+      rect:
+        serializedVersion: 2
+        x: 1890
+        y: 315.92307
+        width: 315.07693
+        height: 315.07693
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a601431e811ed9b4f872942be54f9908
+      internalID: 1517915719
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DED spritesheet 4096_150
+      rect:
+        serializedVersion: 2
+        x: 2205
+        y: 315.92307
+        width: 315.07693
+        height: 315.07693
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0c20c029a34faa54b8b392ac599c165a
+      internalID: -393084688
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DED spritesheet 4096_151
+      rect:
+        serializedVersion: 2
+        x: 2520
+        y: 315.92307
+        width: 315.07693
+        height: 315.07693
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d0fedbb30c798ba499e0e524aacbbe1a
+      internalID: -1359238154
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DED spritesheet 4096_152
+      rect:
+        serializedVersion: 2
+        x: 2835
+        y: 315.92307
+        width: 315.07693
+        height: 315.07693
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 783d9b19c66353f4db1768591fe3ebfd
+      internalID: 2133377423
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DED spritesheet 4096_153
+      rect:
+        serializedVersion: 2
+        x: 3150
+        y: 315.92307
+        width: 315.07693
+        height: 315.07693
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3690c6a28183a0d4daca441f8f731465
+      internalID: 184430558
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DED spritesheet 4096_154
+      rect:
+        serializedVersion: 2
+        x: 3465
+        y: 315.92307
+        width: 315.07693
+        height: 315.07693
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cc9a2a68599ca304891eb88ebce5cb13
+      internalID: -150362878
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DED spritesheet 4096_155
+      rect:
+        serializedVersion: 2
+        x: 3780
+        y: 315.92307
+        width: 315.07693
+        height: 315.07693
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: edbf2d9f6817f7149896253de86a20d7
+      internalID: 832287163
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DED spritesheet 4096_156
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0.9230652
+        width: 315.07693
+        height: 315.07693
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6190f3ede11c47e42804abb9ee9ac578
+      internalID: -639670668
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DED spritesheet 4096_157
+      rect:
+        serializedVersion: 2
+        x: 315
+        y: 0.9230652
+        width: 315.07693
+        height: 315.07693
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f73ea8b263bdc70478174bc7a8845fb3
+      internalID: 1682239940
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DED spritesheet 4096_158
+      rect:
+        serializedVersion: 2
+        x: 630
+        y: 0.9230652
+        width: 315.07693
+        height: 315.07693
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7357025d5b7074d4d9ac977f60024823
+      internalID: -221574471
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DED spritesheet 4096_159
+      rect:
+        serializedVersion: 2
+        x: 945
+        y: 0.9230652
+        width: 315.07693
+        height: 315.07693
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 122a23519d50d3d46aedfe65d7f3d737
+      internalID: 1321248679
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      DED spritesheet 4096_0: -1017247543
+      DED spritesheet 4096_1: 1489040642
+      DED spritesheet 4096_10: 803910870
+      DED spritesheet 4096_100: 1868469302
+      DED spritesheet 4096_101: -1136185488
+      DED spritesheet 4096_102: 801620712
+      DED spritesheet 4096_103: -1735691147
+      DED spritesheet 4096_104: 988782914
+      DED spritesheet 4096_105: 680949426
+      DED spritesheet 4096_106: 1488083858
+      DED spritesheet 4096_107: 1559996263
+      DED spritesheet 4096_108: 967345954
+      DED spritesheet 4096_109: 536807435
+      DED spritesheet 4096_11: 1030724596
+      DED spritesheet 4096_110: 1986776618
+      DED spritesheet 4096_111: 1384416056
+      DED spritesheet 4096_112: 907649688
+      DED spritesheet 4096_113: 1339256950
+      DED spritesheet 4096_114: 597233570
+      DED spritesheet 4096_115: 1293351502
+      DED spritesheet 4096_116: 374350750
+      DED spritesheet 4096_117: 1250513378
+      DED spritesheet 4096_118: -1005847388
+      DED spritesheet 4096_119: -263091682
+      DED spritesheet 4096_12: -625226747
+      DED spritesheet 4096_120: 1852339935
+      DED spritesheet 4096_121: -512281414
+      DED spritesheet 4096_122: 463394336
+      DED spritesheet 4096_123: 187386599
+      DED spritesheet 4096_124: -986185255
+      DED spritesheet 4096_125: -1040696757
+      DED spritesheet 4096_126: 640305810
+      DED spritesheet 4096_127: 2036348931
+      DED spritesheet 4096_128: 1267123310
+      DED spritesheet 4096_129: -667396967
+      DED spritesheet 4096_13: -985487293
+      DED spritesheet 4096_130: -1594697355
+      DED spritesheet 4096_131: -2026112951
+      DED spritesheet 4096_132: 664184780
+      DED spritesheet 4096_133: 438925229
+      DED spritesheet 4096_134: 2037498023
+      DED spritesheet 4096_135: 718519463
+      DED spritesheet 4096_136: 2122711135
+      DED spritesheet 4096_137: 541280682
+      DED spritesheet 4096_138: -1590420411
+      DED spritesheet 4096_139: -214093899
+      DED spritesheet 4096_14: -1769258622
+      DED spritesheet 4096_140: 1947833740
+      DED spritesheet 4096_141: 288072889
+      DED spritesheet 4096_142: -1098100735
+      DED spritesheet 4096_143: 549642046
+      DED spritesheet 4096_144: 2136840500
+      DED spritesheet 4096_145: 260805630
+      DED spritesheet 4096_146: -1247148495
+      DED spritesheet 4096_147: 343869440
+      DED spritesheet 4096_148: -722985324
+      DED spritesheet 4096_149: 1517915719
+      DED spritesheet 4096_15: -2009206176
+      DED spritesheet 4096_150: -393084688
+      DED spritesheet 4096_151: -1359238154
+      DED spritesheet 4096_152: 2133377423
+      DED spritesheet 4096_153: 184430558
+      DED spritesheet 4096_154: -150362878
+      DED spritesheet 4096_155: 832287163
+      DED spritesheet 4096_156: -639670668
+      DED spritesheet 4096_157: 1682239940
+      DED spritesheet 4096_158: -221574471
+      DED spritesheet 4096_159: 1321248679
+      DED spritesheet 4096_16: 105550716
+      DED spritesheet 4096_17: -2035283446
+      DED spritesheet 4096_18: -1883798311
+      DED spritesheet 4096_19: -989047442
+      DED spritesheet 4096_2: 118712766
+      DED spritesheet 4096_20: 1774489815
+      DED spritesheet 4096_21: 976546241
+      DED spritesheet 4096_22: 473890347
+      DED spritesheet 4096_23: 230669038
+      DED spritesheet 4096_24: -1640192933
+      DED spritesheet 4096_25: 2097173033
+      DED spritesheet 4096_26: -1437844487
+      DED spritesheet 4096_27: -643407864
+      DED spritesheet 4096_28: -144909165
+      DED spritesheet 4096_29: 2101798018
+      DED spritesheet 4096_3: 2121436879
+      DED spritesheet 4096_30: -367771554
+      DED spritesheet 4096_31: 259294989
+      DED spritesheet 4096_32: -683771983
+      DED spritesheet 4096_33: -1215688075
+      DED spritesheet 4096_34: 1782813508
+      DED spritesheet 4096_35: 1682606753
+      DED spritesheet 4096_36: -1763252316
+      DED spritesheet 4096_37: 1271563294
+      DED spritesheet 4096_38: 981869571
+      DED spritesheet 4096_39: -562113328
+      DED spritesheet 4096_4: -1613529199
+      DED spritesheet 4096_40: -1997189150
+      DED spritesheet 4096_41: 1711224334
+      DED spritesheet 4096_42: 2046864886
+      DED spritesheet 4096_43: 154180763
+      DED spritesheet 4096_44: -558661005
+      DED spritesheet 4096_45: 1848871654
+      DED spritesheet 4096_46: -1397848269
+      DED spritesheet 4096_47: 574655647
+      DED spritesheet 4096_48: 1796898119
+      DED spritesheet 4096_49: 1491530359
+      DED spritesheet 4096_5: -1536532835
+      DED spritesheet 4096_50: -1627100220
+      DED spritesheet 4096_51: -2054121505
+      DED spritesheet 4096_52: -1536699437
+      DED spritesheet 4096_53: -1345121628
+      DED spritesheet 4096_54: 1257549448
+      DED spritesheet 4096_55: 256402347
+      DED spritesheet 4096_56: -1075789390
+      DED spritesheet 4096_57: 1577021736
+      DED spritesheet 4096_58: -296908854
+      DED spritesheet 4096_59: 1492541777
+      DED spritesheet 4096_6: 60539876
+      DED spritesheet 4096_60: -476612554
+      DED spritesheet 4096_61: -1005872612
+      DED spritesheet 4096_62: 827072376
+      DED spritesheet 4096_63: -1966611500
+      DED spritesheet 4096_64: -1294000129
+      DED spritesheet 4096_65: 248297430
+      DED spritesheet 4096_66: -1461968583
+      DED spritesheet 4096_67: 653827464
+      DED spritesheet 4096_68: 1376383745
+      DED spritesheet 4096_69: -1339243447
+      DED spritesheet 4096_7: -1571287558
+      DED spritesheet 4096_70: 1553885804
+      DED spritesheet 4096_71: -448711039
+      DED spritesheet 4096_72: 1027093181
+      DED spritesheet 4096_73: -791929109
+      DED spritesheet 4096_74: 522738347
+      DED spritesheet 4096_75: -448102533
+      DED spritesheet 4096_76: -1629740831
+      DED spritesheet 4096_77: 472995459
+      DED spritesheet 4096_78: 2090157358
+      DED spritesheet 4096_79: -1672103533
+      DED spritesheet 4096_8: 1955118538
+      DED spritesheet 4096_80: 1339411778
+      DED spritesheet 4096_81: 713923706
+      DED spritesheet 4096_82: -672644006
+      DED spritesheet 4096_83: 2032484668
+      DED spritesheet 4096_84: 1457306234
+      DED spritesheet 4096_85: 164823137
+      DED spritesheet 4096_86: 1468315126
+      DED spritesheet 4096_87: -2105884300
+      DED spritesheet 4096_88: -1935075315
+      DED spritesheet 4096_89: -316347419
+      DED spritesheet 4096_9: 2051638582
+      DED spritesheet 4096_90: -1426547094
+      DED spritesheet 4096_91: -1979199749
+      DED spritesheet 4096_92: 533363716
+      DED spritesheet 4096_93: -1334143514
+      DED spritesheet 4096_94: 110458286
+      DED spritesheet 4096_95: -446978974
+      DED spritesheet 4096_96: -1181063974
+      DED spritesheet 4096_97: 939279483
+      DED spritesheet 4096_98: -1988426473
+      DED spritesheet 4096_99: -230318381
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

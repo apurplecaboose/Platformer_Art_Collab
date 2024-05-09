@@ -10,8 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 9148861593406926340}
   - component: {fileID: 8883285903315602185}
+  - component: {fileID: 8947919277639304401}
   m_Layer: 0
-  m_Name: CampfireParticle 1
+  m_Name: ReloadParticle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -46,6 +47,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Lifetime: 0
+--- !u!114 &8947919277639304401
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 545765367640586768}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab4adb9b49743e44493a84ac9ed68b58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  followTarget: {fileID: 0}
 --- !u!1 &7888828583741815223
 GameObject:
   m_ObjectHideFlags: 0
@@ -1595,12 +1609,12 @@ ParticleSystem:
     flipU: 0
     flipV: 0
   VelocityModule:
-    enabled: 0
+    enabled: 1
     x:
       serializedVersion: 2
-      minMaxState: 0
-      scalar: 0
-      minScalar: 0
+      minMaxState: 3
+      scalar: -3
+      minScalar: 3
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -1651,7 +1665,7 @@ ParticleSystem:
         m_RotationOrder: 4
     y:
       serializedVersion: 2
-      minMaxState: 0
+      minMaxState: 3
       scalar: 0
       minScalar: 0
       maxCurve:
@@ -1704,7 +1718,7 @@ ParticleSystem:
         m_RotationOrder: 4
     z:
       serializedVersion: 2
-      minMaxState: 0
+      minMaxState: 3
       scalar: 0
       minScalar: 0
       maxCurve:
@@ -4901,7 +4915,7 @@ ParticleSystemRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 500
+  m_SortingOrder: 10000
   m_RenderMode: 0
   m_MeshDistribution: 0
   m_SortMode: 0

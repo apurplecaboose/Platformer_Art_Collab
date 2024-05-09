@@ -30,10 +30,10 @@ public class HighScore : MonoBehaviour
             HighscoreTMP.text = "Highscore:N/A";
         }
         currentScore = Timer.GetComponent<Timer>().timer;
-        if (GM.GetComponent<GameMaster>().recording) //test condition
-        {
-            UpdateHighScore();
-        }
+        //if (GM.GetComponent<GameMaster>().recording) //test condition
+        //{
+        //    UpdateHighScore();
+        //}
 
     }
     public void UpdateHighScore()

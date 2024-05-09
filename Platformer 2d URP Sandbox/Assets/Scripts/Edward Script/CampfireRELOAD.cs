@@ -45,6 +45,7 @@ public class CampfireRELOAD : MonoBehaviour
             Particle_Master KachowUI = Instantiate(ParticlePrefabUI, bulletCountUIPosition, Quaternion.identity);
             KachowUI.transform.localScale = new Vector3(ParticleScale, ParticleScale , 1);
             KachowUI.Lifetime = 0.5f;
+            KachowUI.gameObject.GetComponent<MoveWithUI>().followTarget = _reloadUI;
 
 
             P_shoot.ReloadFireBullets(_reloadAmount);
