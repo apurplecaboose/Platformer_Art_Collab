@@ -37,7 +37,6 @@ public class P_ShootLogic : MonoBehaviour
         if (GameManager.P_state == GameManager.PlayerState.Playing)
         {
             Shoot();
-            ReloadFireBullets();//Test Only
             _refToMousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition) + new Vector3(0, 0, 10);//mouse input
         }
     }
@@ -114,15 +113,13 @@ public class P_ShootLogic : MonoBehaviour
         }
 
     }
-
-    void ReloadFireBullets()
+    /// <summary>
+    /// For cheatcode use. Will reload bullets to 7
+    /// </summary>
+    public void ReloadFireBullets()
     {
-        if (Input.GetKeyDown(KeyCode.R))
-        {
-            BulletNum = 10;
-            _p_LanternLight.TriggerLightChange(BulletNum);
-            
-        }
+        BulletNum = 7;
+        _p_LanternLight.TriggerLightChange(BulletNum);
     }
     /// <summary>
     /// pass in the reload amount and it will do the rest for you

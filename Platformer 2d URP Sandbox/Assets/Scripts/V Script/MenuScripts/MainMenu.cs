@@ -10,6 +10,8 @@ public class MainMenu : MonoBehaviour
     [SerializeField] SceneEnum.SceneList Lv2Scene;
     [SerializeField] SceneEnum.SceneList Lv3Scene;
     [SerializeField] SceneEnum.SceneList HighScore;
+    int secretbuttoncount;
+    public AudioSource Active, Deactive;
     public void PlayGame()
     {
         SceneManager.LoadScene(PlayTargetScene.ToString());
@@ -33,5 +35,30 @@ public class MainMenu : MonoBehaviour
     public void SecretHighscore()
     {
         SceneManager.LoadScene(HighScore.ToString());
+    }
+    public void SecretCheatButton()
+    {
+        if(GameManager.CHEATS_ACTIVE)
+        {
+            GameManager.CHEATS_ACTIVE = false;
+            Debug.Log("Cheats DEACTIVE");
+            Deactive.Play();
+        }
+        else
+        {
+            secretbuttoncount += 1;
+            if(secretbuttoncount == 7)
+            {
+                secretbuttoncount = 0;
+                Active.Play();
+                GameManager.CHEATS_ACTIVE = true;
+                Debug.Log("Cheats ACTIVE");
+            }
+        }
+    }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape)) Application.Quit();
     }
 }
