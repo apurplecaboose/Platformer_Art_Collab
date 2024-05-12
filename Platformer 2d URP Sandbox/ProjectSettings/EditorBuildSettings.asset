@@ -6,7 +6,7 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Reference Scenes/JohnnyLogo.unity
+    path: Assets/Scenes/Reference Scenes/LogoStart.unity
     guid: c666952ab6c434e43a940fb06eb9c48e
   - enabled: 1
     path: Assets/Scenes/Reference Scenes/Menu.unity
