@@ -38,7 +38,7 @@ public class SlowMo : MonoBehaviour
         if(Time.timeScale == 1 && Time.fixedDeltaTime != 0.02f)
         {
             Time.fixedDeltaTime = 0.02f; // set it to fixed time step 
-            Debug.Log("Time.fixedDeltaTime Reset Catch Case!!!");
+            //Debug.Log("Time.fixedDeltaTime Reset Catch Case!!!");
         }
 
         SlowMoReady(SlowMoToggle);

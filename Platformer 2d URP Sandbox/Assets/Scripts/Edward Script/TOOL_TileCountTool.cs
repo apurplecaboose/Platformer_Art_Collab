@@ -30,7 +30,7 @@ public class TOOL_TileCountTool : MonoBehaviour
             }
         }
 
-        Debug.Log("Total Lv3 Playable Tiles = " + amount);
+        //Debug.Log("Total Lv3 Playable Tiles = " + amount);
         return amount;
     }
 }
