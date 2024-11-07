@@ -25,9 +25,16 @@ public class Reset_Misc : MonoBehaviour
             poof.Player = this.gameObject;
             poof.Respawn = true;
         }
+#if UNITY_WEBGL
+        if (Input.GetKeyDown(KeyCode.Backspace))
+        {
+            SceneManager.LoadScene(_MenuMainScene.ToString());
+        }
+#else
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             SceneManager.LoadScene(_MenuMainScene.ToString());
         }
+#endif
     }
 }
