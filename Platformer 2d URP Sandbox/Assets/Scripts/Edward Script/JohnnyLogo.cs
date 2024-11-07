@@ -6,17 +6,14 @@ using UnityEngine.Video;
 public class JohnnyLogo : MonoBehaviour
 {
     VideoPlayer video;
-    public bool TEST__ISWEBGL;
-
     void Awake()
     {
-
 #if UNITY_WEBGL
 
             SceneManager.LoadScene(1);
 
             //video.source = VideoSource.Url;
-            //Debug.Log("USE URL");
+            //Debug.Log("USE URL");1
             //string videoUrl = Application.streamingAssetsPath + "/" + "TESTVIDEO" + ".mp4";
             //video.url = videoUrl;
             //video.Play();

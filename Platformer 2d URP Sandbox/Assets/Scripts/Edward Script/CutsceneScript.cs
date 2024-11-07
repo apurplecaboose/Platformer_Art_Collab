@@ -1,6 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using System.Threading.Tasks;
 using TransitionsPlus;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -18,14 +17,13 @@ public class CutsceneScript : MonoBehaviour
     [SerializeField] Image Dial;
     [SerializeField] GameObject CHEATERSkipUI;
 
-    public string PathURL_Filename_forWebGL; // add the fileformat too!!!
-
     float _cutsceneLength, _cutsceneTimer, _skipTimer, _skipcutscenebuttonholdtime = 1.25f;
     bool _toggle;
-    void Awake()
+    public string VIDEOPATH;
+    private void Awake()
     {
-        CutscenePlayer.source = VideoSource.Url; // double check
-        string videoUrl = Application.streamingAssetsPath + "/" + PathURL_Filename_forWebGL;
+        CutscenePlayer.source = VideoSource.Url;
+        string videoUrl = Application.streamingAssetsPath + "/" + VIDEOPATH;
         CutscenePlayer.url = videoUrl;
     }
     private void Start()
@@ -41,37 +39,17 @@ public class CutsceneScript : MonoBehaviour
             default:
                 break;
         }
-#if UNITY_WEBGL
-
-#else
-        WaitforVideoLoad();
-#endif
     }
-
-    async void WaitforVideoLoad()
+    private void Update()
     {
-        do
+        if(CutscenePlayer.isPrepared)
         {
             _cutsceneLength = (float)CutscenePlayer.length;
             if (_cutsceneTimer < _videoOffset)
             {
                 Debug.Log("Offset is larger than video length u idiot");
             }
-            await Task.Yield();
-        }
-        while (!CutscenePlayer.isPrepared);
-        return;
-    }
-    private void Update()
-    {
-        if(CutscenePlayer.isPrepared)
-        {
-            CutscenePlayer.Play();
-#if UNITY_WEBGL
-_cutsceneLength = (float)CutscenePlayer.length;
-#endif
             _cutsceneTimer += Time.deltaTime;
-
             if (_cutsceneTimer >= _cutsceneLength - _videoOffset)
             {
                 if (!_toggle)

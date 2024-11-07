@@ -1147,7 +1147,7 @@ MonoBehaviour:
   SkipUI: {fileID: 822193887}
   Dial: {fileID: 434356010}
   CHEATERSkipUI: {fileID: 570280260}
-  PathURL_Filename_forWebGL: 3-Cutscene.mp4
+  VIDEOPATH: 3-Cutscene.mp4
 --- !u!1 &2011640026
 GameObject:
   m_ObjectHideFlags: 0
